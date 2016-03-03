@@ -24,6 +24,6 @@
    * browserify用户
    * 代码拆分
    * Stylesheets
-   * [优化](Optimization.md)
-   * [长时缓存](long_term_cashing.md)
+   * [优化](chapter3/Optimization.md)
+   * [长时缓存](chapter3/long_term_cashing.md)
 
