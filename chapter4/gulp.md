@@ -1,8 +1,10 @@
 
-Using webpack with gulp is as easy as using the [node.js API](node.js-api.html).
+Using webpack with gulp is as easy as using the
 
-## [→](#using-webpack-stream)Using [webpack-stream](https://github.com/shama/webpack-stream)
+和[node.js API](node.js-api.html)一样简单.
 
+## 运用 [webpack-stream](https://github.com/shama/webpack-stream)
+```zsh
     var gulp = require('gulp');
     var webpack = require('webpack-stream');
     gulp.task('default', function() {
@@ -10,6 +12,7 @@ Using webpack with gulp is as easy as using the [node.js API](node.js-api.html).
         .pipe(webpack())
         .pipe(gulp.dest('dist/'));
     });
+```
 
 The above will compile src/entry.js into assets with webpack into dist/ with the output filename of [hash].js (webpack generated hash of the build).
 
