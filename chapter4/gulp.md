@@ -35,6 +35,7 @@ See [webpack-stream](https://github.com/shama/webpack-stream) for more options a
 
 ### [→](#normal-compilation)Normal compilation
 
+```zsh
     gulp.task("webpack", function(callback) {
         // run webpack
         webpack({
@@ -47,6 +48,8 @@ See [webpack-stream](https://github.com/shama/webpack-stream) for more options a
             callback();
         });
     });
+    
+```
 
 ## [→](#webpack-dev-server)[webpack-dev-server](webpack-dev-server.html)
 
