@@ -18,3 +18,8 @@ git clone https://github.com/stephenzhao/webpack_cn_doc
 推荐使用[Gitbook Editor](https://www.gitbook.com/editor/osx)
 
 4.保存发布，发pr给我就好了
+
+
+## gitbook 如何工作的
+
+这片[文章](http://www.chengweiyang.cn/gitbook/introduction/README.html)或许可以给你答案
