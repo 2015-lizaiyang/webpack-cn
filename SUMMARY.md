@@ -4,7 +4,7 @@
 * [概览](chapter0/home.md)
 * 开始
    * [optimization 优化](chapter1/section1.md)
-   * 动机
+   * [动机](chapter1/dong_ji.md)
    * Webpack是什么
    * 安装
 * 教程和例子
