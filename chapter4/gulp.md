@@ -26,11 +26,12 @@ Or just pass in your `webpack.config.js`:
 See [webpack-stream](https://github.com/shama/webpack-stream) for more options and details.
 
 ## [→](#without-webpack-stream)Without `webpack-stream`
-
+```zsh
     var gulp = require("gulp");
     var gutil = require("gulp-util");
     var webpack = require("webpack");
     var WebpackDevServer = require("webpack-dev-server");
+```
 
 ### [→](#normal-compilation)Normal compilation
 
