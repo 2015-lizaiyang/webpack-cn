@@ -15,7 +15,7 @@
    * [工具](chapter1/devtool.md)
    * [常见问题](chapter1/troubleshootingmd.md)
 * 教程和例子
-   * [开始](chapter2/getting_started.md)
+   * [开始](chapter2/gettingstarted_md.md)
    * 教程列表
    * 例子
 * 实践指南
