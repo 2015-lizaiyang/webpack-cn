@@ -5,7 +5,7 @@
 1. 安装[gitbook](https://github.com/GitbookIO/gitbook) 客户端
 
 ```zsh
-    npm install gitbook-cli -g
+npm install gitbook-cli -g
 ```
 2.clone [我的书的代码](https://github.com/stephenzhao/webpack_cn_doc)
 
