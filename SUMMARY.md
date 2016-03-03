@@ -28,4 +28,5 @@
    * [长期缓存](chapter3/long_term_cashing.md)
    * [如何编写loader](chapter3/ru_he_bian_xie_loader.md)
    * 如何编写插件
+   * 多个入口的代码分割
 
