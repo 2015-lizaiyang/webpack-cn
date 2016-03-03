@@ -11,4 +11,5 @@
 * 实践指南
    * Commonjs
    * AMD
+   * browserify用户
 
