@@ -36,7 +36,7 @@
    * 热替换
    * 各模块加载器对比
 * 结合其他工具
-   * gulp
+   * [gulp](chapter4/gulp.md)
 * 一些资源列表
    * loaders列表
 * API
