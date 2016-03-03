@@ -9,6 +9,7 @@
    * [安装](chapter1/an_zhuang.md)
    * [使用](usage.md)
    * Require Modules
+   * Vendor Modules
 * 教程和例子
    * 开始
    * 教程列表
