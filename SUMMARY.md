@@ -32,4 +32,5 @@
    * 库和扩展
    * SHIMMING MODULES
    * 测试
+   * 编译性能检测
 
