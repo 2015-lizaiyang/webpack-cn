@@ -25,5 +25,5 @@
    * 代码拆分
    * Stylesheets
    * [优化](chapter3/Optimization.md)
-   * [长时缓存](chapter3/long_term_cashing.md)
+   * [长期缓存](chapter3/long_term_cashing.md)
 
