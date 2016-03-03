@@ -4,6 +4,7 @@
 * [概览](chapter0/home.md)
 * 开始
    * [optimization 优化](chapter1/section1.md)
+   * 动机
 * 教程和例子
    * 开始
    * 教程列表
