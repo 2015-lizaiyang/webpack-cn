@@ -55,6 +55,7 @@ See [webpack-stream](https://github.com/shama/webpack-stream) for more options a
 
 > Don’t be too lazy to integrate the webpack-dev-server into your development process. It’s an important tool for productivity.
 
+```zsh
     gulp.task("webpack-dev-server", function(callback) {
         // Start a webpack-dev-server
         var compiler = webpack({
@@ -72,7 +73,7 @@ See [webpack-stream](https://github.com/shama/webpack-stream) for more options a
             // callback();
         });
     });
-
+```
 ## [→](#example)Example
 
 Take a look at an example gulpfile. It covers three modes:
