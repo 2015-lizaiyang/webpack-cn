@@ -12,7 +12,7 @@
    * Vendor Modules
    * [Using Loaders](chapter1/using_loaders.md)
    * [使用插件](chapter1/using_plugins.md)
-   * [工具](devtool.md)
+   * [工具](chapter1/devtool.md)
    * [常见问题](chapter1/troubleshootingmd.md)
 * 教程和例子
    * [开始](chapter2/getting_started.md)
