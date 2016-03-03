@@ -5,6 +5,7 @@
 * 开始
    * [optimization 优化](chapter1/section1.md)
    * 动机
+   * Webpack是什么
 * 教程和例子
    * 开始
    * 教程列表
