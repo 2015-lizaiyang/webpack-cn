@@ -1,2 +1,20 @@
 ## webpack doc
 中文翻译
+
+## how to work cooperatively
+1. 安装[gitbook](https://github.com/GitbookIO/gitbook) 客户端
+
+```zsh
+    npm install gitbook-cli -g
+```
+2.clone [我的书的代码](https://github.com/stephenzhao/webpack_cn_doc)
+
+```zsh
+git clone https://github.com/stephenzhao/webpack_cn_doc
+
+```
+3.利用任意一种你觉得顺手的编辑器比如
+![markdown](QQ20160303-0@2x.png) 来编辑章节
+推荐使用[Gitbook Editor](https://www.gitbook.com/editor/osx)
+
+4.保存发布，发pr给我就好了
