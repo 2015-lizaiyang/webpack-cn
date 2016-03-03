@@ -19,6 +19,20 @@ git clone https://github.com/stephenzhao/webpack_cn_doc
 
 4.保存发布，发pr给我就好了
 
+``` js
+//创建预览页面 http://localhost:4000
+$ gitbook serve
+Press CTRL+C to quit ...
+
+Live reload server started on port: 35729
+Starting build ...
+Successfully built!
+
+Starting server ...
+Serving book on http://localhost:4000
+
+```
+
 
 ## gitbook 如何工作的
 
