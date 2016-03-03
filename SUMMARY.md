@@ -11,6 +11,7 @@
    * Require Modules
    * Vendor Modules
    * [Using Loaders](chapter1/using_loaders.md)
+   * 使用插件
 * 教程和例子
    * 开始
    * 教程列表
