@@ -10,7 +10,7 @@
    * [使用](usage.md)
    * Require Modules
    * Vendor Modules
-   * Using Loaders
+   * [Using Loaders](chapter1/using_loaders.md)
 * 教程和例子
    * 开始
    * 教程列表
