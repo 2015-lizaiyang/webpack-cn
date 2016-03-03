@@ -51,7 +51,7 @@ See [webpack-stream](https://github.com/shama/webpack-stream) for more options a
     
 ```
 
-## [webpack-dev-server](webpack-dev-server.html)
+## webpack-dev-server
 
 > Don’t be too lazy to integrate the webpack-dev-server into your development process. It’s an important tool for productivity.
 
