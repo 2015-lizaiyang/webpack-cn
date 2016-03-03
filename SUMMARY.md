@@ -12,4 +12,5 @@
    * Commonjs
    * AMD
    * browserify用户
+   * 代码拆分
 
