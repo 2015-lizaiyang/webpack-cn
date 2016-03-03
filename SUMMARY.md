@@ -5,7 +5,7 @@
 * 开始
    * [optimization 优化](chapter1/section1.md)
    * [动机](chapter1/dong_ji.md)
-   * Webpack是什么
+   * [Webpack是什么](chapter1/webpack_is.md)
    * 安装
 * 教程和例子
    * 开始
