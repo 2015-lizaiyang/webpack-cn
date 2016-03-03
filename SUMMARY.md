@@ -7,7 +7,7 @@
    * [动机](chapter1/dong_ji.md)
    * [Webpack是什么](chapter1/webpack_is.md)
    * [安装](chapter1/an_zhuang.md)
-   * [使用](usage.md)
+   * [使用](chapter1/usage.md)
    * Require Modules
    * Vendor Modules
    * [Using Loaders](chapter1/using_loaders.md)
