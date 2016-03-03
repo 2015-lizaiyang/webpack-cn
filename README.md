@@ -1,6 +1,6 @@
 ## webpack doc
 中文翻译
-
+![[ds](stephenzhao.github.io/webpack_cn_doc/)](QQ20160303-0.png)
 ## how to work cooperatively
 1. 安装[gitbook](https://github.com/GitbookIO/gitbook) 客户端
 
