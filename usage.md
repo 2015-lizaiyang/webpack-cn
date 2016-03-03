@@ -5,3 +5,6 @@
 英文版[Webpack your bags ](http://blog.madewithlove.be/post/webpack-your-bags/)
 
 这是一片教你怎么配置一个真是的Webpack项目。
+* see [CLI](/chapter8/CLI.html) for the command line interface.
+* see node.js API for the node.js interface.
+* see Configuration for the configuration options.
