@@ -10,6 +10,7 @@
    * [使用](usage.md)
    * Require Modules
    * Vendor Modules
+   * Using Loaders
 * 教程和例子
    * 开始
    * 教程列表
