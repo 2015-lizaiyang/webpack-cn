@@ -56,6 +56,8 @@ It’s possible to specify the loaders in the require statement (or define, requ
 
 It’s possible to overwrite any loaders in the configuration by prefixing the entire rule with !.
 
+```
+
 require("./loader!./dir/file.txt");
 // => uses the file "loader.js" in the current directory to transform
 //    "file.txt" in the folder "dir".
@@ -87,18 +89,20 @@ You can bind loaders to a RegExp via configuration:
         ]
     }
 }
-CLI
+```
+##CLI
 You can bind loaders to an extension via CLI:
-
+```zsh
 $ webpack --module-bind jade --module-bind 'css=style!css'
 This uses the loader “jade” for “.jade” files and the loaders “style” and “css” for “.css” files.
-
-Query parameters
+```
+###Query parameters
 Loader can be passed query parameters via a query string (just like in the web). The query string is appended to the loader with ?. i.e. url-loader?mimetype=image/png.
 
-Note: The format of the query string is up to the loader. See format in the loader documentation. Most loaders accept parameters in the normal query format (?key=value&key2=value2) and as JSON object (?{"key":"value","key2":"value2"}).
+>Note: The format of the query string is up to the loader. See format in the loader documentation. Most loaders accept parameters in the normal query format (```?key=value&key2=value2```) and as JSON object (?```{"key":"value","key2":"value2"}```).
 
-in require
+### in require
+```
 require("url-loader?mimetype=image/png!./file.png");
 Configuration
 { test: /\.png$/, loader: "url-loader?mimetype=image/png" }
@@ -109,5 +113,9 @@ or
     loader: "url-loader",
     query: { mimetype: "image/png" }
 }
-CLI
+```
+
+## CLI
+```
 webpack --module-bind "png=url-loader?mimetype=image/png"
+```
