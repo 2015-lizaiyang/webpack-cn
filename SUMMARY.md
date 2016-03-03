@@ -16,7 +16,7 @@
    * [常见问题](chapter1/troubleshootingmd.md)
 * 教程和例子
    * [开始](chapter2/gettingstarted_md.md)
-   * [教程列表](chapter2/list_of_tutorials.md)
+   * [教程列表](chapter2/listof_tutorials.md)
    * 例子
 * 实践指南
    * Commonjs
