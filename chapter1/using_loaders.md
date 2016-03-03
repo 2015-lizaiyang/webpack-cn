@@ -49,7 +49,8 @@ explicit in the require statement
 configured via configuration
 configured via CLI
 loaders in require
-Note: Avoid using this, if at all possible, if you intend your scripts to be environment agnostic (node.js and browser). Use the configuration convention for specifying loaders (see next section).
+
+ > Note: Avoid using this, if at all possible, if you intend your scripts to be environment agnostic (node.js and browser). Use the configuration convention for specifying loaders (see next section).
 
 It’s possible to specify the loaders in the require statement (or define, require.ensure, etc.). Just separate loaders from resource with !. Each part is resolved relative to the current directory.
 
