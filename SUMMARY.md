@@ -33,4 +33,5 @@
    * SHIMMING MODULES
    * 测试
    * 编译性能检测
+   * 热替换
 
