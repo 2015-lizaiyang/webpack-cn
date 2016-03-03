@@ -26,5 +26,5 @@
    * Stylesheets
    * [优化](chapter3/Optimization.md)
    * [长期缓存](chapter3/long_term_cashing.md)
-   * 如何编写loader
+   * [如何编写loader](ru_he_bian_xie_loader.md)
 
