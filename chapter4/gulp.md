@@ -1,7 +1,5 @@
 
-Using webpack with gulp is as easy as using the
-
-和[node.js API](node.js-api.html)一样简单.
+结合gulp使用和[node.js API](node.js-api.html)一样简单.
 
 ## 运用 [webpack-stream](https://github.com/shama/webpack-stream)
 ```zsh
@@ -14,18 +12,18 @@ Using webpack with gulp is as easy as using the
     });
 ```
 
-The above will compile src/entry.js into assets with webpack into dist/ with the output filename of [hash].js (webpack generated hash of the build).
+上面的例子，将 ```src/entry.js``` 用webpack打包到```dist/``` 当中，输出的文件名，由webpack的build hash ```[hash].js``` 产生
 
-Or just pass in your `webpack.config.js`:
+你也可以将`webpack.config.js`传到gulp流里面：
 ```zsh
     return gulp.src('src/entry.js')
       .pipe(webpack( require('./webpack.config.js') ))
       .pipe(gulp.dest('dist/'));
 ```
 
-See [webpack-stream](https://github.com/shama/webpack-stream) for more options and details.
+可以查看更多 [webpack-stream](https://github.com/shama/webpack-stream) 相关。
 
-## Without `webpack-stream`
+## 不使用 `webpack-stream`
 ```zsh
     var gulp = require("gulp");
     var gutil = require("gulp-util");
@@ -33,7 +31,7 @@ See [webpack-stream](https://github.com/shama/webpack-stream) for more options a
     var WebpackDevServer = require("webpack-dev-server");
 ```
 
-### Normal compilation
+### 一般的编译过程
 
 ```zsh
     gulp.task("webpack", function(callback) {
@@ -53,7 +51,7 @@ See [webpack-stream](https://github.com/shama/webpack-stream) for more options a
 
 ## webpack-dev-server
 
-> Don’t be too lazy to integrate the webpack-dev-server into your development process. It’s an important tool for productivity.
+> `webpack-dev-server`是一个重要的辅助开发的工具
 
 ```zsh
     gulp.task("webpack-dev-server", function(callback) {
@@ -74,12 +72,13 @@ See [webpack-stream](https://github.com/shama/webpack-stream) for more options a
         });
     });
 ```
-## [→](#example)Example
+## 举例子
 
-Take a look at an example gulpfile. It covers three modes:
+例子包含下面三个部分
 
 *   webpack-dev-server
 *   build - watch cycle
 *   production build
 
-[Example gulpfile](https://github.com/webpack/webpack-with-common-libs/blob/master/gulpfile.js)
+[gulpfile demo](https://github.com/webpack/webpack-with-common-libs/blob/master/gulpfile.js)
+
