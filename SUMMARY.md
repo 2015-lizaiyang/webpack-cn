@@ -39,5 +39,5 @@
 * 一些资源列表
    * loaders列表
 * API
-   * Configuration
+   * [Configuration](chapter6/configuration.md)
 
