@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>优化 | webpack doc</title>
+        <title>gulp | webpack doc</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.2">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../chapter3/long_term_cashing.html" />
+    <link rel="next" href="../chapter6/configuration.html" />
     
     
-    <link rel="prev" href="../chapter3/codeSplitting.html" />
+    <link rel="prev" href="../chapter3/ru_he_bian_xie_loader.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="4.6"
-        data-chapter-title="优化"
-        data-filepath="chapter3/Optimization.md"
+        data-level="5.1"
+        data-chapter-title="gulp"
+        data-filepath="chapter4/gulp.md"
         data-basepath=".."
         data-revision="Wed Mar 09 2016 15:41:39 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -345,7 +345,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="4.6" data-path="chapter3/Optimization.html">
+        <li class="chapter " data-level="4.6" data-path="chapter3/Optimization.html">
             
                 
                     <a href="../chapter3/Optimization.html">
@@ -459,7 +459,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="5.1" data-path="chapter4/gulp.html">
+        <li class="chapter active" data-level="5.1" data-path="chapter4/gulp.html">
             
                 
                     <a href="../chapter4/gulp.html">
@@ -560,115 +560,73 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="optimization-&#x4F18;&#x5316;">optimization &#x4F18;&#x5316;</h1>
-<h2 id="&#x6700;&#x5C0F;&#x5316;">&#x6700;&#x5C0F;&#x5316;</h2>
-<p>&#x4E3A;&#x4E86;&#x7626;&#x8EAB;&#x4F60;&#x7684;js&#xFF08;&#x8FD8;&#x6709;&#x4F60;&#x7684;css&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7528;&#x5230;css-loader&#x7684;&#x8BDD;&#xFF09;webpack&#x652F;&#x6301;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x914D;&#x7F6E;&#x9879;&#xFF1A;</p>
-<p><code>--optimize-minimize</code>resp.<a href="http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin" target="_blank">new webpack.optimize.UglifyJsPlugin()</a> </p>
-<p>&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x7B80;&#x5355;&#x800C;&#x6709;&#x6548;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x4F18;&#x5316;&#x4F60;&#x7684;webapp&#x3002;</p>
-<p>&#x5982;&#x679C;&#x4F60;&#x5DF2;&#x7ECF;&#x9605;&#x8BFB;&#x8FC7;&#x6211;&#x4EEC;&#x524D;&#x9762;&#x7684;&#x6587;&#x6863;&#xFF0C;&#x6211;&#x60F3;&#x4F60;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;webpack&#x63D0;&#x4F9B;&#x4E86;modules &#x548C; chunks ids &#x6765;&#x533A;&#x5206;&#x4ED6;&#x4EEC;&#x4FE9;&#x3002;&#x5229;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x914D;&#x7F6E;&#x9879;&#xFF0C;webpack&#x5C31;&#x80FD;&#x591F;&#x6BD4;&#x5BF9;id&#x7684;&#x4F7F;&#x7528;&#x9891;&#x7387;&#x548C;&#x5206;&#x5E03;&#x6765;&#x5F97;&#x51FA;&#x6700;&#x77ED;&#x7684;id&#x5206;&#x914D;&#x7ED9;&#x4F7F;&#x7528;&#x9891;&#x7387;&#x9AD8;&#x7684;&#x6A21;&#x5757;&#xFF1A;</p>
-<pre><code class="lang-zsh">--optimize-occurence-order resp. new webpack.optimize.OccurenceOrderPlugin()
+                        <p>&#x7ED3;&#x5408;gulp&#x4F7F;&#x7528;&#x548C;<a href="node.js-api.html">node.js API</a>&#x4E00;&#x6837;&#x7B80;&#x5355;.</p>
+<h2 id="&#x8FD0;&#x7528;-webpackstream">&#x8FD0;&#x7528; <a href="https://github.com/shama/webpack-stream" target="_blank">webpack-stream</a></h2>
+<pre><code class="lang-zsh">    var gulp = require(<span class="hljs-string">&apos;gulp&apos;</span>);
+    var webpack = require(<span class="hljs-string">&apos;webpack-stream&apos;</span>);
+    gulp.task(<span class="hljs-string">&apos;default&apos;</span>, <span class="hljs-function"><span class="hljs-title">function</span></span>() {
+      <span class="hljs-built_in">return</span> gulp.src(<span class="hljs-string">&apos;src/entry.js&apos;</span>)
+        .pipe(webpack())
+        .pipe(gulp.dest(<span class="hljs-string">&apos;dist/&apos;</span>));
+    });
 </code></pre>
-<p>&#x5165;&#x53E3;&#x6587;&#x4EF6;&#x5BF9;&#x4E8E;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x6709;&#x8F83;&#x9AD8;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#xFF08;&#x5165;&#x53E3;&#x6587;&#x4EF6;&#x538B;&#x7F29;&#x4F18;&#x5316;&#x7387;&#x5C3D;&#x91CF;&#x7684;&#x597D;&#xFF09;</p>
-<h2 id="&#x53BB;&#x91CD;">&#x53BB;&#x91CD;</h2>
-<p>&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E9B;&#x6709;&#x7740;&#x5F88;&#x9177;&#x7684;&#x4F9D;&#x8D56;&#x6811;&#x7684;&#x5E93;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x4E00;&#x4E9B;&#x6587;&#x4EF6;&#x662F;&#x91CD;&#x590D;&#x7684;&#x3002;webpack&#x53EF;&#x4EE5;&#x627E;&#x5230;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x5E76;&#x53BB;&#x91CD;&#x3002;&#x8FD9;&#x4FDD;&#x8BC1;&#x4E86;&#x91CD;&#x590D;&#x7684;&#x4EE3;&#x7801;&#x4E0D;&#x88AB;&#x5927;&#x5305;&#x5230;bundle&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x53BB;&#xFF0C;&#x53D6;&#x800C;&#x4EE3;&#x4E4B;&#x7684;&#x662F;&#x8FD0;&#x884C;&#x65F6;&#x8BF7;&#x6C42;&#x4E00;&#x4E2A;&#x5C01;&#x88C5;&#x7684;&#x51FD;&#x6570;&#x3002;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x8BED;&#x4E49;&#xFF1A;</p>
-<pre><code>--optimize-dedupe resp. new webpack.optimize.DedupePlugin()
-</code></pre><p>&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x53EF;&#x80FD;&#x4F1A;&#x589E;&#x52A0;&#x5165;&#x53E3;&#x6A21;&#x5757;&#x7684;&#x4E00;&#x4E9B;&#x82B1;&#x9500;</p>
-<h2 id="&#x5BF9;&#x4E8E;chunks&#x7684;&#x4F18;&#x5316;">&#x5BF9;&#x4E8E;chunks&#x7684;&#x4F18;&#x5316;</h2>
-<p>&#x5F53;coding&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x6DFB;&#x52A0;&#x4E86;&#x8BB8;&#x591A;&#x5206;&#x5272;&#x70B9;&#x6765;&#x6309;&#x9700;&#x52A0;&#x8F7D;&#x3002;&#x4F46;&#x7F16;&#x8BD1;&#x5B8C;&#x4E86;&#x4E4B;&#x540E;&#x4F60;&#x53D1;&#x73B0;&#x6709;&#x592A;&#x591A;&#x7EC6;&#x5C0F;&#x7684;&#x6A21;&#x5757;&#x9020;&#x6210;&#x4E86;&#x5F88;&#x5927;&#x7684;HTTP&#x635F;&#x8017;&#x3002;&#x5E78;&#x8FD0;&#x7684;&#x662F;Webpack&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x505A;&#x4E0B;&#x9762;&#x4E24;&#x4EF6;&#x4E8B;&#x60C5;&#x6765;&#x5408;&#x5E76;&#x4E00;&#x4E9B;&#x8BF7;&#x6C42;&#xFF1A;</p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x5C06; <code>src/entry.js</code> &#x7528;webpack&#x6253;&#x5305;&#x5230;<code>dist/</code> &#x5F53;&#x4E2D;&#xFF0C;&#x8F93;&#x51FA;&#x7684;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x7531;webpack&#x7684;build hash <code>[hash].js</code> &#x4EA7;&#x751F;</p>
+<p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5C06;<code>webpack.config.js</code>&#x4F20;&#x5230;gulp&#x6D41;&#x91CC;&#x9762;&#xFF1A;</p>
+<pre><code class="lang-zsh">    <span class="hljs-built_in">return</span> gulp.src(<span class="hljs-string">&apos;src/entry.js&apos;</span>)
+      .pipe(webpack( require(<span class="hljs-string">&apos;./webpack.config.js&apos;</span>) ))
+      .pipe(gulp.dest(<span class="hljs-string">&apos;dist/&apos;</span>));
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x66F4;&#x591A; <a href="https://github.com/shama/webpack-stream" target="_blank">webpack-stream</a> &#x76F8;&#x5173;&#x3002;</p>
+<h2 id="&#x4E0D;&#x4F7F;&#x7528;-webpackstream">&#x4E0D;&#x4F7F;&#x7528; <code>webpack-stream</code></h2>
+<pre><code class="lang-zsh">    var gulp = require(<span class="hljs-string">&quot;gulp&quot;</span>);
+    var gutil = require(<span class="hljs-string">&quot;gulp-util&quot;</span>);
+    var webpack = require(<span class="hljs-string">&quot;webpack&quot;</span>);
+    var WebpackDevServer = require(<span class="hljs-string">&quot;webpack-dev-server&quot;</span>);
+</code></pre>
+<h3 id="&#x4E00;&#x822C;&#x7684;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;">&#x4E00;&#x822C;&#x7684;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;</h3>
+<pre><code class="lang-zsh">    gulp.task(<span class="hljs-string">&quot;webpack&quot;</span>, <span class="hljs-keyword">function</span>(callback) {
+        // run webpack
+        webpack({
+            // configuration
+        }, <span class="hljs-keyword">function</span>(err, stats) {
+            <span class="hljs-keyword">if</span>(err) throw new gutil.PluginError(<span class="hljs-string">&quot;webpack&quot;</span>, err);
+            gutil.log(<span class="hljs-string">&quot;[webpack]&quot;</span>, stats.toString({
+                // output options
+            }));
+            callback();
+        });
+    });
+</code></pre>
+<h2 id="webpackdevserver">webpack-dev-server</h2>
+<blockquote>
+<p><code>webpack-dev-server</code>&#x662F;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x8F85;&#x52A9;&#x5F00;&#x53D1;&#x7684;&#x5DE5;&#x5177;</p>
+</blockquote>
+<pre><code class="lang-zsh">    gulp.task(<span class="hljs-string">&quot;webpack-dev-server&quot;</span>, <span class="hljs-keyword">function</span>(callback) {
+        // Start a webpack-dev-server
+        var compiler = webpack({
+            // configuration
+        });
+
+        new WebpackDevServer(compiler, {
+            // server and middleware options
+        }).listen(<span class="hljs-number">8080</span>, <span class="hljs-string">&quot;localhost&quot;</span>, <span class="hljs-keyword">function</span>(err) {
+            <span class="hljs-keyword">if</span>(err) throw new gutil.PluginError(<span class="hljs-string">&quot;webpack-dev-server&quot;</span>, err);
+            // Server listening
+            gutil.log(<span class="hljs-string">&quot;[webpack-dev-server]&quot;</span>, <span class="hljs-string">&quot;http://localhost:8080/webpack-dev-server/index.html&quot;</span>);
+
+            // keep the server alive or <span class="hljs-built_in">continue</span>?
+            // callback();
+        });
+    });
+</code></pre>
+<h2 id="&#x4E3E;&#x4F8B;&#x5B50;">&#x4E3E;&#x4F8B;&#x5B50;</h2>
+<p>&#x4F8B;&#x5B50;&#x5305;&#x542B;&#x4E0B;&#x9762;&#x4E09;&#x4E2A;&#x90E8;&#x5206;</p>
 <ul>
-<li>Limit the maximum chunk count with <pre><code>--optimize-max-chunks 15 new webpack.optimize.LimitChunkCountPlugin({maxChunks: 15})
-</code></pre></li>
-<li>Limit the minimum chunk size with <pre><code>--optimize-min-chunk-size 10000 new webpack.optimize.MinChunkSizePlugin({minChunkSize: 10000})
-</code></pre>Webpack&#x901A;&#x8FC7;&#x5408;&#x5E76;&#x6765;&#x7BA1;&#x7406;&#x8FD9;&#x4E9B;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x7684;&#x6A21;&#x5757;(&#x5408;&#x5E76;&#x66F4;&#x591A;&#x7684;&#x65F6;&#x5019;&#x53D1;&#x751F;&#x5728;&#x5F53;&#x524D;&#x8FD9;&#x4E2A;chunk&#x6709;&#x590D;&#x7528;&#x7684;&#x5730;&#x65B9;)&#x3002;&#x6587;&#x4EF6;&#x53EA;&#x8981;&#x5728;&#x5165;&#x53E3;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x7684;&#x65F6;&#x5019;&#x6CA1;&#x6709;&#x88AB;&#x5F15;&#x5165;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4E0D;&#x4F1A;&#x88AB;&#x5408;&#x5E76;&#x5230;chunk&#x91CC;&#x9762;&#x53BB;&#x3002;</li>
+<li>webpack-dev-server</li>
+<li>build - watch cycle</li>
+<li>production build</li>
 </ul>
-<h2 id="&#x5355;&#x9875;">&#x5355;&#x9875;</h2>
-<p>Webpack &#x662F;&#x4E3A;&#x5355;&#x9875;&#x5E94;&#x7528;&#x91CF;&#x8EAB;&#x5B9A;&#x505A;&#x7684;
-&#x4F60;&#x53EF;&#x4EE5;&#x628A;app&#x62C6;&#x6210;&#x5F88;&#x591A;chunk&#xFF0C;&#x8FD9;&#x4E9B;chunk&#x7531;&#x8DEF;&#x7531;&#x6765;&#x52A0;&#x8F7D;&#x3002;&#x5165;&#x53E3;&#x6A21;&#x5757;&#x4EC5;&#x4EC5;&#x5305;&#x542B;&#x8DEF;&#x7531;&#x548C;&#x4E00;&#x4E9B;&#x5E93;&#xFF0C;&#x6CA1;&#x6709;&#x522B;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x8FD9;&#x4E48;&#x505A;&#x5728;&#x7528;&#x6237;&#x901A;&#x8FC7;&#x5BFC;&#x822A;&#x6D4F;&#x89C8;&#x8868;&#x73B0;&#x5F88;&#x597D;&#xFF0C;&#x4F46;&#x662F;&#x521D;&#x59CB;&#x5316;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x7684;&#x65F6;&#x5019;&#x4F60;&#x9700;&#x8981;2&#x4E2A;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#xFF1A;&#x4E00;&#x4E2A;&#x662F;&#x8BF7;&#x6C42;&#x8DEF;&#x7531;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x52A0;&#x8F7D;&#x5F53;&#x524D;&#x5185;&#x5BB9;&#x3002;</p>
-<p>&#x5982;&#x679C;&#x4F60;&#x5229;&#x7528;HTML5&#x7684;HistoryAPI &#x6765;&#x8BA9;URL&#x5F71;&#x54CD;&#x5F53;&#x524D;&#x5185;&#x5BB9;&#x9875;&#x7684;&#x8BDD;&#x3002;&#x4F60;&#x7684;&#x670D;&#x52A1;&#x5668;&#x53EF;&#x4EE5;&#x77E5;&#x9053;&#x90A3;&#x4E2A;&#x5185;&#x5BB9;&#x9875;&#x9762;&#x5C06;&#x88AB;&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;&#x3002;&#x4E3A;&#x4E86;&#x8282;&#x7EA6;&#x8BF7;&#x6C42;&#x6570;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x53EF;&#x4EE5;&#x628A;&#x8981;&#x8BF7;&#x6C42;&#x7684;&#x5185;&#x5BB9;&#x6A21;&#x5757;&#x653E;&#x5230;&#x54CD;&#x5E94;&#x5934;&#x91CC;&#x9762;&#xFF1A;&#x4EE5;script&#x6807;&#x7B7E;&#x7684;&#x5F62;&#x5F0F;&#x6765;&#x6DFB;&#x52A0;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x5C06;&#x5E76;&#x884C;&#x7684;&#x52A0;&#x8F7D;&#x8FD9;&#x4FE9;&#x8BF7;&#x6C42;&#x3002;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;entry-chunk.js&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text/javascript&quot;</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">&quot;utf-8&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;3.chunk.js&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text/javascript&quot;</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">&quot;utf-8&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-</code></pre>
-<p>&#x4F60;&#x53EF;&#x4EE5;&#x4ECE;build stas&#x91CC;&#x9762;&#x63D0;&#x53D6;&#x51FA;chunk&#x7684;filename &#xFF08;<a href="https://www.npmjs.com/package/stats-webpack-plugin" target="_blank">stats-webpack-plugin </a>&#xFF09;</p>
-<h2 id="&#x591A;&#x9875;">&#x591A;&#x9875;</h2>
-<p>&#x5F53;&#x7F16;&#x8BD1;&#x4E00;&#x4E2A;&#x591A;&#x9875;&#x9762;&#x7684;app&#x65F6;&#xFF0C;&#x4F60;&#x60F3;&#x8981;&#x5728;&#x9875;&#x9762;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;&#x3002;&#x8FD9;&#x5728;webpack&#x770B;&#x6765;&#x5F88;&#x7B80;&#x5355;&#x7684;&#xFF1A;&#x53EA;&#x9700;&#x8981;&#x548C;&#x591A;&#x4E2A;&#x5165;&#x53E3;&#x6587;&#x4EF6;&#x4E00;&#x8D77;&#x7F16;&#x8BD1;&#x5C31;&#x597D;</p>
-<pre><code class="lang-zsh">webpack p1=./page1 p2=./page2 p3=./page3 [name].entry-chunk.js
-</code></pre>
-<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
-    entry: {
-        p1: <span class="hljs-string">&quot;./page1&quot;</span>,
-        p2: <span class="hljs-string">&quot;./page2&quot;</span>,
-        p3: <span class="hljs-string">&quot;./page3&quot;</span>
-    },
-    output: {
-        filename: <span class="hljs-string">&quot;[name].entry.chunk.js&quot;</span>
-    }
-}
-</code></pre>
-<p>&#x7531;&#x4E0A;&#x9762;&#x53EF;&#x4EE5;&#x4EA7;&#x51FA;&#x591A;&#x4E2A;&#x5165;&#x53E3;&#x6587;&#x4EF6;</p>
-<pre><code class="lang-zsh">p1.entry.chunk.js, p2.entry.chunk.js and p3.entry.chunk.js
-</code></pre>
-<p>&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x4E00;&#x4E2A;chunk&#x6765;&#x5171;&#x4EAB;&#x5979;&#x4EEC;&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;&#x3002;
-&#x5982;&#x679C;&#x4F60;&#x7684;chunks&#x6709;&#x4E00;&#x4E9B;&#x516C;&#x7528;&#x7684;modules&#xFF0C;&#x90A3;&#x6211;&#x63A8;&#x8350;&#x4E00;&#x4E2A;&#x5F88;&#x9177;&#x7684;&#x63D2;&#x4EF6;<code>CommonsChunkPlugin</code>&#xFF0C;&#x5B83;&#x80FD;&#x8FA8;&#x522B;&#x5171;&#x7528;&#x6A21;&#x5757;&#x5E76;&#x628A;&#x4ED6;&#x4EEC;&#x653E;&#x5012;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x53BB;&#x3002;&#x4F60;&#x9700;&#x8981;&#x5728;&#x4F60;&#x7684;&#x9875;&#x9762;&#x91CC;&#x6DFB;&#x52A0;&#x4E24;&#x4E2A;script&#x6807;&#x7B7E;&#x6765;&#x5206;&#x522B;&#x5F15;&#x5165;&#x5165;&#x53E3;&#x6587;&#x4EF6;&#x548C;&#x5171;&#x7528;&#x6A21;&#x5757;&#x6587;&#x4EF6;&#x3002;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> CommonsChunkPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;webpack/lib/optimize/CommonsChunkPlugin&quot;</span>);
-<span class="hljs-built_in">module</span>.exports = {
-    entry: {
-        p1: <span class="hljs-string">&quot;./page1&quot;</span>,
-        p2: <span class="hljs-string">&quot;./page2&quot;</span>,
-        p3: <span class="hljs-string">&quot;./page3&quot;</span>
-    },
-    output: {
-        filename: <span class="hljs-string">&quot;[name].entry.chunk.js&quot;</span>
-    },
-    plugins: [
-        <span class="hljs-keyword">new</span> CommonsChunkPlugin(<span class="hljs-string">&quot;commons.chunk.js&quot;</span>)
-    ]
-}
-</code></pre>
-<p>&#x7531;&#x4E0A;&#x9762;&#x53EF;&#x4EE5;&#x4EA7;&#x51FA;&#x5165;&#x53E3;&#x6587;&#x4EF6;</p>
-<pre><code class="lang-zsh">p1.entry.chunk.js, p2.entry.chunk.js and p3.entry.chunk.js
-</code></pre>
-<p>&#x548C;&#x5171;&#x7528;&#x6587;&#x4EF6;</p>
-<pre><code>commons.chunk.js
-</code></pre><p>&#x5728;&#x9875;&#x9762;&#x4E2D;&#x8981;&#x9996;&#x5148;&#x52A0;&#x8F7D; <code>commons.chunk.js</code> &#x5728;&#x52A0;&#x8F7D;<code>xx.entry.chunk.js</code>
-&#x4F60;&#x53EF;&#x4EE5;&#x51FA;&#x5B9E;&#x8BDD;&#x5F88;&#x591A;&#x4E2A;commons chunks &#xFF0C;&#x901A;&#x8FC7;&#x9009;&#x62E9;&#x4E0D;&#x540C;&#x7684;&#x5165;&#x53E3;&#x6587;&#x4EF6;&#x3002;&#x5E76;&#x4E14;&#x4F60;&#x53EF;&#x4EE5;&#x5806;&#x53E0;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;commons chunks</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> CommonsChunkPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;webpack/lib/optimize/CommonsChunkPlugin&quot;</span>);
-<span class="hljs-built_in">module</span>.exports = {
-    entry: {
-        p1: <span class="hljs-string">&quot;./page1&quot;</span>,
-        p2: <span class="hljs-string">&quot;./page2&quot;</span>,
-        p3: <span class="hljs-string">&quot;./page3&quot;</span>,
-        ap1: <span class="hljs-string">&quot;./admin/page1&quot;</span>,
-        ap2: <span class="hljs-string">&quot;./admin/page2&quot;</span>
-    },
-    output: {
-        filename: <span class="hljs-string">&quot;[name].js&quot;</span>
-    },
-    plugins: [
-        <span class="hljs-keyword">new</span> CommonsChunkPlugin(<span class="hljs-string">&quot;admin-commons.js&quot;</span>, [<span class="hljs-string">&quot;ap1&quot;</span>, <span class="hljs-string">&quot;ap2&quot;</span>]),
-        <span class="hljs-keyword">new</span> CommonsChunkPlugin(<span class="hljs-string">&quot;commons.js&quot;</span>, [<span class="hljs-string">&quot;p1&quot;</span>, <span class="hljs-string">&quot;p2&quot;</span>, <span class="hljs-string">&quot;admin-commons.js&quot;</span>])
-    ]
-};
-<span class="hljs-comment">// &lt;script&gt;s required:</span>
-<span class="hljs-comment">// page1.html: commons.js, p1.js</span>
-<span class="hljs-comment">// page2.html: commons.js, p2.js</span>
-<span class="hljs-comment">// page3.html: p3.js</span>
-<span class="hljs-comment">// admin-page1.html: commons.js, admin-commons.js, ap1.js</span>
-<span class="hljs-comment">// admin-page2.html: commons.js, admin-commons.js, ap2.js</span>
-</code></pre>
-<p>&#x53E6;&#x5916;&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x591A;&#x4E2A;&#x5171;&#x7528;&#x6587;&#x4EF6;&#x6253;&#x5305;&#x5230;&#x4E00;&#x4E2A;&#x5171;&#x7528;&#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> CommonsChunkPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;webpack/lib/optimize/CommonsChunkPlugin&quot;</span>);
-<span class="hljs-built_in">module</span>.exports = {
-    entry: {
-        p1: <span class="hljs-string">&quot;./page1&quot;</span>,
-        p2: <span class="hljs-string">&quot;./page2&quot;</span>,
-        commons: <span class="hljs-string">&quot;./entry-for-the-commons-chunk&quot;</span>
-    },
-    plugins: [
-        <span class="hljs-keyword">new</span> CommonsChunkPlugin(<span class="hljs-string">&quot;commons&quot;</span>, <span class="hljs-string">&quot;commons.js&quot;</span>)
-    ]
-};
-</code></pre>
-<p>&#x66F4;&#x591A;&#x6709;&#x5173;&#x5171;&#x7528;&#x6A21;&#x5757;&#x6253;&#x5305;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x770B;&#xFF1A;<a href="https://github.com/webpack/webpack/tree/master/examples/multiple-entry-points" target="_blank"> multiple-entry-points example</a> &#x4EE5;&#x53CA; <a href="https://github.com/webpack/webpack/tree/master/examples/multiple-commons-chunks" target="_blank">advanced multiple-commons-chunks example</a></p>
+<p><a href="https://github.com/webpack/webpack-with-common-libs/blob/master/gulpfile.js" target="_blank">gulpfile demo</a></p>
 
                     
                     </section>
@@ -679,10 +637,10 @@
         </div>
 
         
-        <a href="../chapter3/codeSplitting.html" class="navigation navigation-prev " aria-label="Previous page: 代码拆分"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter3/ru_he_bian_xie_loader.html" class="navigation navigation-prev " aria-label="Previous page: 如何编写loader"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../chapter3/long_term_cashing.html" class="navigation navigation-next " aria-label="Next page: 长期缓存"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter6/configuration.html" class="navigation navigation-next " aria-label="Next page: Configuration"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
