@@ -21,7 +21,7 @@
    * Commonjs
    * AMD
    * browserify用户
-   * 代码拆分
+   * [代码拆分](chapter3/codeSplitting.md)
    * Stylesheets
    * [优化](chapter3/Optimization.md)
    * [长期缓存](chapter3/long_term_cashing.md)
