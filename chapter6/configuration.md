@@ -30,11 +30,10 @@ In both cases you can also use an array of configurations, which are processed i
 
 # configuration object content
 
-> Hint: Keep in mind that you don't need to write pure JSON into the configuration. Use any JavaScript you want. It's just a node.js module...
+>注意： 记住你不需要写纯粹的JSON，可以用js的，它仅仅是一个node模块而已
 
-Very simple configuration object example:
-
-``` javascript
+很简单的列子：
+```
 {
 	context: __dirname + "/app",
 	entry: "./entry",
@@ -44,14 +43,8 @@ Very simple configuration object example:
 	}
 }
 ```
-
-
-
-## `context`
-
-The base directory (absolute path!) for resolving the `entry` option. If `output.pathinfo` is set, the included pathinfo is shortened to this directory.
-
-> Default: `process.cwd()`
+##  `context`
+基础路径来解析`entry`项。如果设置了`output.pathinfo`，那么这个路径可以写成包涵了pathinfo的短链
 
 
 
