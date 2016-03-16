@@ -1,17 +1,16 @@
 ## 如何书写webpack loader
 
-A loader is a node module exporting a `function`.
 
-This function is called when a resource should be transformed by this loader.
+webpack的loader是一个node module 导出的一个用于转化加载的资源的 `function`.
 
 In the simple case, when only a single loader is applied to the resource, the loader is called with one parameter: the content of the resource file as string.
+在简单的情况下，当只有一个加载器被执行的时候，其参数为资源文件的内容串。
 
-The loader can access the [loader API](loaders.html) on the `<span class="keyword">this</span>` context in the function.
+加载器可以通过`this`上下文来访问[loader API](loaders.html)。
+仅仅需要一个只值的同步加载器能很容易 `return` 它。在别的情况下，加载器可以通过`this.callback(err, values...)` 方法来返回。异常和错误会被`this.callback`传递或者被同步加载器抛出。
 
-A sync loader that only wants to give a one value can simply `<span class="keyword">return</span>` it. In every other case the loader can give back any number of values with the `<span class="keyword">this</span>.callback(err, values...)` function. Errors are passed to the `<span class="keyword">this</span>.callback` function or thrown in a sync loader.
-
-The loader is expected to give back one or two values. The first value is a resulting JavaScript code as string or buffer. The second optional value is a SourceMap as JavaScript object.
-
+加载器期望返回一个或两个值，第一个是被转化的js串或者是buffer。第二个可选是js的`SourceMap` 
+更复杂的情况是，当很多个加载器串联的时候，只有最后一个加载器拿到资源文件，并且只有第一个加载器能觉得返回一个还是两个值（`js` 和``）
 In the complex case, when multiple loaders are chained, only the last loader gets the resource file and only the first loader is expected to give back one or two values (JavaScript and SourceMap). Values that any other loader give back are passed to the previous loader.
 
 ## [→](#examples)Examples
