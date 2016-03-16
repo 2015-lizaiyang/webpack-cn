@@ -10,11 +10,10 @@ In the simple case, when only a single loader is applied to the resource, the lo
 仅仅需要一个只值的同步加载器能很容易 `return` 它。在别的情况下，加载器可以通过`this.callback(err, values...)` 方法来返回。异常和错误会被`this.callback`传递或者被同步加载器抛出。
 
 加载器期望返回一个或两个值，第一个是被转化的js串或者是buffer。第二个可选是js的`SourceMap` 
-更复杂的情况是，当很多个加载器串联的时候，只有最后一个加载器拿到资源文件，并且只有第一个加载器能觉得返回一个还是两个值（`js` 和``）
-In the complex case, when multiple loaders are chained, only the last loader gets the resource file and only the first loader is expected to give back one or two values (JavaScript and SourceMap). Values that any other loader give back are passed to the previous loader.
+更复杂的情况是，当很多个加载器串联的时候，只有最后一个加载器拿到资源文件，并且只有第一个加载器能觉得返回一个还是两个值（`js` 和`SourceMap`）.其他loader的返回值都是从上一层级传递过来的。
 
-## [→](#examples)Examples
-
+## 例子
+```js
     // Identity loader
     module.exports = function(source) {
       return source;
@@ -24,28 +23,28 @@ In the complex case, when multiple loaders are chained, only the last loader get
     module.exports = function(source, map) {
       this.callback(null, source, map);
     };
+```
 
-## [→](#guidelines)Guidelines
+## 指南
 
-(Ordered by priority, first one should get the highest priority)
+安处理顺序排列
 
-Loaders should
+加载器应该具备
 
-### [→](#do-only-a-single-task)do only a single task
+### 只关心一个任务
 
-Loaders can be chained. Create loaders for every step, instead of a loader that does everything at once.
-
-This also means they should not convert to JavaScript if not necessary.
+加载器可以被串联，所以要分部实现加载器，而不是一个加载器把所有事情都做了。
+这也就意味着，他们没必要都被转化为js
 
 Example: Render HTML from a template file by applying the query parameters
+比如：我们要通过设置参数来将模板渲染为HTML，
+不好的做法：写一个加载器编译模板，执行并返回一个包含HTML代码的模块
+相反，我们应该为每一个在这个案例里的任务写加载器，并且通过管道来加载他们。
 
-I could write a loader that compiles the template from source, execute it and return a module that exports a string containing the HTML code. This is bad.
 
-Instead I should write loaders for every task in this use case and apply them all (pipeline):
-
-*   jade-loader: Convert template to a module that exports a function.
-*   apply-loader: Takes a function exporting module and returns raw result by applying query parameters.
-*   html-loader: Takes HTML and exports a string exporting module.
+*   jade-loader: 将模板转化为一个node模块
+*   apply-loader: 加载这个node模块并且按照请求返回资源
+*   html-loader: 加载一个HTML文件，并且到处一个字符串模块
 
 ### [→](#generate-modules-that-are-modular)generate modules that are modular
 
