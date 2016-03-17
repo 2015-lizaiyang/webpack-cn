@@ -51,7 +51,7 @@
         data-chapter-title="Configuration"
         data-filepath="chapter6/configuration.md"
         data-basepath=".."
-        data-revision="Wed Mar 09 2016 16:21:26 GMT+0800 (CST)"
+        data-revision="Thu Mar 17 2016 14:47:57 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -577,23 +577,19 @@
 <p>In both cases you can also use an array of configurations, which are processed in parallel. They share filesystem cache and watchers so this is more efficent than calling webpack multiple times.</p>
 <h1 id="configuration-object-content">configuration object content</h1>
 <blockquote>
-<p>Hint: Keep in mind that you don&apos;t need to write pure JSON into the configuration. Use any JavaScript you want. It&apos;s just a node.js module...</p>
+<p>&#x6CE8;&#x610F;&#xFF1A; &#x8BB0;&#x4F4F;&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x5199;&#x7EAF;&#x7CB9;&#x7684;JSON&#xFF0C;&#x53EF;&#x4EE5;&#x7528;js&#x7684;&#xFF0C;&#x5B83;&#x4EC5;&#x4EC5;&#x662F;&#x4E00;&#x4E2A;node&#x6A21;&#x5757;&#x800C;&#x5DF2;</p>
 </blockquote>
-<p>Very simple configuration object example:</p>
-<pre><code class="lang-javascript">{
-    context: __dirname + <span class="hljs-string">&quot;/app&quot;</span>,
-    entry: <span class="hljs-string">&quot;./entry&quot;</span>,
+<p>&#x5F88;&#x7B80;&#x5355;&#x7684;&#x5217;&#x5B50;&#xFF1A;</p>
+<pre><code>{
+    context: __dirname + &quot;/app&quot;,
+    entry: &quot;./entry&quot;,
     output: {
-        path: __dirname + <span class="hljs-string">&quot;/dist&quot;</span>,
-        filename: <span class="hljs-string">&quot;bundle.js&quot;</span>
+        path: __dirname + &quot;/dist&quot;,
+        filename: &quot;bundle.js&quot;
     }
 }
-</code></pre>
-<h2 id="context"><code>context</code></h2>
-<p>The base directory (absolute path!) for resolving the <code>entry</code> option. If <code>output.pathinfo</code> is set, the included pathinfo is shortened to this directory.</p>
-<blockquote>
-<p>Default: <code>process.cwd()</code></p>
-</blockquote>
+</code></pre><h2 id="context"><code>context</code></h2>
+<p>&#x57FA;&#x7840;&#x8DEF;&#x5F84;&#x6765;&#x89E3;&#x6790;<code>entry</code>&#x9879;&#x3002;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;<code>output.pathinfo</code>&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x8DEF;&#x5F84;&#x53EF;&#x4EE5;&#x5199;&#x6210;&#x5305;&#x6DB5;&#x4E86;pathinfo&#x7684;&#x77ED;&#x94FE;</p>
 <h2 id="entry"><code>entry</code></h2>
 <p>The entry point for the bundle.</p>
 <p>If you pass a string: The string is resolved to a module which is loaded upon startup.</p>

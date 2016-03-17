@@ -53,7 +53,7 @@
         data-chapter-title="如何编写loader"
         data-filepath="chapter3/ru_he_bian_xie_loader.md"
         data-basepath=".."
-        data-revision="Wed Mar 09 2016 16:21:26 GMT+0800 (CST)"
+        data-revision="Thu Mar 17 2016 14:47:57 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -560,36 +560,39 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>A loader is a node module exporting a <code>function</code>.</p>
-<p>This function is called when a resource should be transformed by this loader.</p>
-<p>In the simple case, when only a single loader is applied to the resource, the loader is called with one parameter: the content of the resource file as string.</p>
-<p>The loader can access the <a href="loaders.html">loader API</a> on the <code>&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;</code> context in the function.</p>
-<p>A sync loader that only wants to give a one value can simply <code>&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;</code> it. In every other case the loader can give back any number of values with the <code>&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.callback(err, values...)</code> function. Errors are passed to the <code>&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.callback</code> function or thrown in a sync loader.</p>
-<p>The loader is expected to give back one or two values. The first value is a resulting JavaScript code as string or buffer. The second optional value is a SourceMap as JavaScript object.</p>
-<p>In the complex case, when multiple loaders are chained, only the last loader gets the resource file and only the first loader is expected to give back one or two values (JavaScript and SourceMap). Values that any other loader give back are passed to the previous loader.</p>
-<h2 id="&#x2192;examples"><a href="#examples">&#x2192;</a>Examples</h2>
-<pre><code>// Identity loader
-module.exports = function(source) {
-  return source;
-};
+                        <h2 id="&#x5982;&#x4F55;&#x4E66;&#x5199;webpack-loader">&#x5982;&#x4F55;&#x4E66;&#x5199;webpack loader</h2>
+<p>webpack&#x7684;loader&#x662F;&#x4E00;&#x4E2A;node module &#x5BFC;&#x51FA;&#x7684;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x8F6C;&#x5316;&#x52A0;&#x8F7D;&#x7684;&#x8D44;&#x6E90;&#x7684; <code>function</code>.</p>
+<p>In the simple case, when only a single loader is applied to the resource, the loader is called with one parameter: the content of the resource file as string.
+&#x5728;&#x7B80;&#x5355;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5F53;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x52A0;&#x8F7D;&#x5668;&#x88AB;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5176;&#x53C2;&#x6570;&#x4E3A;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x4E32;&#x3002;</p>
+<p>&#x52A0;&#x8F7D;&#x5668;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>this</code>&#x4E0A;&#x4E0B;&#x6587;&#x6765;&#x8BBF;&#x95EE;<a href="loaders.html">loader API</a>&#x3002;
+&#x4EC5;&#x4EC5;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x53EA;&#x503C;&#x7684;&#x540C;&#x6B65;&#x52A0;&#x8F7D;&#x5668;&#x80FD;&#x5F88;&#x5BB9;&#x6613; <code>return</code> &#x5B83;&#x3002;&#x5728;&#x522B;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x52A0;&#x8F7D;&#x5668;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>this.callback(err, values...)</code> &#x65B9;&#x6CD5;&#x6765;&#x8FD4;&#x56DE;&#x3002;&#x5F02;&#x5E38;&#x548C;&#x9519;&#x8BEF;&#x4F1A;&#x88AB;<code>this.callback</code>&#x4F20;&#x9012;&#x6216;&#x8005;&#x88AB;&#x540C;&#x6B65;&#x52A0;&#x8F7D;&#x5668;&#x629B;&#x51FA;&#x3002;</p>
+<p>&#x52A0;&#x8F7D;&#x5668;&#x671F;&#x671B;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6216;&#x4E24;&#x4E2A;&#x503C;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x662F;&#x88AB;&#x8F6C;&#x5316;&#x7684;js&#x4E32;&#x6216;&#x8005;&#x662F;buffer&#x3002;&#x7B2C;&#x4E8C;&#x4E2A;&#x53EF;&#x9009;&#x662F;js&#x7684;<code>SourceMap</code> 
+&#x66F4;&#x590D;&#x6742;&#x7684;&#x60C5;&#x51B5;&#x662F;&#xFF0C;&#x5F53;&#x5F88;&#x591A;&#x4E2A;&#x52A0;&#x8F7D;&#x5668;&#x4E32;&#x8054;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EA;&#x6709;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x52A0;&#x8F7D;&#x5668;&#x62FF;&#x5230;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x53EA;&#x6709;&#x7B2C;&#x4E00;&#x4E2A;&#x52A0;&#x8F7D;&#x5668;&#x80FD;&#x89C9;&#x5F97;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x8FD8;&#x662F;&#x4E24;&#x4E2A;&#x503C;&#xFF08;<code>js</code> &#x548C;<code>SourceMap</code>&#xFF09;.&#x5176;&#x4ED6;loader&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x90FD;&#x662F;&#x4ECE;&#x4E0A;&#x4E00;&#x5C42;&#x7EA7;&#x4F20;&#x9012;&#x8FC7;&#x6765;&#x7684;&#x3002;</p>
+<h2 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</h2>
+<pre><code class="lang-js">    <span class="hljs-comment">// Identity loader</span>
+    <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">source</span>) </span>{
+      <span class="hljs-keyword">return</span> source;
+    };
 
-// Identity loader with SourceMap support
-module.exports = function(source, map) {
-  this.callback(null, source, map);
-};
-</code></pre><h2 id="&#x2192;guidelines"><a href="#guidelines">&#x2192;</a>Guidelines</h2>
-<p>(Ordered by priority, first one should get the highest priority)</p>
-<p>Loaders should</p>
-<h3 id="&#x2192;do-only-a-single-task"><a href="#do-only-a-single-task">&#x2192;</a>do only a single task</h3>
-<p>Loaders can be chained. Create loaders for every step, instead of a loader that does everything at once.</p>
-<p>This also means they should not convert to JavaScript if not necessary.</p>
-<p>Example: Render HTML from a template file by applying the query parameters</p>
-<p>I could write a loader that compiles the template from source, execute it and return a module that exports a string containing the HTML code. This is bad.</p>
-<p>Instead I should write loaders for every task in this use case and apply them all (pipeline):</p>
+    <span class="hljs-comment">// Identity loader with SourceMap support</span>
+    <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">source, map</span>) </span>{
+      <span class="hljs-keyword">this</span>.callback(<span class="hljs-literal">null</span>, source, map);
+    };
+</code></pre>
+<h2 id="&#x6307;&#x5357;">&#x6307;&#x5357;</h2>
+<p>&#x5B89;&#x5904;&#x7406;&#x987A;&#x5E8F;&#x6392;&#x5217;</p>
+<p>&#x52A0;&#x8F7D;&#x5668;&#x5E94;&#x8BE5;&#x5177;&#x5907;</p>
+<h3 id="&#x53EA;&#x5173;&#x5FC3;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;">&#x53EA;&#x5173;&#x5FC3;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;</h3>
+<p>&#x52A0;&#x8F7D;&#x5668;&#x53EF;&#x4EE5;&#x88AB;&#x4E32;&#x8054;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x5206;&#x90E8;&#x5B9E;&#x73B0;&#x52A0;&#x8F7D;&#x5668;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x52A0;&#x8F7D;&#x5668;&#x628A;&#x6240;&#x6709;&#x4E8B;&#x60C5;&#x90FD;&#x505A;&#x4E86;&#x3002;
+&#x8FD9;&#x4E5F;&#x5C31;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x4ED6;&#x4EEC;&#x6CA1;&#x5FC5;&#x8981;&#x90FD;&#x88AB;&#x8F6C;&#x5316;&#x4E3A;js</p>
+<p>Example: Render HTML from a template file by applying the query parameters
+&#x6BD4;&#x5982;&#xFF1A;&#x6211;&#x4EEC;&#x8981;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;&#x53C2;&#x6570;&#x6765;&#x5C06;&#x6A21;&#x677F;&#x6E32;&#x67D3;&#x4E3A;HTML&#xFF0C;
+&#x4E0D;&#x597D;&#x7684;&#x505A;&#x6CD5;&#xFF1A;&#x5199;&#x4E00;&#x4E2A;&#x52A0;&#x8F7D;&#x5668;&#x7F16;&#x8BD1;&#x6A21;&#x677F;&#xFF0C;&#x6267;&#x884C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5305;&#x542B;HTML&#x4EE3;&#x7801;&#x7684;&#x6A21;&#x5757;
+&#x76F8;&#x53CD;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x5728;&#x8FD9;&#x4E2A;&#x6848;&#x4F8B;&#x91CC;&#x7684;&#x4EFB;&#x52A1;&#x5199;&#x52A0;&#x8F7D;&#x5668;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8FC7;&#x7BA1;&#x9053;&#x6765;&#x52A0;&#x8F7D;&#x4ED6;&#x4EEC;&#x3002;</p>
 <ul>
-<li>jade-loader: Convert template to a module that exports a function.</li>
-<li>apply-loader: Takes a function exporting module and returns raw result by applying query parameters.</li>
-<li>html-loader: Takes HTML and exports a string exporting module.</li>
+<li>jade-loader: &#x5C06;&#x6A21;&#x677F;&#x8F6C;&#x5316;&#x4E3A;&#x4E00;&#x4E2A;node&#x6A21;&#x5757;</li>
+<li>apply-loader: &#x52A0;&#x8F7D;&#x8FD9;&#x4E2A;node&#x6A21;&#x5757;&#x5E76;&#x4E14;&#x6309;&#x7167;&#x8BF7;&#x6C42;&#x8FD4;&#x56DE;&#x8D44;&#x6E90;</li>
+<li>html-loader: &#x52A0;&#x8F7D;&#x4E00;&#x4E2A;HTML&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x5230;&#x5904;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x5757;</li>
 </ul>
 <h3 id="&#x2192;generate-modules-that-are-modular"><a href="#generate-modules-that-are-modular">&#x2192;</a>generate modules that are modular</h3>
 <p>Loader generated modules should respect the same design principles like normal modules.</p>
