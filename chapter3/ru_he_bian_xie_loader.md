@@ -46,9 +46,11 @@ Example: Render HTML from a template file by applying the query parameters
 *   apply-loader: 加载这个node模块并且按照请求返回资源
 *   html-loader: 加载一个HTML文件，并且到处一个字符串模块
 
-### [→](#generate-modules-that-are-modular)generate modules that are modular
+### 把所有模块变成模块化
 
 Loader generated modules should respect the same design principles like normal modules.
+加载器生成的模块应该遵循一般模块的设计原则，
+错误的例子：（非 moduler，global state）
 
 Example: That’s a bad design: (not modular, global state, …)
 
