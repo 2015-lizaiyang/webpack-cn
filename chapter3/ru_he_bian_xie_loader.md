@@ -52,11 +52,11 @@ Loader generated modules should respect the same design principles like normal m
 加载器生成的模块应该遵循一般模块的设计原则，
 错误的例子：（非 moduler，global state）
 
-Example: That’s a bad design: (not modular, global state, …)
+   ```
+   require("any-template-language-loader!./xyz.atl");
 
-    require("any-template-language-loader!./xyz.atl");
-
-    var html = anyTemplateLanguage.render("xyz");
+   var html = anyTemplateLanguage.render("xyz");
+   ```
 
 ### [→](#flag-itself-cacheable-if-possible)flag itself cacheable if possible
 
