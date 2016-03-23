@@ -99,23 +99,21 @@ If a loader uses external resources (i. e. by reading from filesystem), they **m
 ```
 ### 解决依赖
 
-In many languages there is some schema to specify dependencies. i. e. in css there is `@import` and `url(...)`. These dependencies should be resolved by the module system.
-在很多语言里都会有一下schema来指定依赖。比如在css中我们用`@import` `url`. 有的依赖应该通过模块系统解决
-There are two options to do this:
-
+在很多语言里都会有一下schema来指定依赖。比如在css中我们用`@import` `url`. 这些依赖管理应该通过模块系统解决
+两点：
 *  把他们转化为`require`.
 *   运用`this.resolve()`来解决路径问题.
 例1: 
   css-loader: 
-Example 1 css-loader: The css-loader transform dependencies to `require`s, by replacing `@import`s with a require to the other stylesheet (processed with the css-loader too) and `url(...)` with a `require` to the referenced file.
-
-Example 2 less-loader: The less-loader cannot transform `@import`s to `require`s, because all less files need to be compiled in one pass to track variables and mixins. Therefore the less-loader extends the less compiler with a custom path resolving logic. This custom logic uses `<span class="keyword">this</span>.resolve` to resolve the file with the configuration of the module system (aliasing, custom module directories, etc.).
-
-If the language only accept relative urls (like css: `url(file)` always means `.<span class="regexp">/file</span>`), there is the `~`-convection to specify references to modules:
-
+  css-loader将依赖转换成`require`，通过`require`来替换`import`去加载别的样式表模块以及替代`url`去取资源文件
+例2:
+  less-loader:
+  less-loader不能直接将`@import`转化成`require`,因为所有的less文件需要被编译进一个通道里去跟踪`variables`和`mixins`。所以less－loader扩展了自己的路径解决逻辑。这个定制的逻辑运用了`this.resolve`函数去解决模块系统配置的文件路径。
+如果某种语言只接受相对的urls（比如 css:`url(file)` 通常意味着`/file`)，所以有一个`~`符号来说明指向模块
+``` bash
     url(file) -> require("./file")
     url(~module) -> require("module")
-
+```
 ### [→](#extract-common-code)extract common code
 
 don’t generate much code that is common in every module processed by that loader. Create a (runtime) file in the loader and generate a `require` to that common code.
