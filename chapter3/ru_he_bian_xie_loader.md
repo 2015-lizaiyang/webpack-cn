@@ -103,12 +103,17 @@ If a loader uses external resources (i. e. by reading from filesystem), they **m
 两点：
 *  把他们转化为`require`.
 *   运用`this.resolve()`来解决路径问题.
+
 例1: 
   css-loader: 
-  css-loader将依赖转换成`require`，通过`require`来替换`import`去加载别的样式表模块以及替代`url`去取资源文件
+  css-loader将依赖转换成`require`，通过`require`来替换`import`去加载别的样式表模块以及替代`url`去取资源文件.
+  
 例2:
+
   less-loader:
+
   less-loader不能直接将`@import`转化成`require`,因为所有的less文件需要被编译进一个通道里去跟踪`variables`和`mixins`。所以less－loader扩展了自己的路径解决逻辑。这个定制的逻辑运用了`this.resolve`函数去解决模块系统配置的文件路径。
+  
 如果某种语言只接受相对的urls（比如 css:`url(file)` 通常意味着`/file`)，所以有一个`~`符号来说明指向模块
 ``` bash
     url(file) -> require("./file")
