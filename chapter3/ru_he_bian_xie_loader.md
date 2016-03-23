@@ -58,19 +58,20 @@ Loader generated modules should respect the same design principles like normal m
    var html = anyTemplateLanguage.render("xyz");
    ```
 
-### [→](#flag-itself-cacheable-if-possible)flag itself cacheable if possible
+### 把他标记为可缓存的
 
-Most loaders are cacheable, so they should flag itself as cacheable.
+大多数加载器可缓存的，所以应该把他标记为可缓存的
 
 Just call `cacheable` in the loader.
-
+只需要调用`cacheable`函数就可以
+```js
     // Cacheable identity loader
     module.exports = function(source) {
         this.cacheable();
         return source;
     };
-
-### [→](#not-keep-state-between-runs-and-modules)not keep state between runs and modules
+```
+### not keep state between runs and modules
 
 A loader should be independent of other modules compiled (expect of these issued by the loader).
 
