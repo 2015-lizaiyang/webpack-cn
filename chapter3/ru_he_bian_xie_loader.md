@@ -134,13 +134,14 @@ If a loader uses external resources (i. e. by reading from filesystem), they **m
       loaderUtils.stringifyRequest(this, "!" + require.resolve("module/runtime")) +
       ");";
 ```
-### [→](#use-a-library-as-peerdependencies-when-they-wrap-it)use a library as `peerDependencies` when they wrap it
-
-using a peerDependency allows the application developer to specify the exact version in `package.json` if desired. The dependency should be relatively open to allow updating the library without needing to publish a new loader version.
-
+### →use a library as `peerDependencies` when they wrap it
+### 将使用的库作为`peerDependencies`来依赖
+使用｀peerDependencies｀可以允许应用开发者必要时在`package.json`去标示版本。依赖应该相对独立的去更新库而不用再发一个新的加载器版本
+```
     "peerDependencies": {
         "library": "^1.3.5"
     }
+```
 
 ### [→](#programmable-objects-as-query-option)programmable objects as `query`-option
 
