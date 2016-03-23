@@ -72,12 +72,14 @@ Just call `cacheable` in the loader.
     };
 ```
 ### not keep state between runs and modules
+### 别把让它处于代码组织者和模块之间
 
 A loader should be independent of other modules compiled (expect of these issued by the loader).
+一个加载器应该无须依赖其他模块来编译，也独立于之前编译模块
 
 A loader should be independent of previous compilations of the same module.
 
-### [→](#mark-dependencies)mark dependencies
+### 标记好依赖
 
 If a loader uses external resources (i. e. by reading from filesystem), they **must** tell about that. This information is used to invalidate cacheable loaders and recompile in watch mode.
 
