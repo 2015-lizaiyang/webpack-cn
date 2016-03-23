@@ -82,7 +82,8 @@ A loader should be independent of previous compilations of the same module.
 ### 标记好依赖
 
 If a loader uses external resources (i. e. by reading from filesystem), they **must** tell about that. This information is used to invalidate cacheable loaders and recompile in watch mode.
-
+如果加载器用到了额外的资源（比如说读取文件系统），那么**必须**被告知。这些信息将用于区别可缓存加载器，还是在watch状态下的重编译
+```js
     // Loader adding a header
     var path = require("path");
     module.exports = function(source) {
@@ -95,7 +96,7 @@ If a loader uses external resources (i. e. by reading from filesystem), they **m
             callback(null, header + "\n" + source);
         });
     };
-
+```
 ### [→](#resolve-dependencies)resolve dependencies
 
 In many languages there is some schema to specify dependencies. i. e. in css there is `@import` and `url(...)`. These dependencies should be resolved by the module system.
