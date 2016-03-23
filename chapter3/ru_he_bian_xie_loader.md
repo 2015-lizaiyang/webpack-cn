@@ -136,7 +136,7 @@ If a loader uses external resources (i. e. by reading from filesystem), they **m
 ```
 ### →use a library as `peerDependencies` when they wrap it
 ### 将使用的库作为`peerDependencies`来依赖
-使用`peerDependencies`可以允许应用开发者必要时在`package.json`去标示版本。依赖应该相对独立的去更新库而不用再发一个新的加载器版本
+使用`peerDependencies`可以允许应用开发者必要时在`package.json`去标示库的版本。依赖应该相对独立的去更新库而不用再发一个新的加载器版本
 ```
     "peerDependencies": {
         "library": "^1.3.5"
