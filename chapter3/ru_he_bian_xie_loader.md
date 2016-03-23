@@ -119,11 +119,11 @@ If a loader uses external resources (i. e. by reading from filesystem), they **m
     url(file) -> require("./file")
     url(~module) -> require("module")
 ```
-### [→](#extract-common-code)extract common code
+### 提取公用的模块
 
-don’t generate much code that is common in every module processed by that loader. Create a (runtime) file in the loader and generate a `require` to that common code.
+不要初始化很多公用的模块代码在每一个加载器执行的模块，创建一个（运行时）文件在加载器里，并且通过`require`来加载他
 
-### [→](#should-not-embed-absolute-paths)should not embed absolute paths
+### 不要潜入绝对路径
 
 don’t put absolute paths in to the module code. They break hashing when the root for the project is moved. There is a method [`stringifyRequest` in loader-utils](https://github.com/webpack/loader-utils#stringifyrequest) which converts an absolute path to an relative one.
 
