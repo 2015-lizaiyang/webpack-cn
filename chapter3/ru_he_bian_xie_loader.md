@@ -100,12 +100,13 @@ If a loader uses external resources (i. e. by reading from filesystem), they **m
 ### 解决依赖
 
 In many languages there is some schema to specify dependencies. i. e. in css there is `@import` and `url(...)`. These dependencies should be resolved by the module system.
-
+在很多语言里都会有一下schema来指定依赖。比如在css中我们用`@import` `url`. 有的依赖应该通过模块系统解决
 There are two options to do this:
 
-*   Transform them to `require`s.
-*   Use the `<span class="keyword">this</span>.resolve` function to resolve the path
-
+*  把他们转化为`require`.
+*   运用`this.resolve()`来解决路径问题.
+例1: 
+  css-loader: 
 Example 1 css-loader: The css-loader transform dependencies to `require`s, by replacing `@import`s with a require to the other stylesheet (processed with the css-loader too) and `url(...)` with a `require` to the referenced file.
 
 Example 2 less-loader: The less-loader cannot transform `@import`s to `require`s, because all less files need to be compiled in one pass to track variables and mixins. Therefore the less-loader extends the less compiler with a custom path resolving logic. This custom logic uses `<span class="keyword">this</span>.resolve` to resolve the file with the configuration of the module system (aliasing, custom module directories, etc.).
