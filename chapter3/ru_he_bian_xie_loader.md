@@ -143,10 +143,11 @@ If a loader uses external resources (i. e. by reading from filesystem), they **m
     }
 ```
 
-### [→](#programmable-objects-as-query-option)programmable objects as `query`-option
+### →programmable objects as `query`-option
 
-there are situations where your loader requires programmable objects with functions which cannot stringified as `query`-string. The less-loader, for example, provides the possibility to specify [LESS-plugins](https://github.com/webpack/less-loader#less-plugins). In these cases, a loader is allowed to extend webpack’s `options`-object to retrieve that specific option. In order to avoid name collisions, however, it is important that the option is namespaced under the loader’s camelCased npm-name.
-
+有些情况下你的加载器需要一些不可`stringify`为`query`字串的可编程对象的函数。
+比如lessloader，提供了一个`LESS-plugins` 允许加载器去扩展webpack的`options`去检索特定的选项。为了避免名字冲突然，option是在加载器的npm驼峰名字域下的
+```js
 Example:
 
     // webpack.config.js
@@ -158,7 +159,7 @@ Example:
         ]
       }
     };
-
+```
 The loader should also allow to specify the config-key (e.g. `lessLoader`) via `query`. See [discussion](https://github.com/webpack/less-loader/pull/40) and [example implementation](https://github.com/webpack/less-loader/blob/39f742b4624fceae6d9cf266e9554d07a32a9c14/index.js#L49-51).
 
 ### [→](#be-added-to-the-list-of-loaders)be added to the [list of loaders](list-of-loaders.html)
