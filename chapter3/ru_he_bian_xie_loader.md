@@ -125,15 +125,15 @@ If a loader uses external resources (i. e. by reading from filesystem), they **m
 
 ### 不要潜入绝对路径
 
-don’t put absolute paths in to the module code. They break hashing when the root for the project is moved. There is a method [`stringifyRequest` in loader-utils](https://github.com/webpack/loader-utils#stringifyrequest) which converts an absolute path to an relative one.
+不要把绝对路径放到模块的代码里面。这样当根目录被移动的时候会打破文件的哈希，有一个工具`stringifyRequest` 在`loader-utils`里面可以将绝对路径处理成相对路径
 
-Example:
-
+比如
+```js
     var loaderUtils = require("loader-utils");
     return "var runtime = require(" +
       loaderUtils.stringifyRequest(this, "!" + require.resolve("module/runtime")) +
       ");";
-
+```
 ### [→](#use-a-library-as-peerdependencies-when-they-wrap-it)use a library as `peerDependencies` when they wrap it
 
 using a peerDependency allows the application developer to specify the exact version in `package.json` if desired. The dependency should be relatively open to allow updating the library without needing to publish a new loader version.
