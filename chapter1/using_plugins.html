@@ -53,7 +53,7 @@
         data-chapter-title="使用插件"
         data-filepath="chapter1/using_plugins.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 16:02:44 GMT+0800 (CST)"
+        data-revision="Sat Mar 26 2016 16:19:35 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -561,6 +561,39 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="&#x4F7F;&#x7528;&#x63D2;&#x4EF6;">&#x4F7F;&#x7528;&#x63D2;&#x4EF6;</h1>
+<p>Use plugins to add functionality typically related to bundles in webpack.  For example, the <a href="https://github.com/senotrusov/bell-on-bundler-error-plugin" target="_blank">BellOnBundlerErrorPlugin</a> will notify you of an error in the bundler build process.  </p>
+<h2 id="builtin-plugins">Built-in plugins</h2>
+<p>Plugins are included in your module by using the plugins property in the webpack config.</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// webpack should be in the node_modules directory, install if not.</span>
+<span class="hljs-keyword">var</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;webpack&quot;</span>);
+
+<span class="hljs-built_in">module</span>.exports = {
+    plugins: [
+        <span class="hljs-keyword">new</span> webpack.ResolverPlugin([
+            <span class="hljs-keyword">new</span> webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(<span class="hljs-string">&quot;bower.json&quot;</span>, [<span class="hljs-string">&quot;main&quot;</span>])
+        ], [<span class="hljs-string">&quot;normal&quot;</span>, <span class="hljs-string">&quot;loader&quot;</span>])
+    ]
+};
+</code></pre>
+<h2 id="other-plugins">Other plugins</h2>
+<p>Plugins that are not built-in may be installed via npm if published there, or by other means if not:</p>
+<pre><code class="lang-text">npm install component-webpack-plugin
+</code></pre>
+<p>which can then be used as follows:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> ComponentPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;component-webpack-plugin&quot;</span>);
+<span class="hljs-built_in">module</span>.exports = {
+    plugins: [
+        <span class="hljs-keyword">new</span> ComponentPlugin()
+    ]
+}
+</code></pre>
+<p>When installing third party plugins via npm it is advised to use this tool:
+<a href="https://www.npmjs.com/package/webpack-load-plugins" target="_blank">https://www.npmjs.com/package/webpack-load-plugins</a></p>
+<p>It checks for all third party plugins installed in your dependencies and lazyloads them when you need them.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li>[[list of plugins]]</li>
+</ul>
 
                     
                     </section>

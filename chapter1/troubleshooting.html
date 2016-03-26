@@ -53,7 +53,7 @@
         data-chapter-title="常见问题"
         data-filepath="chapter1/troubleshooting.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 16:02:44 GMT+0800 (CST)"
+        data-revision="Sat Mar 26 2016 16:19:35 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -560,7 +560,39 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x5E38;&#x89C1;&#x95EE;&#x9898;">&#x5E38;&#x89C1;&#x95EE;&#x9898;</h1>
+                        <h1 id="resolving">resolving</h1>
+<h2 id="general-resolving-issues">general resolving issues</h2>
+<ul>
+<li><code>--display-error-details</code> give you more details.</li>
+<li>Read [[Configuration]] regarding resolving starting at <code>resolve</code><ul>
+<li>loaders have their own resolving configuration <code>resolveLoader</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="npm-linked-modules-dont-find-their-dependencies"><code>npm link</code>ed modules don&apos;t find their dependencies</h2>
+<p>The node.js module resolving algorithm is pretty simple: module dependencies are looked up in <code>node_modules</code> folders in every parent directory of the requiring module. When you <code>npm link</code> modules with peer dependencies that are not in your root directory, modules can no longer be found. (You probably want to consider <code>peerDependencies</code> with <code>npm link</code> as broken by design in node.js.) Note that a dependency to the application (even if this is not the perfect design) is also a kind of peerDependency even if it&apos;s not listed as such in the module&apos;s <code>package.json</code>.</p>
+<p>But you can easily workaround that in webpack: Add the <code>node_modules</code> folder of your application to the resolve paths. There are two config options for this: <code>resolve.fallback</code> and <code>resolveLoader.fallback</code>.</p>
+<p>Here is a config example:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+  resolve: { fallback: path.join(__dirname, <span class="hljs-string">&quot;node_modules&quot;</span>) },
+  resolveLoader: { fallback: path.join(__dirname, <span class="hljs-string">&quot;node_modules&quot;</span>) }
+};
+</code></pre>
+<h1 id="watching">Watching</h1>
+<h2 id="webpack-doesnt-recompile-on-change-while-watching">webpack doesn&apos;t recompile on change while watching</h2>
+<h3 id="not-enough-watchers">Not enough watchers</h3>
+<p>Verify that if you have enough available watchers in your system. If this value is too low, the file watcher in Webpack won&apos;t recognize the changes:</p>
+<pre><code>cat /proc/sys/fs/inotify/max_user_watches
+</code></pre><p>Arch users, add <code>fs.inotify.max_user_watches=524288</code> to <code>/etc/sysctl.d/99-sysctl.conf</code> and then execute <code>sysctl --system</code>. Ubuntu users (and possibly others): <code>echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf &amp;&amp; sudo sysctl -p</code>.</p>
+<h3 id="osx-fsevents-bug">OS-X fsevents bug</h3>
+<p>On OS-X folders can get corrupted. See this article:</p>
+<p><a href="http://feedback.livereload.com/knowledgebase/articles/86239-os-x-fsevents-bug-may-prevent-monitoring-of-certai" target="_blank">OS X FSEvents bug may prevent monitoring of certain folders</a></p>
+<h3 id="windows-paths">Windows paths</h3>
+<p>webpack expects absolute paths for many config options. <code>__dirname + &quot;/app/folder&quot;</code> is wrong, because windows uses <code>\</code> as path separator. This breaks some stuff.</p>
+<p>Use the correct separators. I.e. <code>path.resolve(__dirname, &quot;app/folder&quot;)</code> or <code>path.join(__dirname, &quot;app&quot;, &quot;folder&quot;)</code>.</p>
+<h3 id="vim">Vim</h3>
+<p>On some machines Vim is preconfigured with the <a href="http://vimdoc.sourceforge.net/htmldoc/options.html#&apos;backupcopy&apos;" target="_blank">backupcopy option</a> set to <strong>auto</strong>. This could potentially cause problems with the system&apos;s file watching mechanism. Switching this option to <code>yes</code> will make sure a copy of the file is made and the original one overwritten on save. </p>
+<p><code>:set backupcopy=yes</code></p>
 
                     
                     </section>
