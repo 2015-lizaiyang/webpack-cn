@@ -1,47 +1,57 @@
+# webpack 是什么
 
-**webpack** is a **module bundler**.
+**webpack** 是一个**模块打包器**。
 
-webpack takes modules with dependencies and generates static assets representing those modules.
+webpack 处理带有依赖关系的模块，生成一系列表示这些模块的静态资源。
+
 
 ![modules with dependencies ---webpack---> static assets](http://webpack.github.io/assets/what-is-webpack.png)
 
-## [→](#why-another-module-bundler)Why another module bundler?
+## 为什么再造一个模块打包器
 
-Existing module bundlers are not well suited for big projects (big single page applications). The most pressing reason for developing another module bundler was [Code Splitting](code-splitting.html) and that static assets should fit seamlessly together through modularization.
+现有的模块打包器并不适用于大项目（如大的单页应用）。最重要的因素是，[代码拆分][Code Spliting]和把静态资源无缝接入模块化。
 
-I tried to extend existing module bundlers, but it wasn’t possible to achieve all goals.
+尝试过扩展已有模块打包器，但无法达成下面所有的目标。
 
-## [→](#goals)Goals
+## 目标
 
-*   Split the dependency tree into chunks loaded on demand
-*   Keep initial loading time low
-*   Every static asset should be able to be a module
-*   Ability to integrate 3rd-party libraries as modules
-*   Ability to customize nearly every part of the module bundler
-*   Suited for big projects
+- 把依赖树拆成可按需加载的块
+- 让初始化加载时间尽可能地少
+- 每个静态资源都是一个模块
+- 模块化集成第三方库
+- 尽可能地自定义打包器的每一部分
+- 适合大项目
 
-## [→](#how-is-webpack-different)How is webpack different?
+## webpack 的特别之处
 
-#### [→](#code-splitting)[Code Splitting](code-splitting.html)
+### [代码拆分][Code Spliting]
 
-webpack has two types of dependencies in its dependency tree: sync and async. Async dependencies act as split points and form a new chunk. After the chunk tree is optimized, a file is emitted for each chunk.
+webpack 的依赖树中有同步和异步两种依赖方式。其中，异步模块将会被拆成一个新的块，并且在被优化后，生成一个对应的文件。
 
-Read more about [Code Splitting](code-splitting.html).
+更多参考[代码拆分][Code Spliting]。
 
-#### [→](#loaders)[Loaders](loaders.html)
+### [加载器][Loaders]
 
-webpack can only process JavaScript natively, but loaders are used to transform other resources into JavaScript. By doing so, every resource forms a module.
+webpack 本身只支持处理 JavaScript，但可以通过加载器来把别的资源转为 JavaScript。因此，每个资源都被当作一个模块。
 
-Read more about [Using loaders](using-loaders.html) and [Loaders](loaders.html).
+更多参考[使用加载器][Using loaders]和[加载器][Loaders]。
 
-#### [→](#clever-parsing)Clever parsing
+### 智能解析
 
-webpack has a clever parser that can process nearly every 3rd party library. It even allows expressions in dependencies like so `require(<span class="string">"./templates/"</span> + name + <span class="string">".jade"</span>)`. It handles the most common module styles: [CommonJs](commonjs.html) and [AMD](amd.html).
+webpack 有一个基本支持所有第三方库的智能解析器，甚至还支持带有表达式的依赖表述法，如 `require("./templates/" + name + ".jade")`。支持最常用的 [CommonJs][CommonJs] 和 [AMD][AMD] 这两种模块风格。
 
-Read more about [expressions in dependencies](context.html), [CommonJs](commonjs.html) and [AMD](amd.html).
+更多参考[含有表达式的依赖表述][context]、[CommonJs][CommonJs] 和 [AMD][AMD]。
 
-#### [→](#plugin-system)[Plugin system](plugins.html)
+### [插件系统][plugins]
 
-webpack features a rich plugin system. Most internal features are based on this plugin system. This allows you to customize webpack for your needs and distribute common plugins as open source.
+webpack 有一个很出色的插件系统，甚至大部分内置功能都是基于这个插件系统而来的。这个插件系统允许你根据需要来自定义 webpack，以及通过开源的方式来分发通用插件。
 
-Read more about [Plugins](plugins.html).
+更多参考[插件][plugins]。
+
+[Code Spliting]: code-spliting.md
+[Loaders]: loaders.md
+[Using loaders]: using-loaders.md
+[CommonJs]: commonjs.md
+[AMD]: amd.md
+[context]: context.md
+[plugins]: plugins.md
