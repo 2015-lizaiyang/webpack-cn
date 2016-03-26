@@ -30,7 +30,7 @@ webpack 的依赖树中有同步和异步两种依赖方式。其中，异步模
 
 更多参考[代码拆分][Code Spliting]。
 
-### [加载器][Loaders]
+### 加载器
 
 webpack 本身只支持处理 JavaScript，但可以通过加载器来把别的资源转为 JavaScript。因此，每个资源都被当作一个模块。
 
