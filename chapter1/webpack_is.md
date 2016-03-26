@@ -9,7 +9,7 @@ webpack 处理带有依赖关系的模块，生成一系列表示这些模块的
 
 ## 为什么再造一个模块打包器
 
-现有的模块打包器并不适用于大项目（如大的单页应用）。最重要的因素是，[代码拆分](http://stephenzhao.github.io/webpack-cn/chapter3/codeSplitting.html) 和把静态资源无缝接入模块化。
+现有的模块打包器并不适用于大项目（如大的单页应用）。最重要的因素是，[代码拆分][Code Spliting] 和把静态资源无缝接入模块化。
 
 尝试过扩展已有模块打包器，但无法达成下面所有的目标。
 
@@ -48,7 +48,7 @@ webpack 有一个很出色的插件系统，甚至大部分内置功能都是基
 
 更多参考[插件][plugins]。
 
-[Code Spliting]: code-spliting.md
+[Code Spliting]:chapter3/codeSplitting.md
 [Loaders]: loaders.md
 [Using loaders]: using-loaders.md
 [CommonJs]: commonjs.md
