@@ -50,7 +50,7 @@ webpack 有一个很出色的插件系统，甚至大部分内置功能都是基
 
 [Code Spliting]:chapter3/codeSplitting.md
 [Loaders]: loaders.md
-[Using loaders]: using-loaders.md
+[Using loaders]: chapter1/using_loaders.md
 [CommonJs]: commonjs.md
 [AMD]: amd.md
 [context]: context.md
