@@ -4,35 +4,49 @@
 你可以从左边浏览到相关的文档目录。
 
 If you are new to webpack, you may want to start by reading this page or the Getting started section on the left.
-如果你刚开始了解webpack，那你来到这里
-Plugins
+如果你刚开始了解webpack 那就从左边目录的入门开始学习吧
 
-webpack has a rich plugin interface. Most of the features are internal plugins using this interface. This makes webpack very flexible.
+## 插件
 
-Performance
+webpack 有着丰富的[插件][plugin]接口，这让 webpack 更具有扩展性，内建插件也大多基于这些接口。
 
-webpack uses async I/O and has multiple caching levels. This makes webpack fast and incredibly fast on incremental compilation.
+## 性能
 
-Loaders
+webpack 使用异步 I/O 和多层缓存，从而运行得很快，尤其是增量构建。
 
-webpack supports pre-processing files via loaders. This allows you to bundle any static resource not only javascript. You can easily write your own loaders running in node.js.
 
-Support
+## 加载器（Loaders）
 
-webpack supports AMD and CommonJs module styles. It performs clever static analysis on the AST of your code. It even has an evaluation engine to evaluate simple expressions. This allows you to support most existing libraries.
+webpack 允许使用[加载器][loaders]来预处理文件，从而可以打包任何文件而不仅是 JavaScript。可以用 node.js 来轻易地自定义加载器。
 
-Code Splitting
+## 支持
 
-webpack allows to split your codebase into chunks. Chunks are loaded on demand. This reduces initial loading time.
+webpack 支持 [AMD][AMD] 和 [CommonJs][CommonJs] 这两种模块机制。可以通过 AST 来对代码来做静态分析。还可以通过一个运算引擎来做简单表达式运算，从而支持绝大多数的现存 JavaScript 库。
 
-Optimizations
+## 代码分离
 
-webpack can do many optimizations to reduce the output size. It also cares about request caching by using hashes.
+webpack 支持把代码库[拆分][split]成多块，从而可以按需加载，减少初次加载的耗时。
 
-Development Tools
+## 优化
 
-webpack supports SourceUrls and SourceMaps for simple debugging. It can watch your files and comes with a development middleware and a development server for automatic reloading.
+webpack 通过多种[优化][optimization]来减少输出体积，同时还支持使用 hashes 来做[请求缓存][request-caching]。
 
-Multiple targets
+## 开发工具
 
-webpack's main target is the web, but it also supports generating bundles for WebWorkers and node.js.
+webpack 支持 SourceUrls 和 SourceMaps，从而让 debug 更友好。通过 watch 和 [开发中间件][webpack-dev-middleware]以及[开发服务器][webpack-dev-server]来实现自动更新。
+
+## 多目标
+
+webpack 的主要目标是 web，但同时也支持 [WebWorker][worker-loader] 和 node.js 的打包。
+
+
+[plugin]: plugin.md
+[loaders]: loaders.md
+[AMD]: amd.md
+[CommonJs]: commonjs.md
+[split]: code-splitting.md
+[optimization]: optimization.md
+[request-caching]: long-term-caching.md
+[webpack-dev-middleware]: webpack-dev-middleware.md
+[webpack-dev-server]: webpack-dev-server.md
+[worker-loader]: worker-loader.md
