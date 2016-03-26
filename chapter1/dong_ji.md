@@ -21,7 +21,7 @@ There are multiple standards for how to define dependencies and export values:
 
 ## `<script>`-tag 风格
 
-This is the way you would handle a modularized code base if you didn't use a module system.
+下面是处理没有模块系统的模块化代码的方案
 
 ``` html
 <script src="module1.js"></script>
