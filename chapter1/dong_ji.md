@@ -38,7 +38,7 @@ There are multiple standards for how to define dependencies and export values:
 * 开发者需要手动处理依赖
 * 大型项目模块列表会变得很长且难以维护 
 
-## CommonJs: synchronous `require`
+## CommonJs:同步加载 `require`
 
 This style uses a synchronous `require` method to load a dependency and return an exported interface. A module can specify exports by adding properties to the `exports` object or setting the value of `module.exports`.
 
