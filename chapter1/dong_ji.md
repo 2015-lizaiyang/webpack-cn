@@ -42,6 +42,7 @@ There are multiple standards for how to define dependencies and export values:
 
 This style uses a synchronous `require` method to load a dependency and return an exported interface. A module can specify exports by adding properties to the `exports` object or setting the value of `module.exports`.
 
+这种风格通过同步`require` 方法加载依赖并返回一个导出的接口。一个模块可以通过添加`exports`属性活着设置`module.exports`的值来指定导出的接口。
 ``` javascript
 require("module");
 require("../file.js");
@@ -50,17 +51,17 @@ module.exports = someValue;
 ```
 
 It's used on server-side by [node.js](http://nodejs.org).
+这种方案通常见于服务端 比如nodejs
+#### 优点
 
-#### Pros
+* 服务端的模块可重用
+* 已经有很多模块用这种风格 比如npm包
+* 非常简单易用
 
-* Server-side modules can be reused
-* There are already many modules in this style (npm)
-* very simple and easy to use.
+#### 缺点
 
-#### Cons
-
-* blocking calls do not apply well on networks. Network requests are asynchronous.
-* No parallel require of multiple modules
+* 网络请求是异步的，所以在网络请求上阻塞执行的不是很好
+* 不能并行加载多个模块
 
 #### Implementations
 
