@@ -53,7 +53,7 @@
         data-chapter-title="概览"
         data-filepath="chapter0/home.md"
         data-basepath=".."
-        data-revision="Sat Mar 26 2016 16:28:11 GMT+0800 (CST)"
+        data-revision="Sat Mar 26 2016 16:40:26 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -564,23 +564,23 @@
 <h2 id="&#x6B22;&#x8FCE;&#x67E5;&#x9605;webpack&#x6587;&#x6863;">&#x6B22;&#x8FCE;&#x67E5;&#x9605;webpack&#x6587;&#x6863;</h2>
 <p>&#x4F60;&#x53EF;&#x4EE5;&#x4ECE;&#x5DE6;&#x8FB9;&#x6D4F;&#x89C8;&#x5230;&#x76F8;&#x5173;&#x7684;&#x6587;&#x6863;&#x76EE;&#x5F55;&#x3002;</p>
 <p>If you are new to webpack, you may want to start by reading this page or the Getting started section on the left.
-&#x5982;&#x679C;&#x4F60;&#x521A;&#x5F00;&#x59CB;&#x4E86;&#x89E3;webpack&#xFF0C;&#x90A3;&#x4F60;&#x6765;&#x5230;&#x8FD9;&#x91CC;
-Plugins</p>
-<p>webpack has a rich plugin interface. Most of the features are internal plugins using this interface. This makes webpack very flexible.</p>
-<p>Performance</p>
-<p>webpack uses async I/O and has multiple caching levels. This makes webpack fast and incredibly fast on incremental compilation.</p>
-<p>Loaders</p>
-<p>webpack supports pre-processing files via loaders. This allows you to bundle any static resource not only javascript. You can easily write your own loaders running in node.js.</p>
-<p>Support</p>
-<p>webpack supports AMD and CommonJs module styles. It performs clever static analysis on the AST of your code. It even has an evaluation engine to evaluate simple expressions. This allows you to support most existing libraries.</p>
-<p>Code Splitting</p>
-<p>webpack allows to split your codebase into chunks. Chunks are loaded on demand. This reduces initial loading time.</p>
-<p>Optimizations</p>
-<p>webpack can do many optimizations to reduce the output size. It also cares about request caching by using hashes.</p>
-<p>Development Tools</p>
-<p>webpack supports SourceUrls and SourceMaps for simple debugging. It can watch your files and comes with a development middleware and a development server for automatic reloading.</p>
-<p>Multiple targets</p>
-<p>webpack&apos;s main target is the web, but it also supports generating bundles for WebWorkers and node.js.</p>
+&#x5982;&#x679C;&#x4F60;&#x521A;&#x5F00;&#x59CB;&#x4E86;&#x89E3;webpack &#x90A3;&#x5C31;&#x4ECE;&#x5DE6;&#x8FB9;&#x76EE;&#x5F55;&#x7684;&#x5165;&#x95E8;&#x5F00;&#x59CB;&#x5B66;&#x4E60;&#x5427;</p>
+<h2 id="&#x63D2;&#x4EF6;">&#x63D2;&#x4EF6;</h2>
+<p>webpack &#x6709;&#x7740;&#x4E30;&#x5BCC;&#x7684;<a href="plugin.md">&#x63D2;&#x4EF6;</a>&#x63A5;&#x53E3;&#xFF0C;&#x8FD9;&#x8BA9; webpack &#x66F4;&#x5177;&#x6709;&#x6269;&#x5C55;&#x6027;&#xFF0C;&#x5185;&#x5EFA;&#x63D2;&#x4EF6;&#x4E5F;&#x5927;&#x591A;&#x57FA;&#x4E8E;&#x8FD9;&#x4E9B;&#x63A5;&#x53E3;&#x3002;</p>
+<h2 id="&#x6027;&#x80FD;">&#x6027;&#x80FD;</h2>
+<p>webpack &#x4F7F;&#x7528;&#x5F02;&#x6B65; I/O &#x548C;&#x591A;&#x5C42;&#x7F13;&#x5B58;&#xFF0C;&#x4ECE;&#x800C;&#x8FD0;&#x884C;&#x5F97;&#x5F88;&#x5FEB;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x589E;&#x91CF;&#x6784;&#x5EFA;&#x3002;</p>
+<h2 id="&#x52A0;&#x8F7D;&#x5668;&#xFF08;loaders&#xFF09;">&#x52A0;&#x8F7D;&#x5668;&#xFF08;Loaders&#xFF09;</h2>
+<p>webpack &#x5141;&#x8BB8;&#x4F7F;&#x7528;<a href="loaders.md">&#x52A0;&#x8F7D;&#x5668;</a>&#x6765;&#x9884;&#x5904;&#x7406;&#x6587;&#x4EF6;&#xFF0C;&#x4ECE;&#x800C;&#x53EF;&#x4EE5;&#x6253;&#x5305;&#x4EFB;&#x4F55;&#x6587;&#x4EF6;&#x800C;&#x4E0D;&#x4EC5;&#x662F; JavaScript&#x3002;&#x53EF;&#x4EE5;&#x7528; node.js &#x6765;&#x8F7B;&#x6613;&#x5730;&#x81EA;&#x5B9A;&#x4E49;&#x52A0;&#x8F7D;&#x5668;&#x3002;</p>
+<h2 id="&#x652F;&#x6301;">&#x652F;&#x6301;</h2>
+<p>webpack &#x652F;&#x6301; <a href="amd.md">AMD</a> &#x548C; <a href="commonjs.md">CommonJs</a> &#x8FD9;&#x4E24;&#x79CD;&#x6A21;&#x5757;&#x673A;&#x5236;&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; AST &#x6765;&#x5BF9;&#x4EE3;&#x7801;&#x6765;&#x505A;&#x9759;&#x6001;&#x5206;&#x6790;&#x3002;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x8FD0;&#x7B97;&#x5F15;&#x64CE;&#x6765;&#x505A;&#x7B80;&#x5355;&#x8868;&#x8FBE;&#x5F0F;&#x8FD0;&#x7B97;&#xFF0C;&#x4ECE;&#x800C;&#x652F;&#x6301;&#x7EDD;&#x5927;&#x591A;&#x6570;&#x7684;&#x73B0;&#x5B58; JavaScript &#x5E93;&#x3002;</p>
+<h2 id="&#x4EE3;&#x7801;&#x5206;&#x79BB;">&#x4EE3;&#x7801;&#x5206;&#x79BB;</h2>
+<p>webpack &#x652F;&#x6301;&#x628A;&#x4EE3;&#x7801;&#x5E93;<a href="code-splitting.md">&#x62C6;&#x5206;</a>&#x6210;&#x591A;&#x5757;&#xFF0C;&#x4ECE;&#x800C;&#x53EF;&#x4EE5;&#x6309;&#x9700;&#x52A0;&#x8F7D;&#xFF0C;&#x51CF;&#x5C11;&#x521D;&#x6B21;&#x52A0;&#x8F7D;&#x7684;&#x8017;&#x65F6;&#x3002;</p>
+<h2 id="&#x4F18;&#x5316;">&#x4F18;&#x5316;</h2>
+<p>webpack &#x901A;&#x8FC7;&#x591A;&#x79CD;<a href="optimization.md">&#x4F18;&#x5316;</a>&#x6765;&#x51CF;&#x5C11;&#x8F93;&#x51FA;&#x4F53;&#x79EF;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x652F;&#x6301;&#x4F7F;&#x7528; hashes &#x6765;&#x505A;<a href="long-term-caching.md">&#x8BF7;&#x6C42;&#x7F13;&#x5B58;</a>&#x3002;</p>
+<h2 id="&#x5F00;&#x53D1;&#x5DE5;&#x5177;">&#x5F00;&#x53D1;&#x5DE5;&#x5177;</h2>
+<p>webpack &#x652F;&#x6301; SourceUrls &#x548C; SourceMaps&#xFF0C;&#x4ECE;&#x800C;&#x8BA9; debug &#x66F4;&#x53CB;&#x597D;&#x3002;&#x901A;&#x8FC7; watch &#x548C; <a href="webpack-dev-middleware.md">&#x5F00;&#x53D1;&#x4E2D;&#x95F4;&#x4EF6;</a>&#x4EE5;&#x53CA;<a href="webpack-dev-server.md">&#x5F00;&#x53D1;&#x670D;&#x52A1;&#x5668;</a>&#x6765;&#x5B9E;&#x73B0;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x3002;</p>
+<h2 id="&#x591A;&#x76EE;&#x6807;">&#x591A;&#x76EE;&#x6807;</h2>
+<p>webpack &#x7684;&#x4E3B;&#x8981;&#x76EE;&#x6807;&#x662F; web&#xFF0C;&#x4F46;&#x540C;&#x65F6;&#x4E5F;&#x652F;&#x6301; <a href="worker-loader.md">WebWorker</a> &#x548C; node.js &#x7684;&#x6253;&#x5305;&#x3002;</p>
 
                     
                     </section>
