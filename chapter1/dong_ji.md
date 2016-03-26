@@ -69,7 +69,7 @@ It's used on server-side by [node.js](http://nodejs.org).
 * [modules-webmake](https://github.com/medikoo/modules-webmake) - compile to one bundle
 * [wreq](https://github.com/substack/wreq) - client-side
 
-## AMD: asynchronous require
+## AMD: 异步加载
 
 [`Asynchronous Module Definition`](https://github.com/amdjs/amdjs-api/wiki/AMD)
 
