@@ -29,15 +29,14 @@ There are multiple standards for how to define dependencies and export values:
 <script src="libraryA.js"></script>
 <script src="module3.js"></script>
 ```
+每个模块都导出一个借口给一个全局变量 比如`window`。模块可以通过这个全局变量来读去依赖的接口。
 
-Modules export an interface to the global object, i. e. the `window` object. Modules can access the interface of dependencies over the global object.
+#### 常见的问题
 
-#### Common problems
-
-* Conflicts in the global object.
-* Order of loading is important.
-* Developers have to resolve dependencies of modules/libraries.
-* In big projects the list can get really long and difficult to manage.
+* 全局变量冲突
+* 加载顺序变得麻烦
+* 开发者需要手动处理依赖
+* 大型项目模块列表会变得很长且难以维护 
 
 ## CommonJs: synchronous `require`
 
