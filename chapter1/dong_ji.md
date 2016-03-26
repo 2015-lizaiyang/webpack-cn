@@ -63,12 +63,12 @@ It's used on server-side by [node.js](http://nodejs.org).
 * 网络请求是异步的，所以在网络请求上阻塞执行的不是很好
 * 不能并行加载多个模块
 
-#### Implementations
+#### 一些实现
 
-* [node.js](http://nodejs.org/) - server-side
+* [node.js](http://nodejs.org/) - 服务端
 * [browserify](https://github.com/substack/node-browserify)
-* [modules-webmake](https://github.com/medikoo/modules-webmake) - compile to one bundle
-* [wreq](https://github.com/substack/wreq) - client-side
+* [modules-webmake](https://github.com/medikoo/modules-webmake) -编译成一个包
+* [wreq](https://github.com/substack/wreq) - 服务端
 
 ## AMD: 异步加载
 
