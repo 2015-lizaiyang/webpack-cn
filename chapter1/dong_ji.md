@@ -11,14 +11,15 @@
 ##模块化风格
 
 There are multiple standards for how to define dependencies and export values:
+有很多定义依赖和加载值的表转
 
-* `<script>`-tag style (without a module system)
+* `<script>`-tag 无模块系统风格
 * CommonJs
-* AMD and some dialects of it
+* AMD 
 * ES6 modules
-* and more...
+* ...
 
-## `<script>`-tag style
+## `<script>`-tag 风格
 
 This is the way you would handle a modularized code base if you didn't use a module system.
 
