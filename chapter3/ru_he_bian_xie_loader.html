@@ -53,7 +53,7 @@
         data-chapter-title="如何编写loader"
         data-filepath="chapter3/ru_he_bian_xie_loader.md"
         data-basepath=".."
-        data-revision="Thu Mar 17 2016 14:47:57 GMT+0800 (CST)"
+        data-revision="Sat Mar 26 2016 16:02:44 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -594,77 +594,92 @@
 <li>apply-loader: &#x52A0;&#x8F7D;&#x8FD9;&#x4E2A;node&#x6A21;&#x5757;&#x5E76;&#x4E14;&#x6309;&#x7167;&#x8BF7;&#x6C42;&#x8FD4;&#x56DE;&#x8D44;&#x6E90;</li>
 <li>html-loader: &#x52A0;&#x8F7D;&#x4E00;&#x4E2A;HTML&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x5230;&#x5904;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x5757;</li>
 </ul>
-<h3 id="&#x2192;generate-modules-that-are-modular"><a href="#generate-modules-that-are-modular">&#x2192;</a>generate modules that are modular</h3>
-<p>Loader generated modules should respect the same design principles like normal modules.</p>
-<p>Example: That&#x2019;s a bad design: (not modular, global state, &#x2026;)</p>
-<pre><code>require(&quot;any-template-language-loader!./xyz.atl&quot;);
+<h3 id="&#x628A;&#x6240;&#x6709;&#x6A21;&#x5757;&#x53D8;&#x6210;&#x6A21;&#x5757;&#x5316;">&#x628A;&#x6240;&#x6709;&#x6A21;&#x5757;&#x53D8;&#x6210;&#x6A21;&#x5757;&#x5316;</h3>
+<p>Loader generated modules should respect the same design principles like normal modules.
+&#x52A0;&#x8F7D;&#x5668;&#x751F;&#x6210;&#x7684;&#x6A21;&#x5757;&#x5E94;&#x8BE5;&#x9075;&#x5FAA;&#x4E00;&#x822C;&#x6A21;&#x5757;&#x7684;&#x8BBE;&#x8BA1;&#x539F;&#x5219;&#xFF0C;
+&#x9519;&#x8BEF;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;&#xFF08;&#x975E; moduler&#xFF0C;global state&#xFF09;</p>
+<pre><code>   require(&quot;any-template-language-loader!./xyz.atl&quot;);
 
-var html = anyTemplateLanguage.render(&quot;xyz&quot;);
-</code></pre><h3 id="&#x2192;flag-itself-cacheable-if-possible"><a href="#flag-itself-cacheable-if-possible">&#x2192;</a>flag itself cacheable if possible</h3>
-<p>Most loaders are cacheable, so they should flag itself as cacheable.</p>
-<p>Just call <code>cacheable</code> in the loader.</p>
-<pre><code>// Cacheable identity loader
-module.exports = function(source) {
-    this.cacheable();
-    return source;
-};
-</code></pre><h3 id="&#x2192;not-keep-state-between-runs-and-modules"><a href="#not-keep-state-between-runs-and-modules">&#x2192;</a>not keep state between runs and modules</h3>
-<p>A loader should be independent of other modules compiled (expect of these issued by the loader).</p>
+   var html = anyTemplateLanguage.render(&quot;xyz&quot;);
+</code></pre><h3 id="&#x628A;&#x4ED6;&#x6807;&#x8BB0;&#x4E3A;&#x53EF;&#x7F13;&#x5B58;&#x7684;">&#x628A;&#x4ED6;&#x6807;&#x8BB0;&#x4E3A;&#x53EF;&#x7F13;&#x5B58;&#x7684;</h3>
+<p>&#x5927;&#x591A;&#x6570;&#x52A0;&#x8F7D;&#x5668;&#x53EF;&#x7F13;&#x5B58;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5E94;&#x8BE5;&#x628A;&#x4ED6;&#x6807;&#x8BB0;&#x4E3A;&#x53EF;&#x7F13;&#x5B58;&#x7684;</p>
+<p>Just call <code>cacheable</code> in the loader.
+&#x53EA;&#x9700;&#x8981;&#x8C03;&#x7528;<code>cacheable</code>&#x51FD;&#x6570;&#x5C31;&#x53EF;&#x4EE5;</p>
+<pre><code class="lang-js">    <span class="hljs-comment">// Cacheable identity loader</span>
+    <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">source</span>) </span>{
+        <span class="hljs-keyword">this</span>.cacheable();
+        <span class="hljs-keyword">return</span> source;
+    };
+</code></pre>
+<h3 id="not-keep-state-between-runs-and-modules">not keep state between runs and modules</h3>
+<h3 id="&#x522B;&#x628A;&#x8BA9;&#x5B83;&#x5904;&#x4E8E;&#x4EE3;&#x7801;&#x7EC4;&#x7EC7;&#x8005;&#x548C;&#x6A21;&#x5757;&#x4E4B;&#x95F4;">&#x522B;&#x628A;&#x8BA9;&#x5B83;&#x5904;&#x4E8E;&#x4EE3;&#x7801;&#x7EC4;&#x7EC7;&#x8005;&#x548C;&#x6A21;&#x5757;&#x4E4B;&#x95F4;</h3>
+<p>A loader should be independent of other modules compiled (expect of these issued by the loader).
+&#x4E00;&#x4E2A;&#x52A0;&#x8F7D;&#x5668;&#x5E94;&#x8BE5;&#x65E0;&#x987B;&#x4F9D;&#x8D56;&#x5176;&#x4ED6;&#x6A21;&#x5757;&#x6765;&#x7F16;&#x8BD1;&#xFF0C;&#x4E5F;&#x72EC;&#x7ACB;&#x4E8E;&#x4E4B;&#x524D;&#x7F16;&#x8BD1;&#x6A21;&#x5757;</p>
 <p>A loader should be independent of previous compilations of the same module.</p>
-<h3 id="&#x2192;mark-dependencies"><a href="#mark-dependencies">&#x2192;</a>mark dependencies</h3>
-<p>If a loader uses external resources (i. e. by reading from filesystem), they <strong>must</strong> tell about that. This information is used to invalidate cacheable loaders and recompile in watch mode.</p>
-<pre><code>// Loader adding a header
-var path = require(&quot;path&quot;);
-module.exports = function(source) {
-    this.cacheable();
-    var callback = this.async();
-    var headerPath = path.resolve(&quot;header.js&quot;);
-    this.addDependency(headerPath);
-    fs.readFile(headerPath, &quot;utf-8&quot;, function(err, header) {
-        if(err) return callback(err);
-        callback(null, header + &quot;\n&quot; + source);
-    });
-};
-</code></pre><h3 id="&#x2192;resolve-dependencies"><a href="#resolve-dependencies">&#x2192;</a>resolve dependencies</h3>
-<p>In many languages there is some schema to specify dependencies. i. e. in css there is <code>@import</code> and <code>url(...)</code>. These dependencies should be resolved by the module system.</p>
-<p>There are two options to do this:</p>
+<h3 id="&#x6807;&#x8BB0;&#x597D;&#x4F9D;&#x8D56;">&#x6807;&#x8BB0;&#x597D;&#x4F9D;&#x8D56;</h3>
+<p>If a loader uses external resources (i. e. by reading from filesystem), they <strong>must</strong> tell about that. This information is used to invalidate cacheable loaders and recompile in watch mode.
+&#x5982;&#x679C;&#x52A0;&#x8F7D;&#x5668;&#x7528;&#x5230;&#x4E86;&#x989D;&#x5916;&#x7684;&#x8D44;&#x6E90;&#xFF08;&#x6BD4;&#x5982;&#x8BF4;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E9B;&#x8D44;&#x6E90;<strong>&#x5FC5;&#x987B;</strong>&#x88AB;&#x544A;&#x77E5;&#x3002;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x5C06;&#x7528;&#x4E8E;&#x533A;&#x522B;&#x53EF;&#x7F13;&#x5B58;&#x52A0;&#x8F7D;&#x5668;&#xFF0C;&#x8FD8;&#x662F;&#x5728;watch&#x72B6;&#x6001;&#x4E0B;&#x7684;&#x91CD;&#x7F16;&#x8BD1;</p>
+<pre><code class="lang-js">    <span class="hljs-comment">// Loader adding a header</span>
+    <span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>);
+    <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">source</span>) </span>{
+        <span class="hljs-keyword">this</span>.cacheable();
+        <span class="hljs-keyword">var</span> callback = <span class="hljs-keyword">this</span>.async();
+        <span class="hljs-keyword">var</span> headerPath = path.resolve(<span class="hljs-string">&quot;header.js&quot;</span>);
+        <span class="hljs-keyword">this</span>.addDependency(headerPath);
+        fs.readFile(headerPath, <span class="hljs-string">&quot;utf-8&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, header</span>) </span>{
+            <span class="hljs-keyword">if</span>(err) <span class="hljs-keyword">return</span> callback(err);
+            callback(<span class="hljs-literal">null</span>, header + <span class="hljs-string">&quot;\n&quot;</span> + source);
+        });
+    };
+</code></pre>
+<h3 id="&#x89E3;&#x51B3;&#x4F9D;&#x8D56;">&#x89E3;&#x51B3;&#x4F9D;&#x8D56;</h3>
+<p>&#x5728;&#x5F88;&#x591A;&#x8BED;&#x8A00;&#x91CC;&#x90FD;&#x4F1A;&#x6709;&#x4E00;&#x4E0B;schema&#x6765;&#x6307;&#x5B9A;&#x4F9D;&#x8D56;&#x3002;&#x6BD4;&#x5982;&#x5728;css&#x4E2D;&#x6211;&#x4EEC;&#x7528;<code>@import</code> <code>url</code>. &#x8FD9;&#x4E9B;&#x4F9D;&#x8D56;&#x7BA1;&#x7406;&#x5E94;&#x8BE5;&#x901A;&#x8FC7;&#x6A21;&#x5757;&#x7CFB;&#x7EDF;&#x89E3;&#x51B3;
+&#x4E24;&#x70B9;&#xFF1A;</p>
 <ul>
-<li>Transform them to <code>require</code>s.</li>
-<li>Use the <code>&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.resolve</code> function to resolve the path</li>
+<li>&#x628A;&#x4ED6;&#x4EEC;&#x8F6C;&#x5316;&#x4E3A;<code>require</code>.</li>
+<li>&#x8FD0;&#x7528;<code>this.resolve()</code>&#x6765;&#x89E3;&#x51B3;&#x8DEF;&#x5F84;&#x95EE;&#x9898;.</li>
 </ul>
-<p>Example 1 css-loader: The css-loader transform dependencies to <code>require</code>s, by replacing <code>@import</code>s with a require to the other stylesheet (processed with the css-loader too) and <code>url(...)</code> with a <code>require</code> to the referenced file.</p>
-<p>Example 2 less-loader: The less-loader cannot transform <code>@import</code>s to <code>require</code>s, because all less files need to be compiled in one pass to track variables and mixins. Therefore the less-loader extends the less compiler with a custom path resolving logic. This custom logic uses <code>&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.resolve</code> to resolve the file with the configuration of the module system (aliasing, custom module directories, etc.).</p>
-<p>If the language only accept relative urls (like css: <code>url(file)</code> always means <code>.&lt;span class=&quot;regexp&quot;&gt;/file&lt;/span&gt;</code>), there is the <code>~</code>-convection to specify references to modules:</p>
-<pre><code>url(file) -&gt; require(&quot;./file&quot;)
-url(~module) -&gt; require(&quot;module&quot;)
-</code></pre><h3 id="&#x2192;extract-common-code"><a href="#extract-common-code">&#x2192;</a>extract common code</h3>
-<p>don&#x2019;t generate much code that is common in every module processed by that loader. Create a (runtime) file in the loader and generate a <code>require</code> to that common code.</p>
-<h3 id="&#x2192;should-not-embed-absolute-paths"><a href="#should-not-embed-absolute-paths">&#x2192;</a>should not embed absolute paths</h3>
-<p>don&#x2019;t put absolute paths in to the module code. They break hashing when the root for the project is moved. There is a method <a href="https://github.com/webpack/loader-utils#stringifyrequest" target="_blank"><code>stringifyRequest</code> in loader-utils</a> which converts an absolute path to an relative one.</p>
-<p>Example:</p>
-<pre><code>var loaderUtils = require(&quot;loader-utils&quot;);
-return &quot;var runtime = require(&quot; +
-  loaderUtils.stringifyRequest(this, &quot;!&quot; + require.resolve(&quot;module/runtime&quot;)) +
-  &quot;);&quot;;
-</code></pre><h3 id="&#x2192;use-a-library-as-peerdependencies-when-they-wrap-it"><a href="#use-a-library-as-peerdependencies-when-they-wrap-it">&#x2192;</a>use a library as <code>peerDependencies</code> when they wrap it</h3>
-<p>using a peerDependency allows the application developer to specify the exact version in <code>package.json</code> if desired. The dependency should be relatively open to allow updating the library without needing to publish a new loader version.</p>
-<pre><code>&quot;peerDependencies&quot;: {
-    &quot;library&quot;: &quot;^1.3.5&quot;
-}
-</code></pre><h3 id="&#x2192;programmable-objects-as-queryoption"><a href="#programmable-objects-as-query-option">&#x2192;</a>programmable objects as <code>query</code>-option</h3>
-<p>there are situations where your loader requires programmable objects with functions which cannot stringified as <code>query</code>-string. The less-loader, for example, provides the possibility to specify <a href="https://github.com/webpack/less-loader#less-plugins" target="_blank">LESS-plugins</a>. In these cases, a loader is allowed to extend webpack&#x2019;s <code>options</code>-object to retrieve that specific option. In order to avoid name collisions, however, it is important that the option is namespaced under the loader&#x2019;s camelCased npm-name.</p>
-<p>Example:</p>
-<pre><code>// webpack.config.js
-module.exports = {
-  ...
-  lessLoader: {
-    lessPlugins: [
-      new LessPluginCleanCSS({advanced: true})
-    ]
-  }
-};
-</code></pre><p>The loader should also allow to specify the config-key (e.g. <code>lessLoader</code>) via <code>query</code>. See <a href="https://github.com/webpack/less-loader/pull/40" target="_blank">discussion</a> and <a href="https://github.com/webpack/less-loader/blob/39f742b4624fceae6d9cf266e9554d07a32a9c14/index.js#L49-51" target="_blank">example implementation</a>.</p>
-<h3 id="&#x2192;be-added-to-the-list-of-loaders"><a href="#be-added-to-the-list-of-loaders">&#x2192;</a>be added to the <a href="list-of-loaders.html">list of loaders</a></h3>
+<p>&#x4F8B;1: 
+  css-loader: 
+  css-loader&#x5C06;&#x4F9D;&#x8D56;&#x8F6C;&#x6362;&#x6210;<code>require</code>&#xFF0C;&#x901A;&#x8FC7;<code>require</code>&#x6765;&#x66FF;&#x6362;<code>import</code>&#x53BB;&#x52A0;&#x8F7D;&#x522B;&#x7684;&#x6837;&#x5F0F;&#x8868;&#x6A21;&#x5757;&#x4EE5;&#x53CA;&#x66FF;&#x4EE3;<code>url</code>&#x53BB;&#x53D6;&#x8D44;&#x6E90;&#x6587;&#x4EF6;.</p>
+<p>&#x4F8B;2:</p>
+<p>  less-loader:</p>
+<p>  less-loader&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x5C06;<code>@import</code>&#x8F6C;&#x5316;&#x6210;<code>require</code>,&#x56E0;&#x4E3A;&#x6240;&#x6709;&#x7684;less&#x6587;&#x4EF6;&#x9700;&#x8981;&#x88AB;&#x7F16;&#x8BD1;&#x8FDB;&#x4E00;&#x4E2A;&#x901A;&#x9053;&#x91CC;&#x53BB;&#x8DDF;&#x8E2A;<code>variables</code>&#x548C;<code>mixins</code>&#x3002;&#x6240;&#x4EE5;less&#xFF0D;loader&#x6269;&#x5C55;&#x4E86;&#x81EA;&#x5DF1;&#x7684;&#x8DEF;&#x5F84;&#x89E3;&#x51B3;&#x903B;&#x8F91;&#x3002;&#x8FD9;&#x4E2A;&#x5B9A;&#x5236;&#x7684;&#x903B;&#x8F91;&#x8FD0;&#x7528;&#x4E86;<code>this.resolve</code>&#x51FD;&#x6570;&#x53BB;&#x89E3;&#x51B3;&#x6A21;&#x5757;&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x67D0;&#x79CD;&#x8BED;&#x8A00;&#x53EA;&#x63A5;&#x53D7;&#x76F8;&#x5BF9;&#x7684;urls&#xFF08;&#x6BD4;&#x5982; css:<code>url(file)</code> &#x901A;&#x5E38;&#x610F;&#x5473;&#x7740;<code>/file</code>)&#xFF0C;&#x6240;&#x4EE5;&#x6709;&#x4E00;&#x4E2A;<code>~</code>&#x7B26;&#x53F7;&#x6765;&#x8BF4;&#x660E;&#x6307;&#x5411;&#x6A21;&#x5757;</p>
+<pre><code class="lang-bash">    url(file) -&gt; require(<span class="hljs-string">&quot;./file&quot;</span>)
+    url(~module) -&gt; require(<span class="hljs-string">&quot;module&quot;</span>)
+</code></pre>
+<h3 id="&#x63D0;&#x53D6;&#x516C;&#x7528;&#x7684;&#x6A21;&#x5757;">&#x63D0;&#x53D6;&#x516C;&#x7528;&#x7684;&#x6A21;&#x5757;</h3>
+<p>&#x4E0D;&#x8981;&#x521D;&#x59CB;&#x5316;&#x5F88;&#x591A;&#x516C;&#x7528;&#x7684;&#x6A21;&#x5757;&#x4EE3;&#x7801;&#x5728;&#x6BCF;&#x4E00;&#x4E2A;&#x52A0;&#x8F7D;&#x5668;&#x6267;&#x884C;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#xFF08;&#x8FD0;&#x884C;&#x65F6;&#xFF09;&#x6587;&#x4EF6;&#x5728;&#x52A0;&#x8F7D;&#x5668;&#x91CC;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8FC7;<code>require</code>&#x6765;&#x52A0;&#x8F7D;&#x4ED6;</p>
+<h3 id="&#x4E0D;&#x8981;&#x6F5C;&#x5165;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;">&#x4E0D;&#x8981;&#x6F5C;&#x5165;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;</h3>
+<p>&#x4E0D;&#x8981;&#x628A;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x653E;&#x5230;&#x6A21;&#x5757;&#x7684;&#x4EE3;&#x7801;&#x91CC;&#x9762;&#x3002;&#x8FD9;&#x6837;&#x5F53;&#x6839;&#x76EE;&#x5F55;&#x88AB;&#x79FB;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x6253;&#x7834;&#x6587;&#x4EF6;&#x7684;&#x54C8;&#x5E0C;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x5DE5;&#x5177;<code>stringifyRequest</code> &#x5728;<code>loader-utils</code>&#x91CC;&#x9762;&#x53EF;&#x4EE5;&#x5C06;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x5904;&#x7406;&#x6210;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;</p>
+<p>&#x6BD4;&#x5982;</p>
+<pre><code class="lang-js">    <span class="hljs-keyword">var</span> loaderUtils = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;loader-utils&quot;</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;var runtime = require(&quot;</span> +
+      loaderUtils.stringifyRequest(<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;!&quot;</span> + <span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">&quot;module/runtime&quot;</span>)) +
+      <span class="hljs-string">&quot;);&quot;</span>;
+</code></pre>
+<h3 id="&#x5C06;&#x4F7F;&#x7528;&#x7684;&#x5E93;&#x4F5C;&#x4E3A;peerdependencies&#x6765;&#x4F9D;&#x8D56;">&#x5C06;&#x4F7F;&#x7528;&#x7684;&#x5E93;&#x4F5C;&#x4E3A;<code>peerDependencies</code>&#x6765;&#x4F9D;&#x8D56;</h3>
+<p>&#x4F7F;&#x7528;<code>peerDependencies</code>&#x53EF;&#x4EE5;&#x5141;&#x8BB8;&#x5E94;&#x7528;&#x5F00;&#x53D1;&#x8005;&#x5FC5;&#x8981;&#x65F6;&#x5728;<code>package.json</code>&#x53BB;&#x6807;&#x793A;&#x5E93;&#x7684;&#x7248;&#x672C;&#x3002;&#x4F9D;&#x8D56;&#x5E94;&#x8BE5;&#x76F8;&#x5BF9;&#x72EC;&#x7ACB;&#x7684;&#x53BB;&#x66F4;&#x65B0;&#x5E93;&#x800C;&#x4E0D;&#x7528;&#x518D;&#x53D1;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x52A0;&#x8F7D;&#x5668;&#x7248;&#x672C;</p>
+<pre><code>    &quot;peerDependencies&quot;: {
+        &quot;library&quot;: &quot;^1.3.5&quot;
+    }
+</code></pre><h3 id="programmable-objects-as-queryoption">programmable objects as <code>query</code>-option</h3>
+<p>&#x6709;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x4F60;&#x7684;&#x52A0;&#x8F7D;&#x5668;&#x9700;&#x8981;&#x4E00;&#x4E9B;&#x4E0D;&#x53EF;<code>stringify</code>&#x4E3A;<code>query</code>&#x5B57;&#x4E32;&#x7684;&#x53EF;&#x7F16;&#x7A0B;&#x5BF9;&#x8C61;&#x7684;&#x51FD;&#x6570;&#x3002;
+&#x6BD4;&#x5982;lessloader&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;<code>LESS-plugins</code> &#x5141;&#x8BB8;&#x52A0;&#x8F7D;&#x5668;&#x53BB;&#x6269;&#x5C55;webpack&#x7684;<code>options</code>&#x53BB;&#x68C0;&#x7D22;&#x7279;&#x5B9A;&#x7684;&#x9009;&#x9879;&#x3002;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x540D;&#x5B57;&#x51B2;&#x7A81;&#x7136;&#xFF0C;option&#x662F;&#x5728;&#x52A0;&#x8F7D;&#x5668;&#x7684;npm&#x9A7C;&#x5CF0;&#x540D;&#x5B57;&#x57DF;&#x4E0B;&#x7684;</p>
+<pre><code class="lang-js">Example:
+
+    <span class="hljs-comment">// webpack.config.js</span>
+    <span class="hljs-built_in">module</span>.exports = {
+      ...
+      lessLoader: {
+        lessPlugins: [
+          <span class="hljs-keyword">new</span> LessPluginCleanCSS({advanced: <span class="hljs-literal">true</span>})
+        ]
+      }
+    };
+</code></pre>
+<p>The loader should also allow to specify the dded to the <a href="list-of-loaders.html">list of loaders</a></p>
 <h2 id="&#x2192;read-more"><a href="#read-more">&#x2192;</a>Read more</h2>
 <p>Read more about <a href="loaders.html">loaders</a>.</p>
 
