@@ -5,7 +5,7 @@
 # Summary
 
 * [关于文档](README.md)
-* [概览](docs/Home.md)
+* [概览](docs/home.md)
 * 开始
   * [动机][Motivation]
   * [webpack是什么][What is webpack? | What is webpack]
@@ -124,7 +124,7 @@ Serving book on http://localhost:4000
 [Code Splitting]:[docs/code-splitting.md]
 [Stylesheets]:[docs/stylesheets.md]
 [Optimization]:[docs/optimization.md]
-[Long-term Caching]:[docs/long-term-cashing.md]
+[Long-term Caching]:[docs/long-term-caching.md]
 [How to write a loader]:[docs/how-to-write-a-loader.md]
 [How to write a plugin]:[docs/how-to-write-a-plugin.md]
 [Multiple entry points]:[docs/multiple-entry-points.md]
@@ -134,7 +134,7 @@ Serving book on http://localhost:4000
 [Build performance]:[docs/build-performance.md]
 [Hot Module Replacement with webpack]:[docs/hot-module-replacement-with-webpack.md]
 [Comparison]:[docs/comparison.md]
-[grunt | Usage with grunt]:[docs/usage-with-group.md]
+[grunt | Usage with grunt]:[docs/usage-with-grunt.md]
 [gulp | Usage with gulp]:[docs/usage-with-gulp.md]
 [bower | Usage with bower]:[docs/usage-with-bower.md]
 [karma | Usage with karma]:[docs/usage-with-karma.md]
@@ -144,7 +144,7 @@ Serving book on http://localhost:4000
 [List of tutorials]:[docs/list-of-tutorials.md]
 [List of hints]:[docs/list-of-hints.md]
 [Configuration]:[docs/configuration.md]
-[CLI]:[docs/CLI.md]
+[CLI]:[docs/cli.md]
 [Node.js API]:[docs/node.js-api.md]
 [API in modules]:[docs/api-in-modules.md]
 [Loaders]:[docs/loaders.md]
