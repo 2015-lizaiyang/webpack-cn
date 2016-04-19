@@ -1,26 +1,27 @@
-Today's websites are evolving into web apps:
+#动机
 
-* More and more JavaScript is in a page.
-* You can do more stuff in modern browsers.
-* Fewer full page reloads → even more code in a page.
+现如今网页已经转战进入webapp时代：
 
-As a result there is a **lot** of code on the client side!
+* 一个页面里面有越来越多的js
+* 现在的浏览器上面可以做更多的事情
+* 越来越少的全页面刷新的需求，甚至有的已经是在一个页面实现所有需求。
 
-A big code base needs to be organized. Module systems offer the option to split your code base into modules.
+综上，客户端已经开始拥有很高的代码量了代码量一大就需要管理，模块系统孕育而生。
 
-# Module system styles
+##模块化风格
 
 There are multiple standards for how to define dependencies and export values:
+有很多定义依赖和加载值的表转
 
-* `<script>`-tag style (without a module system)
+* `<script>`-tag 无模块系统风格
 * CommonJs
-* AMD and some dialects of it
+* AMD 
 * ES6 modules
-* and more...
+* ...
 
-## `<script>`-tag style
+## `<script>`-tag 风格
 
-This is the way you would handle a modularized code base if you didn't use a module system.
+下面是处理没有模块系统的模块化代码的方案
 
 ``` html
 <script src="module1.js"></script>
@@ -28,20 +29,20 @@ This is the way you would handle a modularized code base if you didn't use a mod
 <script src="libraryA.js"></script>
 <script src="module3.js"></script>
 ```
+每个模块都导出一个借口给一个全局变量 比如`window`。模块可以通过这个全局变量来读去依赖的接口。
 
-Modules export an interface to the global object, i. e. the `window` object. Modules can access the interface of dependencies over the global object.
+#### 常见的问题
 
-#### Common problems
+* 全局变量冲突
+* 加载顺序变得麻烦
+* 开发者需要手动处理依赖
+* 大型项目模块列表会变得很长且难以维护 
 
-* Conflicts in the global object.
-* Order of loading is important.
-* Developers have to resolve dependencies of modules/libraries.
-* In big projects the list can get really long and difficult to manage.
-
-## CommonJs: synchronous `require`
+## CommonJs:同步加载 `require`
 
 This style uses a synchronous `require` method to load a dependency and return an exported interface. A module can specify exports by adding properties to the `exports` object or setting the value of `module.exports`.
 
+这种风格通过同步`require` 方法加载依赖并返回一个导出的接口。一个模块可以通过添加`exports`属性活着设置`module.exports`的值来指定导出的接口。
 ``` javascript
 require("module");
 require("../file.js");
@@ -50,26 +51,26 @@ module.exports = someValue;
 ```
 
 It's used on server-side by [node.js](http://nodejs.org).
+这种方案通常见于服务端 比如nodejs
+#### 优点
 
-#### Pros
+* 服务端的模块可重用
+* 已经有很多模块用这种风格 比如npm包
+* 非常简单易用
 
-* Server-side modules can be reused
-* There are already many modules in this style (npm)
-* very simple and easy to use.
+#### 缺点
 
-#### Cons
+* 网络请求是异步的，所以在网络请求上阻塞执行的不是很好
+* 不能并行加载多个模块
 
-* blocking calls do not apply well on networks. Network requests are asynchronous.
-* No parallel require of multiple modules
+#### 一些实现
 
-#### Implementations
-
-* [node.js](http://nodejs.org/) - server-side
+* [node.js](http://nodejs.org/) - 服务端
 * [browserify](https://github.com/substack/node-browserify)
-* [modules-webmake](https://github.com/medikoo/modules-webmake) - compile to one bundle
-* [wreq](https://github.com/substack/wreq) - client-side
+* [modules-webmake](https://github.com/medikoo/modules-webmake) -编译成一个包
+* [wreq](https://github.com/substack/wreq) - 服务端
 
-## AMD: asynchronous require
+## AMD: 异步加载
 
 [`Asynchronous Module Definition`](https://github.com/amdjs/amdjs-api/wiki/AMD)
 

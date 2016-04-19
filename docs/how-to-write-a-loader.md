@@ -1,175 +1,167 @@
-A loader is a node module exporting a `function`.
+## 如何书写webpack loader
 
-This function is called when a resource should be transformed by this loader.
+
+webpack的loader是一个node module 导出的一个用于转化加载的资源的 `function`.
 
 In the simple case, when only a single loader is applied to the resource, the loader is called with one parameter: the content of the resource file as string.
+在简单的情况下，当只有一个加载器被执行的时候，其参数为资源文件的内容串。
 
-The loader can access the [[loader API | loaders]] on the `this` context in the function.
+加载器可以通过`this`上下文来访问[loader API](loaders.html)。
+仅仅需要一个只值的同步加载器能很容易 `return` 它。在别的情况下，加载器可以通过`this.callback(err, values...)` 方法来返回。异常和错误会被`this.callback`传递或者被同步加载器抛出。
 
-A sync loader that only wants to give a one value can simply `return` it. In every other case the loader can give back any number of values with the `this.callback(err, values...)` function. Errors are passed to the `this.callback` function or thrown in a sync loader.
+加载器期望返回一个或两个值，第一个是被转化的js串或者是buffer。第二个可选是js的`SourceMap` 
+更复杂的情况是，当很多个加载器串联的时候，只有最后一个加载器拿到资源文件，并且只有第一个加载器能觉得返回一个还是两个值（`js` 和`SourceMap`）.其他loader的返回值都是从上一层级传递过来的。
 
-The loader is expected to give back one or two values. The first value is a resulting JavaScript code as string or buffer. The second optional value is a SourceMap as JavaScript object.
+## 例子
+```js
+    // Identity loader
+    module.exports = function(source) {
+      return source;
+    };
 
-In the complex case, when multiple loaders are chained, only the last loader gets the resource file and only the first loader is expected to give back one or two values (JavaScript and SourceMap). Values that any other loader give back are passed to the previous loader.
-
-## Examples
-
-``` javascript
-// Identity loader
-module.exports = function(source) {
-  return source;
-};
+    // Identity loader with SourceMap support
+    module.exports = function(source, map) {
+      this.callback(null, source, map);
+    };
 ```
 
-``` javascript
-// Identity loader with SourceMap support
-module.exports = function(source, map) {
-  this.callback(null, source, map);
-};
-```
+## 指南
 
-## Guidelines
+安处理顺序排列
 
-(Ordered by priority, first one should get the highest priority)
+加载器应该具备
 
-Loaders should
+### 只关心一个任务
 
-### do only a single task
-
-Loaders can be chained. Create loaders for every step, instead of a loader that does everything at once.
-
-This also means they should not convert to JavaScript if not necessary.
+加载器可以被串联，所以要分部实现加载器，而不是一个加载器把所有事情都做了。
+这也就意味着，他们没必要都被转化为js
 
 Example: Render HTML from a template file by applying the query parameters
+比如：我们要通过设置参数来将模板渲染为HTML，
+不好的做法：写一个加载器编译模板，执行并返回一个包含HTML代码的模块
+相反，我们应该为每一个在这个案例里的任务写加载器，并且通过管道来加载他们。
 
-I could write a loader that compiles the template from source, execute it and return a module that exports a string containing the HTML code. This is bad.
 
-Instead I should write loaders for every task in this use case and apply them all (pipeline):
+*   jade-loader: 将模板转化为一个node模块
+*   apply-loader: 加载这个node模块并且按照请求返回资源
+*   html-loader: 加载一个HTML文件，并且到处一个字符串模块
 
-* jade-loader: Convert template to a module that exports a function.
-* apply-loader: Takes a function exporting module and returns raw result by applying query parameters.
-* html-loader: Takes HTML and exports a string exporting module.
-
-### generate modules that are modular
+### 把所有模块变成模块化
 
 Loader generated modules should respect the same design principles like normal modules.
+加载器生成的模块应该遵循一般模块的设计原则，
+错误的例子：（非 moduler，global state）
 
-Example: That's a bad design: (not modular, global state, ...)
+   ```
+   require("any-template-language-loader!./xyz.atl");
 
-``` javascript
-require("any-template-language-loader!./xyz.atl");
+   var html = anyTemplateLanguage.render("xyz");
+   ```
 
-var html = anyTemplateLanguage.render("xyz");
-```
+### 把他标记为可缓存的
 
-### flag itself cacheable if possible
-
-Most loaders are cacheable, so they should flag itself as cacheable.
+大多数加载器可缓存的，所以应该把他标记为可缓存的
 
 Just call `cacheable` in the loader.
-
-``` javascript
-// Cacheable identity loader
-module.exports = function(source) {
-	this.cacheable();
-	return source;
-};
+只需要调用`cacheable`函数就可以
+```js
+    // Cacheable identity loader
+    module.exports = function(source) {
+        this.cacheable();
+        return source;
+    };
 ```
-
 ### not keep state between runs and modules
+### 别把让它处于代码组织者和模块之间
 
 A loader should be independent of other modules compiled (expect of these issued by the loader).
+一个加载器应该无须依赖其他模块来编译，也独立于之前编译模块
 
 A loader should be independent of previous compilations of the same module.
 
-### mark dependencies
+### 标记好依赖
 
 If a loader uses external resources (i. e. by reading from filesystem), they **must** tell about that. This information is used to invalidate cacheable loaders and recompile in watch mode.
+如果加载器用到了额外的资源（比如说读取文件系统），那么这些资源**必须**被告知。这些信息将用于区别可缓存加载器，还是在watch状态下的重编译
+```js
+    // Loader adding a header
+    var path = require("path");
+    module.exports = function(source) {
+        this.cacheable();
+        var callback = this.async();
+        var headerPath = path.resolve("header.js");
+        this.addDependency(headerPath);
+        fs.readFile(headerPath, "utf-8", function(err, header) {
+            if(err) return callback(err);
+            callback(null, header + "\n" + source);
+        });
+    };
+```
+### 解决依赖
 
-``` javascript
-// Loader adding a header
-var path = require("path");
-module.exports = function(source) {
-	this.cacheable();
-	var callback = this.async();
-	var headerPath = path.resolve("header.js");
-	this.addDependency(headerPath);
-	fs.readFile(headerPath, "utf-8", function(err, header) {
-		if(err) return callback(err);
-		callback(null, header + "\n" + source);
-	});
-};
+在很多语言里都会有一下schema来指定依赖。比如在css中我们用`@import` `url`. 这些依赖管理应该通过模块系统解决
+两点：
+*  把他们转化为`require`.
+*   运用`this.resolve()`来解决路径问题.
+
+例1: 
+  css-loader: 
+  css-loader将依赖转换成`require`，通过`require`来替换`import`去加载别的样式表模块以及替代`url`去取资源文件.
+  
+例2:
+
+  less-loader:
+
+  less-loader不能直接将`@import`转化成`require`,因为所有的less文件需要被编译进一个通道里去跟踪`variables`和`mixins`。所以less－loader扩展了自己的路径解决逻辑。这个定制的逻辑运用了`this.resolve`函数去解决模块系统配置的文件路径。
+  
+如果某种语言只接受相对的urls（比如 css:`url(file)` 通常意味着`/file`)，所以有一个`~`符号来说明指向模块
+``` bash
+    url(file) -> require("./file")
+    url(~module) -> require("module")
+```
+### 提取公用的模块
+
+不要初始化很多公用的模块代码在每一个加载器执行的模块，创建一个（运行时）文件在加载器里，并且通过`require`来加载他
+
+### 不要潜入绝对路径
+
+不要把绝对路径放到模块的代码里面。这样当根目录被移动的时候会打破文件的哈希，有一个工具`stringifyRequest` 在`loader-utils`里面可以将绝对路径处理成相对路径
+
+比如
+```js
+    var loaderUtils = require("loader-utils");
+    return "var runtime = require(" +
+      loaderUtils.stringifyRequest(this, "!" + require.resolve("module/runtime")) +
+      ");";
 ```
 
-### resolve dependencies
-
-In many languages there is some schema to specify dependencies. i. e. in css there is `@import` and `url(...)`. These dependencies should be resolved by the module system.
-
-There are two options to do this:
-
-* Transform them to `require`s.
-* Use the `this.resolve` function to resolve the path
-
-Example 1 css-loader: The css-loader transform dependencies to `require`s, by replacing `@import`s with a require to the other stylesheet (processed with the css-loader too) and `url(...)` with a `require` to the referenced file.
-
-Example 2 less-loader: The less-loader cannot transform `@import`s to `require`s, because all less files need to be compiled in one pass to track variables and mixins. Therefore the less-loader extends the less compiler with a custom path resolving logic. This custom logic uses `this.resolve` to resolve the file with the configuration of the module system (aliasing, custom module directories, etc.).
-
-If the language only accept relative urls (like css: `url(file)` always means `./file`), there is the `~`-convection to specify references to modules:
-
-``` text
-url(file) -> require("./file")
-url(~module) -> require("module")
+### 将使用的库作为`peerDependencies`来依赖
+使用`peerDependencies`可以允许应用开发者必要时在`package.json`去标示库的版本。依赖应该相对独立的去更新库而不用再发一个新的加载器版本
 ```
-
-### extract common code
-
-don't generate much code that is common in every module processed by that loader. Create a (runtime) file in the loader and generate a `require` to that common code.
-
-### should not embed absolute paths
-
-don't put absolute paths in to the module code. They break hashing when the root for the project is moved. There is a method [`stringifyRequest` in loader-utils](https://github.com/webpack/loader-utils#stringifyrequest) which converts an absolute path to an relative one.
-
-Example:
-
-``` js
-var loaderUtils = require("loader-utils");
-return "var runtime = require(" +
-  loaderUtils.stringifyRequest(this, "!" + require.resolve("module/runtime")) +
-  ");";
-```
-
-### use a library as `peerDependencies` when they wrap it
-
-using a peerDependency allows the application developer to specify the exact version in `package.json` if desired. The dependency should be relatively open to allow updating the library without needing to publish a new loader version.
-
-``` javascript
-"peerDependencies": {
-	"library": "^1.3.5"
-}
+    "peerDependencies": {
+        "library": "^1.3.5"
+    }
 ```
 
 ### programmable objects as `query`-option
 
-there are situations where your loader requires programmable objects with functions which cannot stringified as `query`-string. The less-loader, for example, provides the possibility to specify [LESS-plugins](https://github.com/webpack/less-loader#less-plugins). In these cases, a loader is allowed to extend webpack's `options`-object to retrieve that specific option. In order to avoid name collisions, however, it is important that the option is namespaced under the loader's camelCased npm-name.
-
+有些情况下你的加载器需要一些不可`stringify`为`query`字串的可编程对象的函数。
+比如lessloader，提供了一个`LESS-plugins` 允许加载器去扩展webpack的`options`去检索特定的选项。为了避免名字冲突然，option是在加载器的npm驼峰名字域下的
+```js
 Example:
 
-```javascript
-// webpack.config.js
-module.exports = {
-  ...
-  lessLoader: {
-    lessPlugins: [
-      new LessPluginCleanCSS({advanced: true})
-    ]
-  }
-};
+    // webpack.config.js
+    module.exports = {
+      ...
+      lessLoader: {
+        lessPlugins: [
+          new LessPluginCleanCSS({advanced: true})
+        ]
+      }
+    };
 ```
+The loader should also allow to specify the dded to the [list of loaders](list-of-loaders.html)
 
-The loader should also allow to specify the config-key (e.g. `lessLoader`) via `query`. See [discussion](https://github.com/webpack/less-loader/pull/40) and [example implementation](https://github.com/webpack/less-loader/blob/39f742b4624fceae6d9cf266e9554d07a32a9c14/index.js#L49-51).
+## [→](#read-more)Read more
 
-### be added to the [[list of loaders]]
-
-## Read more
-
-Read more about [[loaders]].
+Read more about [loaders](loaders.html).

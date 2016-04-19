@@ -1,14 +1,14 @@
-For big web apps it's not efficient to put all code into a single file, especially if some blocks of code are only required under some circumstances.
-Webpack has a feature to split your codebase into "chunks" which are loaded on demand. Some other bundlers call them "layers", "rollups", or "fragments". This feature is called "code splitting". 
+# 代码拆分
+对于大型的app，把所有代码放入一个文件是比较低效的，特别是一些代码只有在某些情况下才需要加载。
+Webpack 可以把你的代码拆分到“chunks”里面去，从而让你的代码可以按需加载。有些打包器把这种代码层 叫 “层”，“归纳集”，或者叫“片段”。这种处理代码的功能就叫“code splitting 代码拆分”
+这是一种可选的功能，你可以在代码里面定义你的的拆分点。Webpack 会处理好依赖，输出以及运行时。
+澄清一个公认的误解：代码拆分不仅仅是将公用代码提取到可共享的模块里面，更重要的是它能被用于拆分一些按需加载的模块。这样就可以保证初始文件加载变小，在应用需要的时候在加载需要的模块。
 
-It's an opt-in feature. You can define split points in your code base. Webpack takes care of the dependencies, output files and runtime stuff.
 
-To clarify a common misunderstanding: Code Splitting is not just about extracting common code into a shared chunk. The more notable feature is that Code Splitting can be used to split code into an **on demand** loaded chunk. This can keep the initial download small and downloads code on demand when requested by the application.
-
-
-## Defining a split point
+## 如何定义拆分点
 
 AMD and CommonJs specify different methods to load code on demand. Both are supported and act as split points:
+AMD 和 CommonJs 有指定的方法去做按需加载，都支持并且和扮演拆分点的角色
 
 ### CommonJs: `require.ensure`
 
@@ -22,8 +22,8 @@ Example:
 
 ``` javascript
 require.ensure(["module-a", "module-b"], function(require) {
-	var a = require("module-a");
-	// ...
+  var a = require("module-a");
+  // ...
 });
 ```
 
@@ -43,7 +43,7 @@ Example:
 
 ``` javascript
 require(["module-a", "module-b"], function(a, b) {
-	// ...
+  // ...
 });
 ```
 
@@ -76,15 +76,18 @@ require.ensure([], function(require) {
 })
 ```
 
-## Chunk content
+## 模块内容
 
-All dependencies at a split point go into a new chunk. Dependencies are also recursively added.
-
-If you pass a function expression (or bound function expression) as callback to the split point, webpack automatically puts all dependencies required in this function expression into the chunk too.
-
+在拆分点的所有依赖进入到一个新的模块，依赖也被递归的添加进去。
+如果你的拆分点代码传入了一个回调函数，webpack也会将回调里面的依赖自动的驾到chunk上的。
 
 
-## Chunk optimization
+## Chunk 优化
+如果两个`chunks`包涵相同的`modules`,他们将会被合并到一个，这会导致`chunks`有多个父级依赖。
+
+如果一个`modoule`在所有的`chunk`父级可用，它将从`chunk`中被移除。
+
+如果一个chunk包涵别的chunk的所有modules，这个chunk将被保存，并最终出现多个chunks
 
 If two chunks contain the same modules, they are merged into one. This can cause chunks to have multiple parents.
 
@@ -161,9 +164,9 @@ Example:
 ``` javascript
 var webpack = require("webpack");
 module.exports = {
-	entry: { a: "./a", b: "./b" },
-	output: { filename: "[name].js" },
-	plugins: [ new webpack.optimize.CommonsChunkPlugin("init.js") ]
+  entry: { a: "./a", b: "./b" },
+  output: { filename: "[name].js" },
+  plugins: [ new webpack.optimize.CommonsChunkPlugin("init.js") ]
 }
 ```
 

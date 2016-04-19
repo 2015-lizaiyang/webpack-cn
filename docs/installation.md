@@ -1,52 +1,51 @@
+# 安装
+
 ## node.js
 
-Install [node.js](http://nodejs.org).
+安装 [node.js][node.js]。
 
-node.js comes with a package manager called `npm`.
+其中，node.js 内置了一个叫做 `npm` 的包管理工具。
 
 ## webpack
 
-webpack can be installed through `npm`:
+通过 `npm` 安装 webpack：
 
-``` sh
+```bash
 $ npm install webpack -g
 ```
 
-webpack is now installed globally and the `webpack` command is available.
+这样，webpack 将被安装为全局工具，同时，也提供了一个 `webpack` 的命令。
 
-## Use webpack in a project
+## 在项目中使用 webpack
 
-It's the best to have webpack also as dependency in your project. Through this you can choose a local webpack version and will not be forced to use the single global one.
+最好的方法是把 webpack 作为项目的依赖，这样，每个项目都可以使用自己所需要的版本而不必依赖于全局的 webpack。
 
-Add a `package.json` configuration file for `npm` with:
+通过 `npm` 来增加一个 `package.json` 文件：
 
-``` sh
+```bash
 $ npm init
 ```
 
-The answers to the questions are not so important if you don't want to publish your project to npm.
+如果不把项目发布到 npm 上，上述命令中要求回答的问题的答案则不是很重要。
 
-Install and add `webpack` to the `package.json` with:
+使用下面的命令来安装 `webpack` 并把其添加到 `packeage.json` 中：
 
-``` sh
+```bash
 $ npm install webpack --save-dev
 ```
 
-## Versions
+## 版本
 
-There are two versions of webpack available. The stable one and a beta version. The beta version is marked with a `-beta` in the version string. The beta version may contain fragile changes or experimental features and is less tested. See [[changelog]] for differences. For serious stuff you should use the stable version:
+webpack 有稳定版和 beta 版两个可用的版本，其中，beta 版本在版本号中添加了 `-beta` 的标识。beta 版本可能带有很多不稳定变更或实验性的功能，并且未完全测试。可查看[变更记录][changelog]来看各版本的差别。正式项目中应该使用稳定版本。
 
-``` sh
+```bash
 $ npm install webpack@1.2.x --save-dev
 ```
 
-## Dev Tools
-If you want to use dev tools you should install it:
-``` sh
-$ npm install webpack-dev-server --save-dev
-```
+## 延伸阅读
 
+更多可阅读[使用][usage]。
 
-## Continue reading
-
-You can continue reading [[Usage]].
+[node.js]: http://nodejs.org
+[changelog]: changelog.md
+[usage]: usage.md
