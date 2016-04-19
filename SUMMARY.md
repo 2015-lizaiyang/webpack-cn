@@ -26,7 +26,7 @@
    * [优化](chapter3/Optimization.md)
    * [长期缓存](chapter3/long_term_cashing.md)
    * [如何编写loader](chapter3/ru_he_bian_xie_loader.md)
-   * 如何编写插件
+   * [如何编写插件](chapter3/ru_he_bian_xie_cha_jian.md)
    * 多个入口的代码分割
    * 库和扩展
    * SHIMMING MODULES
