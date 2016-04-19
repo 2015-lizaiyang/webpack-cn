@@ -70,7 +70,6 @@
   * Contributing
 
 
->>>>>>> new-wiki-doc
 ## how to work cooperatively
 1. 安装[gitbook](https://github.com/GitbookIO/gitbook) 客户端
 
