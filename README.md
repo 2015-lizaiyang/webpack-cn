@@ -144,3 +144,5 @@ Serving book on http://localhost:4000
   * [[Ideas]]
   * Contributing
 
+
+[Motivation]:docs/motivation.md
