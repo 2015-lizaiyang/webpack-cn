@@ -7,116 +7,65 @@
 * [关于文档](README.md)
 * [概览](docs/home.md)
 * 开始
-  * [动机][Motivation]
-  * [webpack是什么][What is webpack? | What is webpack]
-  * [安装][Installation]
-  * [用法][Usage]
-  * Require Modules
-  * Vendor Modules
-  * [Using Loaders]
-  * [Using Plugins]
-  * [Dev Tools]
-  * [Troubleshooting]
+   * [动机](docs/motivation.md)
+   * [webpack是什么](docs/what-is-webpack.md)
+   * [安装](docs/installation.md)
+   * [用法](docs/usage.md)
+   * Require Modules
+   * Vendor Modules
+   * [Using Loaders](docs/using-loaders.md)
+   * [Using Plugins](docs/using-plugins.md)
+   * [Dev Tools](docs/dev-tools.md)
+   * [Troubleshooting](docs/troubleshooting.md)
 * Tutorials and examples
-  * [Getting started](http://webpack.github.io/docs/tutorials/getting-started/)
-  * [List of tutorials]
-  * [examples]
+   * [Getting started](http://webpack.github.io/docs/tutorials/getting-started/)
+   * [List of tutorials](docs/list-of-tutorials.md)
+   * [examples](docs/examples.md)
 * Guides
-  * [CommonJs]
-  * [AMD]
-  * [webpack for browserify users]
-  * [代码拆分][Code Splitting]
-  * [Stylesheets]
-  * [性能优化][Optimization]
-  * [Long-term Caching]
-  * [如何编写loader][How to write a loader]
-  * [How to write a plugin]
-  * [Multiple entry points]
-  * [Library and externals]
-  * [Shimming modules]
-  * [Testing]
-  * [Build performance]
-  * [Hot Module Replacement with webpack]
-  * [Comparison]
+   * [CommonJs](docs/commonjs.md)
+   * [AMD](docs/amd.md)
+   * [webpack for browserify users](docs/webpack-for-browserify-users.md)
+   * [代码拆分](docs/code-splitting.md)
+   * [Stylesheets](docs/stylesheets.md)
+   * [性能优化](docs/optimization.md)
+   * [Long-term Caching](docs/long-term-caching.md)
+   * [如何编写loader](docs/how-to-write-a-loader.md)
+   * [How to write a plugin](docs/how-to-write-a-plugin.md)
+   * [Multiple entry points](docs/multiple-entry-points.md)
+   * [Library and externals](docs/library-and-externals.md)
+   * [Shimming modules](docs/shimming-modules.md)
+   * [Testing](docs/testing.md)
+   * [Build performance](docs/build-performance.md)
+   * [Hot Module Replacement with webpack](docs/hot-module-replacement-with-webpack)md]
+   * [Comparison](docs/comparison.md)
 * webpack with
-  * [grunt | Usage with grunt]
-  * [使用gulp][gulp | Usage with gulp]
-  * [bower | Usage with bower]
-  * [karma | Usage with karma]
+   * [grunt | Usage with grunt](docs/usage-with-grunt.md)
+   * [gulp | 使用gulp](docs/usage-with-gulp.md)
+   * [bower | Usage with bower](docs/usage-with-bower.md)
+   * [karma | Usage with karma](docs/usage-with-karma.md)
 * Lists
-  * [loader conventions]
-  * [List of loaders]
-  * [List of plugins]
-  * [List of tutorials]
-  * [List of hints]
-* API
-  * [Configuration]
-  * [CLI]
-  * [Node.js API]
-  * [API in modules]
-  * [Loaders]
-  * [Plugins]
-  * [Context]
-  * [Resolving]
-  * [Hot Module Replacement]
-  * Dev Tools
-    * [webpack-dev-server]
-    * [webpack-dev-middleware]
+   * [loader conventions](docs/loader-conventions.md)
+   * [List of loaders](docs/list-of-loaders.md)
+   * [List of plugins](docs/list-of-plugins.md)
+   * [List of tutorials](docs/list-of-tutorials.md)
+   * [List of hints](docs/list-of-hints.md)
+   * [Configuration](docs/configuration.md)
+   * [CLI](docs/cli.md)
+   * [Node.js API](docs/node.js-api.md)
+   * [API in modules](docs/api-in-modules.md)
+   * [Loaders](docs/loaders.md)
+   * [Plugins](docs/plugins.md)
+   * [Context](docs/context.md)
+   * [Resolving](docs/resolving.md)
+   * [Hot Module Replacement](docs/hot-module-replacement.md)
+   * Dev Tools
+      * [webpack-dev-server](docs/webpack-dev-server.md)
+      * [webpack-dev-middleware](docs/webpack-dev-middleware.md)
 * Development
-  * [Changelog]
-  * [Roadmap]
-  * [Ideas]
-  * Contributing
-
-[Motivation]:[docs/motivation.md]
-[What is webpack? | What is webpack]:[docs/what-is-webpack.md]
-[Installation]:[docs/installation.md]
-[Usage]:[docs/usage.md]
-[Using Loaders]:[docs/using-loaders.md]
-[Using Plugins]:[docs/using-plugins.md]
-[Dev Tools]:[docs/dev-tools.md]
-[Troubleshooting]:[docs/troubleshooting.md]
-[List of tutorials]:[docs/list-of-tutorials.md]
-[examples]:[docs/examples.md]
-[CommonJs]:[docs/commonjs.md]
-[AMD]:[docs/amd.md]
-[webpack for browserify users]:[docs/webpack-for-browserify-users.md]
-[Code Splitting]:[docs/code-splitting.md]
-[Stylesheets]:[docs/stylesheets.md]
-[Optimization]:[docs/optimization.md]
-[Long-term Caching]:[docs/long-term-caching.md]
-[How to write a loader]:[docs/how-to-write-a-loader.md]
-[How to write a plugin]:[docs/how-to-write-a-plugin.md]
-[Multiple entry points]:[docs/multiple-entry-points.md]
-[Library and externals]:[docs/library-and-externals.md]
-[Shimming modules]:[docs/shimming-modules.md]
-[Testing]:[docs/testing.md]
-[Build performance]:[docs/build-performance.md]
-[Hot Module Replacement with webpack]:[docs/hot-module-replacement-with-webpack.md]
-[Comparison]:[docs/comparison.md]
-[grunt | Usage with grunt]:[docs/usage-with-grunt.md]
-[gulp | Usage with gulp]:[docs/usage-with-gulp.md]
-[bower | Usage with bower]:[docs/usage-with-bower.md]
-[karma | Usage with karma]:[docs/usage-with-karma.md]
-[loader conventions]:[docs/loader-conventions.md]
-[List of loaders]:[docs/list-of-loaders.md]
-[List of plugins]:[docs/list-of-plugins.md]
-[List of tutorials]:[docs/list-of-tutorials.md]
-[List of hints]:[docs/list-of-hints.md]
-[Configuration]:[docs/configuration.md]
-[CLI]:[docs/cli.md]
-[Node.js API]:[docs/node.js-api.md]
-[API in modules]:[docs/api-in-modules.md]
-[Loaders]:[docs/loaders.md]
-[Plugins]:[docs/plugins.md]
-[Context]:[docs/context.md]
-[Resolving]:[docs/resolving.md]
-[Hot Module Replacement]:[docs/hot-module-replacement.md]
-[webpack-dev-server]:[docs/webpack-dev-server.md]
-[webpack-dev-middleware]:[docs/webpack-dev-middleware.md]
-[Changelog]:[docs/changelog.md]
-[Roadmap]:[docs/roadmap.md]
-[Ideas]:[docs/ideas.md]
+   * [Changelog](docs/changelog.md)
+   * [Roadmap](docs/roadmap.md)
+   * [Ideas](docs/ideas.md)
+   * Contributing
 
 ## how to work cooperatively
 1. 安装[gitbook](https://github.com/GitbookIO/gitbook) 客户端
