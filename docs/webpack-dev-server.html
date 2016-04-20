@@ -1,0 +1,1281 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>webpack-dev-server | webpack doc</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.2">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../docs/webpack-dev-middleware.html" />
+    
+    
+    <link rel="prev" href="../docs/hot-module-replacement.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="6.14.1"
+        data-chapter-title="webpack-dev-server"
+        data-filepath="docs/webpack-dev-server.md"
+        data-basepath=".."
+        data-revision="Tue Apr 19 2016 19:48:57 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        关于文档
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="docs/home.html">
+            
+                
+                    <a href="../docs/home.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        概览
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> 开始</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="docs/motivation.html">
+            
+                
+                    <a href="../docs/motivation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        动机
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="docs/what-is-webpack.html">
+            
+                
+                    <a href="../docs/what-is-webpack.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        webpack是什么
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="docs/installation.html">
+            
+                
+                    <a href="../docs/installation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        安装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="docs/usage.html">
+            
+                
+                    <a href="../docs/usage.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        用法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+            <span><b>2.5.</b> Require Modules</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" >
+            
+            <span><b>2.6.</b> Vendor Modules</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="docs/using-loaders.html">
+            
+                
+                    <a href="../docs/using-loaders.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        Using Loaders
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="docs/using-plugins.html">
+            
+                
+                    <a href="../docs/using-plugins.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        Using Plugins
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="docs/dev-tools.html">
+            
+                
+                    <a href="../docs/dev-tools.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.9.</b>
+                        
+                        Dev Tools
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="docs/troubleshooting.html">
+            
+                
+                    <a href="../docs/troubleshooting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.10.</b>
+                        
+                        Troubleshooting
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" >
+            
+            <span><b>3.</b> Tutorials and examples</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" >
+            
+                
+                    <a target="_blank" href="http:/webpack.github.io/docs/tutorials/getting-started/">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Getting started
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="docs/list-of-tutorials.html">
+            
+                
+                    <a href="../docs/list-of-tutorials.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        List of tutorials
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="docs/examples.html">
+            
+                
+                    <a href="../docs/examples.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        examples
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> Guides</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="docs/commonjs.html">
+            
+                
+                    <a href="../docs/commonjs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        CommonJs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="docs/amd.html">
+            
+                
+                    <a href="../docs/amd.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        AMD
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="docs/webpack-for-browserify-users.html">
+            
+                
+                    <a href="../docs/webpack-for-browserify-users.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        webpack for browserify users
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="docs/code-splitting.html">
+            
+                
+                    <a href="../docs/code-splitting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        代码拆分
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="docs/stylesheets.html">
+            
+                
+                    <a href="../docs/stylesheets.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        Stylesheets
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="docs/optimization.html">
+            
+                
+                    <a href="../docs/optimization.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                        性能优化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="docs/long-term-caching.html">
+            
+                
+                    <a href="../docs/long-term-caching.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.</b>
+                        
+                        Long-term Caching
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="docs/how-to-write-a-loader.html">
+            
+                
+                    <a href="../docs/how-to-write-a-loader.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.8.</b>
+                        
+                        如何编写loader
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="docs/how-to-write-a-plugin.html">
+            
+                
+                    <a href="../docs/how-to-write-a-plugin.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.</b>
+                        
+                        How to write a plugin
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="docs/multiple-entry-points.html">
+            
+                
+                    <a href="../docs/multiple-entry-points.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.10.</b>
+                        
+                        Multiple entry points
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="docs/library-and-externals.html">
+            
+                
+                    <a href="../docs/library-and-externals.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.11.</b>
+                        
+                        Library and externals
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="docs/shimming-modules.html">
+            
+                
+                    <a href="../docs/shimming-modules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.12.</b>
+                        
+                        Shimming modules
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="docs/testing.html">
+            
+                
+                    <a href="../docs/testing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.13.</b>
+                        
+                        Testing
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="docs/build-performance.html">
+            
+                
+                    <a href="../docs/build-performance.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.14.</b>
+                        
+                        Build performance
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="docs/hot-module-replacement-with-webpack.html">
+            
+            <span><b>4.15.</b> Hot Module Replacement with webpack</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="docs/comparison.html">
+            
+                
+                    <a href="../docs/comparison.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.16.</b>
+                        
+                        Comparison
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" >
+            
+            <span><b>5.</b> webpack with</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="docs/usage-with-grunt.html">
+            
+                
+                    <a href="../docs/usage-with-grunt.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        grunt | Usage with grunt
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="docs/usage-with-gulp.html">
+            
+                
+                    <a href="../docs/usage-with-gulp.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        gulp | 使用gulp
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="docs/usage-with-bower.html">
+            
+                
+                    <a href="../docs/usage-with-bower.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        bower | Usage with bower
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="docs/usage-with-karma.html">
+            
+                
+                    <a href="../docs/usage-with-karma.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        karma | Usage with karma
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" >
+            
+            <span><b>6.</b> Lists</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="docs/loader-conventions.html">
+            
+                
+                    <a href="../docs/loader-conventions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        loader conventions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="docs/list-of-loaders.html">
+            
+                
+                    <a href="../docs/list-of-loaders.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        List of loaders
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="docs/list-of-plugins.html">
+            
+                
+                    <a href="../docs/list-of-plugins.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        List of plugins
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="docs/list-of-hints.html">
+            
+                
+                    <a href="../docs/list-of-hints.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        List of hints
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="docs/configuration.html">
+            
+                
+                    <a href="../docs/configuration.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        Configuration
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="docs/cli.html">
+            
+                
+                    <a href="../docs/cli.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        CLI
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="docs/node.js-api.html">
+            
+                
+                    <a href="../docs/node.js-api.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.7.</b>
+                        
+                        Node.js API
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="docs/api-in-modules.html">
+            
+                
+                    <a href="../docs/api-in-modules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.8.</b>
+                        
+                        API in modules
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="docs/loaders.html">
+            
+                
+                    <a href="../docs/loaders.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.9.</b>
+                        
+                        Loaders
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="docs/plugins.html">
+            
+                
+                    <a href="../docs/plugins.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.10.</b>
+                        
+                        Plugins
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="docs/context.html">
+            
+                
+                    <a href="../docs/context.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.11.</b>
+                        
+                        Context
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="docs/resolving.html">
+            
+                
+                    <a href="../docs/resolving.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.12.</b>
+                        
+                        Resolving
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="docs/hot-module-replacement.html">
+            
+                
+                    <a href="../docs/hot-module-replacement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.13.</b>
+                        
+                        Hot Module Replacement
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" >
+            
+            <span><b>6.14.</b> Dev Tools</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="6.14.1" data-path="docs/webpack-dev-server.html">
+            
+                
+                    <a href="../docs/webpack-dev-server.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.14.1.</b>
+                        
+                        webpack-dev-server
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14.2" data-path="docs/webpack-dev-middleware.html">
+            
+                
+                    <a href="../docs/webpack-dev-middleware.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.14.2.</b>
+                        
+                        webpack-dev-middleware
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" >
+            
+            <span><b>7.</b> Development</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="docs/changelog.html">
+            
+                
+                    <a href="../docs/changelog.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        Changelog
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="docs/roadmap.html">
+            
+                
+                    <a href="../docs/roadmap.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        Roadmap
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="docs/ideas.html">
+            
+                
+                    <a href="../docs/ideas.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        Ideas
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" >
+            
+            <span><b>7.4.</b> Contributing</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >webpack doc</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <p>The <em>webpack-dev-server</em> is a little node.js <a href="http://expressjs.com/" target="_blank">Express</a> server, which uses the <em>[[webpack-dev-middleware]]</em> to serve a <em>webpack bundle</em>. It also has a little runtime which is connected to the server via <a href="http://socket.io/" target="_blank">Socket.IO</a>. The server emits information about the compilation state to the client, which reacts to those events. You can choose between different modes, depending on your needs. So let&apos;s say you have the following config file:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>);
+<span class="hljs-built_in">module</span>.exports = {
+  entry: {
+    app: [<span class="hljs-string">&quot;./app/main.js&quot;</span>]
+  },
+  output: {
+    path: path.resolve(__dirname, <span class="hljs-string">&quot;build&quot;</span>),
+    publicPath: <span class="hljs-string">&quot;/assets/&quot;</span>,
+    filename: <span class="hljs-string">&quot;bundle.js&quot;</span>
+  }
+};
+</code></pre>
+<p>You have an <code>app</code> folder with your initial entry point that <em>webpack</em> will bundle into a <code>bundle.js</code> file in the <code>build</code> folder.</p>
+<h2 id="content-base">Content Base</h2>
+<p>The <em>webpack-dev-server</em> will serve the files in the current directory, unless you configure a specific content base. </p>
+<pre><code class="lang-sh">$ webpack-dev-server --content-base build/
+</code></pre>
+<p>Using this config <em>webpack-dev-server</em> will serve the static files in your <code>build</code> folder. It&apos;ll watch your source files for changes and when changes are made the <em>bundle</em> will be recompiled. This modified <em>bundle</em> is served from memory at the relative path specified in <code>publicPath</code> (see <a href="#api">API</a>). It will not be written to your configured output directory. Where a <em>bundle</em> already exists at the same url path the <em>bundle</em> in memory will take precedence (by default).</p>
+<p>For example with the configuration above your <em>bundle</em> will be available at <code>localhost:8080/assets/bundle.js</code></p>
+<p>To load your bundled files, you will need to create an <code>index.html</code> file in the <code>build</code> folder from which static files are served (<code>--content-base</code> option). e.g:</p>
+<pre><code class="lang-html"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">&quot;UTF-8&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;bundle.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<p>By default go to <code>localhost:8080/</code> to launch your app. For example with the configuration above (with publicPath) go to <code>localhost:8080/assets/</code>.</p>
+<h2 id="automatic-refresh">Automatic Refresh</h2>
+<p>The <em>webpack-dev-server</em> supports multiple modes to automatic refresh the page:</p>
+<ul>
+<li>Iframe mode (page is embedded in an iframe and reloaded on change)</li>
+<li>Inline mode (a small webpack-dev-server client entry is added to the bundle which refresh the page on change)</li>
+</ul>
+<p>Each mode also supports Hot Module Replacement in which the bundle is notified that a change happened instead of a full page reload. A Hot Module Replacement runtime could then load the updated modules and inject them into the running app.</p>
+<h3 id="iframe-mode">Iframe mode</h3>
+<p>To use the iframe mode no additional configuration is needed. Just navigate the browser to <code>http://&lt;host&gt;:&lt;port&gt;/webpack-dev-server/&lt;path&gt;</code>. I. e. with the above configuration <code>http://localhost:8080/webpack-dev-server/index.html</code>.</p>
+<ul>
+<li>No configuration change needed.</li>
+<li>Nice information bar on top of your app.</li>
+<li>Url changes in the app are <strong>not</strong> reflected in the browsers url bar.</li>
+</ul>
+<h3 id="inline-mode">Inline mode</h3>
+<p>To use the inline mode, specify <code>--inline</code> on the command line (you cannot specify it in the configuration). This adds the webpack-dev-server client entry point to the webpack configuration. There is no change in the url required. Just navigate to <code>http://&lt;host&gt;:&lt;port&gt;/&lt;path&gt;</code>. I. e. with the above configuration <code>http://localhost:8080/index.html</code>.</p>
+<ul>
+<li>Command line flag needed.</li>
+<li>Status information in the browser log.</li>
+<li>Url changes in the app are reflected in the browsers url bar.</li>
+</ul>
+<h4 id="inline-mode-with-nodejs-api">Inline mode with node.js API</h4>
+<p>There is no <code>inline: true</code> flag in the webpack-dev-server configuration, because the webpack-dev-server module has no access to the webpack configuration. Instead the user must add the webpack-dev-server client entry point to the webpack configuration.</p>
+<p>To do this just add <code>webpack-dev-server/client?http://&lt;path&gt;:&lt;port&gt;/</code> to (all) entry point(s). I. e. with the above configuration:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> config = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./webpack.config.js&quot;</span>);
+config.entry.app.unshift(<span class="hljs-string">&quot;webpack-dev-server/client?http://localhost:8080/&quot;</span>);
+<span class="hljs-keyword">var</span> compiler = webpack(config);
+<span class="hljs-keyword">var</span> server = <span class="hljs-keyword">new</span> WebpackDevServer(compiler, {...});
+server.listen(<span class="hljs-number">8080</span>);
+</code></pre>
+<h4 id="inline-mode-in-html">Inline mode in HTML</h4>
+<p>There is also the option to add a reference to the webpack-dev-server client script to the HTML page:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;http://localhost:8080/webpack-dev-server.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<h3 id="hot-module-replacement">Hot Module Replacement</h3>
+<p>To enable Hot Module Replacement with the webpack-dev-server specify <code>--hot</code> on the command line. This adds the <code>HotModuleReplacementPlugin</code> to the webpack configuration.</p>
+<p>The easiest way to use Hot Module Replacement with the webpack-dev-server is to use the inline mode.</p>
+<h4 id="hot-module-replacement-with-inline-mode-on-cli">Hot Module Replacement with Inline mode on CLI</h4>
+<p>Nothing more is needed. <code>--inline --hot</code> does all the relevant work automatically. The CLI of the webpack-dev-server automatically adds the special <code>webpack/hot/dev-server</code> entry point to your configuration.</p>
+<p>Just navigate to <code>http://&lt;host&gt;:&lt;port&gt;/&lt;path&gt;</code> and let the magic happen.</p>
+<p>You should see the following messages in the browser log:</p>
+<pre><code class="lang-text">[HMR] Waiting for update signal from WDS...
+[WDS] Hot Module Replacement enabled.
+</code></pre>
+<p>Messages prefixed with <code>[HMR]</code> originate from the <code>webpack/hot/dev-server</code> module. Messages prefixed with <code>[WDS]</code> originate from the webpack-dev-server client.</p>
+<p>It&apos;s important to specify a correct <code>output.publicPath</code> otherwise the hot update chunks cannot be loaded.</p>
+<h4 id="hot-module-replacement-with-nodejs-api">Hot Module Replacement with node.js API</h4>
+<p>Similar to the inline mode the user must make changes to the webpack configuration.</p>
+<p>Three changes are needed:</p>
+<ul>
+<li>add an entry point to the webpack configuration: <code>webpack/hot/dev-server</code>.</li>
+<li>add the <code>new webpack.HotModuleReplacementPlugin()</code> to the webpack configuration.</li>
+<li>add <code>hot: true</code> to the webpack-dev-server configuration to enable HMR on the server.</li>
+</ul>
+<p>I. e. with the above configuration:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> config = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./webpack.config.js&quot;</span>);
+config.entry.app.unshift(<span class="hljs-string">&quot;webpack-dev-server/client?http://localhost:8080/&quot;</span>, <span class="hljs-string">&quot;webpack/hot/dev-server&quot;</span>);
+<span class="hljs-keyword">var</span> compiler = webpack(config);
+<span class="hljs-keyword">var</span> server = <span class="hljs-keyword">new</span> webpackDevServer(compiler, {
+  hot: <span class="hljs-literal">true</span>
+  ...
+});
+server.listen(<span class="hljs-number">8080</span>);
+</code></pre>
+<h3 id="working-with-editorsides-supporting-safe-write">Working with editors/IDEs supporting &quot;safe write&quot;</h3>
+<p>Note that many editors support &quot;safe write&quot; feature and have it enabled by default, which makes dev server unable to watch files correctly. &quot;Safe write&quot; means changes are not written directly to original file but to temporary one instead, which is renamed and replaces original file when save operation is completed successfully. This behaviour causes file watcher to lose the track because the original file is removed. In order to prevent this issue, you have to disable &quot;safe write&quot; feature in your editor.</p>
+<ul>
+<li><strong>VIM</strong> - set &quot;:set backupcopy=yes&quot; (<a href="http://vimdoc.sourceforge.net/htmldoc/options.html#&apos;backupcopy&apos;" target="_blank">see documentation</a>)</li>
+<li><strong>IntelliJ</strong> - Settings -&gt; System Settings -&gt; Synchronization -&gt; disable &quot;safe write&quot; (may differ in various IntelliJ IDEs, but you can still use the search feature)</li>
+</ul>
+<h2 id="proxy">Proxy</h2>
+<p>The Webpack dev server makes use of <a href="https://github.com/nodejitsu/node-http-proxy" target="_blank">node-http-proxy</a> to optionally proxy requests to a separate, possibly external, backend server. A sample configuration is below.</p>
+<pre><code class="lang-javascript">proxy: {
+  <span class="hljs-string">&apos;/some/path*&apos;</span>: {
+    target: <span class="hljs-string">&apos;https://other-server.example.com&apos;</span>,
+    secure: <span class="hljs-literal">false</span>
+  }
+}
+</code></pre>
+<p>See the <a href="https://github.com/nodejitsu/node-http-proxy#options" target="_blank">node-http-proxy Options documentation</a> for available configuration.</p>
+<p>Proxying some URLs can be useful for a variety of configurations. One example is to serve JavaScript files and other static assets from the local development server but still send API requests to an external backend development server. Another example is splitting requests between two separate backend servers such as an authentication backend and a application backend.</p>
+<h3 id="bypass-the-proxy">Bypass the Proxy</h3>
+<p>(Added in v1.13.0.) The proxy can be optionally bypassed based on the return from a function. The function can inspect the HTTP request, response, and any given proxy options. It must return either <code>false</code> or a URL path that will be served <em>instead</em> of continuing to proxy the request.</p>
+<p>For example, the configuration below will not proxy HTTP requests that originate from a browser. This is similar to the <code>historyApiFallback</code> option: browser requests will receive the HTML file as normal but API requests will be proxied to the backend server.</p>
+<pre><code class="lang-javascript">proxy: {
+  <span class="hljs-string">&apos;/some/path*&apos;</span>: {
+    target: <span class="hljs-string">&apos;https://other-server.example.com&apos;</span>,
+    secure: <span class="hljs-literal">false</span>,
+    bypass: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res, proxyOptions</span>) </span>{
+      <span class="hljs-keyword">if</span> (req.headers.accept.indexOf(<span class="hljs-string">&apos;html&apos;</span>) !== -<span class="hljs-number">1</span>) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Skipping proxy for browser request.&apos;</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;/index.html&apos;</span>;
+    }
+  }
+}
+</code></pre>
+<h3 id="rewriting-urls-of-proxy-request">Rewriting URLs of proxy request</h3>
+<p>(Added in v???) The request to the proxy can be optionally rewritten by providing a function. The function can inspect and change the HTTP request.</p>
+<p>For example, the configuration below will rewrite the HTTP requests to remove the part <code>/api</code> at the beginning of the URL.</p>
+<pre><code class="lang-javascript">proxy: {
+  <span class="hljs-string">&apos;/api/*&apos;</span>: {
+    target: <span class="hljs-string">&apos;https://other-server.example.com&apos;</span>,
+    rewrite: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req</span>) </span>{
+      req.url = req.url.replace(<span class="hljs-regexp">/^\/api/</span>, <span class="hljs-string">&apos;&apos;</span>);
+    }
+  }
+}
+</code></pre>
+<h2 id="webpackdevserver-cli">webpack-dev-server CLI</h2>
+<pre><code class="lang-sh">$ webpack-dev-server &lt;entry&gt;
+</code></pre>
+<p>All <em>webpack</em> [[CLI|cli]] options are valid for the <em>webpack-dev-server</em> CLI too, but there is no <code>&lt;output&gt;</code> default argument. For the <em>webpack-dev-server</em> CLI a <code>webpack.config.js</code> (or the file passed by the <code>--config</code> option) is accepted as well.</p>
+<p>There are some additional options:</p>
+<ul>
+<li><code>--content-base &lt;file/directory/url/port&gt;</code>: base path for the content.</li>
+<li><code>--quiet</code>: don&apos;t output anything to the console.</li>
+<li><code>--no-info</code>: suppress boring information.</li>
+<li><code>--colors</code>: add some colors to the output.</li>
+<li><code>--no-colors</code>: don&apos;t use colors in the output.</li>
+<li><code>--compress</code>: use gzip compression.</li>
+<li><code>--host &lt;hostname/ip&gt;</code>: hostname or IP. <code>0.0.0.0</code> binds to all hosts.</li>
+<li><code>--port &lt;number&gt;</code>: port.</li>
+<li><code>--inline</code>: embed the <em>webpack-dev-server</em> runtime into the <em>bundle</em>.</li>
+<li><code>--hot</code>: adds the <code>HotModuleReplacementPlugin</code> and switch the server to <em>hot mode</em>. Note: make sure you don&apos;t add <code>HotModuleReplacementPlugin</code> twice.</li>
+<li><code>--hot --inline</code> also adds the <code>webpack/hot/dev-server</code> entry.</li>
+<li><code>--lazy</code>: no watching, compiles on request (cannot be combined with <code>--hot</code>).</li>
+<li><code>--https</code>: serves <em>webpack-dev-server</em> over HTTPS Protocol. Includes a self-signed certificate that is used when serving the requests.</li>
+<li><code>--cert</code>, <code>--cacert</code>, <code>--key</code>: Paths the certificate files.</li>
+<li><code>--open</code>: opens the url in default browser (for webpack-dev-server versions &gt; 2.0).</li>
+<li><code>--history-api-fallback</code>: enables support for history API fallback.</li>
+</ul>
+<h3 id="additional-configuration-options">Additional configuration options</h3>
+<p>When using the CLI it&apos;s possible to have the webpack-dev-server options in the configuration file under the key <code>devServer</code>. Options passed via CLI arguments override options in configuration file. For options under <code>devServer</code> see next section.</p>
+<p>Example</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-comment">// ...</span>
+  devServer: {
+    hot: <span class="hljs-literal">true</span>
+  }
+}
+</code></pre>
+<h2 id="api">API</h2>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> WebpackDevServer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;webpack-dev-server&quot;</span>);
+<span class="hljs-keyword">var</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;webpack&quot;</span>);
+
+<span class="hljs-keyword">var</span> compiler = webpack({
+  <span class="hljs-comment">// configuration</span>
+});
+<span class="hljs-keyword">var</span> server = <span class="hljs-keyword">new</span> WebpackDevServer(compiler, {
+  <span class="hljs-comment">// webpack-dev-server options</span>
+
+  contentBase: <span class="hljs-string">&quot;/path/to/directory&quot;</span>,
+  <span class="hljs-comment">// or: contentBase: &quot;http://localhost/&quot;,</span>
+
+  hot: <span class="hljs-literal">true</span>,
+  <span class="hljs-comment">// Enable special support for Hot Module Replacement</span>
+  <span class="hljs-comment">// Page is no longer updated, but a &quot;webpackHotUpdate&quot; message is send to the content</span>
+  <span class="hljs-comment">// Use &quot;webpack/hot/dev-server&quot; as additional module in your entry point</span>
+  <span class="hljs-comment">// Note: this does _not_ add the `HotModuleReplacementPlugin` like the CLI option does. </span>
+
+  <span class="hljs-comment">// Set this as true if you want to access dev server from arbitrary url.</span>
+  <span class="hljs-comment">// This is handy if you are using a html5 router.</span>
+  historyApiFallback: <span class="hljs-literal">false</span>,
+
+  <span class="hljs-comment">// Set this if you want to enable gzip compression for assets</span>
+  compress: <span class="hljs-literal">true</span>,
+
+  <span class="hljs-comment">// Set this if you want webpack-dev-server to delegate a single path to an arbitrary server.</span>
+  <span class="hljs-comment">// Use &quot;*&quot; to proxy all paths to the specified server.</span>
+  <span class="hljs-comment">// This is useful if you want to get rid of &apos;http://localhost:8080/&apos; in script[src],</span>
+  <span class="hljs-comment">// and has many other use cases (see https://github.com/webpack/webpack-dev-server/pull/127 ).</span>
+  proxy: {
+    <span class="hljs-string">&quot;*&quot;</span>: <span class="hljs-string">&quot;http://localhost:9090&quot;</span>
+  },
+
+  <span class="hljs-comment">// pass [static options](http://expressjs.com/en/4x/api.html#express.static) to inner express server</span>
+  staticOptions: {
+  },
+
+  <span class="hljs-comment">// webpack-dev-middleware options</span>
+  quiet: <span class="hljs-literal">false</span>,
+  noInfo: <span class="hljs-literal">false</span>,
+  lazy: <span class="hljs-literal">true</span>,
+  filename: <span class="hljs-string">&quot;bundle.js&quot;</span>,
+  watchOptions: {
+    aggregateTimeout: <span class="hljs-number">300</span>,
+    poll: <span class="hljs-number">1000</span>
+  },
+  publicPath: <span class="hljs-string">&quot;/assets/&quot;</span>,
+  headers: { <span class="hljs-string">&quot;X-Custom-Header&quot;</span>: <span class="hljs-string">&quot;yes&quot;</span> },
+  stats: { colors: <span class="hljs-literal">true</span> }
+});
+server.listen(<span class="hljs-number">8080</span>, <span class="hljs-string">&quot;localhost&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{});
+<span class="hljs-comment">// server.close();</span>
+</code></pre>
+<p>See <em>[[webpack-dev-middleware]]</em> for documentation on middleware options.</p>
+<p>Notice that <em>webpack configuration</em> is not passed to <code>WebpackDevServer</code> API, thus <code>devServer</code> option in webpack configuration is not used in this case. Also, there is no <em>inline mode</em> for <code>WebpackDevServer</code> API. <code>&lt;script src=&quot;http://localhost:8080/webpack-dev-server.js&quot;&gt;&lt;/script&gt;</code> should be inserted to HTML page manually.</p>
+<h3 id="the-historyapifallback-option">The <code>historyApiFallback</code> option</h3>
+<p>If you are using the HTML5 history API you probably need to serve your <code>index.html</code> in place of 404 responses, which can be done by setting <code>historyApiFallback: true</code>. However, if you have modified <code>output.publicPath</code> in your Webpack configuration, you need to specify the URL to redirect to. This is done using the <code>historyApiFallback.index</code> option:</p>
+<pre><code>// output.publicPath: &apos;/foo-app/&apos;
+historyApiFallback: {
+  index: &apos;/foo-app/&apos;
+}
+</code></pre><h2 id="combining-with-an-existing-server">Combining with an existing server</h2>
+<p>You may want to run a backend server or a mock of it in development. You should <strong>not</strong> use the <em>webpack-dev-server</em> as a backend. Its only purpose is to serve static (webpacked) assets.</p>
+<p>You can run two servers side-by-side: The <em>webpack-dev-server</em> and your backend server.</p>
+<p>In this case you need to teach the webpack-generated assets to make requests to the <em>webpack-dev-server</em> even when running on a HTML-page sent by the backend server. On the other side you need to teach your backend server to generate HTML pages that include <code>script</code> tags that point to assets on the <em>webpack-dev-server</em>. In addition to that you need a connection between the <em>webpack-dev-server</em> and the <em>webpack-dev-server</em> runtime to trigger reloads on recompilation.</p>
+<p>To teach <em>webpack</em> to make requests (for chunk loading or HMR) to the <em>webpack-dev-server</em> you need to provide <strong>a full URL in the <code>output.publicPath</code></strong> option.</p>
+<p>To make a connection between <em>webpack-dev-server</em> and its runtime best, use the <em>inline mode</em> with <code>--inline</code>. The <em>webpack-dev-server</em> CLI automatically includes an entry point which establishes a WebSocket connection. (You can also use the <em>iframe</em> mode if you point <code>--content-base</code> of the <em>webpack-dev-server</em> to your backend server.  <strong>If you need a websocket connection to your backend server</strong>, you&apos;ll have to use iframe mode.</p>
+<p>When you use the <em>inline mode</em> just open the backend server URL in your web browsers. (If you use the <em>iframe mode</em> open the <code>/webpack-dev-server/</code> prefixed URL of the <em>webpack-dev-server</em>.)</p>
+<p>Summary and example:</p>
+<ul>
+<li><em>webpack-dev-server</em> on port <code>8080</code>.</li>
+<li>backend server on port <code>9090</code>.</li>
+<li>generate HTML pages with <code>&lt;script src=&quot;http://localhost:8080/assets/bundle.js&quot;&gt;</code>.</li>
+<li>webpack configuration with <code>output.publicPath = &quot;http://localhost:8080/assets/&quot;</code>.</li>
+<li>when compiling files for production, use <code>--output-public-path /assets/</code>.</li>
+<li><em>inline mode</em>:<ul>
+<li><code>--inline</code>.</li>
+<li>open <code>http://localhost:9090</code>.</li>
+</ul>
+</li>
+<li>or <em>iframe mode</em>:<ul>
+<li><em>webpack-dev-server</em> <code>contentBase = &quot;http://localhost:9090/&quot;</code> (<code>--content-base</code>).</li>
+<li>open <code>http://localhost:8080/webpack-dev-server/</code>.</li>
+</ul>
+</li>
+</ul>
+<p>Or use the proxy option...</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../docs/hot-module-replacement.html" class="navigation navigation-prev " aria-label="Previous page: Hot Module Replacement"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../docs/webpack-dev-middleware.html" class="navigation navigation-next " aria-label="Next page: webpack-dev-middleware"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

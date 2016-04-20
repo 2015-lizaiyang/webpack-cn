@@ -1,0 +1,1163 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>代码拆分 | webpack doc</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.2">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../docs/stylesheets.html" />
+    
+    
+    <link rel="prev" href="../docs/webpack-for-browserify-users.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4.4"
+        data-chapter-title="代码拆分"
+        data-filepath="docs/code-splitting.md"
+        data-basepath=".."
+        data-revision="Tue Apr 19 2016 19:48:57 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        关于文档
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="docs/home.html">
+            
+                
+                    <a href="../docs/home.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        概览
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> 开始</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="docs/motivation.html">
+            
+                
+                    <a href="../docs/motivation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        动机
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="docs/what-is-webpack.html">
+            
+                
+                    <a href="../docs/what-is-webpack.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        webpack是什么
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="docs/installation.html">
+            
+                
+                    <a href="../docs/installation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        安装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="docs/usage.html">
+            
+                
+                    <a href="../docs/usage.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        用法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+            <span><b>2.5.</b> Require Modules</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" >
+            
+            <span><b>2.6.</b> Vendor Modules</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="docs/using-loaders.html">
+            
+                
+                    <a href="../docs/using-loaders.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        Using Loaders
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="docs/using-plugins.html">
+            
+                
+                    <a href="../docs/using-plugins.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        Using Plugins
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="docs/dev-tools.html">
+            
+                
+                    <a href="../docs/dev-tools.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.9.</b>
+                        
+                        Dev Tools
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="docs/troubleshooting.html">
+            
+                
+                    <a href="../docs/troubleshooting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.10.</b>
+                        
+                        Troubleshooting
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" >
+            
+            <span><b>3.</b> Tutorials and examples</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" >
+            
+                
+                    <a target="_blank" href="http:/webpack.github.io/docs/tutorials/getting-started/">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Getting started
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="docs/list-of-tutorials.html">
+            
+                
+                    <a href="../docs/list-of-tutorials.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        List of tutorials
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="docs/examples.html">
+            
+                
+                    <a href="../docs/examples.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        examples
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> Guides</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="docs/commonjs.html">
+            
+                
+                    <a href="../docs/commonjs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        CommonJs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="docs/amd.html">
+            
+                
+                    <a href="../docs/amd.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        AMD
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="docs/webpack-for-browserify-users.html">
+            
+                
+                    <a href="../docs/webpack-for-browserify-users.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        webpack for browserify users
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.4" data-path="docs/code-splitting.html">
+            
+                
+                    <a href="../docs/code-splitting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        代码拆分
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="docs/stylesheets.html">
+            
+                
+                    <a href="../docs/stylesheets.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        Stylesheets
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="docs/optimization.html">
+            
+                
+                    <a href="../docs/optimization.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                        性能优化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="docs/long-term-caching.html">
+            
+                
+                    <a href="../docs/long-term-caching.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.</b>
+                        
+                        Long-term Caching
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="docs/how-to-write-a-loader.html">
+            
+                
+                    <a href="../docs/how-to-write-a-loader.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.8.</b>
+                        
+                        如何编写loader
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="docs/how-to-write-a-plugin.html">
+            
+                
+                    <a href="../docs/how-to-write-a-plugin.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.</b>
+                        
+                        How to write a plugin
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="docs/multiple-entry-points.html">
+            
+                
+                    <a href="../docs/multiple-entry-points.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.10.</b>
+                        
+                        Multiple entry points
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="docs/library-and-externals.html">
+            
+                
+                    <a href="../docs/library-and-externals.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.11.</b>
+                        
+                        Library and externals
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="docs/shimming-modules.html">
+            
+                
+                    <a href="../docs/shimming-modules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.12.</b>
+                        
+                        Shimming modules
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="docs/testing.html">
+            
+                
+                    <a href="../docs/testing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.13.</b>
+                        
+                        Testing
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="docs/build-performance.html">
+            
+                
+                    <a href="../docs/build-performance.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.14.</b>
+                        
+                        Build performance
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="docs/hot-module-replacement-with-webpack.html">
+            
+            <span><b>4.15.</b> Hot Module Replacement with webpack</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="docs/comparison.html">
+            
+                
+                    <a href="../docs/comparison.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.16.</b>
+                        
+                        Comparison
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" >
+            
+            <span><b>5.</b> webpack with</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="docs/usage-with-grunt.html">
+            
+                
+                    <a href="../docs/usage-with-grunt.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        grunt | Usage with grunt
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="docs/usage-with-gulp.html">
+            
+                
+                    <a href="../docs/usage-with-gulp.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        gulp | 使用gulp
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="docs/usage-with-bower.html">
+            
+                
+                    <a href="../docs/usage-with-bower.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        bower | Usage with bower
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="docs/usage-with-karma.html">
+            
+                
+                    <a href="../docs/usage-with-karma.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        karma | Usage with karma
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" >
+            
+            <span><b>6.</b> Lists</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="docs/loader-conventions.html">
+            
+                
+                    <a href="../docs/loader-conventions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        loader conventions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="docs/list-of-loaders.html">
+            
+                
+                    <a href="../docs/list-of-loaders.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        List of loaders
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="docs/list-of-plugins.html">
+            
+                
+                    <a href="../docs/list-of-plugins.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        List of plugins
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="docs/list-of-hints.html">
+            
+                
+                    <a href="../docs/list-of-hints.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        List of hints
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="docs/configuration.html">
+            
+                
+                    <a href="../docs/configuration.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        Configuration
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="docs/cli.html">
+            
+                
+                    <a href="../docs/cli.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        CLI
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="docs/node.js-api.html">
+            
+                
+                    <a href="../docs/node.js-api.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.7.</b>
+                        
+                        Node.js API
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="docs/api-in-modules.html">
+            
+                
+                    <a href="../docs/api-in-modules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.8.</b>
+                        
+                        API in modules
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="docs/loaders.html">
+            
+                
+                    <a href="../docs/loaders.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.9.</b>
+                        
+                        Loaders
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="docs/plugins.html">
+            
+                
+                    <a href="../docs/plugins.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.10.</b>
+                        
+                        Plugins
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="docs/context.html">
+            
+                
+                    <a href="../docs/context.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.11.</b>
+                        
+                        Context
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="docs/resolving.html">
+            
+                
+                    <a href="../docs/resolving.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.12.</b>
+                        
+                        Resolving
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="docs/hot-module-replacement.html">
+            
+                
+                    <a href="../docs/hot-module-replacement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.13.</b>
+                        
+                        Hot Module Replacement
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" >
+            
+            <span><b>6.14.</b> Dev Tools</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.14.1" data-path="docs/webpack-dev-server.html">
+            
+                
+                    <a href="../docs/webpack-dev-server.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.14.1.</b>
+                        
+                        webpack-dev-server
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14.2" data-path="docs/webpack-dev-middleware.html">
+            
+                
+                    <a href="../docs/webpack-dev-middleware.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.14.2.</b>
+                        
+                        webpack-dev-middleware
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" >
+            
+            <span><b>7.</b> Development</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="docs/changelog.html">
+            
+                
+                    <a href="../docs/changelog.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        Changelog
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="docs/roadmap.html">
+            
+                
+                    <a href="../docs/roadmap.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        Roadmap
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="docs/ideas.html">
+            
+                
+                    <a href="../docs/ideas.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        Ideas
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" >
+            
+            <span><b>7.4.</b> Contributing</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >webpack doc</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x4EE3;&#x7801;&#x62C6;&#x5206;">&#x4EE3;&#x7801;&#x62C6;&#x5206;</h1>
+<p>&#x5BF9;&#x4E8E;&#x5927;&#x578B;&#x7684;app&#xFF0C;&#x628A;&#x6240;&#x6709;&#x4EE3;&#x7801;&#x653E;&#x5165;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x662F;&#x6BD4;&#x8F83;&#x4F4E;&#x6548;&#x7684;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;&#x53EA;&#x6709;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x624D;&#x9700;&#x8981;&#x52A0;&#x8F7D;&#x3002;
+Webpack &#x53EF;&#x4EE5;&#x628A;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#x62C6;&#x5206;&#x5230;&#x201C;chunks&#x201D;&#x91CC;&#x9762;&#x53BB;&#xFF0C;&#x4ECE;&#x800C;&#x8BA9;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x6309;&#x9700;&#x52A0;&#x8F7D;&#x3002;&#x6709;&#x4E9B;&#x6253;&#x5305;&#x5668;&#x628A;&#x8FD9;&#x79CD;&#x4EE3;&#x7801;&#x5C42; &#x53EB; &#x201C;&#x5C42;&#x201D;&#xFF0C;&#x201C;&#x5F52;&#x7EB3;&#x96C6;&#x201D;&#xFF0C;&#x6216;&#x8005;&#x53EB;&#x201C;&#x7247;&#x6BB5;&#x201D;&#x3002;&#x8FD9;&#x79CD;&#x5904;&#x7406;&#x4EE3;&#x7801;&#x7684;&#x529F;&#x80FD;&#x5C31;&#x53EB;&#x201C;code splitting &#x4EE3;&#x7801;&#x62C6;&#x5206;&#x201D;
+&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x53EF;&#x9009;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x4EE3;&#x7801;&#x91CC;&#x9762;&#x5B9A;&#x4E49;&#x4F60;&#x7684;&#x7684;&#x62C6;&#x5206;&#x70B9;&#x3002;Webpack &#x4F1A;&#x5904;&#x7406;&#x597D;&#x4F9D;&#x8D56;&#xFF0C;&#x8F93;&#x51FA;&#x4EE5;&#x53CA;&#x8FD0;&#x884C;&#x65F6;&#x3002;
+&#x6F84;&#x6E05;&#x4E00;&#x4E2A;&#x516C;&#x8BA4;&#x7684;&#x8BEF;&#x89E3;&#xFF1A;&#x4EE3;&#x7801;&#x62C6;&#x5206;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x5C06;&#x516C;&#x7528;&#x4EE3;&#x7801;&#x63D0;&#x53D6;&#x5230;&#x53EF;&#x5171;&#x4EAB;&#x7684;&#x6A21;&#x5757;&#x91CC;&#x9762;&#xFF0C;&#x66F4;&#x91CD;&#x8981;&#x7684;&#x662F;&#x5B83;&#x80FD;&#x88AB;&#x7528;&#x4E8E;&#x62C6;&#x5206;&#x4E00;&#x4E9B;&#x6309;&#x9700;&#x52A0;&#x8F7D;&#x7684;&#x6A21;&#x5757;&#x3002;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x521D;&#x59CB;&#x6587;&#x4EF6;&#x52A0;&#x8F7D;&#x53D8;&#x5C0F;&#xFF0C;&#x5728;&#x5E94;&#x7528;&#x9700;&#x8981;&#x7684;&#x65F6;&#x5019;&#x5728;&#x52A0;&#x8F7D;&#x9700;&#x8981;&#x7684;&#x6A21;&#x5757;&#x3002;</p>
+<h2 id="&#x5982;&#x4F55;&#x5B9A;&#x4E49;&#x62C6;&#x5206;&#x70B9;">&#x5982;&#x4F55;&#x5B9A;&#x4E49;&#x62C6;&#x5206;&#x70B9;</h2>
+<p>AMD and CommonJs specify different methods to load code on demand. Both are supported and act as split points:
+AMD &#x548C; CommonJs &#x6709;&#x6307;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&#x53BB;&#x505A;&#x6309;&#x9700;&#x52A0;&#x8F7D;&#xFF0C;&#x90FD;&#x652F;&#x6301;&#x5E76;&#x4E14;&#x548C;&#x626E;&#x6F14;&#x62C6;&#x5206;&#x70B9;&#x7684;&#x89D2;&#x8272;</p>
+<h3 id="commonjs-requireensure">CommonJs: <code>require.ensure</code></h3>
+<pre><code class="lang-javascript"><span class="hljs-built_in">require</span>.ensure(dependencies, callback)
+</code></pre>
+<p>The <code>require.ensure</code> method ensures that every dependency in <code>dependencies</code> can be synchronously required when calling the <code>callback</code>. <code>callback</code> is called with the <code>require</code> function as parameter.</p>
+<p>Example:</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">require</span>.ensure([<span class="hljs-string">&quot;module-a&quot;</span>, <span class="hljs-string">&quot;module-b&quot;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">require</span>) </span>{
+  <span class="hljs-keyword">var</span> a = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;module-a&quot;</span>);
+  <span class="hljs-comment">// ...</span>
+});
+</code></pre>
+<p>Note: <code>require.ensure</code> only loads the modules, it doesn&apos;t evaluate them.</p>
+<h3 id="amd-require">AMD: <code>require</code></h3>
+<p>The AMD spec defines an asynchronous <code>require</code> method with this definition:</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">require</span>(dependencies, callback)
+</code></pre>
+<p>When called, all <code>dependencies</code> are loaded and the <code>callback</code> is called with the exports of the loaded <code>dependencies</code>.</p>
+<p>Example:</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">require</span>([<span class="hljs-string">&quot;module-a&quot;</span>, <span class="hljs-string">&quot;module-b&quot;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+});
+</code></pre>
+<p>Note: AMD <code>require</code> loads and evaluate the modules. In webpack modules are evaluated left to right.</p>
+<p>Note: It&apos;s allowed to omit the callback.</p>
+<h3 id="es6-modules">ES6 Modules</h3>
+<p><strong>tldr: Webpack doesn&apos;t support es6 modules, use <code>require.ensure</code> or <code>require</code> directly depending on which module format your transpiler creates.</strong></p>
+<p>Webpack <code>1.x.x</code> (coming in <code>2.0.0</code>!) does not natively support or understand ES6 modules. However, you can get around that by using a transpiler, like Babel, to turning the ES6 <code>import</code> syntax into CommonJs or AMD modules. This approach is effective but has one important caveat for dynamic loading.</p>
+<p>The module <em>syntax</em> addition (<code>import x from &apos;foo&apos;</code>) is intentionally designed to be <em>statically</em> analyzable, which means that you cannot do dynamic imports.</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// INVALID!!!!!!!!!</span>
+[<span class="hljs-string">&apos;lodash&apos;</span>, <span class="hljs-string">&apos;backbone&apos;</span>].forEach(name =&gt; <span class="hljs-keyword">import</span> name )
+</code></pre>
+<p>Luckily, there is a JavaScript API &quot;loader&quot; specification being written to handle the dynamic use case: <code>System.load</code> (or <code>System.import</code>). This API will be the native equivalent to the above <code>require</code> variations. However, <strong>most transpilers do not support converting <code>System.load</code> calls to <code>require.ensure</code></strong> so you have to do that directly if you want to make use of dynamic code splitting.</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">//static imports</span>
+<span class="hljs-keyword">import</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;lodash&apos;</span>
+
+// dynamic imports
+require.ensure([], function(require) {
+  let contacts = require(<span class="hljs-string">&apos;./contacts&apos;</span>)
+})
+</code></pre>
+<h2 id="&#x6A21;&#x5757;&#x5185;&#x5BB9;">&#x6A21;&#x5757;&#x5185;&#x5BB9;</h2>
+<p>&#x5728;&#x62C6;&#x5206;&#x70B9;&#x7684;&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x8FDB;&#x5165;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x4F9D;&#x8D56;&#x4E5F;&#x88AB;&#x9012;&#x5F52;&#x7684;&#x6DFB;&#x52A0;&#x8FDB;&#x53BB;&#x3002;
+&#x5982;&#x679C;&#x4F60;&#x7684;&#x62C6;&#x5206;&#x70B9;&#x4EE3;&#x7801;&#x4F20;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;webpack&#x4E5F;&#x4F1A;&#x5C06;&#x56DE;&#x8C03;&#x91CC;&#x9762;&#x7684;&#x4F9D;&#x8D56;&#x81EA;&#x52A8;&#x7684;&#x9A7E;&#x5230;chunk&#x4E0A;&#x7684;&#x3002;</p>
+<h2 id="chunk-&#x4F18;&#x5316;">Chunk &#x4F18;&#x5316;</h2>
+<p>&#x5982;&#x679C;&#x4E24;&#x4E2A;<code>chunks</code>&#x5305;&#x6DB5;&#x76F8;&#x540C;&#x7684;<code>modules</code>,&#x4ED6;&#x4EEC;&#x5C06;&#x4F1A;&#x88AB;&#x5408;&#x5E76;&#x5230;&#x4E00;&#x4E2A;&#xFF0C;&#x8FD9;&#x4F1A;&#x5BFC;&#x81F4;<code>chunks</code>&#x6709;&#x591A;&#x4E2A;&#x7236;&#x7EA7;&#x4F9D;&#x8D56;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;<code>modoule</code>&#x5728;&#x6240;&#x6709;&#x7684;<code>chunk</code>&#x7236;&#x7EA7;&#x53EF;&#x7528;&#xFF0C;&#x5B83;&#x5C06;&#x4ECE;<code>chunk</code>&#x4E2D;&#x88AB;&#x79FB;&#x9664;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;chunk&#x5305;&#x6DB5;&#x522B;&#x7684;chunk&#x7684;&#x6240;&#x6709;modules&#xFF0C;&#x8FD9;&#x4E2A;chunk&#x5C06;&#x88AB;&#x4FDD;&#x5B58;&#xFF0C;&#x5E76;&#x6700;&#x7EC8;&#x51FA;&#x73B0;&#x591A;&#x4E2A;chunks</p>
+<p>If two chunks contain the same modules, they are merged into one. This can cause chunks to have multiple parents.</p>
+<p>If a module is available in all parents of a chunk, it&apos;s removed from that chunk.</p>
+<p>If a chunk contains all modules of another chunk, this is stored. It fulfills multiple chunks.</p>
+<h2 id="chunk-loading">Chunk loading</h2>
+<p>Depending on the configuration option <code>target</code> a runtime logic for chunk loading is added to the bundle. I. e. for the <code>web</code> target chunks are loaded via jsonp. A chunk is only loaded once and parallel requests are merged into one. The runtime checks for loaded chunks whether they fulfill multiple chunks.</p>
+<h2 id="chunk-types">Chunk types</h2>
+<h3 id="entry-chunk">Entry chunk</h3>
+<p>An entry chunk contains the runtime plus a bunch of modules. If the chunk contains the module <code>0</code> the runtime executes it. If not, it waits for chunks that contains the module <code>0</code> and executes it (every time when there is a chunk with a module <code>0</code>).</p>
+<h3 id="normal-chunk">Normal chunk</h3>
+<p>A normal chunk contains no runtime. It only contains a bunch of modules. The structure depends on the chunk loading algorithm. I. e. for jsonp the modules are wrapped in a jsonp callback function. The chunk also contains a list of chunk id that it fulfills.</p>
+<h3 id="initial-chunk-nonentry">Initial chunk (non-entry)</h3>
+<p>An initial chunk is a normal chunk. The only difference is that optimization treats it as more important because it counts toward the initial loading time (like entry chunks). That chunk type can occur in combination with the <code>CommonsChunkPlugin</code>.</p>
+<h2 id="split-app-and-vendor-code">Split app and vendor code</h2>
+<p>To split your app into 2 files, say <code>app.js</code> and <code>vendor.js</code>, you can <code>require</code> the vendor files in <code>vendor.js</code>. Then pass this name to the <code>CommonsChunkPlugin</code> as shown below.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;webpack&quot;</span>);
+
+<span class="hljs-built_in">module</span>.exports = {
+  entry: {
+    app: <span class="hljs-string">&quot;./app.js&quot;</span>,
+    vendor: [<span class="hljs-string">&quot;jquery&quot;</span>, <span class="hljs-string">&quot;underscore&quot;</span>, ...],
+  },
+  output: {
+    filename: <span class="hljs-string">&quot;bundle.js&quot;</span>
+  },
+  plugins: [
+    <span class="hljs-keyword">new</span> webpack.optimize.CommonsChunkPlugin(<span class="hljs-comment">/* chunkName= */</span><span class="hljs-string">&quot;vendor&quot;</span>, <span class="hljs-comment">/* filename= */</span><span class="hljs-string">&quot;vendor.bundle.js&quot;</span>)
+  ]
+};
+</code></pre>
+<p>This will remove all modules in the <code>vendor</code> chunk from the <code>app</code> chunk. The <code>bundle.js</code> will now contain just your app code, without any of its dependencies. These are in <code>vendor.bundle.js</code>.</p>
+<p>In your HTML page load <code>vendor.bundle.js</code> before <code>bundle.js</code>.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;vendor.bundle.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;bundle.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<h2 id="multiple-entry-chunks">Multiple entry chunks</h2>
+<p>It&apos;s possible to [[configure | configuration]] multiple entry points that will result in multiple entry chunks. The entry chunk contains the runtime and there must only be one runtime on a page (there are exceptions).</p>
+<h3 id="running-multiple-entry-points">Running multiple entry points</h3>
+<p>With the <code>CommonsChunkPlugin</code> the runtime is moved to the commons chunk. The entry points are now in initial chunks. While only one initial chunk can be loaded, multiple entry chunks can be loaded. This exposes the possibility to run multiple entry points in a single page.</p>
+<p>Example:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;webpack&quot;</span>);
+<span class="hljs-built_in">module</span>.exports = {
+  entry: { a: <span class="hljs-string">&quot;./a&quot;</span>, b: <span class="hljs-string">&quot;./b&quot;</span> },
+  output: { filename: <span class="hljs-string">&quot;[name].js&quot;</span> },
+  plugins: [ <span class="hljs-keyword">new</span> webpack.optimize.CommonsChunkPlugin(<span class="hljs-string">&quot;init.js&quot;</span>) ]
+}
+</code></pre>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;init.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;a.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;b.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<h2 id="commons-chunk">Commons chunk</h2>
+<p>The <code>CommonsChunkPlugin</code> can move modules that occur in multiple entry chunks to a new entry chunk (the commons chunk). The runtime is moved to the commons chunk too. This means the old entry chunks are initial chunks now. See all options in the [[list of plugins]].</p>
+<h2 id="optimization">Optimization</h2>
+<p>There are optimizing plugins that can merge chunks depending on specific criteria. See [[list of plugins]].</p>
+<ul>
+<li><code>LimitChunkCountPlugin</code></li>
+<li><code>MinChunkSizePlugin</code></li>
+<li><code>AggressiveMergingPlugin</code></li>
+</ul>
+<h2 id="named-chunks">Named chunks</h2>
+<p>The <code>require.ensure</code> function accepts an additional 3rd parameter. This must be a string. If two split point pass the same string they use the same chunk.</p>
+<h2 id="requireinclude"><code>require.include</code></h2>
+<pre><code class="lang-javascript"><span class="hljs-built_in">require</span>.include(request)
+</code></pre>
+<p><code>require.include</code> is a webpack specific function that adds a module to the current chunk, but doesn&apos;t evaluate it (The statement is removed from the bundle).</p>
+<p>Example:</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">require</span>.ensure([<span class="hljs-string">&quot;./file&quot;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">require</span>) </span>{
+  <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./file2&quot;</span>);
+});
+
+<span class="hljs-comment">// is equal to</span>
+
+<span class="hljs-built_in">require</span>.ensure([], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">require</span>) </span>{
+  <span class="hljs-built_in">require</span>.include(<span class="hljs-string">&quot;./file&quot;</span>);
+  <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./file2&quot;</span>);
+});
+</code></pre>
+<p><code>require.include</code> can be useful if a module is in multiple child chunks. A <code>require.include</code> in the parent would include the module and the instances of the modules in the child chunks would disappear.</p>
+<h2 id="examples">Examples</h2>
+<ul>
+<li><a href="https://github.com/webpack/webpack/tree/master/examples/code-splitting" target="_blank">Simple</a></li>
+<li><a href="https://github.com/webpack/webpack/tree/master/examples/code-splitting-bundle-loader" target="_blank">with bundle-loader</a></li>
+<li><a href="https://github.com/webpack/webpack/tree/master/examples/code-splitted-require.context" target="_blank">with context</a></li>
+<li><a href="https://github.com/webpack/webpack/tree/master/examples/code-splitted-require.context-amd" target="_blank">with amd and context</a></li>
+<li><a href="https://github.com/webpack/webpack/tree/master/examples/code-splitted-dedupe" target="_blank">with deduplication</a></li>
+<li><a href="https://github.com/webpack/webpack/tree/master/examples/named-chunks" target="_blank">named-chunks</a></li>
+<li><a href="https://github.com/webpack/webpack/tree/master/examples/multiple-entry-points" target="_blank">multiple entry chunks</a></li>
+<li><a href="https://github.com/webpack/webpack/tree/master/examples/multiple-commons-chunks" target="_blank">multiple commons chunks</a></li>
+</ul>
+<p>For a running demo see the <a href="http://webpack.github.io/example-app/" target="_blank">example-app</a>. Check Network in DevTools.</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../docs/webpack-for-browserify-users.html" class="navigation navigation-prev " aria-label="Previous page: webpack for browserify users"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../docs/stylesheets.html" class="navigation navigation-next " aria-label="Next page: Stylesheets"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

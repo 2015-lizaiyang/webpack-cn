@@ -1,0 +1,1429 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Plugins | webpack doc</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.2">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../docs/context.html" />
+    
+    
+    <link rel="prev" href="../docs/loaders.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="6.10"
+        data-chapter-title="Plugins"
+        data-filepath="docs/plugins.md"
+        data-basepath=".."
+        data-revision="Tue Apr 19 2016 19:48:57 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        关于文档
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="docs/home.html">
+            
+                
+                    <a href="../docs/home.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        概览
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" >
+            
+            <span><b>2.</b> 开始</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="docs/motivation.html">
+            
+                
+                    <a href="../docs/motivation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        动机
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="docs/what-is-webpack.html">
+            
+                
+                    <a href="../docs/what-is-webpack.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        webpack是什么
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="docs/installation.html">
+            
+                
+                    <a href="../docs/installation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        安装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="docs/usage.html">
+            
+                
+                    <a href="../docs/usage.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        用法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+            <span><b>2.5.</b> Require Modules</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" >
+            
+            <span><b>2.6.</b> Vendor Modules</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="docs/using-loaders.html">
+            
+                
+                    <a href="../docs/using-loaders.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        Using Loaders
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="docs/using-plugins.html">
+            
+                
+                    <a href="../docs/using-plugins.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        Using Plugins
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="docs/dev-tools.html">
+            
+                
+                    <a href="../docs/dev-tools.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.9.</b>
+                        
+                        Dev Tools
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="docs/troubleshooting.html">
+            
+                
+                    <a href="../docs/troubleshooting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.10.</b>
+                        
+                        Troubleshooting
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" >
+            
+            <span><b>3.</b> Tutorials and examples</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" >
+            
+                
+                    <a target="_blank" href="http:/webpack.github.io/docs/tutorials/getting-started/">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Getting started
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="docs/list-of-tutorials.html">
+            
+                
+                    <a href="../docs/list-of-tutorials.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        List of tutorials
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="docs/examples.html">
+            
+                
+                    <a href="../docs/examples.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        examples
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" >
+            
+            <span><b>4.</b> Guides</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="docs/commonjs.html">
+            
+                
+                    <a href="../docs/commonjs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        CommonJs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="docs/amd.html">
+            
+                
+                    <a href="../docs/amd.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        AMD
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="docs/webpack-for-browserify-users.html">
+            
+                
+                    <a href="../docs/webpack-for-browserify-users.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        webpack for browserify users
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="docs/code-splitting.html">
+            
+                
+                    <a href="../docs/code-splitting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        代码拆分
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="docs/stylesheets.html">
+            
+                
+                    <a href="../docs/stylesheets.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        Stylesheets
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="docs/optimization.html">
+            
+                
+                    <a href="../docs/optimization.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                        性能优化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="docs/long-term-caching.html">
+            
+                
+                    <a href="../docs/long-term-caching.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.</b>
+                        
+                        Long-term Caching
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="docs/how-to-write-a-loader.html">
+            
+                
+                    <a href="../docs/how-to-write-a-loader.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.8.</b>
+                        
+                        如何编写loader
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="docs/how-to-write-a-plugin.html">
+            
+                
+                    <a href="../docs/how-to-write-a-plugin.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.</b>
+                        
+                        How to write a plugin
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="docs/multiple-entry-points.html">
+            
+                
+                    <a href="../docs/multiple-entry-points.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.10.</b>
+                        
+                        Multiple entry points
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="docs/library-and-externals.html">
+            
+                
+                    <a href="../docs/library-and-externals.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.11.</b>
+                        
+                        Library and externals
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="docs/shimming-modules.html">
+            
+                
+                    <a href="../docs/shimming-modules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.12.</b>
+                        
+                        Shimming modules
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="docs/testing.html">
+            
+                
+                    <a href="../docs/testing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.13.</b>
+                        
+                        Testing
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="docs/build-performance.html">
+            
+                
+                    <a href="../docs/build-performance.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.14.</b>
+                        
+                        Build performance
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="docs/hot-module-replacement-with-webpack.html">
+            
+            <span><b>4.15.</b> Hot Module Replacement with webpack</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="docs/comparison.html">
+            
+                
+                    <a href="../docs/comparison.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.16.</b>
+                        
+                        Comparison
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" >
+            
+            <span><b>5.</b> webpack with</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="docs/usage-with-grunt.html">
+            
+                
+                    <a href="../docs/usage-with-grunt.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        grunt | Usage with grunt
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="docs/usage-with-gulp.html">
+            
+                
+                    <a href="../docs/usage-with-gulp.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        gulp | 使用gulp
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="docs/usage-with-bower.html">
+            
+                
+                    <a href="../docs/usage-with-bower.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        bower | Usage with bower
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="docs/usage-with-karma.html">
+            
+                
+                    <a href="../docs/usage-with-karma.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        karma | Usage with karma
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" >
+            
+            <span><b>6.</b> Lists</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="docs/loader-conventions.html">
+            
+                
+                    <a href="../docs/loader-conventions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        loader conventions
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="docs/list-of-loaders.html">
+            
+                
+                    <a href="../docs/list-of-loaders.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        List of loaders
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="docs/list-of-plugins.html">
+            
+                
+                    <a href="../docs/list-of-plugins.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        List of plugins
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="docs/list-of-hints.html">
+            
+                
+                    <a href="../docs/list-of-hints.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        List of hints
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="docs/configuration.html">
+            
+                
+                    <a href="../docs/configuration.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        Configuration
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="docs/cli.html">
+            
+                
+                    <a href="../docs/cli.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        CLI
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="docs/node.js-api.html">
+            
+                
+                    <a href="../docs/node.js-api.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.7.</b>
+                        
+                        Node.js API
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="docs/api-in-modules.html">
+            
+                
+                    <a href="../docs/api-in-modules.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.8.</b>
+                        
+                        API in modules
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="docs/loaders.html">
+            
+                
+                    <a href="../docs/loaders.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.9.</b>
+                        
+                        Loaders
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.10" data-path="docs/plugins.html">
+            
+                
+                    <a href="../docs/plugins.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.10.</b>
+                        
+                        Plugins
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="docs/context.html">
+            
+                
+                    <a href="../docs/context.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.11.</b>
+                        
+                        Context
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="docs/resolving.html">
+            
+                
+                    <a href="../docs/resolving.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.12.</b>
+                        
+                        Resolving
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="docs/hot-module-replacement.html">
+            
+                
+                    <a href="../docs/hot-module-replacement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.13.</b>
+                        
+                        Hot Module Replacement
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" >
+            
+            <span><b>6.14.</b> Dev Tools</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.14.1" data-path="docs/webpack-dev-server.html">
+            
+                
+                    <a href="../docs/webpack-dev-server.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.14.1.</b>
+                        
+                        webpack-dev-server
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14.2" data-path="docs/webpack-dev-middleware.html">
+            
+                
+                    <a href="../docs/webpack-dev-middleware.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.14.2.</b>
+                        
+                        webpack-dev-middleware
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" >
+            
+            <span><b>7.</b> Development</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="docs/changelog.html">
+            
+                
+                    <a href="../docs/changelog.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        Changelog
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="docs/roadmap.html">
+            
+                
+                    <a href="../docs/roadmap.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        Roadmap
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="docs/ideas.html">
+            
+                
+                    <a href="../docs/ideas.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        Ideas
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" >
+            
+            <span><b>7.4.</b> Contributing</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >webpack doc</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <p>For a high-level introduction to writing plugins, start with <a href="https://github.com/webpack/docs/wiki/How-to-write-a-plugin" target="_blank">How to write a plugin</a>.</p>
+<p>Many objects in Webpack extend the Tapable class, which exposes a <code>plugin</code> method. And with the <code>plugin</code> method, plugins can inject custom build steps.  You will see <code>compiler.plugin</code> and <code>compilation.plugin</code> used a lot.  Essentially, each one of these plugin calls binds a callback to fire at specific steps throughout the build process.</p>
+<p>A plugin is installed once as Webpack starts up. Webpack installs a plugin by calling its <code>apply</code> method, and passes a reference to the Webpack <code>compiler</code> object. You may then call <code>compiler.plugin</code> to access asset compilations and their individual build steps. An example would look like this:</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// MyPlugin.js</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyPlugin</span>(<span class="hljs-params">options</span>) </span>{
+  <span class="hljs-comment">// Configure your plugin with options...</span>
+}
+
+MyPlugin.prototype.apply = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">compiler</span>) </span>{
+  compiler.plugin(<span class="hljs-string">&quot;compile&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">params</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;The compiler is starting to compile...&quot;</span>);
+  });
+
+  compiler.plugin(<span class="hljs-string">&quot;compilation&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">compilation</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;The compiler is starting a new compilation...&quot;</span>);
+
+    compilation.plugin(<span class="hljs-string">&quot;optimize&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;The compilation is starting to optimize files...&quot;</span>);
+    });
+  });
+
+  compiler.plugin(<span class="hljs-string">&quot;emit&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">compilation, callback</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;The compilation is going to emit files...&quot;</span>);
+    callback();
+  });
+};
+
+<span class="hljs-built_in">module</span>.exports = MyPlugin;
+</code></pre>
+<p>Then in <code>webpack.config.js</code></p>
+<pre><code class="lang-javascript">    plugins: [
+        <span class="hljs-keyword">new</span> MyPlugin({options: <span class="hljs-string">&apos;nada&apos;</span>})
+    ]
+</code></pre>
+<h3 id="note-on-interface-types">Note on interface types...</h3>
+<p>There are two types of plugin interfaces.</p>
+<ul>
+<li><p>Timing based</p>
+<ul>
+<li>sync (default): As seen above. Use return.</li>
+<li>async: Last parameter is a callback. Signature: function(err, result)</li>
+<li>parallel: The handlers are invoked parallel (async).</li>
+</ul>
+</li>
+<li><p>Return value</p>
+<ul>
+<li>not bailing (default): No return value.</li>
+<li>bailing: The handlers are invoked in order until one handler returns something.</li>
+<li>parallel bailing: The handlers are invoked in parallel (async). The first returned value (by order) is significant.</li>
+<li>waterfall: Each handler gets the result value of the last handler as an argument.</li>
+</ul>
+</li>
+</ul>
+<h1 id="the-compiler-instance">The <code>Compiler</code> instance</h1>
+<p>Plugins need to have the apply method on their prototype chain (or bound to) in order to have access to the compiler instance.</p>
+<pre><code class="lang-javascript">
+<span class="hljs-comment">//MyPlugin.js</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyPlugin</span>(<span class="hljs-params"></span>) </span>{};
+MyPlugin.prototype.apply = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">compiler</span>) </span>{
+    <span class="hljs-comment">//now you have access to all the compiler instance methods</span>
+}
+<span class="hljs-built_in">module</span>.exports = MyPlugin;
+</code></pre>
+<p>Something like this should also work</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">//MyFunction.js</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">apply</span>(<span class="hljs-params">options, compiler</span>) </span>{
+    <span class="hljs-comment">//now you have access to the compiler instance</span>
+    <span class="hljs-comment">//and options</span>
+}
+
+<span class="hljs-comment">//this little trick makes it easier to pass and check options to the plugin</span>
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">options</span>) </span>{
+    <span class="hljs-keyword">if</span> (options <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Array</span>) {
+        options = {
+            include: options
+        };
+    }
+
+    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">Array</span>.isArray(options.include)) {
+        options.include = [ options.include ];
+    }
+
+    <span class="hljs-keyword">return</span> {
+        apply: apply.bind(<span class="hljs-keyword">this</span>, options)
+    };
+};
+</code></pre>
+<h4 id="runcompiler-compiler-async"><code>run(compiler: Compiler)</code> async</h4>
+<p>The <code>run</code> method of the Compiler is used to start a compilation. This is not called in watch mode.</p>
+<h4 id="watchrunwatching-watching-async"><code>watch-run(watching: Watching)</code> async</h4>
+<p>The <code>watch</code> method of the Compiler is used to start a watching compilation. This is not called in normal mode.</p>
+<h4 id="compilationc-compilation-params-object"><code>compilation(c: Compilation, params: Object)</code></h4>
+<p>A <code>Compilation</code> is created. A plugin can use this to obtain a reference to the <code>Compilation</code> object. The <code>params</code> object contains useful references.</p>
+<h4 id="normalmodulefactorynmf-normalmodulefactory"><code>normal-module-factory(nmf: NormalModuleFactory)</code></h4>
+<p>A <code>NormalModuleFactory</code> is created. A plugin can use this to obtain a reference to the <code>NormalModuleFactory</code> object.</p>
+<pre><code class="lang-javascript">
+compiler.plugin(<span class="hljs-string">&quot;normal-module-factory&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nmf</span>) </span>{
+    nmf.plugin(<span class="hljs-string">&quot;after-resolve&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+        data.loaders.unshift(path.join(__dirname, <span class="hljs-string">&quot;postloader.js&quot;</span>));
+    });
+});
+</code></pre>
+<h4 id="contextmodulefactorycmf-contextmodulefactory"><code>context-module-factory(cmf: ContextModuleFactory)</code></h4>
+<p>A <code>ContextModuleFactory</code> is created. A plugin can use this to obtain a reference to the <code>ContextModuleFactory</code> object.</p>
+<h4 id="compileparams"><code>compile(params)</code></h4>
+<p>The Compiler starts compiling. This is used in normal and watch mode. Plugins can use this point to modify the <code>params</code> object (i. e. to decorate the factories).</p>
+<pre><code class="lang-javascript">compiler.plugin(<span class="hljs-string">&quot;compile&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">params</span>) </span>{
+    <span class="hljs-comment">//you are now in the &quot;compile&quot; phase</span>
+});
+</code></pre>
+<h4 id="makec-compilation-parallel"><code>make(c: Compilation)</code> parallel</h4>
+<p>Plugins can use this point to add entries to the compilation or prefetch modules. They can do this by calling <code>addEntry(context, entry, name, callback)</code> or <code>prefetch(context, dependency, callback)</code> on the Compilation.</p>
+<h4 id="aftercompilec-compilation-async"><code>after-compile(c: Compilation)</code> async</h4>
+<p>The compile process is finished and the modules are sealed. The next step is to emit the generated stuff. Here modules can use the results in some cool ways.</p>
+<p>The handlers are not copied to child compilers.</p>
+<h4 id="emitc-compilation-async"><code>emit(c: Compilation)</code> async</h4>
+<p>The Compiler begins with emitting the generated assets. Here plugins have the last chance to add assets to the <code>c.assets</code> array.</p>
+<h4 id="afteremitc-compilation-async"><code>after-emit(c: Compilation)</code> async</h4>
+<p>The Compiler has emitted all assets.</p>
+<h4 id="donestats-stats"><code>done(stats: Stats)</code></h4>
+<p>All is done.</p>
+<h4 id="failederr-error"><code>failed(err: Error)</code></h4>
+<p>The Compiler is in watch mode and a compilation has failed hard.</p>
+<h4 id="invalid"><code>invalid()</code></h4>
+<p>The Compiler is in watch mode and a file change is detected. The compilation will be begin shortly (<code>options.watchDelay</code>).</p>
+<h4 id="afterplugins"><code>after-plugins()</code></h4>
+<p>All plugins extracted from the options object are added to the compiler.</p>
+<h4 id="afterresolvers"><code>after-resolvers()</code></h4>
+<p>All plugins extracted from the options object are added to the resolvers.</p>
+<h1 id="the-compilation-instance">The <code>Compilation</code> instance</h1>
+<p>The Compilation instance extends from the compiler.  ie. compiler.compilation  It is the literal compilation of all the objects in the require graph.  This object has access to all the modules and their dependencies (most of which are circular references).  In the compilation phase, modules are loaded, sealed, optimized, chunked, hashed and restored, etc.  This would be the main lifecycle of any operations of the compilation.</p>
+<pre><code class="lang-javascript">compiler.plugin(<span class="hljs-string">&quot;compilation&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">compilation</span>) </span>{
+    <span class="hljs-comment">//the main compilation instance</span>
+    <span class="hljs-comment">//all subsequent methods are derived from compilation.plugin</span>
+});
+</code></pre>
+<h4 id="normalmoduleloader"><code>normal-module-loader</code></h4>
+<p>The normal module loader, is the function that actually loads all the modules in the module graph (one-by-one).</p>
+<pre><code class="lang-javascript">compilation.plugin(<span class="hljs-string">&apos;normal-module-loader&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">loaderContext, module</span>) </span>{
+    <span class="hljs-comment">//this is where all the modules are loaded</span>
+    <span class="hljs-comment">//one by one, no dependencies are created yet</span>
+});
+</code></pre>
+<h4 id="seal"><code>seal</code></h4>
+<p>The sealing of the compilation has started.</p>
+<pre><code class="lang-javascript">compilation.plugin(<span class="hljs-string">&apos;seal&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">//you are not accepting any more modules</span>
+    <span class="hljs-comment">//no arguments</span>
+});
+</code></pre>
+<h4 id="optimize"><code>optimize</code></h4>
+<p>Optimize the compilation.</p>
+<pre><code class="lang-javascript">compilation.plugin(<span class="hljs-string">&apos;optimize&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">//webpack is begining the optimization phase</span>
+    <span class="hljs-comment">// no arguments</span>
+});
+</code></pre>
+<h4 id="optimizetreechunks-modules-async"><code>optimize-tree(chunks, modules)</code> async</h4>
+<p>Async optimization of the tree.</p>
+<pre><code class="lang-javascript">compilation.plugin(<span class="hljs-string">&apos;optimize-tree&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">chunks, modules</span>) </span>{
+
+});
+</code></pre>
+<h4 id="optimizemodulesmodules-module"><code>optimize-modules(modules: Module[])</code></h4>
+<p>Optimize the modules.</p>
+<pre><code class="lang-javascript">compilation.plugin(<span class="hljs-string">&apos;optimize-modules&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">modules</span>) </span>{
+    <span class="hljs-comment">//handle to the modules array during tree optimization</span>
+});
+</code></pre>
+<h4 id="afteroptimizemodulesmodules-module"><code>after-optimize-modules(modules: Module[])</code></h4>
+<p>Optimizing the modules has finished.</p>
+<h4 id="optimizechunkschunks-chunk"><code>optimize-chunks(chunks: Chunk[])</code></h4>
+<p>Optimize the chunks.</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">//optimize chunks may be run several times in a compilation</span>
+
+compilation.plugin(<span class="hljs-string">&apos;optimize-chunks&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">chunks</span>) </span>{
+    <span class="hljs-comment">//unless you specified multiple entries in your config</span>
+    <span class="hljs-comment">//there&apos;s only one chunk at this point</span>
+    chunks.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">chunk</span>) </span>{
+        <span class="hljs-comment">//chunks have circular references to their modules</span>
+        chunk.modules.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">module</span>)</span>{
+            <span class="hljs-comment">//module.loaders, module.rawRequest, module.dependencies, etc.</span>
+        }); 
+    });
+});
+</code></pre>
+<h4 id="afteroptimizechunkschunks-chunk"><code>after-optimize-chunks(chunks: Chunk[])</code></h4>
+<p>Optimizing the chunks has finished.</p>
+<h4 id="revivemodulesmodules-module-records"><code>revive-modules(modules: Module[], records)</code></h4>
+<p>Restore module info from records.</p>
+<h4 id="optimizemoduleordermodules-module"><code>optimize-module-order(modules: Module[])</code></h4>
+<p>Sort the modules in order of importance. The first is the most important module. It will get the smallest id.</p>
+<h4 id="optimizemoduleidsmodules-module"><code>optimize-module-ids(modules: Module[])</code></h4>
+<p>Optimize the module ids.</p>
+<h4 id="afteroptimizemoduleidsmodules-module"><code>after-optimize-module-ids(modules: Module[])</code></h4>
+<p>Optimizing the module ids has finished.</p>
+<h4 id="recordmodulesmodules-module-records"><code>record-modules(modules: Module[], records)</code></h4>
+<p>Store module info to the records.</p>
+<h4 id="revivechunkschunks-chunk-records"><code>revive-chunks(chunks: Chunk[], records)</code></h4>
+<p>Restore chunk info from records.</p>
+<h4 id="optimizechunkorderchunks-chunk"><code>optimize-chunk-order(chunks: Chunk[])</code></h4>
+<p>Sort the chunks in order of importance. The first is the most important chunk. It will get the smallest id.</p>
+<h4 id="optimizechunkidschunks-chunk"><code>optimize-chunk-ids(chunks: Chunk[])</code></h4>
+<p>Optimize the chunk ids.</p>
+<h4 id="afteroptimizechunkidschunks-chunk"><code>after-optimize-chunk-ids(chunks: Chunk[])</code></h4>
+<p>Optimizing the chunk ids has finished.</p>
+<h4 id="recordchunkschunks-chunk-records"><code>record-chunks(chunks: Chunk[], records)</code></h4>
+<p>Store chunk info to the records.</p>
+<h4 id="beforehash"><code>before-hash</code></h4>
+<p>Before the compilation is hashed.</p>
+<h4 id="afterhash"><code>after-hash</code></h4>
+<p>After the compilation is hashed.</p>
+<h4 id="beforechunkassets"><code>before-chunk-assets</code></h4>
+<p>Before creating the chunk assets.</p>
+<h4 id="additionalchunkassetschunks-chunk"><code>additional-chunk-assets(chunks: Chunk[])</code></h4>
+<p>Create additional assets for the chunks.</p>
+<h4 id="recordcompilation-records"><code>record(compilation, records)</code></h4>
+<p>Store info about the compilation to the records</p>
+<h4 id="optimizechunkassetschunks-chunk-async"><code>optimize-chunk-assets(chunks: Chunk[])</code> async</h4>
+<p>Optimize the assets for the chunks.</p>
+<p>The assets are stored in <code>this.assets</code>, but not all of them are chunk assets. A <code>Chunk</code> has a property <code>files</code> which points to all files created by this chunk. The additional chunk assets are stored in <code>this.additionalChunkAssets</code>.</p>
+<p>Here&apos;s an example that simply adds a banner to each chunk.</p>
+<pre><code class="lang-javascript">compilation.plugin(<span class="hljs-string">&quot;optimize-chunk-assets&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">chunks, callback</span>) </span>{
+    chunks.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">chunk</span>) </span>{
+        chunk.files.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">file</span>) </span>{
+            compilation.assets[file] = <span class="hljs-keyword">new</span> ConcatSource(<span class="hljs-string">&quot;\/**Sweet Banner**\/&quot;</span>, <span class="hljs-string">&quot;\n&quot;</span>, compilation.assets[file]);
+        });
+    });
+    callback();
+});
+</code></pre>
+<h4 id="afteroptimizechunkassetschunks-chunk"><code>after-optimize-chunk-assets(chunks: Chunk[])</code></h4>
+<p>The chunk assets have been optimized. Here&apos;s an example plugin from <a href="https://github.com/boopathi" target="_blank">@boopathi</a> that outputs exactly what went into each chunk.  </p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> PrintChunksPlugin = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{};
+PrintChunksPlugin.prototype.apply = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">compiler</span>) </span>{
+    compiler.plugin(<span class="hljs-string">&apos;compilation&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">compilation, params</span>) </span>{
+        compilation.plugin(<span class="hljs-string">&apos;after-optimize-chunk-assets&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">chunks</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(chunks.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">c</span>) </span>{
+                <span class="hljs-keyword">return</span> {
+                    id: c.id,
+                    name: c.name,
+                    includes: c.modules.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">m</span>) </span>{
+                        <span class="hljs-keyword">return</span> m.request;
+                    })
+                };
+            }));
+        });
+    });
+};
+</code></pre>
+<h4 id="optimizeassetsassets-objectname-source-async"><code>optimize-assets(assets: Object{name: Source})</code> async</h4>
+<p>Optimize all assets.</p>
+<p>The assets are stored in <code>this.assets</code>.</p>
+<h4 id="afteroptimizeassetsassets-objectname-source"><code>after-optimize-assets(assets: Object{name: Source})</code></h4>
+<p>The assets has been optimized.</p>
+<h4 id="buildmodule"><code>build-module</code></h4>
+<p>Before a module build has started.</p>
+<pre><code class="lang-javascript">compilation.plugin(<span class="hljs-string">&apos;build-module&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;build module&apos;</span>);
+});
+</code></pre>
+<h4 id="succeedmodule"><code>succeed-module</code></h4>
+<p>A module has been built successfully.</p>
+<pre><code class="lang-javascript">compilation.plugin(<span class="hljs-string">&apos;succeed-module&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;succeed module&apos;</span>);
+});
+</code></pre>
+<h4 id="failedmodule"><code>failed-module</code></h4>
+<p>The module build has failed.</p>
+<pre><code class="lang-javascript">compilation.plugin(<span class="hljs-string">&apos;failed-module&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;failed module&apos;</span>);
+});
+</code></pre>
+<h4 id="moduleassetmodule-filename"><code>module-asset(module, filename)</code></h4>
+<p>An asset from a module was added to the compilation.</p>
+<h4 id="chunkassetchunk-filename"><code>chunk-asset(chunk, filename)</code></h4>
+<p>An asset from a chunk was added to the compilation.</p>
+<h1 id="the-maintemplate-instance">The <code>MainTemplate</code> instance</h1>
+<h4 id="startupsource-module-hash"><code>startup(source, module, hash)</code></h4>
+<pre><code class="lang-javascript">    compilation.mainTemplate.plugin(<span class="hljs-string">&apos;startup&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">source, module, hash</span>) </span>{
+      <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">module</span>.chunks.length &amp;&amp; source.indexOf(<span class="hljs-string">&apos;__ReactStyle__&apos;</span>) === -<span class="hljs-number">1</span>) {
+        <span class="hljs-keyword">var</span> originName = <span class="hljs-built_in">module</span>.origins &amp;&amp; <span class="hljs-built_in">module</span>.origins.length ? <span class="hljs-built_in">module</span>.origins[<span class="hljs-number">0</span>].name : <span class="hljs-string">&apos;main&apos;</span>;
+        <span class="hljs-keyword">return</span> [<span class="hljs-string">&apos;if (typeof window !== &quot;undefined&quot;) {&apos;</span>,
+            <span class="hljs-string">&apos;  window.__ReactStyle__ = &apos;</span> + <span class="hljs-built_in">JSON</span>.stringify(classNames[originName]) + <span class="hljs-string">&apos;;&apos;</span>,
+            <span class="hljs-string">&apos;}&apos;</span>
+          ].join(<span class="hljs-string">&apos;\n&apos;</span>) + source;
+      }
+      <span class="hljs-keyword">return</span> source;
+    });
+</code></pre>
+<h1 id="the-parser-instance-compilerparser">The <code>Parser</code> instance (<code>compiler.parser</code>)</h1>
+<p>The parser instance takes a String and callback and will return an expression when there&apos;s a match.</p>
+<pre><code class="lang-javascript">compiler.parser.plugin(<span class="hljs-string">&quot;var rewire&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">expr</span>) </span>{
+    <span class="hljs-comment">//if you original module has &apos;var rewire&apos;</span>
+    <span class="hljs-comment">//you now have a handle on the expresssion object   </span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+});
+</code></pre>
+<h4 id="programast-bailing"><code>program(ast)</code> bailing</h4>
+<p>General purpose plugin interface for the AST of a code fragment.</p>
+<h4 id="statementstatement-statement-bailing"><code>statement(statement: Statement)</code> bailing</h4>
+<p>General purpose plugin interface for the statements of the code fragment.</p>
+<h4 id="call-identifierexpr-expression-bailing"><code>call &lt;identifier&gt;(expr: Expression)</code> bailing</h4>
+<p><code>abc(1)</code> =&gt; <code>call abc</code></p>
+<p><code>a.b.c(1)</code> =&gt; <code>call a.b.c</code></p>
+<h4 id="expression-identifierexpr-expression-bailing"><code>expression &lt;identifier&gt;(expr: Expression)</code> bailing</h4>
+<p><code>abc</code> =&gt; <code>expression abc</code></p>
+<p><code>a.b.c</code> =&gt; <code>expression a.b.c</code></p>
+<h4 id="expression-expr-expression-bailing"><code>expression ?:(expr: Expression)</code> bailing</h4>
+<p><code>(abc ? 1 : 2)</code> =&gt; <code>expression ?!</code></p>
+<p>Return a boolean value to omit parsing of the wrong path.</p>
+<h4 id="typeof-identifierexpr-expression-bailing"><code>typeof &lt;identifier&gt;(expr: Expression)</code> bailing</h4>
+<p><code>typeof a.b.c</code> =&gt; <code>typeof a.b.c</code></p>
+<h4 id="statement-ifstatement-statement-bailing"><code>statement if(statement: Statement)</code> bailing</h4>
+<p><code>if(abc) {}</code> =&gt; <code>statement if</code></p>
+<p>Return a boolean value to omit parsing of the wrong path.</p>
+<h4 id="label-labelnamestatement-statement-bailing"><code>label &lt;labelname&gt;(statement: Statement)</code> bailing</h4>
+<p><code>xyz: abc</code> =&gt; <code>label xyz</code></p>
+<h4 id="var-namestatement-statement-bailing"><code>var &lt;name&gt;(statement: Statement)</code> bailing</h4>
+<p><code>var abc, def</code> =&gt; <code>var abc</code> + <code>var def</code></p>
+<p>Return <code>false</code> to not add the variable to the known definitions.</p>
+<h4 id="evaluate-expression-typeexpr-expression-bailing"><code>evaluate &lt;expression type&gt;(expr: Expression)</code> bailing</h4>
+<p>Evaluate an expression.</p>
+<h4 id="evaluate-typeof-identifierexpr-expression-bailing"><code>evaluate typeof &lt;identifier&gt;(expr: Expression)</code> bailing</h4>
+<p>Evaluate the type of an identifier.</p>
+<h4 id="evaluate-identifier-identifierexpr-expression-bailing"><code>evaluate Identifier &lt;identifier&gt;(expr: Expression)</code> bailing</h4>
+<p>Evaluate a identifier that is a free var.</p>
+<h4 id="evaluate-defined-identifier-identifierexpr-expression-bailing"><code>evaluate defined Identifier &lt;identifier&gt;(expr: Expression)</code> bailing</h4>
+<p>Evaluate a identifier that is a defined var.</p>
+<h4 id="evaluate-callexpression-propertyexpr-expression-bailing"><code>evaluate CallExpression .&lt;property&gt;(expr: Expression)</code> bailing</h4>
+<p>Evaluate a call to a member function of a successfully evaluated expression.</p>
+<h1 id="the-normalmodulefactory">The <code>NormalModuleFactory</code></h1>
+<h4 id="beforeresolvedata-async-waterfall"><code>before-resolve(data)</code> async waterfall</h4>
+<p>Before the factory starts resolving. The <code>data</code> object has these properties:</p>
+<ul>
+<li><code>context</code> The absolute path of the directory for resolving.</li>
+<li><code>request</code> The request of the expression.</li>
+</ul>
+<p>Plugins are allowed to modify the object or to pass a new similar object to the callback.</p>
+<h4 id="afterresolvedata-async-waterfall"><code>after-resolve(data)</code> async waterfall</h4>
+<p>After the factory has resolved the request. The <code>data</code> object has this properties:</p>
+<ul>
+<li><code>request</code> The resolved request. It acts as an identifier for the NormalModule.</li>
+<li><code>userRequest</code> The request the user entered. It&apos;s resolved, but does not contain pre or post loaders.</li>
+<li><code>rawRequest</code> The unresolved request.</li>
+<li><code>loaders</code> A array of resolved loaders. This is passed to the NormalModule and they will be executed.</li>
+<li><code>resource</code> The resource. It will be loaded by the NormalModule.</li>
+<li><code>parser</code> The parser that will be used by the NormalModule.</li>
+</ul>
+<h1 id="the-contextmodulefactory">The <code>ContextModuleFactory</code></h1>
+<h4 id="beforeresolvedata-async-waterfall"><code>before-resolve(data)</code> async waterfall</h4>
+<h4 id="afterresolvedata-async-waterfall"><code>after-resolve(data)</code> async waterfall</h4>
+<h4 id="alternativesoptions-array-async-waterfall"><code>alternatives(options: Array)</code> async waterfall</h4>
+<h1 id="resolvers">Resolvers</h1>
+<ul>
+<li><code>compiler.resolvers.normal</code> Resolver for a normal module</li>
+<li><code>compiler.resolvers.context</code> Resolver for a context module</li>
+<li><code>compiler.resolvers.loader</code> Resolver for a loader</li>
+</ul>
+<p>Any plugin should use <code>this.fileSystem</code> as fileSystem, as it&apos;s cached. It only has async named functions, but they may behave sync, if the user uses a sync file system implementation (i. e. in enhanced-require).</p>
+<p>To join paths any plugin should use <code>this.join</code>. It normalizes the paths. There is a <code>this.normalize</code> too.</p>
+<p>A bailing async forEach implementation is available on <code>this.forEachBail(array, iterator, callback)</code>.</p>
+<p>To pass the request to other resolving plugins, use the <code>this.doResolve(types: String|String[], request: Request, callback)</code> method. <code>types</code> are multiple possible request types that are tested in order of preference.</p>
+<pre><code class="lang-javascript">interface Request {
+    path: <span class="hljs-built_in">String</span> <span class="hljs-comment">// The current directory of the request</span>
+    request: <span class="hljs-built_in">String</span> <span class="hljs-comment">// The current request string</span>
+    query: <span class="hljs-built_in">String</span> <span class="hljs-comment">// The query string of the request, if any</span>
+    <span class="hljs-built_in">module</span>: boolean <span class="hljs-comment">// The request begins with a module</span>
+    directory: boolean <span class="hljs-comment">// The request points to a directory</span>
+    file: boolean <span class="hljs-comment">// The request points to a file</span>
+    resolved: boolean <span class="hljs-comment">// The request is resolved/done</span>
+    <span class="hljs-comment">// undefined means false for boolean fields</span>
+}
+
+<span class="hljs-comment">// Examples</span>
+<span class="hljs-comment">// from /home/user/project/file.js: require(&quot;../test?charset=ascii&quot;)</span>
+{
+    path: <span class="hljs-string">&quot;/home/user/project&quot;</span>,
+    request: <span class="hljs-string">&quot;../test&quot;</span>,
+    query: <span class="hljs-string">&quot;?charset=ascii&quot;</span>
+}
+<span class="hljs-comment">// from /home/user/project/file.js: require(&quot;test/test/&quot;)</span>
+{
+    path: <span class="hljs-string">&quot;/home/user/project&quot;</span>,
+    request: <span class="hljs-string">&quot;test/test/&quot;</span>,
+    <span class="hljs-built_in">module</span>: <span class="hljs-literal">true</span>,
+    directory: <span class="hljs-literal">true</span>
+}
+</code></pre>
+<h4 id="resolvecontext-string-request-string"><code>resolve(context: String, request: String)</code></h4>
+<p>Before the resolving process starts.</p>
+<h4 id="resolvesteptypes-string-request-request"><code>resolve-step(types: String[], request: Request)</code></h4>
+<p>Before a single step in the resolving process starts.</p>
+<h4 id="modulerequest-request-async-waterfall"><code>module(request: Request)</code> async waterfall</h4>
+<p>A module request is found and should be resolved.</p>
+<h4 id="directoryrequest-request-async-waterfall"><code>directory(request: Request)</code> async waterfall</h4>
+<p>A directory request is found and should be resolved.</p>
+<h4 id="filerequest-request-async-waterfall"><code>file(request: Request)</code> async waterfall</h4>
+<p>A file request is found and should be resolved.</p>
+<h4 id="the-plugins-may-offer-more-extensions-points">The plugins may offer more extensions points</h4>
+<p>Here is a list what the default plugins in webpack offer. They are all <code>(request: Request)</code> async waterfall.</p>
+<p>The process for normal modules and contexts is <code>module -&gt; module-module -&gt; directory -&gt; file</code>.</p>
+<p>The process for loaders is <code>module -&gt; module-loader-module -&gt; module-module -&gt; directory -&gt; file</code>.</p>
+<h4 id="modulemodule"><code>module-module</code></h4>
+<p>A module should be looked up in a specified directory. <code>path</code> contains the directory.</p>
+<h4 id="moduleloadermodule-only-for-loaders"><code>module-loader-module</code> (only for loaders)</h4>
+<p>Used before module templates are applied to the module name. The process continues with <code>module-module</code>.</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../docs/loaders.html" class="navigation navigation-prev " aria-label="Previous page: Loaders"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../docs/context.html" class="navigation navigation-next " aria-label="Next page: Context"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
