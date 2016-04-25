@@ -44,7 +44,9 @@ output: { chunkFilename: "[chunkhash].bundle.js" }
 
 想要把从asset中得到的最终的filenames嵌入到HTML中，这些信息在webpack的stats 中是可以看到的。如果你使用CLI，运行脚本带上`--json`来得到stats的json文件
 
-你也可以添加一个[assets-webpack-plugin](https://www.npmjs.com/package/assets-webpack-plugin) 的插件到wepack配置当中来让你得到stats对象。例子：
+你也可以添加一个[assets-webpack-plugin](https://www.npmjs.com/package/assets-webpack-plugin) 的插件到wepack配置当中来让你得到stats对象。
+
+或者自己写插件来得到它，例子：
 
 ``` javascript
 plugins: [
@@ -57,7 +59,8 @@ plugins: [
   }
 ]
 ```
+stats JSON包含了一个有用的属性`assetsByChunkName`
+The stats JSON contains a useful property `assetsByChunkName`
+包含了一个以chunk name作为key，filename作为值的对象
 
-The stats JSON contains a useful property `assetsByChunkName` which is a object containing chunk name as key and filename(s) as value.
-
-> Note: It's an array if you are emitting multiple assets per chunk. I. e. a JavaScript file and a SourceMap. The first one is your JavaScript source.
+> tips: 如果每个chunk都输出了多个asset那么filename会是一个数组. 比如一个chunk 你可能既输出js也输出sourceMap文件。
