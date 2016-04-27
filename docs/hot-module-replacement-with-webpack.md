@@ -1,10 +1,11 @@
 *Note that Hot Module Replacement (HMR) is still an experimental feature.*
 
-# Introduction
+# 介绍
 
-Hot Module Replacement (HMR) exchanges, adds, or removes modules while an application is running **without** a page reload.
 
-## Prerequirements
+热组件替换（HMR）是指：在应用运行时候替换、添加、移除模块而**不需要**页面重新加载
+
+## 前提条件
 
 * Using Plugins: http://webpack.github.io/docs/using-plugins.html
 * Code Splitting: http://webpack.github.io/docs/code-splitting.html
