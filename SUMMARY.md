@@ -31,7 +31,7 @@
    * [Library and externals](docs/library-and-externals.md)
    * [Shimming modules](docs/shimming-modules.md)
    * [Testing](docs/testing.md)
-   * [Build performance](docs/build-performance.md)
+   * [构建性能](docs/build-performance.md)
    * [Hot Module Replacement with webpack](docs/hot-module-replacement-with-webpack.md)
    * [Comparison](docs/comparison.md)
 * webpack with
