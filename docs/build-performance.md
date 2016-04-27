@@ -59,3 +59,4 @@ To use the DLL bundle from the app bundle you need to use the `DllReferencePlugi
 
 [webpack-dev-server]:docs/webpack-dev-server.md
 [webpack-dev-middleware]:docs/webpack-dev-middleware
+[webpack --watch | cli]:docs/cli
