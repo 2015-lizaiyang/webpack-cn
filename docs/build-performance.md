@@ -58,5 +58,6 @@ To create the DLL bundle beforehand you need to use the `DllPlugin`. Here is an 
 To use the DLL bundle from the app bundle you need to use the `DllReferencePlugin`. Here is an [example](https://github.com/webpack/webpack/tree/master/examples/dll-user). This stops following the dependency graph of your app when a module from the DLL bundle is found.
 
 [webpack-dev-server]:docs/webpack-dev-server.md
-[webpack-dev-middleware]:docs/webpack-dev-middleware
-[webpack --watch | cli]:docs/cli
+[webpack-dev-middleware]:docs/webpack-dev-middleware.md
+[webpack --watch | cli]:docs/cli.md
+[`watch: true` | node.js API]:docs/node.js-api.md
