@@ -32,7 +32,7 @@
    * [Shimming modules](docs/shimming-modules.md)
    * [Testing](docs/testing.md)
    * [Build performance](docs/build-performance.md)
-   * [Hot Module Replacement with webpack](docs/docs/hot-module-replacement-with-webpack.md)
+   * [Hot Module Replacement with webpack](docs/hot-module-replacement-with-webpack.md)
    * [Comparison](docs/comparison.md)
 * webpack with
    * [grunt | Usage with grunt](docs/usage-with-grunt.md)
