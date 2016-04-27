@@ -1,6 +1,5 @@
-# Incremental builds
-
-Make sure you don't do a full rebuild. Webpack has a great caching layer that allows you to keep already compiled modules in memory. There are some tools that help to use it:
+# 增量构建
+确保你没有操作整体重构建的话。Webpack 拥有一个强大的缓存层让你将已经构建过的模块保存在内存当中，下面的工具可以帮助你利用他们：
 
 * [[webpack-dev-server]]: Serves all webpack assets from memory. Best performance.
 * [[webpack-dev-middleware]]: The same performance as webpack-dev-server for advanced users.
