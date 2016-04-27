@@ -56,3 +56,5 @@ If you have a bunch of rarely changing modules (i. e. vendor libs) and chunking 
 To create the DLL bundle beforehand you need to use the `DllPlugin`. Here is an [example](https://github.com/webpack/webpack/tree/master/examples/dll). This emits a public bundle and a private manifest file.
 
 To use the DLL bundle from the app bundle you need to use the `DllReferencePlugin`. Here is an [example](https://github.com/webpack/webpack/tree/master/examples/dll-user). This stops following the dependency graph of your app when a module from the DLL bundle is found.
+
+[webpack-dev-server]:docs/webpack-dev-server.md
