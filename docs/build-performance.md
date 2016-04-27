@@ -1,15 +1,15 @@
 # 增量构建
 确保你没有操作整体重构建的话。Webpack 拥有一个强大的缓存层让你将已经构建过的模块保存在内存当中，下面的工具可以帮助你利用他们：
 
-* [[webpack-dev-server]]: Serves all webpack assets from memory. Best performance.
-* [[webpack-dev-middleware]]: The same performance as webpack-dev-server for advanced users.
-* [[webpack --watch | cli]] or [[`watch: true` | node.js API]]: Caches stuff but write assets to disk. Ok performance.
+* [[webpack-dev-server]]: 从内存取全部webpack资源.最好的性能.
+* [[webpack-dev-middleware]]: 为高级用户准备的，和webpack-dev-server同样的性能.
+* [[webpack --watch | cli]] or [[`watch: true` | node.js API]]: 缓存所有资源但是写入硬盘.性能OK.
 
-# Exclude modules from parsing
+# 从解析器中排出一些资源
 
-With [`noParse`](http://webpack.github.io/docs/configuration.html#module-noparse) you can exclude big libraries from parsing, but this can break stuff.
+使用 [`noParse`](http://webpack.github.io/docs/configuration.html#module-noparse) 可以避免对一些大型库的解析构建.
 
-# Hints from build stats
+# 从构建的stats中做hints
 
 There is an [analyse tool](http://webpack.github.io/analyse/) which visualise your build and also provides some hint how build size and build performance can be optimized.
 
