@@ -14,8 +14,9 @@
 ## 原理
 在构建的时候，webpack添加了一个小型HRM运行环境给bundle文件。这个运行环境跑在了你的app中。当构建结束Webpack并没有推出而是保持激活状态，监听资源文件的改动。如果Webpeck检测到资源文件的改动他将重新build这个改动的模块。接下来，将根据预先的配置要么让Webpack向HRM发起通知，要么让HRM自动检测webpack的变化。任何一种方式都是将改动后的模块高速HRM运行环境来调起热更新：首先HRM将检查是否更新的模块能自我接纳，如果不能，他将检查那些`require`过该更新模块的模块如果这些也不能接受，那就将他冒泡到其他层级，继续查找，`require`了这些`require`了变动模块的模块们直到这个更新被接受，如果到了入口点还没有，就说明热更新失败。
 
-### From the app view
+### 应用层
 
+app代码会让HMR运行环境监测更新，HRM运行环境下载了更新（异步）并告诉app代码更新已经可用。app代码会通过HMR运行环境来运行更新的文件。HRM运行更新的文件（异步的）app代码可选的拉取UI进程的更新（取决于你）；
 The app code asks the HMR runtime to check for updates. The HMR runtime downloads the updates (async) and tells the app code that an update is available. The app code asks the HMR runtime to apply updates. The HMR runtime applies the update (sync). The app code may or may not require user interaction in this process (you decide).
 
 ### From the compiler (webpack) view
