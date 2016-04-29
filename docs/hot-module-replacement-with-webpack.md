@@ -17,9 +17,9 @@
 ### 应用层
 
 app代码会让HMR运行环境监测更新，HRM运行环境下载了更新（异步）并告诉app代码更新已经可用。app代码会通过HMR运行环境来运行更新的文件。HRM运行更新的文件（异步的）app代码可选的拉取UI进程的更新（取决于你）；
-The app code asks the HMR runtime to check for updates. The HMR runtime downloads the updates (async) and tells the app code that an update is available. The app code asks the HMR runtime to apply updates. The HMR runtime applies the update (sync). The app code may or may not require user interaction in this process (you decide).
 
-### From the compiler (webpack) view
+
+### 编译（webpack）层
 
 In addition to the normal assets, the compiler needs to emit the "Update" to allow updating the previous version to the current version. The "Update" contains two parts:
 
