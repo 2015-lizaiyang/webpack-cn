@@ -17,7 +17,7 @@
    * [Getting started](http:/webpack.github.io/docs/tutorials/getting-started/)
    * [教程列表](docs/list-of-tutorials.md)
    * [示例](docs/examples.md)
-* Guides
+* 指南
    * [CommonJs](docs/commonjs.md)
    * [AMD](docs/amd.md)
    * [webpack for browserify users](docs/webpack-for-browserify-users.md)
