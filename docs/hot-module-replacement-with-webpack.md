@@ -27,8 +27,8 @@ app代码会让HMR运行环境监测更新，HRM运行环境下载了更新（�
 
 manifest包含了新编译后的hash以及所有更新模块的列表。
 更新的代码块包涵所有更新模块的代码（或者如果该模块被移除就是一个标示）.
-
-The compiler also makes sure that module and chunk ids are consistent between these builds. It uses a "records" json file to store them between builds (or it stores them in memory).
+编译器同时会确保模块和代码块id在这次build中是统一的。
+编译器同时会确保模块和编译后的代码块的ID在这几次编译期间是统一的，它将这些id存在‘records’的json文件里面或者直接存在内存。
 
 ### From the module view
 
