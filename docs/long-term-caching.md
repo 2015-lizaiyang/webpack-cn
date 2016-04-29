@@ -1,13 +1,15 @@
-To effectively cache your files, they should have a hash or version in their URL. You can emit or move the output files manually in a folder called `v1.3`. But this has several disadvantages: Extra work for the developer and unchanged files aren't loaded from cache.
+为了有效的缓存你的文件，需要给文件URL添加hash或者版本号。你可以手动的把文件都放进一个带版本如`v1.3`的文件夹里面。但是这样做会有很多的缺陷：增加额外的工作，没有更改的文件也不能从缓存里面取之。
 
-Webpack can add hashes for the files to the filename. Loaders that emit files (worker-loader, file-loader) already do this. For the chunks you have to enable it. There are two levels:
+使用webpack可以给filename上加伤hash，有些输出file的加载器已经支持（work-loader,file-loader）.对于chunks你还需要让他能够支持，两种级别：
+1. 从所有的chunks中计算出一个hash值
+2. 从每一个chunk中计算一个hash值
 
-1. Compute a hash of all chunks and add it.
-2. Compute a hash per chunk and add it.
 
-## Option 1: One hash for the bundle
+## 第一种：一个给bundle的hash
 
-Option 1 is enabled by adding `[hash]` to the filename config options:
+添加 `[hash]` 给filename 
+
+config options:
 
 `webpack ./entry output.[hash].bundle.js`
 
@@ -22,9 +24,11 @@ Option 1 is enabled by adding `[hash]` to the filename config options:
 }
 ```
 
-## Option 2: One hash per chunk
+## 第二种: 每个chunk一个hash
 
-Option 2 is enabled by adding `[chunkhash]` to the chunk filename config option
+添加 `[chunkhash]` 给 chunk filename 
+
+config option
 
 `--output-chunk-file [chunkhash].js`
 
@@ -32,15 +36,17 @@ Option 2 is enabled by adding `[chunkhash]` to the chunk filename config option
 output: { chunkFilename: "[chunkhash].bundle.js" }
 ```
 
-Note that you need to reference the entry chunk with its hash in your HTML. You may want to extract the hash or the filename from the stats.
+注意：如果你想在HTML中使用entry chunk的hash，你可能需要从stats中分离出相应文件的hash 或者filename。
 
-In combination with Hot Code Replacement you must use option 1, but not on the `publicPath` config option.
+如果是和热替换结合，你需要使用第一种类型但不能带`publicPath`配置选项
 
-## Get filenames from stats
+## 从stats中得到 filenames 
 
-You probably want to access the final filename of the asset to embed it into your HTML. This information is available in the webpack stats. If you are using the CLI you can run it with `--json` to get the stats as JSON to stdout.
+想要把从asset中得到的最终的filenames嵌入到HTML中，这些信息在webpack的stats 中是可以看到的。如果你使用CLI，运行脚本带上`--json`来得到stats的json文件
 
-You can add a plugin such as [assets-webpack-plugin](https://www.npmjs.com/package/assets-webpack-plugin) to your configuration which allows you to access the stats object. Here is an example how to write it into a file:
+你也可以添加一个[assets-webpack-plugin](https://www.npmjs.com/package/assets-webpack-plugin) 的插件到wepack配置当中来让你得到stats对象。
+
+或者自己写插件来得到它，例子：
 
 ``` javascript
 plugins: [
@@ -53,7 +59,8 @@ plugins: [
   }
 ]
 ```
+stats JSON包含了一个有用的属性`assetsByChunkName`
+The stats JSON contains a useful property `assetsByChunkName`
+包含了一个以chunk name作为key，filename作为值的对象
 
-The stats JSON contains a useful property `assetsByChunkName` which is a object containing chunk name as key and filename(s) as value.
-
-> Note: It's an array if you are emitting multiple assets per chunk. I. e. a JavaScript file and a SourceMap. The first one is your JavaScript source.
+> tips: 如果每个chunk都输出了多个asset那么filename会是一个数组. 比如一个chunk 你可能既输出js也输出sourceMap文件。

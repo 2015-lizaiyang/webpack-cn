@@ -1,16 +1,15 @@
-# Incremental builds
+# 增量构建
+确保你没有操作整体重构建的话。Webpack 拥有一个强大的缓存层让你将已经构建过的模块保存在内存当中，下面的工具可以帮助你利用他们：
 
-Make sure you don't do a full rebuild. Webpack has a great caching layer that allows you to keep already compiled modules in memory. There are some tools that help to use it:
+* [[webpack-dev-server]]: 从内存取全部webpack资源.最好的性能.
+* [[webpack-dev-middleware]]: 为高级用户准备的，和webpack-dev-server同样的性能.
+* [[webpack --watch | cli]] or [[`watch: true` | node.js API]]: 缓存所有资源但是写入硬盘.性能OK.
 
-* [[webpack-dev-server]]: Serves all webpack assets from memory. Best performance.
-* [[webpack-dev-middleware]]: The same performance as webpack-dev-server for advanced users.
-* [[webpack --watch | cli]] or [[`watch: true` | node.js API]]: Caches stuff but write assets to disk. Ok performance.
+# 从解析器中排出一些资源
 
-# Exclude modules from parsing
+使用 [`noParse`](http://webpack.github.io/docs/configuration.html#module-noparse) 可以避免对一些大型库的解析构建.
 
-With [`noParse`](http://webpack.github.io/docs/configuration.html#module-noparse) you can exclude big libraries from parsing, but this can break stuff.
-
-# Hints from build stats
+# 从构建的stats中做hints
 
 There is an [analyse tool](http://webpack.github.io/analyse/) which visualise your build and also provides some hint how build size and build performance can be optimized.
 
@@ -57,3 +56,8 @@ If you have a bunch of rarely changing modules (i. e. vendor libs) and chunking 
 To create the DLL bundle beforehand you need to use the `DllPlugin`. Here is an [example](https://github.com/webpack/webpack/tree/master/examples/dll). This emits a public bundle and a private manifest file.
 
 To use the DLL bundle from the app bundle you need to use the `DllReferencePlugin`. Here is an [example](https://github.com/webpack/webpack/tree/master/examples/dll-user). This stops following the dependency graph of your app when a module from the DLL bundle is found.
+
+[webpack-dev-server]:docs/webpack-dev-server.md
+[webpack-dev-middleware]:docs/webpack-dev-middleware.md
+[webpack --watch | cli]:docs/cli.md
+[`watch: true` | node.js API]:docs/node.js-api.md
