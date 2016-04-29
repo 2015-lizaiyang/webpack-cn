@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Build performance | webpack doc</title>
+        <title>构建性能 | webpack doc</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.2">
@@ -37,7 +37,7 @@
         
     
     
-    <link rel="next" href="../docs/comparison.html" />
+    <link rel="next" href="../docs/hot-module-replacement-with-webpack.html" />
     
     
     <link rel="prev" href="../docs/testing.html" />
@@ -50,10 +50,10 @@
         
     <div class="book"
         data-level="4.14"
-        data-chapter-title="Build performance"
+        data-chapter-title="构建性能"
         data-filepath="docs/build-performance.md"
         data-basepath=".."
-        data-revision="Tue Apr 19 2016 19:48:57 GMT+0800 (CST)"
+        data-revision="Fri Apr 29 2016 10:47:24 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -84,15 +84,7 @@
     
         <li class="chapter " data-level="1" data-path="docs/home.html">
             
-                
-                    <a href="../docs/home.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.</b>
-                        
-                        概览
-                    </a>
+            <span><b>1.</b> 概览</span>
             
             
         </li>
@@ -218,7 +210,7 @@
                         
                             <b>2.9.</b>
                         
-                        Dev Tools
+                        工具
                     </a>
             
             
@@ -246,7 +238,7 @@
     
         <li class="chapter " data-level="3" >
             
-            <span><b>3.</b> Tutorials and examples</span>
+            <span><b>3.</b> 教程与例子</span>
             
             
             <ul class="articles">
@@ -276,7 +268,7 @@
                         
                             <b>3.2.</b>
                         
-                        List of tutorials
+                        教程列表
                     </a>
             
             
@@ -291,7 +283,7 @@
                         
                             <b>3.3.</b>
                         
-                        examples
+                        示例
                     </a>
             
             
@@ -304,7 +296,7 @@
     
         <li class="chapter " data-level="4" >
             
-            <span><b>4.</b> Guides</span>
+            <span><b>4.</b> 指南</span>
             
             
             <ul class="articles">
@@ -409,7 +401,7 @@
                         
                             <b>4.7.</b>
                         
-                        Long-term Caching
+                        长期缓存
                     </a>
             
             
@@ -514,7 +506,7 @@
                         
                             <b>4.14.</b>
                         
-                        Build performance
+                        构建性能
                     </a>
             
             
@@ -522,7 +514,15 @@
     
         <li class="chapter " data-level="4.15" data-path="docs/hot-module-replacement-with-webpack.html">
             
-            <span><b>4.15.</b> Hot Module Replacement with webpack</span>
+                
+                    <a href="../docs/hot-module-replacement-with-webpack.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.15.</b>
+                        
+                        热替换
+                    </a>
             
             
         </li>
@@ -969,16 +969,16 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="incremental-builds">Incremental builds</h1>
-<p>Make sure you don&apos;t do a full rebuild. Webpack has a great caching layer that allows you to keep already compiled modules in memory. There are some tools that help to use it:</p>
+                        <h1 id="&#x589E;&#x91CF;&#x6784;&#x5EFA;">&#x589E;&#x91CF;&#x6784;&#x5EFA;</h1>
+<p>&#x786E;&#x4FDD;&#x4F60;&#x6CA1;&#x6709;&#x64CD;&#x4F5C;&#x6574;&#x4F53;&#x91CD;&#x6784;&#x5EFA;&#x7684;&#x8BDD;&#x3002;Webpack &#x62E5;&#x6709;&#x4E00;&#x4E2A;&#x5F3A;&#x5927;&#x7684;&#x7F13;&#x5B58;&#x5C42;&#x8BA9;&#x4F60;&#x5C06;&#x5DF2;&#x7ECF;&#x6784;&#x5EFA;&#x8FC7;&#x7684;&#x6A21;&#x5757;&#x4FDD;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x5F53;&#x4E2D;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x5DE5;&#x5177;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x4F60;&#x5229;&#x7528;&#x4ED6;&#x4EEC;&#xFF1A;</p>
 <ul>
-<li>[[webpack-dev-server]]: Serves all webpack assets from memory. Best performance.</li>
-<li>[[webpack-dev-middleware]]: The same performance as webpack-dev-server for advanced users.</li>
-<li>[[webpack --watch | cli]] or [[<code>watch: true</code> | node.js API]]: Caches stuff but write assets to disk. Ok performance.</li>
+<li>[<a href="docs/webpack-dev-server.md">webpack-dev-server</a>]: &#x4ECE;&#x5185;&#x5B58;&#x53D6;&#x5168;&#x90E8;webpack&#x8D44;&#x6E90;.&#x6700;&#x597D;&#x7684;&#x6027;&#x80FD;.</li>
+<li>[<a href="docs/webpack-dev-middleware.md">webpack-dev-middleware</a>]: &#x4E3A;&#x9AD8;&#x7EA7;&#x7528;&#x6237;&#x51C6;&#x5907;&#x7684;&#xFF0C;&#x548C;webpack-dev-server&#x540C;&#x6837;&#x7684;&#x6027;&#x80FD;.</li>
+<li>[<a href="docs/cli.md">webpack --watch | cli</a>] or [<a href="docs/node.js-api.md"><code>watch: true</code> | node.js API</a>]: &#x7F13;&#x5B58;&#x6240;&#x6709;&#x8D44;&#x6E90;&#x4F46;&#x662F;&#x5199;&#x5165;&#x786C;&#x76D8;.&#x6027;&#x80FD;OK.</li>
 </ul>
-<h1 id="exclude-modules-from-parsing">Exclude modules from parsing</h1>
-<p>With <a href="http://webpack.github.io/docs/configuration.html#module-noparse" target="_blank"><code>noParse</code></a> you can exclude big libraries from parsing, but this can break stuff.</p>
-<h1 id="hints-from-build-stats">Hints from build stats</h1>
+<h1 id="&#x4ECE;&#x89E3;&#x6790;&#x5668;&#x4E2D;&#x6392;&#x51FA;&#x4E00;&#x4E9B;&#x8D44;&#x6E90;">&#x4ECE;&#x89E3;&#x6790;&#x5668;&#x4E2D;&#x6392;&#x51FA;&#x4E00;&#x4E9B;&#x8D44;&#x6E90;</h1>
+<p>&#x4F7F;&#x7528; <a href="http://webpack.github.io/docs/configuration.html#module-noparse" target="_blank"><code>noParse</code></a> &#x53EF;&#x4EE5;&#x907F;&#x514D;&#x5BF9;&#x4E00;&#x4E9B;&#x5927;&#x578B;&#x5E93;&#x7684;&#x89E3;&#x6790;&#x6784;&#x5EFA;.</p>
+<h1 id="&#x4ECE;&#x6784;&#x5EFA;&#x7684;stats&#x4E2D;&#x505A;hints">&#x4ECE;&#x6784;&#x5EFA;&#x7684;stats&#x4E2D;&#x505A;hints</h1>
 <p>There is an <a href="http://webpack.github.io/analyse/" target="_blank">analyse tool</a> which visualise your build and also provides some hint how build size and build performance can be optimized.</p>
 <p>You can generate the required JSON file by running <code>webpack --profile --json &gt; stats.json</code></p>
 <h1 id="chunks">Chunks</h1>
@@ -1015,7 +1015,7 @@
         <a href="../docs/testing.html" class="navigation navigation-prev " aria-label="Previous page: Testing"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../docs/comparison.html" class="navigation navigation-next " aria-label="Next page: Comparison"><i class="fa fa-angle-right"></i></a>
+        <a href="../docs/hot-module-replacement-with-webpack.html" class="navigation navigation-next " aria-label="Next page: 热替换"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
