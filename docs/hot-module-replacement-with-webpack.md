@@ -1,35 +1,34 @@
 *Note that Hot Module Replacement (HMR) is still an experimental feature.*
 
-# Introduction
+# 介绍
 
-Hot Module Replacement (HMR) exchanges, adds, or removes modules while an application is running **without** a page reload.
 
-## Prerequirements
+热组件替换（HMR）是指：在应用运行时候替换、添加、移除模块而**不需要**页面重新加载
+
+## 前提条件
 
 * Using Plugins: http://webpack.github.io/docs/using-plugins.html
 * Code Splitting: http://webpack.github.io/docs/code-splitting.html
 * webpack-dev-server: http://webpack.github.io/docs/webpack-dev-server.html
 
-## How does it work?
+## 原理
+在构建的时候，webpack添加了一个小型HRM运行环境给bundle文件。这个运行环境跑在了你的app中。当构建结束Webpack并没有推出而是保持激活状态，监听资源文件的改动。如果Webpeck检测到资源文件的改动他将重新build这个改动的模块。接下来，将根据预先的配置要么让Webpack向HRM发起通知，要么让HRM自动检测webpack的变化。任何一种方式都是将改动后的模块高速HRM运行环境来调起热更新：首先HRM将检查是否更新的模块能自我接纳，如果不能，他将检查那些`require`过该更新模块的模块如果这些也不能接受，那就将他冒泡到其他层级，继续查找，`require`了这些`require`了变动模块的模块们直到这个更新被接受，如果到了入口点还没有，就说明热更新失败。
 
-Webpacks adds a small HMR runtime to the bundle, during the build process, that runs inside your app. When the build completes, Webpack does not exit but stays active, watching the source files for changes. If Webpack detects a source file change, it rebuilds only the changed module(s). Depending on the settings, Webpack will either send a signal to the HMR runtime, or the HMR runtime will poll webpack for changes. Either way, the changed module is sent to the HMR runtime which then tries to apply the hot update. First it checks whether the updated module can self-accept. If not, it checks those modules that have `require`d the updated module. If these too do not accept the update, it bubbles up another level, to the modules that `require`d the modules that `require`d the changed module. This bubbling-up will continue until either the update is accepted, or the app entry point is reached, in which case the hot update fails.
+### 应用层
 
-### From the app view
+app代码会让HMR运行环境监测更新，HRM运行环境下载了更新（异步）并告诉app代码更新已经可用。app代码会通过HMR运行环境来运行更新的文件。HRM运行更新的文件（异步的）app代码可选的拉取UI进程的更新（取决于你）；
 
-The app code asks the HMR runtime to check for updates. The HMR runtime downloads the updates (async) and tells the app code that an update is available. The app code asks the HMR runtime to apply updates. The HMR runtime applies the update (sync). The app code may or may not require user interaction in this process (you decide).
 
-### From the compiler (webpack) view
+### 编译（webpack）层
+除了正常的资源，编译器还需要发出‘Update’通知，来允许更新前一版本到此版本。‘Update’包涵两个内容：
 
-In addition to the normal assets, the compiler needs to emit the "Update" to allow updating the previous version to the current version. The "Update" contains two parts:
+1.  更新的manifest.json
+2. 一个或者多个更新模块 (js)
 
-1. the update manifest (json)
-2. one or multiple update chunks (js)
-
-The manifest contains the new compilation hash and a list of all update chunks (2.).
-
-The update chunks contains code for all updated modules in this chunk (or a flag if a module was removed).
-
-The compiler also makes sure that module and chunk ids are consistent between these builds. It uses a "records" json file to store them between builds (or it stores them in memory).
+manifest包含了新编译后的hash以及所有更新模块的列表。
+更新的代码块包涵所有更新模块的代码（或者如果该模块被移除就是一个标示）.
+编译器同时会确保模块和代码块id在这次build中是统一的。
+编译器同时会确保模块和编译后的代码块的ID在这几次编译期间是统一的，它将这些id存在‘records’的json文件里面或者直接存在内存。
 
 ### From the module view
 
