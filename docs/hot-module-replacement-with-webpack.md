@@ -26,8 +26,7 @@ app代码会让HMR运行环境监测更新，HRM运行环境下载了更新（�
 2. 一个或者多个更新模块 (js)
 
 manifest包含了新编译后的hash以及所有更新模块的列表。
-
-The update chunks contains code for all updated modules in this chunk (or a flag if a module was removed).
+更新的代码块包涵所有更新模块的代码（或者如果该模块被移除就是一个标示）.
 
 The compiler also makes sure that module and chunk ids are consistent between these builds. It uses a "records" json file to store them between builds (or it stores them in memory).
 
