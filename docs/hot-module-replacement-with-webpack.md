@@ -20,13 +20,12 @@ app代码会让HMR运行环境监测更新，HRM运行环境下载了更新（�
 
 
 ### 编译（webpack）层
+除了正常的资源，编译器还需要发出‘Update’通知，来允许更新前一版本到此版本。‘Update’包涵两个内容：
 
-In addition to the normal assets, the compiler needs to emit the "Update" to allow updating the previous version to the current version. The "Update" contains two parts:
+1.  更新的manifest.json
+2. 一个或者多个更新模块 (js)
 
-1. the update manifest (json)
-2. one or multiple update chunks (js)
-
-The manifest contains the new compilation hash and a list of all update chunks (2.).
+manifest包含了新编译后的hash以及所有更新模块的列表。
 
 The update chunks contains code for all updated modules in this chunk (or a flag if a module was removed).
 
