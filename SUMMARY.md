@@ -13,7 +13,7 @@
    * [Using Plugins](docs/using-plugins.md)
    * [工具](docs/dev-tools.md)
    * [Troubleshooting](docs/troubleshooting.md)
-* Tutorials and examples
+* 教程与例子
    * [Getting started](http:/webpack.github.io/docs/tutorials/getting-started/)
    * [List of tutorials](docs/list-of-tutorials.md)
    * [examples](docs/examples.md)
