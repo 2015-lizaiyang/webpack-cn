@@ -11,7 +11,7 @@
    * Vendor Modules
    * [Using Loaders](docs/using-loaders.md)
    * [Using Plugins](docs/using-plugins.md)
-   * [Dev Tools](docs/dev-tools.md)
+   * [工具](docs/dev-tools.md)
    * [Troubleshooting](docs/troubleshooting.md)
 * Tutorials and examples
    * [Getting started](http:/webpack.github.io/docs/tutorials/getting-started/)
