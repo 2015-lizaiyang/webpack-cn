@@ -30,7 +30,7 @@ manifest包含了新编译后的hash以及所有更新模块的列表。
 编译器同时会确保模块和代码块id在这次build中是统一的。
 编译器同时会确保模块和编译后的代码块的ID在这几次编译期间是统一的，它将这些id存在‘records’的json文件里面或者直接存在内存。
 
-### From the module view
+### module层
 
 HMR is an opt-in feature, so it only affects modules that contain HMR code. The documentation describes the API that is available in modules. In general, the module developer writes handlers that are called when a dependency of this module is updated. He can also write a handler that is called when this module is updated.
 
