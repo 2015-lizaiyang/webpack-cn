@@ -1,7 +1,7 @@
 # Summary
 
 * [关于文档](README.md)
-* [概览](docs/home.md)
+* [概览](docs/Home.md)
 * 开始
    * [动机](docs/motivation.md)
    * [webpack是什么](docs/what-is-webpack.md)
@@ -14,7 +14,7 @@
    * [工具](docs/dev-tools.md)
    * [Troubleshooting](docs/troubleshooting.md)
 * 教程与例子
-   * [Getting started](http:/webpack.github.io/docs/tutorials/getting-started/)
+   * [开始](http:/webpack.github.io/docs/tutorials/docs/getting-started.md)
    * [教程列表](docs/list-of-tutorials.md)
    * [示例](docs/examples.md)
 * 指南
