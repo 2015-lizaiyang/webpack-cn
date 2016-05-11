@@ -64,27 +64,19 @@
 
 <a id="second-file"></a>
 
-# Second file
+# 第二个文件
 
-Next, we will move some code into an extra file.
+我们将抽象一些代码带另外一个文件
 
-<div class="panel panel-add">
-
-### add `content.js`
+### 增加 `content.js`
 
     module.exports = "It works from content.js.";
 
-</div>
-
-<div class="panel panel-update">
-
-### update `entry.js`
+### 更新 `entry.js`
 
     - document.write("It works.");+ document.write(require("./content.js"));
 
-</div>
-
-And recompile with:
+然后:
 
     $ webpack ./entry.js bundle.js
 
