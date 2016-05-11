@@ -1,5 +1,3 @@
-# 开始
-
 # Welcome
 
 This small tutorial will guide you through a simple example.
