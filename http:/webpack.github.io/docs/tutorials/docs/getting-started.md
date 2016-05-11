@@ -1,45 +1,37 @@
 # Welcome
 
-This small tutorial will guide you through a simple example.
+一个简单的教程。
+你将学习到:
 
-You’ll learn:
+*   安装webpack
+*   使用 webpack
+*   使用 loaders
+*   使用开发服务器
 
-*   How to install webpack
-*   How to use webpack
-*   How to use loaders
-*   How to use the development server
-
-* * *
 
 <a id="installing-webpack"></a>
 
-# Installing webpack
+# 安装 webpack
 
-You need to have [node.js](https://nodejs.org) installed.
+你需要先安装了 [node.js](https://nodejs.org) 。
 
     $ npm install webpack -g
 
-> This makes the webpack command available.
+> 加载webpack全局命令
 
-* * *
 
 <a id="setup-compilation"></a>
 
-# Setup the compilation
+# 设置 compilation
 
-Start with a empty directory.
+新建一个文件夹.
 
-Create these files:
+创建几个文件:
 
-<div class="panel panel-add">
-
-### add `entry.js`
+###  `entry.js`
 
     document.write("It works.");
 
-</div>
-
-<div class="panel panel-add">
 
 ### add `index.html`
 
@@ -52,15 +44,13 @@ Create these files:
         </body>
     </html>
 
-</div>
-
-Then run the following:
+运行:
 
     $ webpack ./entry.js bundle.js
 
-It will compile your file and create a bundle file.
+这样就会将你的文件编译成一个bundlejs.
 
-If successful it displays something like this:
+如果成功显示如下:
 
     Version: webpack 1.12.11
     Time: 51ms
@@ -69,11 +59,8 @@ If successful it displays something like this:
     chunk    {0} bundle.js (main) 28 bytes [rendered]
         [0] ./tutorials/getting-started/setup-compilation/entry.js 28 bytes {0} [built]
 
-Open `index.html` in your browser. It should display `It works.`
+浏览器打开 `index.html` . 应该展示 `It works.`
 
-<iframe class="tutorial-iframe" seamless="" src="tutorials/getting-started/setup-compilation/index.html"></iframe>
-
-* * *
 
 <a id="second-file"></a>
 
