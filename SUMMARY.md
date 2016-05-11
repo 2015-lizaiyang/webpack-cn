@@ -14,7 +14,7 @@
    * [工具](docs/dev-tools.md)
    * [Troubleshooting](docs/troubleshooting.md)
 * 教程与例子
-   * [Getting started](http:/webpack.github.io/docs/tutorials/getting-started/)
+   * [Getting started](http:/webpack.github.io/docs/tutorials/docs/getting-started.md)
    * [教程列表](docs/list-of-tutorials.md)
    * [示例](docs/examples.md)
 * 指南
