@@ -80,10 +80,10 @@
 
     $ webpack ./entry.js bundle.js
 
-Update your browser window and you should see the text `It works from content.js.`.
+刷新浏览器你将看到 `It works from content.js.`.
 
-<iframe class="tutorial-iframe" seamless="" src="tutorials/getting-started/second-file/index.html"></iframe>
 
+> webpack 会分析你的入口文件的依赖文件
 > webpack will analyze your entry file for dependencies to other files. These files (called modules) are included in your `bundle.js` too. webpack will give each module a unique id and save all modules accessible by id in the `bundle.js` file. Only the entry module is executed on startup. A small runtime provides the `require` function and executes the dependencies when required.
 
 * * *
