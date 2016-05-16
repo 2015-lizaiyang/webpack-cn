@@ -92,7 +92,8 @@
 
 # The first loader
 
-We want to add a css file to our application.
+我们想要添加一个css文件到我们的应用里面。
+webpack 默认只处理js，我们需要添加`css-loader`来处理css文件
 
 webpack can only handle JavaScript natively, so we need the `css-loader` to process CSS files. We also need the `style-loader` to apply the styles in the CSS file.
 
