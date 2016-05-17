@@ -130,7 +130,7 @@ Recompile and update your browser to see your application with yellow background
 
 <a id="binding-loaders"></a>
 
-# Binding loaders
+# 绑定loader
 
 We don’t want to write such long requires `require(<span class="string">"!style!css!./style.css"</span>);`.
 
