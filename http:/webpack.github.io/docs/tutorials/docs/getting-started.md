@@ -132,19 +132,17 @@ Recompile and update your browser to see your application with yellow background
 
 # 绑定loader
 
-We don’t want to write such long requires `require(<span class="string">"!style!css!./style.css"</span>);`.
+我们一般不会想写着么长的字段来require `require(<span class="string">"!style!css!./style.css"</span>);`.
 
-We can bind file extensions to loaders so we just need to write: `require(<span class="string">"./style.css"</span>)`
+如果我们给loader 绑定了扩展名解下来我们只需要这样: `require(<span class="string">"./style.css"</span>)`
 
-<div class="panel panel-update">
 
-### update `entry.js`
+### 更新 `entry.js`
 
     - require("!style!css!./style.css");
     + require("./style.css");
       document.write(require("./content.js"));
 
-</div>
 
 Run the compilation with:
 
