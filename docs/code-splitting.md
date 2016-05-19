@@ -31,7 +31,7 @@ require.ensure(["module-a", "module-b"], function(require) {
 });
 ```
 
-注意: `require.ensure` only loads the modules, it doesn't evaluate them.
+注意: `require.ensure` 只加载modules, 但不执行.
 
 ### AMD: `require`
 
