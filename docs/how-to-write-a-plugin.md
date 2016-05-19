@@ -65,7 +65,8 @@ HelloCompilationPlugin.prototype.apply = function(compiler) {
 module.exports = HelloCompilationPlugin;
 ```
 
-For more information on what callbacks are available on the `compiler`, `compilation`, and other important objects, see the [[plugins API|plugins]] doc.
+更多关于在`compiler`, `compilation`等对象中哪些回调有用，看一下
+[plugins API](http://stephenzhao.github.io/webpack-cn/docs/plugins.html)
 
 ## 异步编译插件
 
