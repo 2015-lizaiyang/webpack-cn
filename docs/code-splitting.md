@@ -20,9 +20,9 @@ require.ensure(dependencies, callback)
 
 The `require.ensure` method ensures that every dependency in `dependencies` can be synchronously required when calling the `callback`. `callback` is called with the `require` function as parameter.
 
- `require.ensure` 方法确保在每个`dependencies`中的依赖都能被异步加载 when calling the `callback`. `callback` is called with the `require` function as parameter.
+ `require.ensure` 方法确保在每个`dependencies`中的依赖都能在`callback`调用时被异步加载。
 
-Example:
+例子:
 
 ``` javascript
 require.ensure(["module-a", "module-b"], function(require) {
