@@ -12,7 +12,9 @@
 
 ## 插件基本结构
 
-Plugins are instanceable objects with an `apply` method on their prototype. This `apply` method is called once by the Webpack compiler while installing the plugin. The `apply` method is given a reference to the underlying Webpack compiler, which grants access to compiler callbacks. A simple plugin is structured as follows:
+Plugins是可以用自身原型方法`apply`来实例化的对象。`apply`只在安装插件被Webpack compiler执行一次。`apply`方法传入一个Webpck compiler的引用，来访问编译器回调。
+
+一个简单的插件结构：
 
 ```javascript
 function HelloWorldPlugin(options) {
@@ -28,7 +30,7 @@ HelloWorldPlugin.prototype.apply = function(compiler) {
 module.exports = HelloWorldPlugin;
 ```
 
-Then to install the plugin, just include an instance in your Webpack config `plugins` array:
+安装插件时, 只需要将它的一个实例放到 Webpack config `plugins` 数组里面:
 
 ```javascript
 var HelloWorldPlugin = require('hello-world');
