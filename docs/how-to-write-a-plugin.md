@@ -1,6 +1,6 @@
-Plugins expose the full potential of the Webpack engine to third-party developers. Using staged build callbacks, developers can introduce their own behaviors into the Webpack build process. Building plugins is a bit more advanced than building loaders, because you'll need to understand some of the Webpack low-level internals to hook into them. Be prepared to read some source code!
+插件为第三方开发者释放了Webpack的最大可能性。利用多级回调开发者可以把他们自己的需要的功能引入到Webpack里面来。Build插件比Build loader 更进一步。因为你需要理解Webpack底层的东西。要有月底源代码的准备。
 
-## Compiler and Compilation
+## Compiler 和 Compilation
 
 Among the two most important resources while developing plugins are the `compiler` and `compilation` objects. Understanding their roles is an important first step in extending the Webpack engine.
 
