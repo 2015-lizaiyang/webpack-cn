@@ -18,9 +18,8 @@ AMD 和 CommonJs 有不同指定的方法去做按需加载，都支持并且和
 require.ensure(dependencies, callback)
 ```
 
-The `require.ensure` method ensures that every dependency in `dependencies` can be synchronously required when calling the `callback`. `callback` is called with the `require` function as parameter.
 
- `require.ensure` 方法确保在每个`dependencies`中的依赖都能在`callback`调用时被异步加载。
+ `require.ensure` 方法确保在每个`dependencies`中的依赖都能在`callback`调用时被异步加载。`callback`函数以`require` 作为参数执行。
 
 例子:
 
