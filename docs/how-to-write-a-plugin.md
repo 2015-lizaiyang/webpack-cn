@@ -69,8 +69,7 @@ module.exports = HelloCompilationPlugin;
 [plugins API](http://stephenzhao.github.io/webpack-cn/docs/plugins.html)
 
 ## 异步编译插件
-
-Some compilation plugin steps are asynchronous, and pass a callback function that _must_ be invoked when your plugin is finished running.
+有些compilation插件的步骤时异步的，并且会传入一个当你的插件运行完成时候_必须_调用的回调函数。
 
 ```javascript
 function HelloAsyncPlugin(options) {}
