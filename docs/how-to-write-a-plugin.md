@@ -45,7 +45,7 @@ var webpackConfig = {
 
 ## 访问 compilation
 
-Using the compiler object, you may bind callbacks that provide a reference to each new compilation. These compilations provide callbacks for hooking into numerous steps within the build process.
+使用compiler对象，你可能需要绑定带有各个新compilation的引用的回调函数。这些compilation提供回调函数连接成许多构建过程中的步骤。
 
 ```javascript
 function HelloCompilationPlugin(options) {}
