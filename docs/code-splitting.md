@@ -49,9 +49,9 @@ require(["module-a", "module-b"], function(a, b) {
 });
 ```
 
-Note: AMD `require` loads and evaluate the modules. In webpack modules are evaluated left to right.
+注1: AMD `require` 加载且执行. 在webpack里 modules *从左到右* 执行.
 
-Note: It's allowed to omit the callback.
+注2: It's allowed to omit the callback.
 
 ### ES6 Modules
 
