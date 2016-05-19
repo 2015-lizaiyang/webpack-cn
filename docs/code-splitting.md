@@ -51,11 +51,11 @@ require(["module-a", "module-b"], function(a, b) {
 
 注1: AMD `require` 加载且执行. 在webpack里 modules *从左到右* 执行.
 
-注2: It's allowed to omit the callback.
+注2: 回调函数是可以省略的.
 
 ### ES6 Modules
 
-**tldr: Webpack doesn't support es6 modules, use `require.ensure` or `require` directly depending on which module format your transpiler creates.**
+** Webpack 不支持 es6 modules, 直接使用 `require.ensure` 或者 `require` 取决于你是那种模块化规范.**
 
 Webpack `1.x.x` (coming in `2.0.0`!) does not natively support or understand ES6 modules. However, you can get around that by using a transpiler, like Babel, to turning the ES6 `import` syntax into CommonJs or AMD modules. This approach is effective but has one important caveat for dynamic loading.
 
