@@ -1,9 +1,8 @@
 插件为第三方开发者释放了Webpack的最大可能性。利用多级回调开发者可以把他们自己的需要的功能引入到Webpack里面来。Build插件比Build loader 更进一步。因为你需要理解Webpack底层的东西。要有月底源代码的准备。
 
 ## Compiler 和 Compilation
-
-Among the two most important resources while developing plugins are the `compiler` and `compilation` objects. Understanding their roles is an important first step in extending the Webpack engine.
-
+开发插件最重要的两个资源就是 `compiler` 和 `compilation` 对象，理解他们的是扩展Webpack重要的一步
+- `compiler`对象包涵了Webpack环境所有的的配置信息，
 - The `compiler` object represents the fully configured Webpack environment. This object is built once upon starting Webpack, and is configured with all operational settings including options, loaders, and plugins. When applying a plugin to the Webpack environment, the plugin will receive a reference to this compiler. Use the compiler to access the main Webpack environment.
 
 - A `compilation` object represents a single build of versioned assets. While running Webpack development middleware, a new compilation will be created each time a file change is detected, thus generating a new set of compiled assets. A compilation surfaces information about the present state of module resources, compiled assets, changed files, and watched dependencies. The compilation also provides many callback points at which a plugin may choose to perform custom actions.
