@@ -35,7 +35,7 @@ require.ensure(["module-a", "module-b"], function(require) {
 
 ### AMD: `require`
 
-The AMD spec defines an asynchronous `require` method with this definition:
+AMD 规范定义的异步 `require` 方法如下:
 
 ``` javascript
 require(dependencies, callback)
