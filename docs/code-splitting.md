@@ -57,7 +57,8 @@ require(["module-a", "module-b"], function(a, b) {
 
 ** Webpack 不支持 es6 modules, 直接使用 `require.ensure` 或者 `require` 取决于你是那种模块化规范.**
 
-Webpack `1.x.x` (coming in `2.0.0`!) does not natively support or understand ES6 modules. However, you can get around that by using a transpiler, like Babel, to turning the ES6 `import` syntax into CommonJs or AMD modules. This approach is effective but has one important caveat for dynamic loading.
+Webpack `1.x.x` ( `2.0.0`快来了!) 没有原生支持或兼容es6 Modules.
+但是，你可以通过使用一种转换器比如`Babel`，来将ES6 `import` 语法转换成CommonJs 或者 AMD modules从而解决这个问题。这种方法是有效的但是在动态加载的时候有一个很重要的警告。
 
 The module _syntax_ addition (`import x from 'foo'`) is intentionally designed to be _statically_ analyzable, which means that you cannot do dynamic imports.
 
