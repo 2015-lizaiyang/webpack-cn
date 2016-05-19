@@ -10,8 +10,7 @@ Webpack 可以把你的代码拆分到“chunks”里面去，从而让你的代
 
 ## 如何定义拆分点
 
-AMD and CommonJs specify different methods to load code on demand. Both are supported and act as split points:
-AMD 和 CommonJs 有指定的方法去做按需加载，都支持并且和扮演拆分点的角色
+AMD 和 CommonJs 有不同指定的方法去做按需加载，都支持并且和扮演拆分点的角色
 
 ### CommonJs: `require.ensure`
 
