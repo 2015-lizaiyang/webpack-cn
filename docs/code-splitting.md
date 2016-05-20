@@ -147,8 +147,8 @@ module.exports = {
 
 
 ## 多入口 chunks
+在config里面配置多入口chunks是可以实现的。入口的chunk包含了运行时环境，一个页面有且仅有一个运行时环境（也可以有例外）：
 
-It's possible to [[configure | configuration]] multiple entry points that will result in multiple entry chunks. The entry chunk contains the runtime and there must only be one runtime on a page (there are exceptions).
 
 ### 运行多入口点
 
