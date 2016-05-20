@@ -179,8 +179,8 @@ module.exports = {
 
 
 ## 优化 
+有一些优化的插件可以合并chunks，看看[plugins列表](http://stephenzhao.github.io/webpack-cn/docs/list-of-plugins.html) 。
 
-There are optimizing plugins that can merge chunks depending on specific criteria. See [[list of plugins]].
 
 * `LimitChunkCountPlugin`
 * `MinChunkSizePlugin`
@@ -189,8 +189,8 @@ There are optimizing plugins that can merge chunks depending on specific criteri
 
 
 ##  chunks的名字
+`require.ensure`函数可以接受额外第三个参数，这个参数必须是一个字符串。如果两个拆分点传递同样的字符串将使用相同的chunk。
 
-The `require.ensure` function accepts an additional 3rd parameter. This must be a string. If two split point pass the same string they use the same chunk.
 
 
 
