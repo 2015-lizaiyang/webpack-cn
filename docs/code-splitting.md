@@ -91,34 +91,35 @@ require.ensure([], function(require) {
 
 如果一个`modoule`在所有的`chunk`父级可用，它将从`chunk`中被移除。
 
-如果一个chunk包涵别的chunk的所有modules，这个chunk将被保存，并最终出现多个chunks
+如果一个`chunk`包涵别的`chunk`的所有`modules`，这个`chunk`将被保存，并最终出现多个`chunks`
 
 
 
 
-## Chunk loading
-
-Depending on the configuration option `target` a runtime logic for chunk loading is added to the bundle. I. e. for the `web` target chunks are loaded via jsonp. A chunk is only loaded once and parallel requests are merged into one. The runtime checks for loaded chunks whether they fulfill multiple chunks.
+## Chunk 加载
 
 
+根据设置项`target`运行环境会在bundle里面加上chunk的加载逻辑。
+比如说`target`选项设置为`web`，目标chunks将通过jsonp来加载。一个chunk之加载一次并且并行的请求将被合并到一个。运行环境会检查加载后的chunk是不是多个。
 
-## Chunk types
 
-### Entry chunk
+## Chunk 类型
+
+### 入口 chunk
 
 An entry chunk contains the runtime plus a bunch of modules. If the chunk contains the module `0` the runtime executes it. If not, it waits for chunks that contains the module `0` and executes it (every time when there is a chunk with a module `0`).
 
-### Normal chunk
+### 标准 chunk
 
 A normal chunk contains no runtime. It only contains a bunch of modules. The structure depends on the chunk loading algorithm. I. e. for jsonp the modules are wrapped in a jsonp callback function. The chunk also contains a list of chunk id that it fulfills.
 
-### Initial chunk (non-entry)
+### 初始 chunk (non-entry)
 
 An initial chunk is a normal chunk. The only difference is that optimization treats it as more important because it counts toward the initial loading time (like entry chunks). That chunk type can occur in combination with the `CommonsChunkPlugin`.
 
 
 
-## Split app and vendor code
+## 拆分 app 和 vendor code
 
 To split your app into 2 files, say `app.js` and `vendor.js`, you can `require` the vendor files in `vendor.js`. Then pass this name to the `CommonsChunkPlugin` as shown below.
 
@@ -150,11 +151,11 @@ In your HTML page load `vendor.bundle.js` before `bundle.js`.
 
 
 
-## Multiple entry chunks
+## 多入口 chunks
 
 It's possible to [[configure | configuration]] multiple entry points that will result in multiple entry chunks. The entry chunk contains the runtime and there must only be one runtime on a page (there are exceptions).
 
-### Running multiple entry points
+### 运行多入口点
 
 With the `CommonsChunkPlugin` the runtime is moved to the commons chunk. The entry points are now in initial chunks. While only one initial chunk can be loaded, multiple entry chunks can be loaded. This exposes the possibility to run multiple entry points in a single page.
 
@@ -183,7 +184,7 @@ The `CommonsChunkPlugin` can move modules that occur in multiple entry chunks to
 
 
 
-## Optimization 
+## 优化 
 
 There are optimizing plugins that can merge chunks depending on specific criteria. See [[list of plugins]].
 
@@ -193,7 +194,7 @@ There are optimizing plugins that can merge chunks depending on specific criteri
 
 
 
-## Named chunks
+##  chunks的名字
 
 The `require.ensure` function accepts an additional 3rd parameter. This must be a string. If two split point pass the same string they use the same chunk.
 
@@ -226,7 +227,7 @@ require.ensure([], function(require) {
 
 
 
-## Examples
+## 示例
 
 * [Simple](https://github.com/webpack/webpack/tree/master/examples/code-splitting)
 * [with bundle-loader](https://github.com/webpack/webpack/tree/master/examples/code-splitting-bundle-loader)
