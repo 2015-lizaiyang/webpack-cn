@@ -93,11 +93,6 @@ require.ensure([], function(require) {
 
 如果一个chunk包涵别的chunk的所有modules，这个chunk将被保存，并最终出现多个chunks
 
-If two chunks contain the same modules, they are merged into one. This can cause chunks to have multiple parents.
-
-If a module is available in all parents of a chunk, it's removed from that chunk.
-
-If a chunk contains all modules of another chunk, this is stored. It fulfills multiple chunks.
 
 
 
