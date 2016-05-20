@@ -173,8 +173,8 @@ module.exports = {
 
 
 ## Commons chunk
-`CommonsChunkPlugin`能把出现在多个入口chunk的 modules移动到一个行的入口chunk里面（commons chunk）。运行时也同样被移动到commons chunk里面。这意味着老的入口chunk成为了一个初始chunk了。可以在［plugins列表］
-The `CommonsChunkPlugin` can move modules that occur in multiple entry chunks to a new entry chunk (the commons chunk). The runtime is moved to the commons chunk too. This means the old entry chunks are initial chunks now. See all options in the [[list of plugins]].
+`CommonsChunkPlugin`能把出现在多个入口chunk的 modules移动到一个行的入口chunk里面（commons chunk）。运行时也同样被移动到commons chunk里面。这意味着老的入口chunk成为了一个初始chunk了。可以在[plugins列表](http://stephenzhao.github.io/webpack-cn/docs/list-of-plugins.html) 看到有关配置说明。
+
 
 
 
