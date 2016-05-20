@@ -60,13 +60,14 @@ require(["module-a", "module-b"], function(a, b) {
 Webpack `1.x.x` ( `2.0.0`快来了!) 没有原生支持或兼容es6 Modules.
 但是，你可以通过使用一种转换器比如`Babel`，来将ES6 `import` 语法转换成CommonJs 或者 AMD modules从而解决这个问题。这种方法是有效的但是在动态加载的时候有一个很重要的警告。
 
-The module _syntax_ addition (`import x from 'foo'`) is intentionally designed to be _statically_ analyzable, which means that you cannot do dynamic imports.
+
+模块添加语法(`import x from 'foo'`) 故意设计成静态可分析的，也就意味着你不能做动态加载。
 
 ```javascript
 // INVALID!!!!!!!!!
 ['lodash', 'backbone'].forEach(name => import name )
 ```
-
+幸运的是，已经有一个 JS API 'loader'
 Luckily, there is a JavaScript API "loader" specification being written to handle the dynamic use case: `System.load` (or `System.import`). This API will be the native equivalent to the above `require` variations. However, __most transpilers do not support converting `System.load` calls to `require.ensure`__ so you have to do that directly if you want to make use of dynamic code splitting.
 
 ```javascript
