@@ -209,15 +209,14 @@ require.ensure(["./file"], function(require) {
   require("./file2");
 });
 
-// is equal to
+// 等价于
 
 require.ensure([], function(require) {
   require.include("./file");
   require("./file2");
 });
 ```
-
-`require.include` can be useful if a module is in multiple child chunks. A `require.include` in the parent would include the module and the instances of the modules in the child chunks would disappear.
+如一个module在多个子chunk里面时候`require.include` 会很有用，在父chunk里面的`require.include`将include该module，并且在子chunk里面的module的实例将不会出现。
 
 
 
