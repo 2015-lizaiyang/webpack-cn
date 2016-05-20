@@ -151,10 +151,9 @@ module.exports = {
 
 
 ### 运行多入口点
+使用`CommonsChunkPlugin`后，运行环境被移动到了commons chunk 里。他们的入口点在初始chunk里面。然而只有一个初始chunk 和 多个入口chunk 能被加载，这表明在一个单页里面运行多个入口点是可行的。
 
-With the `CommonsChunkPlugin` the runtime is moved to the commons chunk. The entry points are now in initial chunks. While only one initial chunk can be loaded, multiple entry chunks can be loaded. This exposes the possibility to run multiple entry points in a single page.
-
-Example:
+例如:
 
 ``` javascript
 var webpack = require("webpack");
@@ -174,7 +173,7 @@ module.exports = {
 
 
 ## Commons chunk
-
+`CommonsChunkPlugin`能把出现在多个入口chunk的 modules移动到一个行的入口chunk里面（commons chunk）。运行时也同样被移动到commons chunk里面。这意味着老的入口chunk成为了一个初始chunk了。可以在［plugins列表］
 The `CommonsChunkPlugin` can move modules that occur in multiple entry chunks to a new entry chunk (the commons chunk). The runtime is moved to the commons chunk too. This means the old entry chunks are initial chunks now. See all options in the [[list of plugins]].
 
 
