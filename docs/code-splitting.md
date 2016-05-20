@@ -231,4 +231,4 @@ require.ensure([], function(require) {
 * [multiple entry chunks](https://github.com/webpack/webpack/tree/master/examples/multiple-entry-points)
 * [multiple commons chunks](https://github.com/webpack/webpack/tree/master/examples/multiple-commons-chunks)
 
-For a running demo see the [example-app](http://webpack.github.io/example-app/). Check Network in DevTools.
+看一个[example-app](http://webpack.github.io/example-app/). 在 DevTools看一下网络请求.
