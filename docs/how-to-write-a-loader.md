@@ -142,12 +142,12 @@ If a loader uses external resources (i. e. by reading from filesystem), they **m
     }
 ```
 
-### programmable objects as `query`-option
+### 让对象可编程 `query`-option
 
 有些情况下你的加载器需要一些不可`stringify`为`query`字串的可编程对象的函数。
 比如lessloader，提供了一个`LESS-plugins` 允许加载器去扩展webpack的`options`去检索特定的选项。为了避免名字冲突然，option是在加载器的npm驼峰名字域下的
 ```js
-Example:
+例子:
 
     // webpack.config.js
     module.exports = {
@@ -159,8 +159,9 @@ Example:
       }
     };
 ```
-The loader should also allow to specify the dded to the [list of loaders](list-of-loaders.html)
 
-## [→](#read-more)Read more
+参考：[list of loaders](list-of-loaders.html)
 
-Read more about [loaders](loaders.html).
+## 阅读更多
+
+ [loaders](loaders.html).
