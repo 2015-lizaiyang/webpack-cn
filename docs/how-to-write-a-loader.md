@@ -3,7 +3,6 @@
 
 webpack的loader是一个node module 导出的一个用于转化加载的资源的 `function`.
 
-In the simple case, when only a single loader is applied to the resource, the loader is called with one parameter: the content of the resource file as string.
 在简单的情况下，当只有一个加载器被执行的时候，其参数为资源文件的内容串。
 
 加载器可以通过`this`上下文来访问[loader API](loaders.html)。
