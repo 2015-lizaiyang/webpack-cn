@@ -106,22 +106,19 @@ require.ensure([], function(require) {
 ## Chunk 类型
 
 ### 入口 chunk
-
-An entry chunk contains the runtime plus a bunch of modules. If the chunk contains the module `0` the runtime executes it. If not, it waits for chunks that contains the module `0` and executes it (every time when there is a chunk with a module `0`).
+一个入口chunk包涵了一个运行环境外加一堆modules。如果该chunk包含了module`0`，chunk将被执行。如果没有，该chunk将等到加载到包含`0`module的chunk并执行它（只要发现有含有module`0` 的chunk都执行）
 
 ### 标准 chunk
-
-A normal chunk contains no runtime. It only contains a bunch of modules. The structure depends on the chunk loading algorithm. I. e. for jsonp the modules are wrapped in a jsonp callback function. The chunk also contains a list of chunk id that it fulfills.
+标准的chunk不包含运行时环境，仅仅包含一堆的modules。它的结构取决于chunk的加载算法。比如，对于jsonp这些模块将被包裹在一个jsonp的回调函数里面。另外标准chunk包含了一个它实现了的chunk ID 列表。
 
 ### 初始 chunk (non-entry)
-
-An initial chunk is a normal chunk. The only difference is that optimization treats it as more important because it counts toward the initial loading time (like entry chunks). That chunk type can occur in combination with the `CommonsChunkPlugin`.
+一个初始的chunk是一个标准的chunk，不同的是它的优化优先级比较高，因为它像入口文件一样记入了加载时间里面。这种类型通常出现在用`CommonsChunkPlugin`合并chunk里面。
 
 
 
 ## 拆分 app 和 vendor code
+拆分你的app为两个文件，`app.js`和`vendor.js`,你可以 `require`公用的文件到`vendor.js`，然后将这个文件名传入到`CommonsChunkPlugin` ，向下面这样：
 
-To split your app into 2 files, say `app.js` and `vendor.js`, you can `require` the vendor files in `vendor.js`. Then pass this name to the `CommonsChunkPlugin` as shown below.
 
 ``` javascript
 var webpack = require("webpack");
@@ -139,10 +136,8 @@ module.exports = {
   ]
 };
 ```
-
-This will remove all modules in the `vendor` chunk from the `app` chunk. The `bundle.js` will now contain just your app code, without any of its dependencies. These are in `vendor.bundle.js`.
-
-In your HTML page load `vendor.bundle.js` before `bundle.js`.
+这样将从`app`里面移除所有的在`vendor`里面的文件。`bundle.js`将之包含你的app代码而没有他的依赖，他们将被放入`vendor.bundle.js`里面。
+在你的HTML页面加载`vendor.bundle.js`（在`bundle.js`之前）即可。
 
 ``` html
 <script src="vendor.bundle.js"></script>
