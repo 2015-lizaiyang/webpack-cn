@@ -1,4 +1,4 @@
-## 如何书写webpack loader
+## 如何编写webpack loader
 
 
 webpack的loader是一个node module 导出的一个用于转化加载的资源的 `function`.
