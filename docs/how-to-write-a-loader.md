@@ -142,9 +142,9 @@ If a loader uses external resources (i. e. by reading from filesystem), they **m
     }
 ```
 
-### 让对象可编程 `query`-option
+### 可编程化对象作为参数
 
-有些情况下你的加载器需要一些不可`stringify`为`query`字串的可编程对象的函数。
+有些情况下你的加载器需要一些带有不可序列化的函数的可编程对象做为参数。
 比如lessloader，提供了一个`LESS-plugins` 允许加载器去扩展webpack的`options`去检索特定的选项。为了避免名字冲突然，option是在加载器的npm驼峰名字域下的
 ```js
 例子:
