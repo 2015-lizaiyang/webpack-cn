@@ -26,7 +26,7 @@
    * [性能优化](docs/optimization.md)
    * [长期缓存](docs/long-term-caching.md)
    * [如何编写loader](docs/how-to-write-a-loader.md)
-   * [How to write a plugin](docs/how-to-write-a-plugin.md)
+   * [如何编写插件](docs/how-to-write-a-plugin.md)
    * [Multiple entry points](docs/multiple-entry-points.md)
    * [Library and externals](docs/library-and-externals.md)
    * [Shimming modules](docs/shimming-modules.md)

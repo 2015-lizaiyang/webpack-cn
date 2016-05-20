@@ -64,34 +64,26 @@
 
 <a id="second-file"></a>
 
-# Second file
+# 第二个文件
 
-Next, we will move some code into an extra file.
+我们将抽象一些代码带另外一个文件
 
-<div class="panel panel-add">
-
-### add `content.js`
+### 增加 `content.js`
 
     module.exports = "It works from content.js.";
 
-</div>
-
-<div class="panel panel-update">
-
-### update `entry.js`
+### 更新 `entry.js`
 
     - document.write("It works.");+ document.write(require("./content.js"));
 
-</div>
-
-And recompile with:
+然后:
 
     $ webpack ./entry.js bundle.js
 
-Update your browser window and you should see the text `It works from content.js.`.
+刷新浏览器你将看到 `It works from content.js.`.
 
-<iframe class="tutorial-iframe" seamless="" src="tutorials/getting-started/second-file/index.html"></iframe>
 
+> webpack 会分析你的入口文件的依赖文件
 > webpack will analyze your entry file for dependencies to other files. These files (called modules) are included in your `bundle.js` too. webpack will give each module a unique id and save all modules accessible by id in the `bundle.js` file. Only the entry module is executed on startup. A small runtime provides the `require` function and executes the dependencies when required.
 
 * * *
@@ -100,7 +92,8 @@ Update your browser window and you should see the text `It works from content.js
 
 # The first loader
 
-We want to add a css file to our application.
+我们想要添加一个css文件到我们的应用里面。
+webpack 默认只处理js，我们需要添加`css-loader`来处理css文件
 
 webpack can only handle JavaScript natively, so we need the `css-loader` to process CSS files. We also need the `style-loader` to apply the styles in the CSS file.
 
@@ -137,21 +130,19 @@ Recompile and update your browser to see your application with yellow background
 
 <a id="binding-loaders"></a>
 
-# Binding loaders
+# 绑定loader
 
-We don’t want to write such long requires `require(<span class="string">"!style!css!./style.css"</span>);`.
+我们一般不会想写着么长的字段来require `require(<span class="string">"!style!css!./style.css"</span>);`.
 
-We can bind file extensions to loaders so we just need to write: `require(<span class="string">"./style.css"</span>)`
+如果我们给loader 绑定了扩展名解下来我们只需要这样: `require(<span class="string">"./style.css"</span>)`
 
-<div class="panel panel-update">
 
-### update `entry.js`
+### 更新 `entry.js`
 
     - require("!style!css!./style.css");
     + require("./style.css");
       document.write(require("./content.js"));
 
-</div>
 
 Run the compilation with:
 

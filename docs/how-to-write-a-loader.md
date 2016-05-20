@@ -1,9 +1,8 @@
-## 如何书写webpack loader
+## 如何编写webpack loader
 
 
 webpack的loader是一个node module 导出的一个用于转化加载的资源的 `function`.
 
-In the simple case, when only a single loader is applied to the resource, the loader is called with one parameter: the content of the resource file as string.
 在简单的情况下，当只有一个加载器被执行的时候，其参数为资源文件的内容串。
 
 加载器可以通过`this`上下文来访问[loader API](loaders.html)。
@@ -143,12 +142,12 @@ If a loader uses external resources (i. e. by reading from filesystem), they **m
     }
 ```
 
-### programmable objects as `query`-option
+### 可编程化对象作为参数
 
-有些情况下你的加载器需要一些不可`stringify`为`query`字串的可编程对象的函数。
+有些情况下你的加载器需要一些带有不可序列化的函数的可编程对象做为参数。
 比如lessloader，提供了一个`LESS-plugins` 允许加载器去扩展webpack的`options`去检索特定的选项。为了避免名字冲突然，option是在加载器的npm驼峰名字域下的
 ```js
-Example:
+例子:
 
     // webpack.config.js
     module.exports = {
@@ -160,8 +159,9 @@ Example:
       }
     };
 ```
-The loader should also allow to specify the dded to the [list of loaders](list-of-loaders.html)
 
-## [→](#read-more)Read more
+参考：[list of loaders](list-of-loaders.html)
 
-Read more about [loaders](loaders.html).
+## 阅读更多
+
+ [loaders](loaders.html).
