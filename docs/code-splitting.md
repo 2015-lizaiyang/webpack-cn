@@ -188,7 +188,7 @@ module.exports = {
 
 
 
-##  chunks的名字
+##  给chunks起个别名
 `require.ensure`函数可以接受额外第三个参数，这个参数必须是一个字符串。如果两个拆分点传递同样的字符串将使用相同的chunk。
 
 
@@ -199,10 +199,10 @@ module.exports = {
 ``` javascript
 require.include(request)
 ```
+`require.include`webpack特殊函数，目的时添加module到当前的chunk里面，但是不会执行它。（声明在bundle里面将会被干掉）
 
-`require.include` is a webpack specific function that adds a module to the current chunk, but doesn't evaluate it (The statement is removed from the bundle).
 
-Example:
+例子:
 
 ``` javascript
 require.ensure(["./file"], function(require) {
