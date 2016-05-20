@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>How to write a plugin | webpack doc</title>
+        <title>如何编写插件 | webpack doc</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.2">
@@ -50,10 +50,10 @@
         
     <div class="book"
         data-level="4.9"
-        data-chapter-title="How to write a plugin"
+        data-chapter-title="如何编写插件"
         data-filepath="docs/how-to-write-a-plugin.md"
         data-basepath=".."
-        data-revision="Fri Apr 29 2016 11:06:13 GMT+0800 (CST)"
+        data-revision="Fri May 20 2016 18:46:15 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -255,13 +255,13 @@
         <li class="chapter " data-level="3.1" >
             
                 
-                    <a target="_blank" href="http:/webpack.github.io/docs/tutorials/getting-started/">
+                    <a target="_blank" href="http:/webpack.github.io/docs/tutorials/docs/getting-started.md">
                 
                         <i class="fa fa-check"></i>
                         
                             <b>3.1.</b>
                         
-                        Getting started
+                        开始
                     </a>
             
             
@@ -439,7 +439,7 @@
                         
                             <b>4.9.</b>
                         
-                        How to write a plugin
+                        如何编写插件
                     </a>
             
             
@@ -977,22 +977,21 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>Plugins expose the full potential of the Webpack engine to third-party developers. Using staged build callbacks, developers can introduce their own behaviors into the Webpack build process. Building plugins is a bit more advanced than building loaders, because you&apos;ll need to understand some of the Webpack low-level internals to hook into them. Be prepared to read some source code!</p>
-<h2 id="compiler-and-compilation">Compiler and Compilation</h2>
-<p>Among the two most important resources while developing plugins are the <code>compiler</code> and <code>compilation</code> objects. Understanding their roles is an important first step in extending the Webpack engine.</p>
+                        <p>&#x63D2;&#x4EF6;&#x4E3A;&#x7B2C;&#x4E09;&#x65B9;&#x5F00;&#x53D1;&#x8005;&#x91CA;&#x653E;&#x4E86;Webpack&#x7684;&#x6700;&#x5927;&#x53EF;&#x80FD;&#x6027;&#x3002;&#x5229;&#x7528;&#x591A;&#x7EA7;&#x56DE;&#x8C03;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x628A;&#x4ED6;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x9700;&#x8981;&#x7684;&#x529F;&#x80FD;&#x5F15;&#x5165;&#x5230;Webpack&#x91CC;&#x9762;&#x6765;&#x3002;Build&#x63D2;&#x4EF6;&#x6BD4;Build loader &#x66F4;&#x8FDB;&#x4E00;&#x6B65;&#x3002;&#x56E0;&#x4E3A;&#x4F60;&#x9700;&#x8981;&#x7406;&#x89E3;Webpack&#x5E95;&#x5C42;&#x7684;&#x4E1C;&#x897F;&#x3002;&#x8981;&#x6709;&#x6708;&#x5E95;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x51C6;&#x5907;&#x3002;</p>
+<h2 id="compiler-&#x548C;-compilation">Compiler &#x548C; Compilation</h2>
+<p>&#x5F00;&#x53D1;&#x63D2;&#x4EF6;&#x6700;&#x91CD;&#x8981;&#x7684;&#x4E24;&#x4E2A;&#x8D44;&#x6E90;&#x5C31;&#x662F; <code>compiler</code> &#x548C; <code>compilation</code> &#x5BF9;&#x8C61;&#xFF0C;&#x7406;&#x89E3;&#x4ED6;&#x4EEC;&#x7684;&#x662F;&#x6269;&#x5C55;Webpack&#x91CD;&#x8981;&#x7684;&#x4E00;&#x6B65;</p>
 <ul>
-<li><p>The <code>compiler</code> object represents the fully configured Webpack environment. This object is built once upon starting Webpack, and is configured with all operational settings including options, loaders, and plugins. When applying a plugin to the Webpack environment, the plugin will receive a reference to this compiler. Use the compiler to access the main Webpack environment.</p>
-</li>
-<li><p>A <code>compilation</code> object represents a single build of versioned assets. While running Webpack development middleware, a new compilation will be created each time a file change is detected, thus generating a new set of compiled assets. A compilation surfaces information about the present state of module resources, compiled assets, changed files, and watched dependencies. The compilation also provides many callback points at which a plugin may choose to perform custom actions.</p>
-</li>
+<li><code>compiler</code>&#x5BF9;&#x8C61;&#x5305;&#x6DB5;&#x4E86;Webpack&#x73AF;&#x5883;&#x6240;&#x6709;&#x7684;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x5728;Webpack&#x542F;&#x52A8;&#x65F6;&#x5019;&#x88AB;&#x6784;&#x5EFA;&#xFF0C;&#x5E76;&#x914D;&#x7F6E;&#x4E0A;&#x6240;&#x6709;&#x7684;&#x8BBE;&#x7F6E;&#x9009;&#x9879;&#x5305;&#x62EC; options&#xFF0C;loaders&#xFF0C;plugins&#x3002;&#x5F53;&#x542F;&#x7528;&#x4E00;&#x4E2A;&#x63D2;&#x4EF6;&#x5230;Webpack&#x73AF;&#x5883;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;&#x5C31;&#x4F1A;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x6307;&#x5411;compiler&#x7684;&#x53C2;&#x6570;&#x3002;&#x8FD0;&#x7528;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x6765;&#x83B7;&#x53D6;&#x5230;Webpack&#x73AF;&#x5883;</li>
+<li><code>compilation</code>&#x4EE3;&#x8868;&#x4E86;&#x4E00;&#x4E2A;&#x5355;&#x4E00;&#x6784;&#x5EFA;&#x7248;&#x672C;&#x7684;&#x7269;&#x6599;&#x3002;&#x5728;webpack&#x4E2D;&#x95F4;&#x4EF6;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x6BCF;&#x5F53;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x53D1;&#x751F;&#x6539;&#x53D8;&#x65F6;&#x5C31;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x65B0;&#x7684;compilation&#x4ECE;&#x800C;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x53D8;&#x5F02;&#x540E;&#x7684;&#x7269;&#x6599;&#x96C6;&#x5408;&#x3002;compilation&#x5217;&#x51FA;&#x4E86;&#x5F88;&#x591A;&#x5173;&#x4E8E;&#x5F53;&#x524D;&#x6A21;&#x5757;&#x8D44;&#x6E90;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x7F16;&#x8BD1;&#x540E;&#x7684;&#x8D44;&#x6E90;&#x4FE1;&#x606F;&#xFF0C;&#x6539;&#x52A8;&#x8FC7;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4EE5;&#x53CA;&#x76D1;&#x542C;&#x8FC7;&#x7684;&#x4F9D;&#x8D56;&#x3002;compilation&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x63D2;&#x4EF6;&#x9700;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#x529F;&#x80FD;&#x7684;&#x56DE;&#x8C03;&#x70B9;&#x3002;</li>
 </ul>
-<p>These two components are an integral part of any Webpack plugin (especially a <code>compilation</code>), so developers will benefit by familiarizing themselves with these source files:</p>
+<p>&#x8FD9;&#x4E24;&#x4E2A;&#x7EC4;&#x4EF6;&#x5728;&#x6240;&#x6709;&#x7684;Webpack&#x63D2;&#x4EF6;&#x4E2D;&#x90FD;&#x662F;&#x4E0D;&#x53EF;&#x5206;&#x5272;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF08;&#x7279;&#x522B;&#x662F;<code>compilation</code>&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x5BF9;&#x4E8E;&#x5F00;&#x53D1;&#x8005;&#x6765;&#x8BF4;&#x719F;&#x6089;&#x8FD9;&#x4E24;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;&#x6E90;&#x6587;&#x4EF6;&#x5C06;&#x662F;&#x4F60;&#x53D7;&#x76CA;&#x5F88;&#x591A;&#xFF1A;</p>
 <ul>
-<li><a href="https://github.com/webpack/webpack/blob/master/lib/Compiler.js" target="_blank">Compiler Source</a></li>
-<li><a href="https://github.com/webpack/webpack/blob/master/lib/Compilation.js" target="_blank">Compilation Source</a></li>
+<li><a href="https://github.com/webpack/webpack/blob/master/lib/Compiler.js" target="_blank">Compiler &#x6E90;&#x6587;&#x4EF6;</a></li>
+<li><a href="https://github.com/webpack/webpack/blob/master/lib/Compilation.js" target="_blank">Compilation &#x6E90;&#x6587;&#x4EF6;</a></li>
 </ul>
-<h2 id="basic-plugin-architecture">Basic plugin architecture</h2>
-<p>Plugins are instanceable objects with an <code>apply</code> method on their prototype. This <code>apply</code> method is called once by the Webpack compiler while installing the plugin. The <code>apply</code> method is given a reference to the underlying Webpack compiler, which grants access to compiler callbacks. A simple plugin is structured as follows:</p>
+<h2 id="&#x63D2;&#x4EF6;&#x57FA;&#x672C;&#x7ED3;&#x6784;">&#x63D2;&#x4EF6;&#x57FA;&#x672C;&#x7ED3;&#x6784;</h2>
+<p>Plugins&#x662F;&#x53EF;&#x4EE5;&#x7528;&#x81EA;&#x8EAB;&#x539F;&#x578B;&#x65B9;&#x6CD5;<code>apply</code>&#x6765;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x5BF9;&#x8C61;&#x3002;<code>apply</code>&#x53EA;&#x5728;&#x5B89;&#x88C5;&#x63D2;&#x4EF6;&#x88AB;Webpack compiler&#x6267;&#x884C;&#x4E00;&#x6B21;&#x3002;<code>apply</code>&#x65B9;&#x6CD5;&#x4F20;&#x5165;&#x4E00;&#x4E2A;Webpck compiler&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x6765;&#x8BBF;&#x95EE;&#x7F16;&#x8BD1;&#x5668;&#x56DE;&#x8C03;&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x63D2;&#x4EF6;&#x7ED3;&#x6784;&#xFF1A;</p>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">HelloWorldPlugin</span>(<span class="hljs-params">options</span>) </span>{
   <span class="hljs-comment">// Setup the plugin instance with options...</span>
 }
@@ -1005,7 +1004,7 @@ HelloWorldPlugin.prototype.apply = <span class="hljs-function"><span class="hljs
 
 <span class="hljs-built_in">module</span>.exports = HelloWorldPlugin;
 </code></pre>
-<p>Then to install the plugin, just include an instance in your Webpack config <code>plugins</code> array:</p>
+<p>&#x5B89;&#x88C5;&#x63D2;&#x4EF6;&#x65F6;, &#x53EA;&#x9700;&#x8981;&#x5C06;&#x5B83;&#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x653E;&#x5230; Webpack config <code>plugins</code> &#x6570;&#x7EC4;&#x91CC;&#x9762;:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> HelloWorldPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;hello-world&apos;</span>);
 
 <span class="hljs-keyword">var</span> webpackConfig = {
@@ -1015,8 +1014,8 @@ HelloWorldPlugin.prototype.apply = <span class="hljs-function"><span class="hljs
   ]
 };
 </code></pre>
-<h2 id="accessing-the-compilation">Accessing the compilation</h2>
-<p>Using the compiler object, you may bind callbacks that provide a reference to each new compilation. These compilations provide callbacks for hooking into numerous steps within the build process.</p>
+<h2 id="&#x8BBF;&#x95EE;-compilation">&#x8BBF;&#x95EE; compilation</h2>
+<p>&#x4F7F;&#x7528;compiler&#x5BF9;&#x8C61;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x7ED1;&#x5B9A;&#x5E26;&#x6709;&#x5404;&#x4E2A;&#x65B0;compilation&#x7684;&#x5F15;&#x7528;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;&#x8FD9;&#x4E9B;compilation&#x63D0;&#x4F9B;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x8FDE;&#x63A5;&#x6210;&#x8BB8;&#x591A;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x6B65;&#x9AA4;&#x3002;</p>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">HelloCompilationPlugin</span>(<span class="hljs-params">options</span>) </span>{}
 
 HelloCompilationPlugin.prototype.apply = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">compiler</span>) </span>{
@@ -1033,9 +1032,10 @@ HelloCompilationPlugin.prototype.apply = <span class="hljs-function"><span class
 
 <span class="hljs-built_in">module</span>.exports = HelloCompilationPlugin;
 </code></pre>
-<p>For more information on what callbacks are available on the <code>compiler</code>, <code>compilation</code>, and other important objects, see the [[plugins API|plugins]] doc.</p>
-<h2 id="async-compilation-plugins">Async compilation plugins</h2>
-<p>Some compilation plugin steps are asynchronous, and pass a callback function that <em>must</em> be invoked when your plugin is finished running.</p>
+<p>&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x5728;<code>compiler</code>, <code>compilation</code>&#x7B49;&#x5BF9;&#x8C61;&#x4E2D;&#x54EA;&#x4E9B;&#x56DE;&#x8C03;&#x6709;&#x7528;&#xFF0C;&#x770B;&#x4E00;&#x4E0B;
+<a href="http://stephenzhao.github.io/webpack-cn/docs/plugins.html" target="_blank">plugins API</a></p>
+<h2 id="&#x5F02;&#x6B65;&#x7F16;&#x8BD1;&#x63D2;&#x4EF6;">&#x5F02;&#x6B65;&#x7F16;&#x8BD1;&#x63D2;&#x4EF6;</h2>
+<p>&#x6709;&#x4E9B;compilation&#x63D2;&#x4EF6;&#x7684;&#x6B65;&#x9AA4;&#x65F6;&#x5F02;&#x6B65;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x4F1A;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x5F53;&#x4F60;&#x7684;&#x63D2;&#x4EF6;&#x8FD0;&#x884C;&#x5B8C;&#x6210;&#x65F6;&#x5019;<em>&#x5FC5;&#x987B;</em>&#x8C03;&#x7528;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</p>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">HelloAsyncPlugin</span>(<span class="hljs-params">options</span>) </span>{}
 
 HelloAsyncPlugin.prototype.apply = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">compiler</span>) </span>{
@@ -1052,9 +1052,9 @@ HelloAsyncPlugin.prototype.apply = <span class="hljs-function"><span class="hljs
 
 <span class="hljs-built_in">module</span>.exports = HelloAsyncPlugin;
 </code></pre>
-<h2 id="a-simple-example">A simple example</h2>
-<p>Once we can latch onto the Webpack compiler and each individual compilations, the possibilities become endless for what we can do with the engine itself. We can reformat existing files, create derivative files, or fabricate entirely new assets.</p>
-<p>Let&apos;s write a simple example plugin that generates a new build file called <code>filelist.md</code>; the contents of which will list all of the asset files in our build. This plugin might look something like this:</p>
+<h2 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</h2>
+<p>&#x6211;&#x4EEC;&#x4E86;&#x89E3;&#x4E86;Webpack compiler&#x548C;&#x5404;&#x4E2A;compilations&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x5B83;&#x4EEC;&#x6765;&#x521B;&#x9020;&#x65E0;&#x5C3D;&#x7684;&#x53EF;&#x80FD;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x91CD;&#x5B9A;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x884D;&#x751F;&#x6587;&#x4EF6;&#xFF0C;&#x6216;&#x8005;&#x5236;&#x9020;&#x51FA;&#x4E00;&#x4E2A;&#x5168;&#x65B0;&#x7684;assets</p>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5C06;&#x5199;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x63D2;&#x4EF6;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;<code>filelist.md</code>&#x6587;&#x4EF6;&#xFF0C;&#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x662F;&#xFF0C;&#x5217;&#x51FA;&#x6211;&#x4EEC;build&#x7684;&#x6240;&#x6709;asset &#x6587;&#x4EF6;&#x3002;</p>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">FileListPlugin</span>(<span class="hljs-params">options</span>) </span>{}
 
 FileListPlugin.prototype.apply = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">compiler</span>) </span>{

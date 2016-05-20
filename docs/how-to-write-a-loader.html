@@ -53,7 +53,7 @@
         data-chapter-title="如何编写loader"
         data-filepath="docs/how-to-write-a-loader.md"
         data-basepath=".."
-        data-revision="Fri Apr 29 2016 11:06:13 GMT+0800 (CST)"
+        data-revision="Fri May 20 2016 18:46:15 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -255,13 +255,13 @@
         <li class="chapter " data-level="3.1" >
             
                 
-                    <a target="_blank" href="http:/webpack.github.io/docs/tutorials/getting-started/">
+                    <a target="_blank" href="http:/webpack.github.io/docs/tutorials/docs/getting-started.md">
                 
                         <i class="fa fa-check"></i>
                         
                             <b>3.1.</b>
                         
-                        Getting started
+                        开始
                     </a>
             
             
@@ -439,7 +439,7 @@
                         
                             <b>4.9.</b>
                         
-                        How to write a plugin
+                        如何编写插件
                     </a>
             
             
@@ -977,10 +977,9 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h2 id="&#x5982;&#x4F55;&#x4E66;&#x5199;webpack-loader">&#x5982;&#x4F55;&#x4E66;&#x5199;webpack loader</h2>
+                        <h2 id="&#x5982;&#x4F55;&#x7F16;&#x5199;webpack-loader">&#x5982;&#x4F55;&#x7F16;&#x5199;webpack loader</h2>
 <p>webpack&#x7684;loader&#x662F;&#x4E00;&#x4E2A;node module &#x5BFC;&#x51FA;&#x7684;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x8F6C;&#x5316;&#x52A0;&#x8F7D;&#x7684;&#x8D44;&#x6E90;&#x7684; <code>function</code>.</p>
-<p>In the simple case, when only a single loader is applied to the resource, the loader is called with one parameter: the content of the resource file as string.
-&#x5728;&#x7B80;&#x5355;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5F53;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x52A0;&#x8F7D;&#x5668;&#x88AB;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5176;&#x53C2;&#x6570;&#x4E3A;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x4E32;&#x3002;</p>
+<p>&#x5728;&#x7B80;&#x5355;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5F53;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x52A0;&#x8F7D;&#x5668;&#x88AB;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5176;&#x53C2;&#x6570;&#x4E3A;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x4E32;&#x3002;</p>
 <p>&#x52A0;&#x8F7D;&#x5668;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>this</code>&#x4E0A;&#x4E0B;&#x6587;&#x6765;&#x8BBF;&#x95EE;<a href="loaders.html">loader API</a>&#x3002;
 &#x4EC5;&#x4EC5;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x53EA;&#x503C;&#x7684;&#x540C;&#x6B65;&#x52A0;&#x8F7D;&#x5668;&#x80FD;&#x5F88;&#x5BB9;&#x6613; <code>return</code> &#x5B83;&#x3002;&#x5728;&#x522B;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x52A0;&#x8F7D;&#x5668;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>this.callback(err, values...)</code> &#x65B9;&#x6CD5;&#x6765;&#x8FD4;&#x56DE;&#x3002;&#x5F02;&#x5E38;&#x548C;&#x9519;&#x8BEF;&#x4F1A;&#x88AB;<code>this.callback</code>&#x4F20;&#x9012;&#x6216;&#x8005;&#x88AB;&#x540C;&#x6B65;&#x52A0;&#x8F7D;&#x5668;&#x629B;&#x51FA;&#x3002;</p>
 <p>&#x52A0;&#x8F7D;&#x5668;&#x671F;&#x671B;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6216;&#x4E24;&#x4E2A;&#x503C;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x662F;&#x88AB;&#x8F6C;&#x5316;&#x7684;js&#x4E32;&#x6216;&#x8005;&#x662F;buffer&#x3002;&#x7B2C;&#x4E8C;&#x4E2A;&#x53EF;&#x9009;&#x662F;js&#x7684;<code>SourceMap</code> 
@@ -1081,10 +1080,10 @@
 <pre><code>    &quot;peerDependencies&quot;: {
         &quot;library&quot;: &quot;^1.3.5&quot;
     }
-</code></pre><h3 id="programmable-objects-as-queryoption">programmable objects as <code>query</code>-option</h3>
-<p>&#x6709;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x4F60;&#x7684;&#x52A0;&#x8F7D;&#x5668;&#x9700;&#x8981;&#x4E00;&#x4E9B;&#x4E0D;&#x53EF;<code>stringify</code>&#x4E3A;<code>query</code>&#x5B57;&#x4E32;&#x7684;&#x53EF;&#x7F16;&#x7A0B;&#x5BF9;&#x8C61;&#x7684;&#x51FD;&#x6570;&#x3002;
+</code></pre><h3 id="&#x53EF;&#x7F16;&#x7A0B;&#x5316;&#x5BF9;&#x8C61;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;">&#x53EF;&#x7F16;&#x7A0B;&#x5316;&#x5BF9;&#x8C61;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;</h3>
+<p>&#x6709;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x4F60;&#x7684;&#x52A0;&#x8F7D;&#x5668;&#x9700;&#x8981;&#x4E00;&#x4E9B;&#x5E26;&#x6709;&#x4E0D;&#x53EF;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x51FD;&#x6570;&#x7684;&#x53EF;&#x7F16;&#x7A0B;&#x5BF9;&#x8C61;&#x505A;&#x4E3A;&#x53C2;&#x6570;&#x3002;
 &#x6BD4;&#x5982;lessloader&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;<code>LESS-plugins</code> &#x5141;&#x8BB8;&#x52A0;&#x8F7D;&#x5668;&#x53BB;&#x6269;&#x5C55;webpack&#x7684;<code>options</code>&#x53BB;&#x68C0;&#x7D22;&#x7279;&#x5B9A;&#x7684;&#x9009;&#x9879;&#x3002;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x540D;&#x5B57;&#x51B2;&#x7A81;&#x7136;&#xFF0C;option&#x662F;&#x5728;&#x52A0;&#x8F7D;&#x5668;&#x7684;npm&#x9A7C;&#x5CF0;&#x540D;&#x5B57;&#x57DF;&#x4E0B;&#x7684;</p>
-<pre><code class="lang-js">Example:
+<pre><code class="lang-js">&#x4F8B;&#x5B50;:
 
     <span class="hljs-comment">// webpack.config.js</span>
     <span class="hljs-built_in">module</span>.exports = {
@@ -1096,9 +1095,9 @@
       }
     };
 </code></pre>
-<p>The loader should also allow to specify the dded to the <a href="list-of-loaders.html">list of loaders</a></p>
-<h2 id="&#x2192;read-more"><a href="#read-more">&#x2192;</a>Read more</h2>
-<p>Read more about <a href="loaders.html">loaders</a>.</p>
+<p>&#x53C2;&#x8003;&#xFF1A;<a href="list-of-loaders.html">list of loaders</a></p>
+<h2 id="&#x9605;&#x8BFB;&#x66F4;&#x591A;">&#x9605;&#x8BFB;&#x66F4;&#x591A;</h2>
+<p> <a href="loaders.html">loaders</a>.</p>
 
                     
                     </section>
@@ -1112,7 +1111,7 @@
         <a href="../docs/long-term-caching.html" class="navigation navigation-prev " aria-label="Previous page: 长期缓存"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../docs/how-to-write-a-plugin.html" class="navigation navigation-next " aria-label="Next page: How to write a plugin"><i class="fa fa-angle-right"></i></a>
+        <a href="../docs/how-to-write-a-plugin.html" class="navigation navigation-next " aria-label="Next page: 如何编写插件"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
