@@ -158,3 +158,5 @@ or
 ``` sh
 webpack --module-bind "png=url-loader?mimetype=image/png"
 ```
+
+[loaders]: docs/loaders.md
