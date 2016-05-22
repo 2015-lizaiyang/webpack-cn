@@ -5,7 +5,7 @@ Loaders 是你的app里面的源文件转换器，是一种运行在nodejs里面
 
 ## Loader 特性
 * Loaders 可以链式调用。他们在资源的管道里面被调用。最后一个loder需要输出的是JavaScript，而在中间的loader输出的可以的是能传到下一级loader的任意格式
-* Loaders可以是同步也可以是异步的
+* Loaders 可以是同步也可以是异步的
 * Loaders 跑在node里面也就意味着有很多可能
 * Loaders 能接受请求参数，这样就可以传入一些配置给loader
 * Loaders 在源配置中可以绑定到扩展名 / RegExps对象里
