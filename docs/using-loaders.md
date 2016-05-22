@@ -115,7 +115,7 @@ Loader can be passed query parameters via a query string (just like in the web).
 
 Note: The format of the query string is up to the loader. See format in the loader documentation. Most loaders accept parameters in the normal query format (`?key=value&key2=value2`) and as JSON object (`?{"key":"value","key2":"value2"}`).
 
-### in `require`
+### `require`
 
 ``` javascript
 require("url-loader?mimetype=image/png!./file.png");
@@ -127,7 +127,7 @@ require("url-loader?mimetype=image/png!./file.png");
 { test: /\.png$/, loader: "url-loader?mimetype=image/png" }
 ```
 
-or
+或者
 
 ``` javascript
 {
