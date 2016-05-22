@@ -160,3 +160,4 @@ webpack --module-bind "png=url-loader?mimetype=image/png"
 ```
 
 [loaders]: docs/loaders.md
+[list of loaders]: docs/list-of-loaders
