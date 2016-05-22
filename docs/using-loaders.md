@@ -44,7 +44,7 @@ or
 ``` sh
 $ npm install xxx-loader --save-dev
 ```
-# Usage
+# 使用方法
 
 There are multiple ways to use loaders in your app:
 
@@ -52,7 +52,7 @@ There are multiple ways to use loaders in your app:
 * configured via configuration
 * configured via CLI
 
-## loaders in `require`
+## 用在`require`里
 
 > **Note:** Avoid using this, if at all possible, if you intend your scripts to be environment agnostic (node.js and browser). Use the *configuration* convention for specifying loaders (see next section).
 
@@ -79,7 +79,7 @@ require("!style!css!less!bootstrap/less/bootstrap.less");
 ```
 
 
-## [[Configuration]]
+## [Configuration][configuration]
 
 You can bind loaders to a RegExp via configuration:
 
