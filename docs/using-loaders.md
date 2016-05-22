@@ -96,7 +96,7 @@ require("!style!css!less!bootstrap/less/bootstrap.less");
 
 ## [CLI][cli]
 
-You can bind loaders to an extension via CLI:
+也可以通过CLI将loader绑定到一个扩展里面：
 
 ``` sh
 $ webpack --module-bind jade --module-bind 'css=style!css'
