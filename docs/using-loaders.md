@@ -102,7 +102,7 @@ require("!style!css!less!bootstrap/less/bootstrap.less");
 $ webpack --module-bind jade --module-bind 'css=style!css'
 ```
 
-This uses the loader "jade" for ".jade" files and the loaders "style" and "css" for ".css" files.
+上面表示 使用 "jade" 转换 ".jade" 文件， 使用 "style" 和 "css" 转换 ".css" 文件.
 
 ## 参数
 
