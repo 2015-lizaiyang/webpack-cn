@@ -56,8 +56,7 @@ There are multiple ways to use loaders in your app:
 在`require`表达式(或者 `define`, `require.ensure`, 等.)。
 
 用多个loaders用`!`隔开即可，每个部分的loader的解析都相对于当前路径。
-可以在configuration里面通过添加带有`!`完整规则的前缀来重写任意loaders
-
+通过在整个配置规则前面加上`!`前缀可以将loaders重写。
 ``` javascript
 require("./loader!./dir/file.txt");
 // => uses the file "loader.js" in the current directory to transform
