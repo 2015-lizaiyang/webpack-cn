@@ -76,7 +76,7 @@ require("!style!css!less!bootstrap/less/bootstrap.less");
 
 ## [Configuration][configuration]
 
-You can bind loaders to a RegExp via configuration:
+可以将loader绑到正则里面
 
 ``` javascript
 {
