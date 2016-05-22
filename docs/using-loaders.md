@@ -63,16 +63,12 @@ require("./loader!./dir/file.txt");
 //    在"dir"上的"file.txt".
 
 require("jade!./template.jade");
-// => uses the "jade-loader" (that is installed from npm to "node_modules")
-//    to transform the file "template.jade"
-//    If configuration has some transforms bound to the file, they will still be applied.
+// => 使用 "jade-loader" (安装到 "node_modules"里面的)
+//    来转化"template.jade"
+//   如果configuration里面还有别的loader绑定到该文件，那么那个loader会被也会调用.
 
 require("!style!css!less!bootstrap/less/bootstrap.less");
-// => the file "bootstrap.less" in the folder "less" in the "bootstrap"
-//    module (that is installed from github to "node_modules") is
-//    transformed by the "less-loader". The result is transformed by the
-//    "css-loader" and then by the "style-loader".
-//    If configuration has some transforms bound to the file, they will not be applied.
+// => 转化顺序"bootstrap.less" =>"less-loader"=>"less-loader"=>"style-loader"
 ```
 
 
