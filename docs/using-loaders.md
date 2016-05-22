@@ -59,8 +59,8 @@ There are multiple ways to use loaders in your app:
 通过在整个配置规则前面加上`!`前缀可以将loaders重写。
 ``` javascript
 require("./loader!./dir/file.txt");
-// => uses the file "loader.js" in the current directory to transform
-//    "file.txt" in the folder "dir".
+// => 使用 当前目录下"loader.js" 文件转换
+//    在"dir"上的"file.txt".
 
 require("jade!./template.jade");
 // => uses the "jade-loader" (that is installed from npm to "node_modules")
