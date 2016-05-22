@@ -30,7 +30,7 @@ For example, you can use loaders to tell webpack to load CoffeeScript or JSX.
 * Loaders 还可以emit出其它任意格式的文件
 * [etc.][loaders]
 
-If you are interested in some loader examples head off to the [[list of loaders]].
+If you are interested in some loader examples head off to the [list of loaders][list of loaders].
 
 # Resolving loaders
 
