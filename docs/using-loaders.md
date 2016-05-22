@@ -22,7 +22,7 @@ Loaders 是你的app里面的源文件转换器，是一种运行在nodejs里面
 Loaders are [[resolved similar to modules ][ resolving]]. A loader module is expected to export a function and to be written in node.js compatible JavaScript. In the common case you manage loaders with npm, but you can also have loaders as files in your app.
 
 ## 引用 loaders
-
+按照惯例，但也不是必须的，loader一般命名为`XXX-loader`，`XXX`代表它的上下文名字，比如`json-loader`
 By convention, though not required, loaders are usually named as `XXX-loader`, where `XXX` is the context name. For example, `json-loader`. 
 
 You may reference loaders by its full (actual) name (e.g. `json-loader`), or by its shorthand name (e.g. `json`). 
@@ -33,7 +33,7 @@ Loader name conventions may be useful, especially when referencing them within `
 
 ## 安装 loaders
 
-如果loader在npm里可以这样:
+如果loader在npm里，可以这样安装:
 
 ``` sh
 $ npm install xxx-loader --save
