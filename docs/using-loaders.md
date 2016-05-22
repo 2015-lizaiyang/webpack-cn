@@ -33,13 +33,13 @@ Loader name conventions may be useful, especially when referencing them within `
 
 ## 安装 loaders
 
-If the loader is available on npm you can install the loader via:
+如果loader在npm里可以这样:
 
 ``` sh
 $ npm install xxx-loader --save
 ```
 
-or
+或者
 
 ``` sh
 $ npm install xxx-loader --save-dev
