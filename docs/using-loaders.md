@@ -147,3 +147,4 @@ webpack --module-bind "png=url-loader?mimetype=image/png"
 [loaders]: loaders.md
 [list of loaders]: list-of-loaders.md
 [resolving]: resolving.md
+[configuration]:configuration.md
