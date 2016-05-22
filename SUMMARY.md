@@ -9,7 +9,7 @@
    * [用法](docs/usage.md)
    * Require Modules
    * Vendor Modules
-   * [Using Loaders](docs/using-loaders.md)
+   * [使用 Loaders](docs/using-loaders.md)
    * [Using Plugins](docs/using-plugins.md)
    * [工具](docs/dev-tools.md)
    * [Troubleshooting](docs/troubleshooting.md)
