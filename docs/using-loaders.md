@@ -18,19 +18,16 @@ Loaders 是你的app里面的源文件转换器，是一种运行在nodejs里面
 * [loaders列表][list of loaders].
 
 # 解析 loaders
-
-Loaders are [[resolved similar to modules ][ resolving]]. A loader module is expected to export a function and to be written in node.js compatible JavaScript. In the common case you manage loaders with npm, but you can also have loaders as files in your app.
+Loaders 的解析和 [modules ][resolving]类似。一个loader要求是在node里面导出的一个函数且兼容js。通常情况你可以用npm管理loader但是你也可以把它当作一个文件在你的app里面引入。
+Loaders are [resolved similar to modules ][ resolving]. A loader module is expected to export a function and to be written in node.js compatible JavaScript. In the common case you manage loaders with npm, but you can also have loaders as files in your app.
 
 ## 引用 loaders
 按照惯例，但也不是必须的，loader一般命名为`XXX-loader`，`XXX`代表它的上下文名字，比如`json-loader`
-By convention, though not required, loaders are usually named as `XXX-loader`, where `XXX` is the context name. For example, `json-loader`. 
+
 你可以用她的全名比如`json-loader`或者缩写`json`
 
-You may reference loaders by its full (actual) name (e.g. `json-loader`), or by its shorthand name (e.g. `json`). 
-
-The loader name convention and precedence search order is defined by [`resolveLoader.moduleTemplates`](http://webpack.github.io/docs/configuration.html#resolveloader-moduletemplates) within the webpack configuration API. 
-
-Loader name conventions may be useful, especially when referencing them within `require()` statements; see usage below.
+Loader的命名约定和优先搜索顺序在 webpack configuration API 里的 [`resolveLoader.moduleTemplates`](http://webpack.github.io/docs/configuration.html#resolveloader-moduletemplates)中规定的。
+Loader 命名约定很有用热别是在`require()`声明式里面。可以参看后面的使用方法。
 
 ## 安装 loaders
 
@@ -54,7 +51,7 @@ There are multiple ways to use loaders in your app:
 * configured via CLI
 
 ## 用在`require`里
-
+>**提示** 避免使用`this`,如果
 > **Note:** Avoid using this, if at all possible, if you intend your scripts to be environment agnostic (node.js and browser). Use the *configuration* convention for specifying loaders (see next section).
 
 It's possible to specify the loaders in the `require` statement (or `define`, `require.ensure`, etc.). Just separate loaders from resource with `!`. Each part is resolved relative to the current directory.
