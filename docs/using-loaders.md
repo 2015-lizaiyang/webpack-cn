@@ -6,16 +6,10 @@ Loaders 是你的app里面的源文件转换器，是一种运行在nodejs里面
 ## Loader 特性
 * Loaders 可以链式调用。他们在资源的管道里面被调用。最后一个loder需要输出的是JavaScript，而在中间的loader输出的可以的是能传到下一级loader的任意格式
 * Loaders可以是同步也可以是异步的
-* Loaders can be chained. They are applied in a pipeline to the resource. The final loader is expected to return JavaScript, the others can return arbitrary format (which is passed to the next loader)
-* Loaders can be synchronous and asynchronous.
 * Loaders 跑在node里面也就意味着有很多可能
-* 
-* Loaders run in node.js and can do everything that's possible there.
 * Loaders 能接受请求参数，这样就可以传入一些配置给loader
-* Loaders accept query parameters. This can be used to pass configuration to the loader.
-* Loaders can be bound to extension / RegExps in the configuration.
+* Loaders 在源配置中可以绑定到扩展名 / RegExps对象里
 * Loaders 可以通过npm发布和安装
-* Loaders can be published / installed through `npm`.
 * 标准modules就能通过`packge.json` `loader`导出除了标准`main`意外的loader
 * Normal modules can export a loader in addition to the normal `main` via `package.json` `loader`.
 * Loaders can access the configuration.
