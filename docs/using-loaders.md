@@ -3,8 +3,6 @@ Loaders 是你的app里面的源文件转换器，是一种运行在nodejs里面
 
 例如，你可以利用loaders来告诉webpack加载CoffeeScript或者JSX。
 
-For example, you can use loaders to tell webpack to load CoffeeScript or JSX.
-
 ## Loader 特性
 * Loaders 可以链式调用。他们在资源的管道里面被调用。最后一个loder需要输出的是JavaScript，而在中间的loader输出的可以的是能传到下一级loader的任意格式
 * Loaders可以是同步也可以是异步的
