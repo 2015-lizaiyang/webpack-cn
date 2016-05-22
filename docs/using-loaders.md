@@ -15,8 +15,7 @@ Loaders 是你的app里面的源文件转换器，是一种运行在nodejs里面
 * 插件可以带给loader更多特性
 * Loaders 还可以emit出其它任意格式的文件
 * [更多.][loaders]
-
-If you are interested in some loader examples head off to the [list of loaders][list of loaders].
+* [loaders列表][list of loaders].
 
 # Resolving loaders
 
