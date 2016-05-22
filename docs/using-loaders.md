@@ -1,8 +1,6 @@
 # 什么是loader?
 Loaders 是你的app里面的源文件转换器，是一种运行在nodejs里面的，以源文件的内容作为参数，返回新的转化后的内容的函数。
 
-Loaders are transformations that are applied on a resource file of your app. They are functions (running in node.js) that take the source of a resource file as the parameter and return the new source.
-
 例如，你可以利用loaders来告诉webpack加载CoffeeScript或者JSX。
 
 For example, you can use loaders to tell webpack to load CoffeeScript or JSX.
