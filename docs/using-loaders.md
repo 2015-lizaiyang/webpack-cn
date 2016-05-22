@@ -51,7 +51,7 @@ There are multiple ways to use loaders in your app:
 * configured via CLI
 
 ## 用在`require`里
->**提示** 避免使用`this`,如果
+>**提示** 如果你希望你的脚本跨平台（nodejs和浏览器端），在可能的情况下避免使用这种方式。
 > **Note:** Avoid using this, if at all possible, if you intend your scripts to be environment agnostic (node.js and browser). Use the *configuration* convention for specifying loaders (see next section).
 
 It's possible to specify the loaders in the `require` statement (or `define`, `require.ensure`, etc.). Just separate loaders from resource with `!`. Each part is resolved relative to the current directory.
