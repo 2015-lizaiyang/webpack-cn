@@ -99,7 +99,7 @@ You can bind loaders to a RegExp via configuration:
 }
 ```
 
-## [CLI][CLI]
+## [CLI][cli]
 
 You can bind loaders to an extension via CLI:
 
@@ -148,3 +148,4 @@ webpack --module-bind "png=url-loader?mimetype=image/png"
 [list of loaders]: list-of-loaders.md
 [resolving]: resolving.md
 [configuration]:configuration.md
+[cli]: cli.md
