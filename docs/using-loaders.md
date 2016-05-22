@@ -11,14 +11,10 @@ Loaders 是你的app里面的源文件转换器，是一种运行在nodejs里面
 * Loaders 在源配置中可以绑定到扩展名 / RegExps对象里
 * Loaders 可以通过npm发布和安装
 * 标准modules就能通过`packge.json` `loader`导出除了标准`main`意外的loader
-* Normal modules can export a loader in addition to the normal `main` via `package.json` `loader`.
-* Loaders can access the configuration.
 * Loader可以访问webpack源配置configuration
-* Plugins can give loaders more features.
 * 插件可以带给loader更多特性
-* Loaders can emit additional arbitrary files.
 * Loaders 还可以emit出其它任意格式的文件
-* [etc.][loaders]
+* [更多.][loaders]
 
 If you are interested in some loader examples head off to the [list of loaders][list of loaders].
 
