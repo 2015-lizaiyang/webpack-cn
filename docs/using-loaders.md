@@ -52,7 +52,7 @@ There are multiple ways to use loaders in your app:
 
 ## 用在`require`里
 >**提示** 如果你希望你的脚本跨平台（nodejs和浏览器端），在可能的情况下避免使用这种方式。可以尝试使用接下来要讲到的*configuration*
-在`require`表达式(或者 `define`, `require.ensure`, 等.)
+在`require`表达式(或者 `define`, `require.ensure`, 等.)。
 It's possible to specify the loaders in the `require` statement (or `define`, `require.ensure`, etc.). Just separate loaders from resource with `!`. Each part is resolved relative to the current directory.
 
 It's possible to overwrite any loaders in the configuration by prefixing the entire rule with `!`.
