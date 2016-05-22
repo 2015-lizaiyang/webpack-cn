@@ -106,8 +106,7 @@ $ webpack --module-bind jade --module-bind 'css=style!css'
 
 ## 参数
 Loader 可以像在web里面一样通过一个请求串来传参，请求串前面加上`?`比如`url-loader?mimetype=image/png`.
-提示：
-Note: The format of the query string is up to the loader. See format in the loader documentation. Most loaders accept parameters in the normal query format (`?key=value&key2=value2`) and as JSON object (`?{"key":"value","key2":"value2"}`).
+提示：请求串的格式取决于loader。可以参照loader的文档。大部分的loader都接受标准格式(`?key=value&key2=value2`)和json格式(`?{"key":"value","key2":"value2"}`)。
 
 ### `require`
 
