@@ -99,7 +99,7 @@ You can bind loaders to a RegExp via configuration:
 }
 ```
 
-## [[CLI]]
+## [CLI][CLI]
 
 You can bind loaders to an extension via CLI:
 
