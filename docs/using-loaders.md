@@ -24,6 +24,7 @@ Loaders are [[resolved similar to modules ][ resolving]]. A loader module is exp
 ## 引用 loaders
 按照惯例，但也不是必须的，loader一般命名为`XXX-loader`，`XXX`代表它的上下文名字，比如`json-loader`
 By convention, though not required, loaders are usually named as `XXX-loader`, where `XXX` is the context name. For example, `json-loader`. 
+你可以用她的全名比如`json-loader`或者缩写`json`
 
 You may reference loaders by its full (actual) name (e.g. `json-loader`), or by its shorthand name (e.g. `json`). 
 
