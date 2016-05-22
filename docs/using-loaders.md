@@ -27,8 +27,8 @@ For example, you can use loaders to tell webpack to load CoffeeScript or JSX.
 * Plugins can give loaders more features.
 * 插件可以带给loader更多特性
 * Loaders can emit additional arbitrary files.
-* Loaders 还可以放射出额外的其它任意格式的文件
-* [[etc. | loaders]]
+* Loaders 还可以输出其它任意格式的文件
+* [etc.][loaders]
 
 If you are interested in some loader examples head off to the [[list of loaders]].
 
