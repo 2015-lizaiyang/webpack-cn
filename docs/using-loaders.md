@@ -105,7 +105,7 @@ $ webpack --module-bind jade --module-bind 'css=style!css'
 上面表示 使用 "jade" 转换 ".jade" 文件， 使用 "style" 和 "css" 转换 ".css" 文件.
 
 ## 参数
-
+Loader 可以像在web里面一样通过一个请求串来传参，请求串前面加上`?`比如`url-loader?mimetype=image/png`
 Loader can be passed query parameters via a query string (just like in the web). The query string is appended to the loader with `?`. i.e. `url-loader?mimetype=image/png`.
 
 Note: The format of the query string is up to the loader. See format in the loader documentation. Most loaders accept parameters in the normal query format (`?key=value&key2=value2`) and as JSON object (`?{"key":"value","key2":"value2"}`).
