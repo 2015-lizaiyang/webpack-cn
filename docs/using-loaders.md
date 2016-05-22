@@ -109,7 +109,7 @@ $ webpack --module-bind jade --module-bind 'css=style!css'
 
 This uses the loader "jade" for ".jade" files and the loaders "style" and "css" for ".css" files.
 
-## Query parameters
+## 参数
 
 Loader can be passed query parameters via a query string (just like in the web). The query string is appended to the loader with `?`. i.e. `url-loader?mimetype=image/png`.
 
