@@ -3,14 +3,6 @@ CommonJS 是以在浏览器环境之外构建 JavaScript 生态系统为目标�
 >我在这里描述的并不是一个技术问题，而是一件重大的事情，让大家走到一起来做决定，迈出第一步，来建立一个更大更酷的东西。 —— Kevin Dangoor's What Server Side JavaScript needs
 
 CommonJS 规范是为了解决 JavaScript 的作用域问题而定义的模块形式，可以使每个模块它自身的命名空间中执行。该规范的主要内容是，模块必须通过 module.exports 导出对外的变量或接口，通过 require() 来导入其他模块的输出到当前模块作用域中。
-The CommonJS group defined a module format to solve 
-JavaScript scope issues by making sure each module
-is executed in its own namespace.
-
-This is achieved by forcing modules to explicitly export
-those variables it wants to expose to the "universe", 
-and also by defining those other modules required to 
-properly work.
 
 Commonjs 提供两个工具:
 
