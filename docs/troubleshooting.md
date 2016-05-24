@@ -1,12 +1,12 @@
-# resolving
+# 解析故障
 
-## general resolving issues
+## 普偏的解析issue
 
 * `--display-error-details` give you more details.
 * Read [[Configuration]] regarding resolving starting at `resolve`
   * loaders have their own resolving configuration `resolveLoader`
 
-## `npm link`ed modules don't find their dependencies
+## `npm link`ed don't find their dependencies
 
 The node.js module resolving algorithm is pretty simple: module dependencies are looked up in `node_modules` folders in every parent directory of the requiring module. When you `npm link` modules with peer dependencies that are not in your root directory, modules can no longer be found. (You probably want to consider `peerDependencies` with `npm link` as broken by design in node.js.) Note that a dependency to the application (even if this is not the perfect design) is also a kind of peerDependency even if it's not listed as such in the module's `package.json`.
 
@@ -21,11 +21,11 @@ module.exports = {
 };
 ```
 
-# Watching
+# 监听
 
-## webpack doesn't recompile on change while watching
+## 监听是出发change不编译
 
-### Not enough watchers
+### 监听器不够
 
 Verify that if you have enough available watchers in your system. If this value is too low, the file watcher in Webpack won't recognize the changes:
 
@@ -41,7 +41,7 @@ On OS-X folders can get corrupted. See this article:
 
 [OS X FSEvents bug may prevent monitoring of certain folders](http://feedback.livereload.com/knowledgebase/articles/86239-os-x-fsevents-bug-may-prevent-monitoring-of-certai)
 
-### Windows paths
+### Windows 路径
 
 webpack expects absolute paths for many config options. `__dirname + "/app/folder"` is wrong, because windows uses `\` as path separator. This breaks some stuff.
 
