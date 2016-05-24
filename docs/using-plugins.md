@@ -51,4 +51,6 @@ module.exports = {
 
 ## See also
 
-* [[plugin列表]]
+* [plugin列表][list of plugins]
+
+[list of plugins]: list-of-plugins.md
