@@ -20,7 +20,7 @@
 * 指南
    * [CommonJs](docs/commonjs.md)
    * [AMD](docs/amd.md)
-   * [webpack for browserify users](docs/webpack-for-browserify-users.md)
+   * [对于browserify用户](docs/webpack-for-browserify-users.md)
    * [代码拆分](docs/code-splitting.md)
    * [Stylesheets](docs/stylesheets.md)
    * [性能优化](docs/optimization.md)
