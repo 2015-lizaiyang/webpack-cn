@@ -86,7 +86,7 @@ Examples:
 
 `require("imports?define=>false!./file.js")`
 
-##### Broken CommonJs
+##### 禁用 CommonJs
 
 `require("imports?require=>false!./file.js")`
 
