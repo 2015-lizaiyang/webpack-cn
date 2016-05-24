@@ -16,7 +16,7 @@ define(id?: String, dependencies?: String[], factory: Function|Object);
 
 #### `id`
 
-Specifies the module name. It is optional.
+module的名字，可选的.
 
 #### `dependencies`
 
