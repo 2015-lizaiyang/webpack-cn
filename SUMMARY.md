@@ -27,7 +27,7 @@
    * [长期缓存](docs/long-term-caching.md)
    * [如何编写loader](docs/how-to-write-a-loader.md)
    * [如何编写插件](docs/how-to-write-a-plugin.md)
-   * [Multiple entry points](docs/multiple-entry-points.md)
+   * [多入口点](docs/multiple-entry-points.md)
    * [Library and externals](docs/library-and-externals.md)
    * [Shimming modules](docs/shimming-modules.md)
    * [Testing](docs/testing.md)
