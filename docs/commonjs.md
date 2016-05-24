@@ -12,10 +12,9 @@ Commonjs 提供两个工具:
 
 ## 无格式的js例子
 
-Here is an example without CommonJS:
+这是一个没有commonjs的例子：
 
-We will define a value in a script file named `salute.js`.
-This script will contain just a value that will be used in other scripts:  
+在`salute.js`文件里面定义一个别的地方要用到的变量MySalute。
 
 ``` javascript
 // salute.js
