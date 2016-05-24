@@ -1,43 +1,35 @@
-The CommonJS group defined a module format to solve 
-JavaScript scope issues by making sure each module
-is executed in its own namespace.
+CommonJS 是以在浏览器环境之外构建 JavaScript 生态系统为目标而产生的项目，比如在服务器和桌面环境中。
+这个项目最开始是由 Mozilla 的工程师 Kevin Dangoor 在2009年1月创建的，当时的名字是 ServerJS。
+>我在这里描述的并不是一个技术问题，而是一件重大的事情，让大家走到一起来做决定，迈出第一步，来建立一个更大更酷的东西。 —— Kevin Dangoor's What Server Side JavaScript needs
 
-This is achieved by forcing modules to explicitly export
-those variables it wants to expose to the "universe", 
-and also by defining those other modules required to 
-properly work.
+CommonJS 规范是为了解决 JavaScript 的作用域问题而定义的模块形式，可以使每个模块它自身的命名空间中执行。该规范的主要内容是，模块必须通过 module.exports 导出对外的变量或接口，通过 require() 来导入其他模块的输出到当前模块作用域中。
 
-To achieve this CommonJS give you two tools:
+Commonjs 提供两个工具:
 
-1. the `require()` function, which allows to import a given module into the current scope.
-2. the `module` object, which allows to export something from the current scope.
+1.  `require()` 函数,当前作用域下导入其他模块.
+2. `module` 对象, 当前域到处变量和接口.
 
-The mandatory hello world example:
 
-## Plain Simple JavaScript
+## 无格式的js例子
 
-Here is an example without CommonJS:
+这是一个没有commonjs的例子：
 
-We will define a value in a script file named `salute.js`.
-This script will contain just a value that will be used in other scripts:  
+在`salute.js`文件里面定义一个别的地方要用到的变量MySalute。
 
 ``` javascript
 // salute.js
 var MySalute = "Hello";
 ```
 
-Now, in a second file named `world.js`, we are
-going to use the value defined in `salute.js`.  
-
+在`world.js`文件里面使用`salute.js`里面定义的变量
 ``` javascript	
 // world.js
 var Result = MySalute + " world!";
 ```
 
-## Module definitions
-
-As it is, `world.js` will not work as `MySalute` is not defined.
-We need to define each script as a module:  
+## Module 定义
+可以看到`world.js` 里面的`MySalute` is not defined。
+所以，我们需要给每个文件定义一个module：
 
 ``` javascript
 // salute.js
@@ -51,16 +43,13 @@ var Result = MySalute + "world!";
 module.exports = Result;
 ```
 
-Here we make use of the special object `module` and place a reference of our
-variable into `module.exports` so the CommonJS module system knows this is 
-the object of our module we want to show to the world.
-`salute.js` discloses `MySalute`, and `world.js` discloses `Result`.
+我们用了一个特殊变量`module`，并将定义的变量引用放到`module.exports` 以至于CommonJS模块系统知道我们模块的对象。
+`salute.js` 暴露了 `MySalute`, `world.js` 暴露了 `Result`.
 
-## Module dependency
-
-We're near but there's still a step missing: dependency definition.
+## Module 依赖
+我们还差一步就完成了：依赖定义。
+我们给每个文件定义一个独立的模块，但是`world.js`得知道是谁定义的`Mysalute`
 We've already defined every script as an independent module, but `world.js`
-still needs to know who defines `MySalute`:
 
 ``` javascript
 // salute.js
@@ -75,13 +64,12 @@ var Result = MySalute + "world!";
 module.exports = Result;
 ```
 
-Note that we didn't use the full filename `salute.js` but `./salute` when calling 
-`require`, so you can omit the extension of your scripts. `./` means that the `salute` module is in the same directory as the `world` module.
+注一道我们没有用完整的文件名`salute.js` 而是`./salute` ， `./` 表示和`world` module在同一个目录.
 
 
-## Examples
+## 例子
 
-### Functions
+### 函数
 
 ``` javascript
 // moduleA.js

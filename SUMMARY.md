@@ -9,10 +9,10 @@
    * [用法](docs/usage.md)
    * Require Modules
    * Vendor Modules
-   * [Using Loaders](docs/using-loaders.md)
-   * [Using Plugins](docs/using-plugins.md)
+   * [使用 Loaders](docs/using-loaders.md)
+   * [使用 Plugins](docs/using-plugins.md)
    * [工具](docs/dev-tools.md)
-   * [Troubleshooting](docs/troubleshooting.md)
+   * [故障处理](docs/troubleshooting.md)
 * 教程与例子
    * [开始](http:/webpack.github.io/docs/tutorials/docs/getting-started.md)
    * [教程列表](docs/list-of-tutorials.md)
@@ -20,7 +20,7 @@
 * 指南
    * [CommonJs](docs/commonjs.md)
    * [AMD](docs/amd.md)
-   * [webpack for browserify users](docs/webpack-for-browserify-users.md)
+   * [对于browserify用户](docs/webpack-for-browserify-users.md)
    * [代码拆分](docs/code-splitting.md)
    * [Stylesheets](docs/stylesheets.md)
    * [性能优化](docs/optimization.md)

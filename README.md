@@ -14,12 +14,12 @@
    * [用法](docs/usage.md)
    * Require Modules
    * Vendor Modules
-   * [Using Loaders](docs/using-loaders.md)
-   * [Using Plugins](docs/using-plugins.md)
+   * [使用 Loaders](docs/using-loaders.md)
+   * [使用 Plugins](docs/using-plugins.md)
    * [工具](docs/dev-tools.md)
-   * [Troubleshooting](docs/troubleshooting.md)
+   * [故障处理](docs/troubleshooting.md)
 * 教程与例子
-   * [Getting started](http:/webpack.github.io/docs/tutorials/getting-started/)
+   * [开始](http:/webpack.github.io/docs/tutorials/docs/getting-started.md)
    * [教程列表](docs/list-of-tutorials.md)
    * [示例](docs/examples.md)
 * 指南
@@ -31,7 +31,7 @@
    * [性能优化](docs/optimization.md)
    * [长期缓存](docs/long-term-caching.md)
    * [如何编写loader](docs/how-to-write-a-loader.md)
-   * [How to write a plugin](docs/how-to-write-a-plugin.md)
+   * [如何编写插件](docs/how-to-write-a-plugin.md)
    * [Multiple entry points](docs/multiple-entry-points.md)
    * [Library and externals](docs/library-and-externals.md)
    * [Shimming modules](docs/shimming-modules.md)
