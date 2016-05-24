@@ -157,7 +157,7 @@ By making Jquery available as a global namespace in our file contianing Jquery c
 
 
 
-# Order of loaders
+# loader的顺序
 
 In rare cases when you have to apply more than one technique, you need to use the correct order of loaders:
 
