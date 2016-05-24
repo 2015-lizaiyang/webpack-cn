@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Troubleshooting | webpack doc</title>
+        <title>故障处理 | webpack doc</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.2">
@@ -50,10 +50,10 @@
         
     <div class="book"
         data-level="2.10"
-        data-chapter-title="Troubleshooting"
+        data-chapter-title="故障处理"
         data-filepath="docs/troubleshooting.md"
         data-basepath=".."
-        data-revision="Fri May 20 2016 18:46:15 GMT+0800 (CST)"
+        data-revision="Tue May 24 2016 13:33:29 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -188,7 +188,7 @@
                         
                             <b>2.7.</b>
                         
-                        Using Loaders
+                        使用 Loaders
                     </a>
             
             
@@ -203,7 +203,7 @@
                         
                             <b>2.8.</b>
                         
-                        Using Plugins
+                        使用 Plugins
                     </a>
             
             
@@ -233,7 +233,7 @@
                         
                             <b>2.10.</b>
                         
-                        Troubleshooting
+                        故障处理
                     </a>
             
             
@@ -349,7 +349,7 @@
                         
                             <b>4.3.</b>
                         
-                        webpack for browserify users
+                        对于browserify用户
                     </a>
             
             
@@ -977,8 +977,8 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="resolving">resolving</h1>
-<h2 id="general-resolving-issues">general resolving issues</h2>
+                        <h1 id="&#x89E3;&#x6790;&#x6545;&#x969C;">&#x89E3;&#x6790;&#x6545;&#x969C;</h1>
+<h2 id="&#x666E;&#x504F;&#x7684;&#x89E3;&#x6790;issue">&#x666E;&#x504F;&#x7684;&#x89E3;&#x6790;issue</h2>
 <ul>
 <li><code>--display-error-details</code> give you more details.</li>
 <li>Read [[Configuration]] regarding resolving starting at <code>resolve</code><ul>
@@ -986,7 +986,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="npm-linked-modules-dont-find-their-dependencies"><code>npm link</code>ed modules don&apos;t find their dependencies</h2>
+<h2 id="npm-linked-dont-find-their-dependencies"><code>npm link</code>ed don&apos;t find their dependencies</h2>
 <p>The node.js module resolving algorithm is pretty simple: module dependencies are looked up in <code>node_modules</code> folders in every parent directory of the requiring module. When you <code>npm link</code> modules with peer dependencies that are not in your root directory, modules can no longer be found. (You probably want to consider <code>peerDependencies</code> with <code>npm link</code> as broken by design in node.js.) Note that a dependency to the application (even if this is not the perfect design) is also a kind of peerDependency even if it&apos;s not listed as such in the module&apos;s <code>package.json</code>.</p>
 <p>But you can easily workaround that in webpack: Add the <code>node_modules</code> folder of your application to the resolve paths. There are two config options for this: <code>resolve.fallback</code> and <code>resolveLoader.fallback</code>.</p>
 <p>Here is a config example:</p>
@@ -995,16 +995,16 @@
   resolveLoader: { fallback: path.join(__dirname, <span class="hljs-string">&quot;node_modules&quot;</span>) }
 };
 </code></pre>
-<h1 id="watching">Watching</h1>
-<h2 id="webpack-doesnt-recompile-on-change-while-watching">webpack doesn&apos;t recompile on change while watching</h2>
-<h3 id="not-enough-watchers">Not enough watchers</h3>
+<h1 id="&#x76D1;&#x542C;">&#x76D1;&#x542C;</h1>
+<h2 id="&#x76D1;&#x542C;&#x662F;&#x51FA;&#x53D1;change&#x4E0D;&#x7F16;&#x8BD1;">&#x76D1;&#x542C;&#x662F;&#x51FA;&#x53D1;change&#x4E0D;&#x7F16;&#x8BD1;</h2>
+<h3 id="&#x76D1;&#x542C;&#x5668;&#x4E0D;&#x591F;">&#x76D1;&#x542C;&#x5668;&#x4E0D;&#x591F;</h3>
 <p>Verify that if you have enough available watchers in your system. If this value is too low, the file watcher in Webpack won&apos;t recognize the changes:</p>
 <pre><code>cat /proc/sys/fs/inotify/max_user_watches
 </code></pre><p>Arch users, add <code>fs.inotify.max_user_watches=524288</code> to <code>/etc/sysctl.d/99-sysctl.conf</code> and then execute <code>sysctl --system</code>. Ubuntu users (and possibly others): <code>echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf &amp;&amp; sudo sysctl -p</code>.</p>
 <h3 id="osx-fsevents-bug">OS-X fsevents bug</h3>
 <p>On OS-X folders can get corrupted. See this article:</p>
 <p><a href="http://feedback.livereload.com/knowledgebase/articles/86239-os-x-fsevents-bug-may-prevent-monitoring-of-certai" target="_blank">OS X FSEvents bug may prevent monitoring of certain folders</a></p>
-<h3 id="windows-paths">Windows paths</h3>
+<h3 id="windows-&#x8DEF;&#x5F84;">Windows &#x8DEF;&#x5F84;</h3>
 <p>webpack expects absolute paths for many config options. <code>__dirname + &quot;/app/folder&quot;</code> is wrong, because windows uses <code>\</code> as path separator. This breaks some stuff.</p>
 <p>Use the correct separators. I.e. <code>path.resolve(__dirname, &quot;app/folder&quot;)</code> or <code>path.join(__dirname, &quot;app&quot;, &quot;folder&quot;)</code>.</p>
 <h3 id="vim">Vim</h3>

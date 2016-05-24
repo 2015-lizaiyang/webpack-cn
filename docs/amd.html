@@ -53,7 +53,7 @@
         data-chapter-title="AMD"
         data-filepath="docs/amd.md"
         data-basepath=".."
-        data-revision="Fri May 20 2016 18:46:15 GMT+0800 (CST)"
+        data-revision="Tue May 24 2016 13:33:29 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -188,7 +188,7 @@
                         
                             <b>2.7.</b>
                         
-                        Using Loaders
+                        使用 Loaders
                     </a>
             
             
@@ -203,7 +203,7 @@
                         
                             <b>2.8.</b>
                         
-                        Using Plugins
+                        使用 Plugins
                     </a>
             
             
@@ -233,7 +233,7 @@
                         
                             <b>2.10.</b>
                         
-                        Troubleshooting
+                        故障处理
                     </a>
             
             
@@ -349,7 +349,7 @@
                         
                             <b>4.3.</b>
                         
-                        webpack for browserify users
+                        对于browserify用户
                     </a>
             
             
@@ -977,27 +977,24 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>AMD (Asynchronous Module Definition) was the response to those who thought the CommonJS Module system was not ready for the browser because its nature was synchronous.</p>
-<p>AMD specifies a standard for modular JavaScript such that modules can load their dependencies asynchronously, solving the problems associated with synchronous loading.</p>
-<h2 id="specification">Specification</h2>
-<p>Modules are defined using the <code>define</code> function.</p>
+                        <p>AMD&#xFF08;&#x5F02;&#x6B65;&#x6A21;&#x5757;&#x5B9A;&#x4E49;&#xFF09;&#x662F;&#x4E3A;&#x6D4F;&#x89C8;&#x5668;&#x73AF;&#x5883;&#x8BBE;&#x8BA1;&#x7684;&#xFF0C;&#x56E0;&#x4E3A; CommonJS &#x6A21;&#x5757;&#x7CFB;&#x7EDF;&#x662F;&#x540C;&#x6B65;&#x52A0;&#x8F7D;&#x7684;&#xFF0C;&#x5F53;&#x524D;&#x6D4F;&#x89C8;&#x5668;&#x73AF;&#x5883;&#x8FD8;&#x6CA1;&#x6709;&#x51C6;&#x5907;&#x597D;&#x540C;&#x6B65;&#x52A0;&#x8F7D;&#x6A21;&#x5757;&#x7684;&#x6761;&#x4EF6;&#x3002;</p>
+<p>AMD &#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x5957; JavaScript &#x6A21;&#x5757;&#x4F9D;&#x8D56;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x6807;&#x51C6;&#xFF0C;&#x6765;&#x89E3;&#x51B3;&#x540C;&#x6B65;&#x52A0;&#x8F7D;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<h2 id="&#x5B9A;&#x4E49;">&#x5B9A;&#x4E49;</h2>
+<p>&#x4F7F;&#x7528;<code>define</code>&#x51FD;&#x6570;&#x5B9A;&#x4E49;Module.</p>
 <h3 id="define"><code>define</code></h3>
-<p>The define function is how modules are defined with AMD. It is just a function that has this signature</p>
+<p>&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code class="lang-javascript">define(id?: <span class="hljs-built_in">String</span>, dependencies?: <span class="hljs-built_in">String</span>[], factory: <span class="hljs-built_in">Function</span>|<span class="hljs-built_in">Object</span>);
 </code></pre>
 <h4 id="id"><code>id</code></h4>
-<p>Specifies the module name. It is optional.</p>
+<p>module&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x53EF;&#x9009;&#x7684;.</p>
 <h4 id="dependencies"><code>dependencies</code></h4>
-<p>This argument specifies which module dependencies the module being defined has.
-It is an array containing module identifiers.
-It is optional, but if omitted, it defaults to [&quot;require&quot;, &quot;exports&quot;, &quot;module&quot;].</p>
+<p>dependencies &#x6307;&#x5B9A;&#x4E86;&#x6240;&#x8981;&#x4F9D;&#x8D56;&#x7684;module&#x5217;&#x8868;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x4E5F;&#x662F;&#x53EF;&#x9009;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x6BCF;&#x4E2A;&#x4F9D;&#x8D56;&#x7684;&#x6A21;&#x5757;&#x7684;&#x8F93;&#x51FA;&#x5C06;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4E00;&#x6B21;&#x4F20;&#x5165; factory &#x4E2D;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A; dependencies&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x662F; [&quot;require&quot;, &quot;exports&quot;, &quot;module&quot;]&#x3002;</p>
 <h4 id="factory"><code>factory</code></h4>
-<p>The last argument is the one who defines the module. It can be a function (which should be called once), or an object.
-If the factory is a function, the value returned will be the exported value for the module.</p>
-<h2 id="examples">Examples</h2>
-<p>Let&apos;s see some examples:</p>
-<h3 id="named-module">Named module</h3>
-<p>Defines a module named <code>myModule</code> that requires <code>jQuery</code>.</p>
+<p>factory &#x662F;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5B83;&#x5305;&#x88F9;&#x4E86;&#x6A21;&#x5757;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF08;&#x53EA;&#x80FD;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#xFF09;&#x6216;&#x8005;&#x5BF9;&#x8C61;&#x3002;
+&#x5982;&#x679C;&#x662F;&#x51FD;&#x6570;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x5C31;&#x662F;&#x6A21;&#x5757;&#x7684;&#x8F93;&#x51FA;&#x63A5;&#x53E3;&#x6216;&#x503C;&#x3002;</p>
+<h2 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</h2>
+<h3 id="&#x547D;&#x540D;-module">&#x547D;&#x540D; module</h3>
+<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; myModule &#x7684;&#x6A21;&#x5757;&#xFF0C;&#x5B83;&#x4F9D;&#x8D56; jQuery &#x6A21;&#x5757;&#xFF1A;</p>
 <pre><code class="lang-javascript">define(<span class="hljs-string">&apos;myModule&apos;</span>, [<span class="hljs-string">&apos;jquery&apos;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">$</span>) </span>{
     <span class="hljs-comment">// $ is the export of the jquery module.</span>
     $(<span class="hljs-string">&apos;body&apos;</span>).text(<span class="hljs-string">&apos;hello world&apos;</span>);
@@ -1005,22 +1002,21 @@ If the factory is a function, the value returned will be the exported value for 
 <span class="hljs-comment">// and use it</span>
 <span class="hljs-built_in">require</span>([<span class="hljs-string">&apos;myModule&apos;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">myModule</span>) </span>{});
 </code></pre>
-<p>Note: In webpack a named module is only locally available. In Require.js a named module is globally available.</p>
-<h3 id="anonymous-module">Anonymous module</h3>
-<p>Define a module without specifying its id.</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5728; webpack &#x4E2D;&#xFF0C;&#x6A21;&#x5757;&#x540D;&#x53EA;&#x6709;&#x5C40;&#x90E8;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x5728; Require.js &#x4E2D;&#x6A21;&#x5757;&#x540D;&#x662F;&#x5168;&#x5C40;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5168;&#x5C40;&#x5F15;&#x7528;&#x3002;</p>
+<h3 id="&#x533F;&#x540D;-module">&#x533F;&#x540D; module</h3>
+<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x6CA1;&#x6709; id &#x503C;&#x7684;&#x533F;&#x540D;&#x6A21;&#x5757;&#xFF0C;&#x901A;&#x5E38;&#x4F5C;&#x4E3A;&#x5E94;&#x7528;&#x7684;&#x542F;&#x52A8;&#x51FD;&#x6570;&#xFF1A;</p>
 <pre><code class="lang-javascript">define([<span class="hljs-string">&apos;jquery&apos;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">$</span>) </span>{
     $(<span class="hljs-string">&apos;body&apos;</span>).text(<span class="hljs-string">&apos;hello world&apos;</span>);
 });
 </code></pre>
-<h3 id="multiple-dependencies">Multiple dependencies</h3>
-<p>Define a module with multiple dependencies. Note that each dependency export will be passed to the factory function.</p>
+<h3 id="&#x591A;&#x4E2A;&#x6A21;&#x5757;&#x4F9D;&#x8D56;">&#x591A;&#x4E2A;&#x6A21;&#x5757;&#x4F9D;&#x8D56;</h3>
 <pre><code class="lang-javascript">define([<span class="hljs-string">&apos;jquery&apos;</span>, <span class="hljs-string">&apos;./math.js&apos;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">$, math</span>) </span>{
     <span class="hljs-comment">// $ and math are the exports of the jquery module.</span>
     $(<span class="hljs-string">&apos;body&apos;</span>).text(<span class="hljs-string">&apos;hello world&apos;</span>);
 });
 </code></pre>
-<h3 id="export-value">Export value</h3>
-<p>Define a module that exports itself.</p>
+<h3 id="&#x6A21;&#x5757;&#x8F93;&#x51FA;">&#x6A21;&#x5757;&#x8F93;&#x51FA;</h3>
+<p>&#x8F93;&#x51FA;&#x6A21;&#x5757;&#x81EA;&#x8EAB;.</p>
 <pre><code class="lang-javascript">define([<span class="hljs-string">&apos;jquery&apos;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">$</span>) </span>{
 
     <span class="hljs-keyword">var</span> HelloWorldize = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">selector</span>)</span>{
@@ -1030,7 +1026,7 @@ If the factory is a function, the value returned will be the exported value for 
     <span class="hljs-keyword">return</span> HelloWorldize;
 });
 </code></pre>
-<h3 id="using-require-to-load-dependencies">Using require to load dependencies</h3>
+<h3 id="&#x5728;&#x6A21;&#x5757;&#x5B9A;&#x4E49;&#x5185;&#x90E8;&#x5F15;&#x7528;&#x4F9D;&#x8D56;">&#x5728;&#x6A21;&#x5757;&#x5B9A;&#x4E49;&#x5185;&#x90E8;&#x5F15;&#x7528;&#x4F9D;&#x8D56;</h3>
 <pre><code class="lang-javascript">define(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">require</span>) </span>{
     <span class="hljs-keyword">var</span> $ = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;jquery&apos;</span>);
     $(<span class="hljs-string">&apos;body&apos;</span>).text(<span class="hljs-string">&apos;hello world&apos;</span>);
@@ -1049,7 +1045,7 @@ If the factory is a function, the value returned will be the exported value for 
         <a href="../docs/commonjs.html" class="navigation navigation-prev " aria-label="Previous page: CommonJs"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../docs/webpack-for-browserify-users.html" class="navigation navigation-next " aria-label="Next page: webpack for browserify users"><i class="fa fa-angle-right"></i></a>
+        <a href="../docs/webpack-for-browserify-users.html" class="navigation navigation-next " aria-label="Next page: 对于browserify用户"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
