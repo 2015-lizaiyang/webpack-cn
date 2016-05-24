@@ -21,9 +21,7 @@ Commonjs 提供两个工具:
 var MySalute = "Hello";
 ```
 
-Now, in a second file named `world.js`, we are
-going to use the value defined in `salute.js`.  
-
+在`world.js`文件里面使用`salute.js`里面定义的变量
 ``` javascript	
 // world.js
 var Result = MySalute + " world!";
