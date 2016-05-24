@@ -82,7 +82,7 @@ Examples:
 
 比如:
 
-##### 损坏 AMD
+##### 禁用 AMD
 
 `require("imports?define=>false!./file.js")`
 
