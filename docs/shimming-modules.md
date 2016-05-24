@@ -13,10 +13,10 @@
 当文件的依赖没有被`require()`的时候有用。
 
 ## [`imports-loader`](https://github.com/webpack/imports-loader)
-
+这个loader允许你将module或其它任意格式的js添加本地文件里面
 This loader allows you to put some modules or arbitrary JavaScript onto a local variable of the file.
 
-Examples: 
+例如: 
 
 ##### `file.js` expect a global variable `$` and you have a module `jquery` that should be used.
 
