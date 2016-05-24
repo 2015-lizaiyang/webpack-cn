@@ -164,3 +164,4 @@ In rare cases when you have to apply more than one technique, you need to use th
 inlined: `expose!imports!exports`, configuration: expose before imports before exports.
 
 [Using loaders]: using-loaders.md
+[configuration]: configuration.md
