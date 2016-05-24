@@ -4,7 +4,7 @@ AMD 定义了一套 JavaScript 模块依赖异步加载标准，来解决同步�
 
 ## 定义
 
-Modules are defined using the `define` function.
+使用`define`函数定义Module.
 
 ### `define`
 
