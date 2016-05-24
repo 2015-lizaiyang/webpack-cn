@@ -8,7 +8,7 @@
 
 
 
-# imports
+# 引入
 
 当文件的依赖没有被`require()`的时候有用。
 
@@ -46,10 +46,9 @@ new webpack.ProvidePlugin({
 
 
 
-# Exporting
+# 输出
 
-The file doesn't export its value.
-
+当文件没有到处变量时使用。
 ## [`exports-loader`](https://github.com/webpack/exports-loader)
 
 This loader exports variables from inside the file.
