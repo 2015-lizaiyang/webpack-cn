@@ -23,9 +23,9 @@ module.exports = {
 
 # 监听
 
-## webpack doesn't recompile on change while watching
+## 监听是出发change不编译
 
-### Not enough watchers
+### 监听器不够
 
 Verify that if you have enough available watchers in your system. If this value is too low, the file watcher in Webpack won't recognize the changes:
 
@@ -41,7 +41,7 @@ On OS-X folders can get corrupted. See this article:
 
 [OS X FSEvents bug may prevent monitoring of certain folders](http://feedback.livereload.com/knowledgebase/articles/86239-os-x-fsevents-bug-may-prevent-monitoring-of-certai)
 
-### Windows paths
+### Windows 路径
 
 webpack expects absolute paths for many config options. `__dirname + "/app/folder"` is wrong, because windows uses `\` as path separator. This breaks some stuff.
 
