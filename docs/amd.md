@@ -80,7 +80,7 @@ define(['jquery'], function($) {
 });
 ```
 
-### 在模块定义内部引用依赖：
+### 在模块定义内部引用依赖
 
 ```javascript
 define(function(require) {
