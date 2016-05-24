@@ -80,7 +80,7 @@ define(['jquery'], function($) {
 });
 ```
 
-### Using require to load dependencies
+### 在模块定义内部引用依赖：
 
 ```javascript
 define(function(require) {
