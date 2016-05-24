@@ -26,11 +26,10 @@ dependencies 指定了所要依赖的module列表，它是一个数组，也是�
 factory 是最后一个参数，它包裹了模块的具体实现，它是一个函数（只能调用一次）或者对象。
 如果是函数，那么它的返回值就是模块的输出接口或值。
 
-## Examples
+## 例子
 
-Let's see some examples:
 
-### Named module
+### 命名 module
 
 Defines a module named `myModule` that requires `jQuery`.
 
