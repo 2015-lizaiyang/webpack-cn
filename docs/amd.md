@@ -46,9 +46,9 @@ require(['myModule'], function(myModule) {});
 
 
 
-### Anonymous module
+### 匿名 module
 
-Define a module without specifying its id.
+定义一个没有 id 值的匿名模块，通常作为应用的启动函数：
 
 ```javascript
 define(['jquery'], function($) {
