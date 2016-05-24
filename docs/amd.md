@@ -65,7 +65,7 @@ define(['jquery', './math.js'], function($, math) {
 });
 ```
 
-### Export value
+### 输出 value
 
 Define a module that exports itself.
 
