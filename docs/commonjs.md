@@ -1,3 +1,5 @@
+CommonJS 是以在浏览器环境之外构建 JavaScript 生态系统为目标而产生的项目，比如在服务器和桌面环境中。
+这个项目最开始是由 Mozilla 的工程师 Kevin Dangoor 在2009年1月创建的，当时的名字是 ServerJS。
 The CommonJS group defined a module format to solve 
 JavaScript scope issues by making sure each module
 is executed in its own namespace.
