@@ -94,7 +94,7 @@ Examples:
 
 This disables parsing by webpack. Therefore you cannot use dependencies. This may be useful for prepackaged libraries.
 
-Example:
+例如:
 
 ``` javascript
 {
