@@ -1,8 +1,8 @@
-In some cases webpack cannot parse some file, because it has a unsupported module format or isn't even in a module format. Therefore you have many options to convert the file into a module.
+有的时候由于一些文件的模块格式不支持活着就没有好模块，webpack 不能解析这些文件，所以我们有很多的选项来讲这些文件转换成module
 
 
 
-# [[Using loaders]]
+# [Using loaders][Using loaders]
 
 On this page all examples with loaders are inlined into `require` calls. This is just for demonstration. You may want to configure them in your webpack config instead. Read [[Using loaders]] for more details how to do this.
 
