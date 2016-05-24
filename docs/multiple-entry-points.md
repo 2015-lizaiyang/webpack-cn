@@ -5,7 +5,7 @@
 
 每个入口文件，都包含着webpack运行环境。因而你只能给一个页面加载一个入口文件（想绕开这个限制，可以使用`CommonsChunkPlugin`将运行环境迁移到独立的chunk里面）。
 
-## Configuration
+## 配置
 
 To use multiple entry points you can pass an object to the `entry` option. Each value is threaded as entry point and the key represents the name of the entry point.
 
