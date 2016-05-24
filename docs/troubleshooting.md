@@ -1,6 +1,6 @@
-# resolving
+# 解析
 
-## general resolving issues
+## 普偏的解析方案
 
 * `--display-error-details` give you more details.
 * Read [[Configuration]] regarding resolving starting at `resolve`
