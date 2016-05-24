@@ -47,8 +47,8 @@ module.exports = Result;
 `salute.js` 暴露了 `MySalute`, `world.js` 暴露了 `Result`.
 
 ## Module 依赖
-
-We're near but there's still a step missing: dependency definition.
+我们还差一步就完成了：依赖定义。
+我们给每个文件定义一个独立的模块，但是`world.js`得知道是谁定义的`Mysalute`
 We've already defined every script as an independent module, but `world.js`
 still needs to know who defines `MySalute`:
 
