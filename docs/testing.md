@@ -3,7 +3,7 @@
 * 浏览器: You get a more realistic test, but you need some more complex infrastructure and the test usually take longer. You can test DOM access.
 * Node: You cannot test DOM access, but testing is usually faster.
 
-## In-browser testing
+##浏览器端 测试
 
 ### mocha-loader
 
