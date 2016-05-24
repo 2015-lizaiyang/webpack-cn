@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Testing | webpack doc</title>
+        <title>测试 | webpack doc</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.2">
@@ -50,10 +50,10 @@
         
     <div class="book"
         data-level="4.13"
-        data-chapter-title="Testing"
+        data-chapter-title="测试"
         data-filepath="docs/testing.md"
         data-basepath=".."
-        data-revision="Tue May 24 2016 13:33:29 GMT+0800 (CST)"
+        data-revision="Tue May 24 2016 14:38:20 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -454,7 +454,7 @@
                         
                             <b>4.10.</b>
                         
-                        Multiple entry points
+                        多入口点
                     </a>
             
             
@@ -469,7 +469,7 @@
                         
                             <b>4.11.</b>
                         
-                        Library and externals
+                        库和扩展
                     </a>
             
             
@@ -499,7 +499,7 @@
                         
                             <b>4.13.</b>
                         
-                        Testing
+                        测试
                     </a>
             
             
@@ -977,12 +977,12 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>There are two ways to test web applications:</p>
+                        <p>&#x4E24;&#x4E2A;&#x9014;&#x5F84;&#x6765;&#x505A;&#x6D4B;&#x8BD5;:</p>
 <ul>
-<li>In-browsers: You get a more realistic test, but you need some more complex infrastructure and the test usually take longer. You can test DOM access.</li>
-<li>with node.js: You cannot test DOM access, but testing is usually faster.</li>
+<li>&#x6D4F;&#x89C8;&#x5668;: You get a more realistic test, but you need some more complex infrastructure and the test usually take longer. You can test DOM access.</li>
+<li>Node: You cannot test DOM access, but testing is usually faster.</li>
 </ul>
-<h2 id="inbrowser-testing">In-browser testing</h2>
+<h2 id="&#x6D4F;&#x89C8;&#x5668;&#x7AEF;-&#x6D4B;&#x8BD5;">&#x6D4F;&#x89C8;&#x5668;&#x7AEF; &#x6D4B;&#x8BD5;</h2>
 <h3 id="mochaloader">mocha-loader</h3>
 <p>The mocha-loader executes your code with the mocha framework. If you run the code it&apos;ll show the results in the web page.</p>
 <p><em>Hint: when using <code>!</code> in the bash command line, you must escape it by prepending a <code>\</code></em></p>
@@ -998,7 +998,7 @@ open http://localhost:<span class="hljs-number">8080</span>/<span class="hljs-bu
 <p>Hint: Use <code>--hot</code> and it&apos;ll only execute tests which have changed or have changed dependencies.</p>
 <h3 id="karma-and-webpack">karma and webpack</h3>
 <p>You can use webpack with karma. Add <a href="https://github.com/webpack/karma-webpack" target="_blank"><code>&quot;webpack&quot;</code> as preprocessor</a> to your karma config.</p>
-<h2 id="nodejs-testing">node.js testing</h2>
+<h2 id="nodejs-&#x6D4B;&#x8BD5;">node.js &#x6D4B;&#x8BD5;</h2>
 <h3 id="commonjs-only">CommonJs only</h3>
 <p>If you write your web app only in CommonJs and don&apos;t use loaders or other webpack-specific features, you can test it in node.js. Just use a node.js testing framework, i. e. <a href="http://visionmedia.github.io/mocha/" target="_blank">mocha</a>.</p>
 <pre><code class="lang-sh">mocha <span class="hljs-built_in">test</span>/*
@@ -1016,7 +1016,7 @@ mocha /tmp/<span class="hljs-built_in">test</span>Bundle.js
 mocha --require <span class="hljs-built_in">source</span>-map-support/register /tmp/<span class="hljs-built_in">test</span>Bundle.js
 </code></pre>
 <p>Make sure to configure the <a href="http://webpack.github.io/docs/configuration.html#devtool" target="_blank"><code>devtool</code></a> option to output the source map.</p>
-<h3 id="enhancedrequire">enhanced-require</h3>
+<h3 id="require&#x589E;&#x5F3A;">require&#x589E;&#x5F3A;</h3>
 <p>TODO</p>
 
                     

@@ -53,7 +53,7 @@
         data-chapter-title="Shimming modules"
         data-filepath="docs/shimming-modules.md"
         data-basepath=".."
-        data-revision="Tue May 24 2016 13:33:29 GMT+0800 (CST)"
+        data-revision="Tue May 24 2016 14:38:20 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -454,7 +454,7 @@
                         
                             <b>4.10.</b>
                         
-                        Multiple entry points
+                        多入口点
                     </a>
             
             
@@ -469,7 +469,7 @@
                         
                             <b>4.11.</b>
                         
-                        Library and externals
+                        库和扩展
                     </a>
             
             
@@ -499,7 +499,7 @@
                         
                             <b>4.13.</b>
                         
-                        Testing
+                        测试
                     </a>
             
             
@@ -977,21 +977,22 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>In some cases webpack cannot parse some file, because it has a unsupported module format or isn&apos;t even in a module format. Therefore you have many options to convert the file into a module.</p>
-<h1 id="using-loaders">[[Using loaders]]</h1>
-<p>On this page all examples with loaders are inlined into <code>require</code> calls. This is just for demonstration. You may want to configure them in your webpack config instead. Read [[Using loaders]] for more details how to do this.</p>
-<h1 id="importing">Importing</h1>
-<p>Useful when a file has dependencies that are not imported via <code>require()</code>. </p>
+                        <p>&#x6709;&#x7684;&#x65F6;&#x5019;&#x7531;&#x4E8E;&#x4E00;&#x4E9B;&#x6587;&#x4EF6;&#x7684;&#x6A21;&#x5757;&#x683C;&#x5F0F;&#x4E0D;&#x652F;&#x6301;&#x6D3B;&#x7740;&#x5C31;&#x6CA1;&#x6709;&#x597D;&#x6A21;&#x5757;&#xFF0C;webpack &#x4E0D;&#x80FD;&#x89E3;&#x6790;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x6709;&#x5F88;&#x591A;&#x7684;&#x9009;&#x9879;&#x6765;&#x8BB2;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x8F6C;&#x6362;&#x6210;module</p>
+<h1 id="using-loaders"><a href="using-loaders.html">Using loaders</a></h1>
+<p>&#x6B64;&#x9875;&#x4F8B;&#x5B50;&#x91CC;&#x9762;&#x7684;loader&#x90FD;&#x5199;&#x5230; <code>require</code>&#x91CC;&#x9762;&#x4E86;&#xFF0C;&#x4EC5;&#x4EC5;&#x53EA;&#x662F;&#x4E3A;&#x4E86;&#x4E3E;&#x4F8B;&#x3002;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x4F60;&#x7684;webpack &#x91CC;&#x9762;&#x914D;&#x7F6E;&#x3002;&#x66F4;&#x591A;&#x8BE6;&#x60C5;&#x8BF7;&#x770B;<a href="using-loaders.html">Using loaders</a></p>
+<h1 id="&#x5F15;&#x5165;">&#x5F15;&#x5165;</h1>
+<p>&#x5F53;&#x6587;&#x4EF6;&#x7684;&#x4F9D;&#x8D56;&#x6CA1;&#x6709;&#x88AB;<code>require()</code>&#x7684;&#x65F6;&#x5019;&#x6709;&#x7528;&#x3002;</p>
 <h2 id="importsloader"><a href="https://github.com/webpack/imports-loader" target="_blank"><code>imports-loader</code></a></h2>
-<p>This loader allows you to put some modules or arbitrary JavaScript onto a local variable of the file.</p>
-<p>Examples: </p>
+<p>&#x8FD9;&#x4E2A;loader&#x5141;&#x8BB8;&#x4F60;&#x5C06;module&#x6216;&#x5176;&#x5B83;&#x4EFB;&#x610F;&#x683C;&#x5F0F;&#x7684;js&#x6DFB;&#x52A0;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x91CC;&#x9762;
+This loader allows you to put some modules or arbitrary JavaScript onto a local variable of the file.</p>
+<p>&#x4F8B;&#x5982;: </p>
 <h5 id="filejs-expect-a-global-variable--and-you-have-a-module-jquery-that-should-be-used"><code>file.js</code> expect a global variable <code>$</code> and you have a module <code>jquery</code> that should be used.</h5>
 <p><code>require(&quot;imports?$=jquery!./file.js&quot;)</code></p>
 <h5 id="filejs-expect-its-configuration-on-a-global-variable-xconfig-and-you-want-it-to-be-value123"><code>file.js</code> expect its configuration on a global variable <code>xConfig</code> and you want it to be <code>{value:123}</code>.</h5>
 <p><code>require(&quot;imports?xConfig=&gt;{value:123}!./file.js&quot;)</code></p>
 <h5 id="filejs-expect-that-this-is-the-global-context"><code>file.js</code> expect that <code>this</code> is the global context.</h5>
 <p><code>require(&quot;imports?this=&gt;window!./file.js&quot;)</code> or <code>require(&quot;imports?this=&gt;global!./file.js&quot;)</code></p>
-<h2 id="plugin--list-of-plugins-provideplugin">[[plugin | list of plugins]] <code>ProvidePlugin</code></h2>
+<h2 id="&#x63D2;&#x4EF6;&#x5217;&#x8868;list-of-plugins-provideplugin">[&#x63D2;&#x4EF6;&#x5217;&#x8868;][list of plugins] <code>ProvidePlugin</code></h2>
 <p>This plugin makes a module available as variable in every module. The module is required only if you use the variable.</p>
 <p>Example: Make <code>$</code> and <code>jQuery</code> available in every module without writing <code>require(&quot;jquery&quot;)</code>.</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">new</span> webpack.ProvidePlugin({
@@ -1000,8 +1001,8 @@
     <span class="hljs-string">&quot;window.jQuery&quot;</span>: <span class="hljs-string">&quot;jquery&quot;</span>
 })
 </code></pre>
-<h1 id="exporting">Exporting</h1>
-<p>The file doesn&apos;t export its value.</p>
+<h1 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h1>
+<p>&#x5F53;&#x6587;&#x4EF6;&#x6CA1;&#x6709;&#x5230;&#x5904;&#x53D8;&#x91CF;&#x65F6;&#x4F7F;&#x7528;&#x3002;</p>
 <h2 id="exportsloader"><a href="https://github.com/webpack/exports-loader" target="_blank"><code>exports-loader</code></a></h2>
 <p>This loader exports variables from inside the file.</p>
 <p>Examples:</p>
@@ -1013,17 +1014,17 @@
 <p><code>require(&quot;imports?XModule=&gt;undefined!exports?XModule!./file.js&quot;)</code> (import to not leak to the global context)</p>
 <h5 id="the-file-sets-a-property-on-window-windowxmodule--">The file sets a property on <code>window</code> <code>window.XModule = ...</code>.</h5>
 <p><code>require(&quot;imports?window=&gt;{}!exports?window.XModule!./file.js</code></p>
-<h1 id="fixing-broken-module-styles">Fixing broken module styles</h1>
-<p>Some files use a module style wrong. You may want to fix this by teaching webpack to not use this style.</p>
-<h2 id="disable-some-module-styles">Disable some module styles</h2>
-<p>Examples:</p>
-<h5 id="broken-amd">Broken AMD</h5>
+<h1 id="&#x4FEE;&#x590D;&#x635F;&#x574F;&#x7684;module">&#x4FEE;&#x590D;&#x635F;&#x574F;&#x7684;module</h1>
+<p>&#x6709;&#x7684;&#x6587;&#x4EF6;&#x4F7F;&#x7528;&#x9519;&#x8BEF;&#x7684;&#x6A21;&#x5757;&#x683C;&#x5F0F;. &#x4F60;&#x9700;&#x8981;&#x544A;&#x8BC9;webpack&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x683C;&#x5F0F;&#x3002;</p>
+<h2 id="&#x7981;&#x7528;-module-styles">&#x7981;&#x7528; module styles</h2>
+<p>&#x6BD4;&#x5982;:</p>
+<h5 id="&#x7981;&#x7528;-amd">&#x7981;&#x7528; AMD</h5>
 <p><code>require(&quot;imports?define=&gt;false!./file.js&quot;)</code></p>
-<h5 id="broken-commonjs">Broken CommonJs</h5>
+<h5 id="&#x7981;&#x7528;-commonjs">&#x7981;&#x7528; CommonJs</h5>
 <p><code>require(&quot;imports?require=&gt;false!./file.js&quot;)</code></p>
-<h2 id="configuration-option-modulenoparse">[[configuration]] option <code>module.noParse</code></h2>
+<h2 id="configuration-&#x9009;&#x9879;-modulenoparse"><a href="configuration.html">configuration</a> &#x9009;&#x9879; <code>module.noParse</code></h2>
 <p>This disables parsing by webpack. Therefore you cannot use dependencies. This may be useful for prepackaged libraries.</p>
-<p>Example:</p>
+<p>&#x4F8B;&#x5982;:</p>
 <pre><code class="lang-javascript">{
     <span class="hljs-built_in">module</span>: {
         noParse: [
@@ -1041,7 +1042,7 @@
 <blockquote>
 <p>Note: The file is added as string to the bundle. It is not minimized by webpack, so use a minimized version. There is also no dev tool support for libraries added by this loader.</p>
 </blockquote>
-<h1 id="exposing">Exposing</h1>
+<h1 id="&#x66B4;&#x9732;&#x5168;&#x5C40;">&#x66B4;&#x9732;&#x5168;&#x5C40;</h1>
 <p>There are cases where you want a module to export itself to the global context.</p>
 <p>Don&apos;t do this unless you really need this. (Better use the ProvidePlugin)</p>
 <h2 id="exposeloader"><a href="https://github.com/webpack/expose-loader" target="_blank"><code>expose-loader</code></a></h2>
@@ -1060,7 +1061,7 @@
 </code></pre><p>By making Jquery available as a global namespace in our file contianing Jquery code or the root file, it&apos;s available to use Jquery everywhere in your project. This works very well if you plan to implement Bootstrap in your Webpack project. </p>
 <p><strong>Note:</strong> Using too much global name-spacing will make your app less efficient. If you are planning to use a lot of global namespaces, consider implementing something like <a href="http://babeljs.io/docs/plugins/transform-runtime/" target="_blank">Babel runtime</a> to your project. </p>
 <hr>
-<h1 id="order-of-loaders">Order of loaders</h1>
+<h1 id="loader&#x7684;&#x987A;&#x5E8F;">loader&#x7684;&#x987A;&#x5E8F;</h1>
 <p>In rare cases when you have to apply more than one technique, you need to use the correct order of loaders:</p>
 <p>inlined: <code>expose!imports!exports</code>, configuration: expose before imports before exports.</p>
 
@@ -1073,10 +1074,10 @@
         </div>
 
         
-        <a href="../docs/library-and-externals.html" class="navigation navigation-prev " aria-label="Previous page: Library and externals"><i class="fa fa-angle-left"></i></a>
+        <a href="../docs/library-and-externals.html" class="navigation navigation-prev " aria-label="Previous page: 库和扩展"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../docs/testing.html" class="navigation navigation-next " aria-label="Next page: Testing"><i class="fa fa-angle-right"></i></a>
+        <a href="../docs/testing.html" class="navigation navigation-next " aria-label="Next page: 测试"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
