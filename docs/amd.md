@@ -1,6 +1,6 @@
-AMD (Asynchronous Module Definition) was the response to those who thought the CommonJS Module system was not ready for the browser because its nature was synchronous.
+AMD（异步模块定义）是为浏览器环境设计的，因为 CommonJS 模块系统是同步加载的，当前浏览器环境还没有准备好同步加载模块的条件。
 
-AMD specifies a standard for modular JavaScript such that modules can load their dependencies asynchronously, solving the problems associated with synchronous loading.
+AMD 定义了一套 JavaScript 模块依赖异步加载标准，来解决同步加载的问题。
 
 ## Specification
 
