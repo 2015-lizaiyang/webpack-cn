@@ -46,7 +46,7 @@ module.exports = Result;
 我们用了一个特殊变量`module`，并将定义的变量引用放到`module.exports` 以至于CommonJS模块系统知道我们模块的对象。
 `salute.js` 暴露了 `MySalute`, `world.js` 暴露了 `Result`.
 
-## Module dependency
+## Module 依赖
 
 We're near but there's still a step missing: dependency definition.
 We've already defined every script as an independent module, but `world.js`
@@ -69,9 +69,9 @@ Note that we didn't use the full filename `salute.js` but `./salute` when callin
 `require`, so you can omit the extension of your scripts. `./` means that the `salute` module is in the same directory as the `world` module.
 
 
-## Examples
+## 例子
 
-### Functions
+### 函数
 
 ``` javascript
 // moduleA.js
