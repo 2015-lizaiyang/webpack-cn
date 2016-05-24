@@ -25,8 +25,6 @@ dependencies 指定了所要依赖的module列表，它是一个数组，也是�
 #### `factory`
 factory 是最后一个参数，它包裹了模块的具体实现，它是一个函数（只能调用一次）或者对象。
 如果是函数，那么它的返回值就是模块的输出接口或值。
-The last argument is the one who defines the module. It can be a function (which should be called once), or an object.
-If the factory is a function, the value returned will be the exported value for the module.
 
 ## Examples
 
