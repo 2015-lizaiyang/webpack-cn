@@ -9,9 +9,8 @@ Commonjs 提供两个工具:
 1.  `require()` 函数,当前作用域下导入其他模块.
 2. `module` 对象, 当前域到处变量和接口.
 
-The mandatory hello world example:
 
-## Plain Simple JavaScript
+##简单的js例子
 
 Here is an example without CommonJS:
 
