@@ -10,7 +10,7 @@ Commonjs 提供两个工具:
 2. `module` 对象, 当前域到处变量和接口.
 
 
-##简单的js例子
+## 无格式的js例子
 
 Here is an example without CommonJS:
 
