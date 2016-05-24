@@ -12,7 +12,7 @@
    * [使用 Loaders](docs/using-loaders.md)
    * [使用 Plugins](docs/using-plugins.md)
    * [工具](docs/dev-tools.md)
-   * [Troubleshooting](docs/troubleshooting.md)
+   * [故障处理](docs/troubleshooting.md)
 * 教程与例子
    * [开始](http:/webpack.github.io/docs/tutorials/docs/getting-started.md)
    * [教程列表](docs/list-of-tutorials.md)
