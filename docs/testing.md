@@ -1,7 +1,7 @@
-There are two ways to test web applications:
+两个途径来做测试:
 
-* In-browsers: You get a more realistic test, but you need some more complex infrastructure and the test usually take longer. You can test DOM access.
-* with node.js: You cannot test DOM access, but testing is usually faster.
+* 浏览器: You get a more realistic test, but you need some more complex infrastructure and the test usually take longer. You can test DOM access.
+* Node: You cannot test DOM access, but testing is usually faster.
 
 ## In-browser testing
 
