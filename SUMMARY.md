@@ -28,7 +28,7 @@
    * [如何编写loader](docs/how-to-write-a-loader.md)
    * [如何编写插件](docs/how-to-write-a-plugin.md)
    * [多入口点](docs/multiple-entry-points.md)
-   * [Library and externals](docs/library-and-externals.md)
+   * [库和扩展](docs/library-and-externals.md)
    * [Shimming modules](docs/shimming-modules.md)
    * [Testing](docs/testing.md)
    * [构建性能](docs/build-performance.md)
