@@ -28,9 +28,8 @@ var Result = MySalute + " world!";
 ```
 
 ## Module 定义
-
-As it is, `world.js` will not work as `MySalute` is not defined.
-We need to define each script as a module:  
+可以看到`world.js` 里面的`MySalute` is not defined。
+所以，我们需要给每个文件定义一个module：
 
 ``` javascript
 // salute.js
