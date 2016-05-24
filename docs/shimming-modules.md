@@ -90,7 +90,7 @@ Examples:
 
 `require("imports?require=>false!./file.js")`
 
-## [[configuration]] option `module.noParse`
+## [configuration][configuration] 选项 `module.noParse`
 
 This disables parsing by webpack. Therefore you cannot use dependencies. This may be useful for prepackaged libraries.
 
