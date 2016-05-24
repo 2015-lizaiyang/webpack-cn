@@ -4,11 +4,12 @@
 
 # [Using loaders][Using loaders]
 
-On this page all examples with loaders are inlined into `require` calls. This is just for demonstration. You may want to configure them in your webpack config instead. Read [[Using loaders]] for more details how to do this.
+此页例子里面的loader都写到 `require`里面了，仅仅只是为了举例。你也可以在你的webpack 里面配置。更多详情请看[Using loaders][Using loaders]
 
 
 
-# Importing
+# 引入
+
 
 Useful when a file has dependencies that are not imported via `require()`. 
 
