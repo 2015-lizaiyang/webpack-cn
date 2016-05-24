@@ -7,8 +7,9 @@
 
 ## 配置
 
-To use multiple entry points you can pass an object to the `entry` option. Each value is threaded as entry point and the key represents the name of the entry point.
+为了使用多入口文件，你可以给`entry`传入一个对象。对象的key代表入口点名字，value代表入口点。
 
+当使用多入口点的时候，需要重载`output.filename`，否责每个入口点都卸乳到同一个输出文件里面了。使用`[name]`来得到入口点名字。
 When using multiple entry point you must override the default `output.filename` option. Otherwise each entry point would write to the same output file. Use `[name]` to get the name of the entry point.
 
 ### 例子
