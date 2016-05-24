@@ -30,7 +30,7 @@
    * [多入口点](docs/multiple-entry-points.md)
    * [库和扩展](docs/library-and-externals.md)
    * [Shimming modules](docs/shimming-modules.md)
-   * [Testing](docs/testing.md)
+   * [测试](docs/testing.md)
    * [构建性能](docs/build-performance.md)
    * [热替换](docs/hot-module-replacement-with-webpack.md)
    * [Comparison](docs/comparison.md)
