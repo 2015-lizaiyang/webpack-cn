@@ -76,13 +76,13 @@ Examples:
 
 # 修复损坏的module
 
-Some files use a module style wrong. You may want to fix this by teaching webpack to not use this style.
+有的文件使用错误的模块格式. 你需要告诉webpack不要使用这个格式。
 
-## Disable some module styles
+## 禁用 module styles
 
-Examples:
+比如:
 
-##### Broken AMD
+##### 损坏 AMD
 
 `require("imports?define=>false!./file.js")`
 
