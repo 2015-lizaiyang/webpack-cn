@@ -8,7 +8,7 @@
 
 
 
-# import
+# imports
 
 当文件的依赖没有被`require()`的时候有用。
 
