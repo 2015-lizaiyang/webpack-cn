@@ -31,7 +31,7 @@ factory 是最后一个参数，它包裹了模块的具体实现，它是一个
 
 ### 命名 module
 
-Defines a module named `myModule` that requires `jQuery`.
+定义一个名为 myModule 的模块，它依赖 jQuery 模块：
 
 ```javascript
 define('myModule', ['jquery'], function($) {
