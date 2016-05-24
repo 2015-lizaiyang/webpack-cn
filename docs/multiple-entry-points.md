@@ -27,7 +27,7 @@ When using multiple entry point you must override the default `output.filename` 
 }
 ```
 
-## Examples
+## 更多
 
 * [multiple-entry-points](https://github.com/webpack/webpack/tree/master/examples/multiple-entry-points)
 * [multi-part-library](https://github.com/webpack/webpack/tree/master/examples/multi-part-library)
