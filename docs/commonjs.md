@@ -43,10 +43,8 @@ var Result = MySalute + "world!";
 module.exports = Result;
 ```
 
-Here we make use of the special object `module` and place a reference of our
-variable into `module.exports` so the CommonJS module system knows this is 
-the object of our module we want to show to the world.
-`salute.js` discloses `MySalute`, and `world.js` discloses `Result`.
+我们用了一个特殊变量`module`，并将定义的变量引用放到`module.exports` 以至于CommonJS模块系统知道我们模块的对象。
+`salute.js` 暴露了 `MySalute`, `world.js` 暴露了 `Result`.
 
 ## Module dependency
 
