@@ -118,7 +118,7 @@ This loader evaluates code in the global context, just like you would add the co
 
 
 
-# Exposing
+# 暴露全局
 
 There are cases where you want a module to export itself to the global context.
 
