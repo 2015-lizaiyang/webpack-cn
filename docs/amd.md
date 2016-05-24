@@ -58,8 +58,6 @@ define(['jquery'], function($) {
 
 ### 多个模块依赖
 
-Define a module with multiple dependencies. Note that each dependency export will be passed to the factory function.
-
 ```javascript
 define(['jquery', './math.js'], function($, math) {
 	// $ and math are the exports of the jquery module.
