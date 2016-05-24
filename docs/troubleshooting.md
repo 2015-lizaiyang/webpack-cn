@@ -21,7 +21,7 @@ module.exports = {
 };
 ```
 
-# Watching
+# 监听
 
 ## webpack doesn't recompile on change while watching
 
