@@ -30,7 +30,7 @@ This loader allows you to put some modules or arbitrary JavaScript onto a local 
 
 `require("imports?this=>window!./file.js")` or `require("imports?this=>global!./file.js")`
 
-## [[plugin | list of plugins]] `ProvidePlugin`
+## [插件列表][list of plugins] `ProvidePlugin`
 
 This plugin makes a module available as variable in every module. The module is required only if you use the variable.
 
