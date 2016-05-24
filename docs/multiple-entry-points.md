@@ -1,5 +1,6 @@
 前提条件: [代码拆分][Code Splitting]
-
+如果你的项目要求多个为多哥HTML页面准备多个bundle时候你要用到这个功能。
+它将一次性构建多个bundle。额外的chunk可以被这些入口chunk共用，并且module只build一次。
 If you need multiple bundles for multiple HTML pages you can use the "multiple entry points" feature. It will build multiple bundles at once. Additional chunks can be shared between these entry chunks and modules are only built once.
 
 > Hint: When you want to start an entry chunk from a module, you are doing something wrong. Use [[Code Splitting]] instead!
