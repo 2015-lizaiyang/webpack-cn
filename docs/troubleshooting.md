@@ -6,7 +6,7 @@
 * Read [[Configuration]] regarding resolving starting at `resolve`
   * loaders have their own resolving configuration `resolveLoader`
 
-## `npm link`ed modules don't find their dependencies
+## `npm link`ed don't find their dependencies
 
 The node.js module resolving algorithm is pretty simple: module dependencies are looked up in `node_modules` folders in every parent directory of the requiring module. When you `npm link` modules with peer dependencies that are not in your root directory, modules can no longer be found. (You probably want to consider `peerDependencies` with `npm link` as broken by design in node.js.) Note that a dependency to the application (even if this is not the perfect design) is also a kind of peerDependency even if it's not listed as such in the module's `package.json`.
 
