@@ -2,7 +2,7 @@ CommonJS 是以在浏览器环境之外构建 JavaScript 生态系统为目标�
 这个项目最开始是由 Mozilla 的工程师 Kevin Dangoor 在2009年1月创建的，当时的名字是 ServerJS。
 >我在这里描述的并不是一个技术问题，而是一件重大的事情，让大家走到一起来做决定，迈出第一步，来建立一个更大更酷的东西。 —— Kevin Dangoor's What Server Side JavaScript needs
 
-
+CommonJS 规范是为了解决 JavaScript 的作用域问题而定义的模块形式，可以使每个模块它自身的命名空间中执行。该规范的主要内容是，模块必须通过 module.exports 导出对外的变量或接口，通过 require() 来导入其他模块的输出到当前模块作用域中。
 The CommonJS group defined a module format to solve 
 JavaScript scope issues by making sure each module
 is executed in its own namespace.
@@ -12,10 +12,10 @@ those variables it wants to expose to the "universe",
 and also by defining those other modules required to 
 properly work.
 
-To achieve this CommonJS give you two tools:
+Commonjs 提供两个工具:
 
-1. the `require()` function, which allows to import a given module into the current scope.
-2. the `module` object, which allows to export something from the current scope.
+1.  `require()` 函数,当前作用域下导入其他模块.
+2. `module` 对象, 当前域到处变量和接口.
 
 The mandatory hello world example:
 
