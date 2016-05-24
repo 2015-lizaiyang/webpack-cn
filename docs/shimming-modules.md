@@ -8,10 +8,9 @@
 
 
 
-# 引入
+# import
 
-
-Useful when a file has dependencies that are not imported via `require()`. 
+当文件的依赖没有被`require()`的时候有用。
 
 ## [`imports-loader`](https://github.com/webpack/imports-loader)
 
