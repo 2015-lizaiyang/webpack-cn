@@ -74,7 +74,7 @@ Examples:
 
 
 
-# Fixing broken module styles
+# 修复损坏的module
 
 Some files use a module style wrong. You may want to fix this by teaching webpack to not use this style.
 
