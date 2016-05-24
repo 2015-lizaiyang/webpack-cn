@@ -2,7 +2,7 @@ AMD（异步模块定义）是为浏览器环境设计的，因为 CommonJS 模�
 
 AMD 定义了一套 JavaScript 模块依赖异步加载标准，来解决同步加载的问题。
 
-## Specification
+## 定义
 
 Modules are defined using the `define` function.
 
