@@ -64,8 +64,7 @@ var Result = MySalute + "world!";
 module.exports = Result;
 ```
 
-Note that we didn't use the full filename `salute.js` but `./salute` when calling 
-`require`, so you can omit the extension of your scripts. `./` means that the `salute` module is in the same directory as the `world` module.
+注一道我们没有用完整的文件名`salute.js` 而是`./salute` ， `./` 表示和`world` module在同一个目录.
 
 
 ## 例子
