@@ -1,5 +1,6 @@
 插件可以完成更多 loader 不能完成的功能。
-Use plugins to add functionality typically related to bundles in webpack.  For example, the [BellOnBundlerErrorPlugin](https://github.com/senotrusov/bell-on-bundler-error-plugin) will notify you of an error in the bundler build process.  
+Use plugins to add functionality typically related to bundles in webpack.  
+比如 [BellOnBundlerErrorPlugin](https://github.com/senotrusov/bell-on-bundler-error-plugin) 可以在build的过程中给出错误提示.  
 
 ## 内置 plugins
 
