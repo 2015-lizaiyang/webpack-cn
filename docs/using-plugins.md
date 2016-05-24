@@ -46,10 +46,9 @@ module.exports = {
 }
 ```
 
-When installing third party plugins via npm it is advised to use this tool:
+当通过npm安装第三方插件时候建议用这个工具:
 [https://www.npmjs.com/package/webpack-load-plugins](https://www.npmjs.com/package/webpack-load-plugins)
-
-It checks for all third party plugins installed in your dependencies and lazyloads them when you need them.
+它会检查你的依赖里面的所有第三方插件并懒加载之
 
 ## See also
 
