@@ -8,7 +8,7 @@ AMD 定义了一套 JavaScript 模块依赖异步加载标准，来解决同步�
 
 ### `define`
 
-The define function is how modules are defined with AMD. It is just a function that has this signature
+格式如下：
 
 ``` javascript
 define(id?: String, dependencies?: String[], factory: Function|Object);
