@@ -1,12 +1,4 @@
 插件可以完成更多 loader 不能完成的功能。
-
-
-
-
-接下来，我们利用一个最简单的 BannerPlugin 内置插件来实践插件的配置和运行，这个插件的作用是给输出的文件头部添加注释信息。
-
-修改 webpack.config.js，添加 plugins：
-
 Use plugins to add functionality typically related to bundles in webpack.  For example, the [BellOnBundlerErrorPlugin](https://github.com/senotrusov/bell-on-bundler-error-plugin) will notify you of an error in the bundler build process.  
 
 ## 内置 plugins
