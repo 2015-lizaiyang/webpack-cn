@@ -10,7 +10,7 @@
    * Require Modules
    * Vendor Modules
    * [使用 Loaders](docs/using-loaders.md)
-   * [Using Plugins](docs/using-plugins.md)
+   * [使用 Plugins](docs/using-plugins.md)
    * [工具](docs/dev-tools.md)
    * [Troubleshooting](docs/troubleshooting.md)
 * 教程与例子
