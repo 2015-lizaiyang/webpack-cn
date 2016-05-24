@@ -163,3 +163,5 @@ By making Jquery available as a global namespace in our file contianing Jquery c
 In rare cases when you have to apply more than one technique, you need to use the correct order of loaders:
 
 inlined: `expose!imports!exports`, configuration: expose before imports before exports.
+
+[Using loaders]: using-loaders.md
