@@ -33,7 +33,7 @@ Hint: Use `--hot` and it'll only execute tests which have changed or have change
 You can use webpack with karma. Add [`"webpack"` as preprocessor](https://github.com/webpack/karma-webpack) to your karma config.
 
 
-## node.js testing
+## node.js 测试
 
 ### CommonJs only
 
@@ -63,6 +63,6 @@ mocha --require source-map-support/register /tmp/testBundle.js
 
 Make sure to configure the [`devtool`](http://webpack.github.io/docs/configuration.html#devtool) option to output the source map.
 
-### enhanced-require
+### require增强
 
 TODO
