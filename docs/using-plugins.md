@@ -47,8 +47,8 @@ module.exports = {
 ```
 
 当通过npm安装第三方插件时候建议用这个工具:[webpack-load-plugins](https://www.npmjs.com/package/webpack-load-plugin)
-它会检查你的依赖里面的所有第三方插件并懒加载之
+它会检查你的依赖里面的所有第三方插件并懒加载之.
 
 ## See also
 
-* [[list of plugins]]
+* [[plugin列表]]
