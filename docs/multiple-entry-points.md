@@ -11,7 +11,7 @@ To use multiple entry points you can pass an object to the `entry` option. Each 
 
 When using multiple entry point you must override the default `output.filename` option. Otherwise each entry point would write to the same output file. Use `[name]` to get the name of the entry point.
 
-### Minimal example configuration
+### 例子
 
 ``` javascript
 {
