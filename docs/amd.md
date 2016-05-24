@@ -20,9 +20,7 @@ module的名字，可选的.
 
 #### `dependencies`
 
-This argument specifies which module dependencies the module being defined has.
-It is an array containing module identifiers.
-It is optional, but if omitted, it defaults to ["require", "exports", "module"].
+dependencies 指定了所要依赖的模块列表，它是一个数组，也是可选的参数，每个依赖的模块的输出将作为参数一次传入 factory 中。如果没有指定 dependencies，那么它的默认值是 ["require", "exports", "module"]。
 
 #### `factory`
 
