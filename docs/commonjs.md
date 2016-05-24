@@ -27,7 +27,7 @@ var MySalute = "Hello";
 var Result = MySalute + " world!";
 ```
 
-## Module definitions
+## Module 定义
 
 As it is, `world.js` will not work as `MySalute` is not defined.
 We need to define each script as a module:  
