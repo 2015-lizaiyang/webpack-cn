@@ -75,30 +75,6 @@ entry: ["./entry1", "./entry2"]
 }
 ```
 
-The entry point for the bundle.
-
-If you pass a string: The string is resolved to a module which is loaded upon startup.
-
-If you pass an array: All modules are loaded upon startup. The last one is exported.
-
-
-
-If you pass an object: Multiple entry bundles are created. The key is the chunk name. The value can be a string or an array.
-
-``` javascript
-{
-	entry: {
-		page1: "./page1",
-		page2: ["./entry1", "./entry2"]
-	},
-	output: {
-		// Make sure to use [name] or [id] in output.filename
-		//  when using multiple entry points
-		filename: "[name].bundle.js",
-		chunkFilename: "[id].bundle.js"
-	}
-}
-```
 
 > **NOTE**: It is not possible to configure other options specific to entry points. If you need entry point specific configuration you need to use [multiple configurations](#multiple-configurations).
 
