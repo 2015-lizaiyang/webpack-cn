@@ -2,7 +2,7 @@
 
 ### CLI
 
-If you use the [[CLI]] it will read a file `webpack.config.js` (or the file passed by the `--config` option). This file should export the configuration object:
+If you use the [CLI][CLI] it will read a file `webpack.config.js` (or the file passed by the `--config` option). This file should export the configuration object:
 
 ``` javascript
 module.exports = {
@@ -799,3 +799,5 @@ This is required, when using Hot Code Replacement between multiple calls to the 
 ## `plugins`
 
 Add additional plugins to the compiler.
+
+[CLI]:docs/cli.md
