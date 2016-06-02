@@ -28,7 +28,7 @@ In both cases you can also use an array of configurations, which are processed i
 
 
 
-# configuration object content
+# 配置对象内容
 
 > Hint: Keep in mind that you don't need to write pure JSON into the configuration. Use any JavaScript you want. It's just a node.js module...
 
