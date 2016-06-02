@@ -1,9 +1,7 @@
-> webpack is fed a configuration object. Depending on your usage of webpack there are two ways to pass this configuration object:
+> webpack 通过一个配置对象来操作. 有两种方式来传递这个对象:
 
 ### CLI
-
-If you use the [[CLI]] it will read a file `webpack.config.js` (or the file passed by the `--config` option). This file should export the configuration object:
-
+如果你使用[CLI][CLI] ，webpack 会默认读取`webpack.config.js`（或者通过 `--config` 选项指向读取文件），该文件需要导出一个配置对象。
 ``` javascript
 module.exports = {
 	// configuration
@@ -12,7 +10,7 @@ module.exports = {
 
 ### node.js API
 
-If you use the [[node.js API]] you need to pass the configuration object as parameter:
+如果使用[node.js API][NODE] 需要将配置对象当作参数传递:
 
 ``` javascript
 webpack({
@@ -20,19 +18,18 @@ webpack({
 }, callback);
 ```
 
-### multiple configurations
+### [](#multiple-configurations)多个配置对象
 
-In both cases you can also use an array of configurations, which are processed in parallel. They share filesystem cache and watchers so this is more efficent than calling webpack multiple times.
-
-
-
+在这两种方法里面，你都可以使用一个配置对象数组来并行的执行。
+他们共享数据缓存，和监听器，这样比多次执行webpack效率更高。
 
 
-# configuration object content
 
-> Hint: Keep in mind that you don't need to write pure JSON into the configuration. Use any JavaScript you want. It's just a node.js module...
+# 配置对象内容
 
-Very simple configuration object example:
+> 提示: 记住不要拘泥于在配置对象里面写纯json对象，可以使用你想使用的任何js方法，他仅仅是一个nodejs模块罢了。
+
+简单的例子:
 
 ``` javascript
 {
@@ -49,26 +46,21 @@ Very simple configuration object example:
 
 ## `context`
 
-The base directory (absolute path!) for resolving the `entry` option. If `output.pathinfo` is set, the included pathinfo is shortened to this directory.
+用于解析`entry`选项的基础目录(绝对路径), 如果output.pathinfo设置了，就包含了缩短过的目录；（相当于公共目录，下面所有的目录都在这个公共目录下面)
 
-> Default: `process.cwd()`
+> 默认: `process.cwd()`
 
 
 
 ## `entry`
 
-The entry point for the bundle.
-
-If you pass a string: The string is resolved to a module which is loaded upon startup.
-
-If you pass an array: All modules are loaded upon startup. The last one is exported.
-
+bundle的入口点。
+- 如果传入一个字符串，这个字符串就会被解析为启动时加载的模块。
+- 如果传入个数组，所有模块都是启动时加载，模块导出到最后一个里面。
 ``` javascript
 entry: ["./entry1", "./entry2"]
 ```
-
-If you pass an object: Multiple entry bundles are created. The key is the chunk name. The value can be a string or an array.
-
+- 如果传入一个对象，就会创建多个输入包文件，对象键值就chunk的name，值可以是字符串或者是数组。
 ``` javascript
 {
 	entry: {
@@ -76,15 +68,14 @@ If you pass an object: Multiple entry bundles are created. The key is the chunk 
 		page2: ["./entry1", "./entry2"]
 	},
 	output: {
-		// Make sure to use [name] or [id] in output.filename
-		//  when using multiple entry points
+        // 当使用多入口文件时候，要确保在output.filename使用[name]或者[id]
 		filename: "[name].bundle.js",
 		chunkFilename: "[id].bundle.js"
 	}
 }
 ```
 
-> **NOTE**: It is not possible to configure other options specific to entry points. If you need entry point specific configuration you need to use [multiple configurations](#multiple-configurations).
+> **注意**: 没有别的专门来配置入口点的选项。如果你需要一个专门来配置入口点的配置对象，你需要哟难道[多个配置对象](#multiple-configurations).
 
 
 
@@ -799,3 +790,6 @@ This is required, when using Hot Code Replacement between multiple calls to the 
 ## `plugins`
 
 Add additional plugins to the compiler.
+
+[CLI]:docs/cli.md
+[NODE]:docs/node.js-api.md
