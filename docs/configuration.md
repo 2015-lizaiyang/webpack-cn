@@ -46,7 +46,7 @@ webpack({
 
 ## `context`
 
-用于解析`entry`选项的基础目录(绝对路径)，如果设置了`output.pathinfo`，包含在内的路径信息
+用于解析`entry`选项的基础目录(绝对路径)如果output.pathinfo设置了，就包含了缩短过的目录；（相当于公共目录，下面所有的目录都在这个公共目录下面）
 The base directory (absolute path!) for resolving the `entry` option. If `output.pathinfo` is set, the included pathinfo is shortened to this directory.
 
 > 默认: `process.cwd()`
