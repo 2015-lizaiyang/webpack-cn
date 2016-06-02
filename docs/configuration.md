@@ -10,7 +10,7 @@ module.exports = {
 
 ### node.js API
 
-If you use the [node.js API][NODE] you need to pass the configuration object as parameter:
+如果使用[node.js API][NODE] 需要将配置对象当作参数传递:
 
 ``` javascript
 webpack({
@@ -18,11 +18,12 @@ webpack({
 }, callback);
 ```
 
-### multiple configurations
+### 多个配置对象
 
 In both cases you can also use an array of configurations, which are processed in parallel. They share filesystem cache and watchers so this is more efficent than calling webpack multiple times.
 
-
+在这两种方法里面，你都可以使用一个配置对象数组来并行的执行。
+他们共享数据缓存，和监听器，这样比多次执行webpack效率更高。
 
 
 
