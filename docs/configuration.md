@@ -20,8 +20,6 @@ webpack({
 
 ### 多个配置对象
 
-In both cases you can also use an array of configurations, which are processed in parallel. They share filesystem cache and watchers so this is more efficent than calling webpack multiple times.
-
 在这两种方法里面，你都可以使用一个配置对象数组来并行的执行。
 他们共享数据缓存，和监听器，这样比多次执行webpack效率更高。
 
@@ -29,7 +27,7 @@ In both cases you can also use an array of configurations, which are processed i
 
 # 配置对象内容
 
-> Hint: Keep in mind that you don't need to write pure JSON into the configuration. Use any JavaScript you want. It's just a node.js module...
+> 提示: 记住不要拘泥于在配置对象里面写纯json对象，可以使用你想使用的任何js方法，他仅仅是一个nodejs模块罢了。
 
 Very simple configuration object example:
 
