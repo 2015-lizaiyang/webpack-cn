@@ -46,9 +46,10 @@ webpack({
 
 ## `context`
 
+用于解析`entry`选项的基础目录(绝对路径)，如果设置了`output.pathinfo`，包含在内的路径信息
 The base directory (absolute path!) for resolving the `entry` option. If `output.pathinfo` is set, the included pathinfo is shortened to this directory.
 
-> Default: `process.cwd()`
+> 默认: `process.cwd()`
 
 
 
