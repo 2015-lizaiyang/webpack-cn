@@ -54,6 +54,9 @@ webpack({
 
 ## `entry`
 
+bundle的入口点。
+如果传入一个字符串，这个字符串就会被解析为启动时加载的模块。
+如果传入个数组，所有模块都是启动时加载，导出最后一个
 The entry point for the bundle.
 
 If you pass a string: The string is resolved to a module which is loaded upon startup.
