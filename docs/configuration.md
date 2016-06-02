@@ -80,6 +80,7 @@ entry: ["./entry1", "./entry2"]
 
 
 ## `output`
+ output是影响编译输出的选项。output选项告诉webpack怎么把编译文件写入磁盘。注意，虽然可以有很多输入口，但是只有一个输出配置
 
 Options affecting the output of the compilation. `output` options tell Webpack how to write the compiled files to disk. Note, that while there can be multiple `entry` points, only one `output` configuration is specified.
 
