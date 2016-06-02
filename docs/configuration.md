@@ -76,7 +76,7 @@ entry: ["./entry1", "./entry2"]
 ```
 
 
-> **NOTE**: It is not possible to configure other options specific to entry points. If you need entry point specific configuration you need to use [multiple configurations](#multiple-configurations).
+> **注意**: It is not possible to configure other options specific to entry points. If you need entry point specific configuration you need to use [multiple configurations](#multiple-configurations).
 
 
 
