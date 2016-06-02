@@ -29,7 +29,7 @@ webpack({
 
 > 提示: 记住不要拘泥于在配置对象里面写纯json对象，可以使用你想使用的任何js方法，他仅仅是一个nodejs模块罢了。
 
-Very simple configuration object example:
+简单的例子:
 
 ``` javascript
 {
