@@ -75,8 +75,7 @@ entry: ["./entry1", "./entry2"]
 }
 ```
 
-> **注意**: 没有别的专门来配置入口点的选项。如果你需要一个专门来配置入口点的配置对象，你需要哟难道[多个配置对象](#multiple-configurations)
-> **注意**: It is not possible to configure other options specific to entry points. If you need entry point specific configuration you need to use [multiple configurations](#multiple-configurations).
+> **注意**: 没有别的专门来配置入口点的选项。如果你需要一个专门来配置入口点的配置对象，你需要哟难道[多个配置对象](#multiple-configurations).
 
 
 
