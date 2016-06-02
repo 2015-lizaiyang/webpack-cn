@@ -1,9 +1,7 @@
 > webpack 通过一个配置对象来操作. 有两种方式来传递这个对象:
 
 ### CLI
-
-If you use the [CLI][CLI] it will read a file `webpack.config.js` (or the file passed by the `--config` option). This file should export the configuration object:
-
+如果你使用[CLI][CLI] ，webpack 会默认读取`webpack.config.js`（或者通过 `--config` 选项指向读取文件），该文件需要导出一个配置对象。
 ``` javascript
 module.exports = {
 	// configuration
@@ -12,7 +10,7 @@ module.exports = {
 
 ### node.js API
 
-If you use the [[node.js API]] you need to pass the configuration object as parameter:
+If you use the [node.js API][NODE] you need to pass the configuration object as parameter:
 
 ``` javascript
 webpack({
@@ -801,3 +799,4 @@ This is required, when using Hot Code Replacement between multiple calls to the 
 Add additional plugins to the compiler.
 
 [CLI]:docs/cli.md
+[NODE]:docs/node.js-api.md
