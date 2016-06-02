@@ -68,8 +68,6 @@ entry: ["./entry1", "./entry2"]
 		page2: ["./entry1", "./entry2"]
 	},
 	output: {
-		// Make sure to use [name] or [id] in output.filename
-		//  when using multiple entry points
         // 当使用多入口文件时候，要确保在output.filename使用[name]或者[id]
 		filename: "[name].bundle.js",
 		chunkFilename: "[id].bundle.js"
