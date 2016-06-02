@@ -1,4 +1,4 @@
-> webpack is fed a configuration object. Depending on your usage of webpack there are two ways to pass this configuration object:
+> webpack 通过一个配置对象来操作. 有两种方式来传递这个对象:
 
 ### CLI
 
