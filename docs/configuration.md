@@ -57,8 +57,25 @@ webpack({
 bundle的入口点。
 - 如果传入一个字符串，这个字符串就会被解析为启动时加载的模块。
 - 如果传入个数组，所有模块都是启动时加载，模块导出到最后一个里面。
+``` javascript
+entry: ["./entry1", "./entry2"]
+```
 - 如果传入一个对象，就会创建多个输入包文件，对象键值就chunk的name，值可以是字符串或者是数组。
-
+``` javascript
+{
+	entry: {
+		page1: "./page1",
+		page2: ["./entry1", "./entry2"]
+	},
+	output: {
+		// Make sure to use [name] or [id] in output.filename
+		//  when using multiple entry points
+        // 当使用多入口文件时候，要确保在output.filename使用[name]或者[id]
+		filename: "[name].bundle.js",
+		chunkFilename: "[id].bundle.js"
+	}
+}
+```
 
 The entry point for the bundle.
 
@@ -66,9 +83,7 @@ If you pass a string: The string is resolved to a module which is loaded upon st
 
 If you pass an array: All modules are loaded upon startup. The last one is exported.
 
-``` javascript
-entry: ["./entry1", "./entry2"]
-```
+
 
 If you pass an object: Multiple entry bundles are created. The key is the chunk name. The value can be a string or an array.
 
