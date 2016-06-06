@@ -7,7 +7,7 @@
 
 ## 第一种：一个给bundle的hash
 
-添加 `[hash]` 给filename 
+给文件名添加 `[hash]` 
 
 配置选项:
 
