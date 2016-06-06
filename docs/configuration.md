@@ -103,7 +103,7 @@ entry: ["./entry1", "./entry2"]
 
 **多入口**
 
-If your configuration creates more than a single "chunk" (as with multiple entry points or when using plugins like CommonsChunkPlugin), you should use substitutions below to ensure that each file has a unique name.
+如果你的配置创建了多于一个的"chunk"(也就是带有多个入口点，或者使用了CommonsChunkPlugin这样的插件)，你应该使用替换符来为每个文件命名一个为一个名字。
 
 `[name]` is replaced by the name of the chunk.
 
@@ -123,7 +123,7 @@ If your configuration creates more than a single "chunk" (as with multiple entry
   }
 }
 
-// writes to disk: ./built/app.js, ./built/search.js
+// 谢如磁盘: ./built/app.js, ./built/search.js
 ```
 
 ### `output.path`
