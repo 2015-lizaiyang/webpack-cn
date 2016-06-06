@@ -105,11 +105,11 @@ entry: ["./entry1", "./entry2"]
 
 如果你的配置创建了多于一个的"chunk"(也就是带有多个入口点，或者使用了CommonsChunkPlugin这样的插件)，你应该使用替换符来为每个文件命名一个为一个名字。
 
-`[name]` is replaced by the name of the chunk.
+`[name]`被chunk的名字替换.
 
-`[hash]` is replaced by the hash of the compilation.
+`[hash]`被编译器hash替换.
 
-`[chunkhash]` is replaced by the hash of the chunk.
+`[chunkhash]` 被chunk的hash替换.
 
 ```javascript
 {
