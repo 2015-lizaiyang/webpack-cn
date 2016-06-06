@@ -128,9 +128,9 @@ entry: ["./entry1", "./entry2"]
 
 ### `output.path`
 
-The output directory as **absolute path** (required).
+**绝对路径**  (required).
 
-`[hash]` is replaced by the hash of the compilation.
+`[hash]` 被编译后文件hash替换.
 
 
 ### `output.publicPath`
