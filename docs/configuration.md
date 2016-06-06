@@ -83,7 +83,6 @@ entry: ["./entry1", "./entry2"]
  output是影响编译输出的选项。output选项告诉webpack怎么把编译文件写入磁盘。注意，虽然可以有很多输入口，但是只有一个输出配置
 
 如果使用了哈希(`[hash]` 或者 `[chunkhash]`), 需要确保有一个一致的模块顺序。使用OccurenceOrderPlugin插件或者 recordsPath。
-If you use any hashing (`[hash]` or `[chunkhash]`) make sure to have a consistent ordering of modules. Use the `OccurenceOrderPlugin` or `recordsPath`.
 
 ### `output.filename`
 
