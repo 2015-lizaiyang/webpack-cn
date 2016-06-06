@@ -85,10 +85,10 @@ entry: ["./entry1", "./entry2"]
 如果使用了哈希(`[hash]` 或者 `[chunkhash]`), 需要确保有一个一致的模块顺序。使用OccurenceOrderPlugin插件或者 recordsPath。(译者：参看[这个issue](https://github.com/webpack/webpack/issues/950))
 
 ### `output.filename`
+指定输出到硬盘的文件的的文件名。这里**不能**是一个绝对的路径！`output.path`会确定该文件的存在硬盘额路径的。`filename`仅仅用来给每个文件命名而已。
 
-Specifies the name of each output file on disk. You must **not** specify an absolute path here! The `output.path` option determines the location on disk the files are written to, `filename` is used solely for naming the individual files.
 
-**single entry**
+**单一 entry**
 ```javascript
 {
   entry: './src/app.js',
@@ -98,7 +98,7 @@ Specifies the name of each output file on disk. You must **not** specify an abso
   }
 }
 
-// writes to disk: ./built/bundle.js
+// 写入磁盘: ./built/bundle.js
 ```
 
 **multiple entries**
