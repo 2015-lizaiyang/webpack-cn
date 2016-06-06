@@ -9,7 +9,7 @@
 
 添加 `[hash]` 给filename 
 
-config options:
+配置选项:
 
 `webpack ./entry output.[hash].bundle.js`
 
