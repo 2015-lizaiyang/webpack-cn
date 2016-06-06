@@ -26,7 +26,7 @@
 
 ## 第二种: 每个chunk一个hash
 
-添加 `[chunkhash]` 给 chunk filename 
+给chunk文件名添加 `[chunkhash]`
 
 config option
 
