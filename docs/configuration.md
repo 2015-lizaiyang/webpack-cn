@@ -88,7 +88,7 @@ entry: ["./entry1", "./entry2"]
 指定输出到硬盘的文件的的文件名。这里**不能**是一个绝对的路径！`output.path`会确定该文件的存在硬盘额路径的。`filename`仅仅用来给每个文件命名而已。
 
 
-**单一 entry**
+**单一入口**
 ```javascript
 {
   entry: './src/app.js',
@@ -101,7 +101,7 @@ entry: ["./entry1", "./entry2"]
 // 写入磁盘: ./built/bundle.js
 ```
 
-**multiple entries**
+**多入口**
 
 If your configuration creates more than a single "chunk" (as with multiple entry points or when using plugins like CommonsChunkPlugin), you should use substitutions below to ensure that each file has a unique name.
 
