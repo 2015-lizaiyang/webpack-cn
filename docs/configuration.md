@@ -172,12 +172,11 @@ output: {
 ```
 
 ### `output.chunkFilename`
+非入口chunk的文件名，作为一个相对路径放到`output.path`里。
 
-The filename of non-entry chunks as relative path inside the `output.path` directory.
+`[id]` 替换chunk的id.
 
-`[id]` is replaced by the id of the chunk.
-
-`[name]` is replaced by the name of the chunk (or with the id when the chunk has no name).
+`[name]` 替换chunk的名字 (or 如果没有名字就用id替换).
 
 `[hash]` is replaced by the hash of the compilation.
 
