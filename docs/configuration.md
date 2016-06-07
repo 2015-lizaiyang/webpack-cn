@@ -80,16 +80,15 @@ entry: ["./entry1", "./entry2"]
 
 
 ## `output`
+ output是影响编译输出的选项。output选项告诉webpack怎么把编译文件写入磁盘。注意，虽然可以有很多输入口，但是只有一个输出配置
 
-Options affecting the output of the compilation. `output` options tell Webpack how to write the compiled files to disk. Note, that while there can be multiple `entry` points, only one `output` configuration is specified.
-
-If you use any hashing (`[hash]` or `[chunkhash]`) make sure to have a consistent ordering of modules. Use the `OccurenceOrderPlugin` or `recordsPath`.
+如果使用了哈希(`[hash]` 或者 `[chunkhash]`), 需要确保有一个一致的模块顺序。使用OccurenceOrderPlugin插件或者 recordsPath。(译者：参看[这个issue](https://github.com/webpack/webpack/issues/950))
 
 ### `output.filename`
+指定输出到硬盘的文件的的文件名。这里**不能**是一个绝对的路径！`output.path`会确定该文件的存在硬盘额路径的。`filename`仅仅用来给每个文件命名而已。
 
-Specifies the name of each output file on disk. You must **not** specify an absolute path here! The `output.path` option determines the location on disk the files are written to, `filename` is used solely for naming the individual files.
 
-**single entry**
+**单一入口**
 ```javascript
 {
   entry: './src/app.js',
@@ -99,18 +98,18 @@ Specifies the name of each output file on disk. You must **not** specify an abso
   }
 }
 
-// writes to disk: ./built/bundle.js
+// 写入磁盘: ./built/bundle.js
 ```
 
-**multiple entries**
+**多入口**
 
-If your configuration creates more than a single "chunk" (as with multiple entry points or when using plugins like CommonsChunkPlugin), you should use substitutions below to ensure that each file has a unique name.
+如果你的配置创建了多于一个的"chunk"(也就是带有多个入口点，或者使用了CommonsChunkPlugin这样的插件)，你应该使用替换符来为每个文件命名一个为一个名字。
 
-`[name]` is replaced by the name of the chunk.
+`[name]`被chunk的名字替换.
 
-`[hash]` is replaced by the hash of the compilation.
+`[hash]`被编译器hash替换.
 
-`[chunkhash]` is replaced by the hash of the chunk.
+`[chunkhash]` 被chunk的hash替换.
 
 ```javascript
 {
@@ -124,19 +123,20 @@ If your configuration creates more than a single "chunk" (as with multiple entry
   }
 }
 
-// writes to disk: ./built/app.js, ./built/search.js
+// 谢如磁盘: ./built/app.js, ./built/search.js
 ```
 
 ### `output.path`
 
-The output directory as **absolute path** (required).
+**绝对路径**  (required).
 
-`[hash]` is replaced by the hash of the compilation.
+`[hash]` 被编译后文件hash替换.
 
 
 ### `output.publicPath`
+`publicPath`指定了一个在浏览器中被引用的URL地址。
+对于使用`<script>` 和 `<link>`加载器，当文件路径不同于他们的本地磁盘路径（由`path`指定）时候`publicPath`被用来作为`href`或者`url`指向该文件。这种做法在你需要将静态文件放在不同的域名或者CDN上面的时候是很有用的。 Webpack Dev Server 也是用这个方式来读取文件的。与`path`搭配使用上`[hash]`就可以做好缓存方案了。
 
-The `publicPath` specifies the public URL address of the output files when referenced in a browser. For loaders that embed `<script>` or `<link>` tags or reference assets like images, `publicPath` is used as the `href` or `url()` to the file when it's different than their location on disk (as specified by `path`). This can be helpful when you want to host some or all output files on a different domain or on a CDN. The Webpack Dev Server also uses this to determine the path where the output files are expected to be served from. As with `path` you can use the `[hash]` substitution for a better caching profile.
 
 **config.js**
 
@@ -154,7 +154,7 @@ output: {
   <link href="/assets/spinner.gif"/>
 </head>
 ```
-And a more complicated example of using a CDN and hashes for assets.
+使用CDN 和 hash的例子.
 
 **config.js**
 ```javascript
@@ -164,10 +164,7 @@ output: {
 	publicPath: "http://cdn.example.com/assets/[hash]/"
 }
 ```
-
-**Note:** In cases when the eventual `publicPath` of output files isn't known at compile time, it can be left blank and set dynamically at runtime in the entry point file.
-If you don't know the `publicPath` while compiling you can omit it and set `__webpack_public_path__` on your entry point.
-
+**注:** 万一最终输出文件的`publicPath`在编译的时候不知道，那么你可以不填，动态的在运行时添加也可以。如果在编译过程你不知道`publicPath`你可以忽略他，然后在你的入口文件里面添加上这个字段就可以了`__webpack_public_path__`。
 ```javascript
  __webpack_public_path__ = myRuntimePublicPath
 
@@ -175,53 +172,47 @@ If you don't know the `publicPath` while compiling you can omit it and set `__we
 ```
 
 ### `output.chunkFilename`
+非入口chunk的文件名，作为一个相对路径放到`output.path`里。
 
-The filename of non-entry chunks as relative path inside the `output.path` directory.
+`[id]` 替换chunk的id.
 
-`[id]` is replaced by the id of the chunk.
+`[name]` 替换chunk的名字 (or 如果没有名字就用id替换).
 
-`[name]` is replaced by the name of the chunk (or with the id when the chunk has no name).
+`[hash]` 替换编译的hash.
 
-`[hash]` is replaced by the hash of the compilation.
-
-`[chunkhash]` is replaced by the hash of the chunk.
+`[chunkhash]` 替换chunk的hash.
 
 ### `output.sourceMapFilename`
 
-The filename of the SourceMaps for the JavaScript files. They are inside the `output.path` directory.
+js文件的SourceMap的文件名. 也同样在 `output.path` 路径下面.
 
-`[file]` is replaced by the filename of the JavaScript file.
+`[file]` 替换js文件的文件名.
 
-`[id]` is replaced by the id of the chunk.
+`[id]` 替换chunk的id.
 
-`[hash]` is replaced by the hash of the compilation.
+`[hash]` 替换编译的hash.
 
-> Default: `"[file].map"`
+> 默认: `"[file].map"`
 
 ### `output.devtoolModuleFilenameTemplate`
+在生成的SourceMap里的函数`sources`数组的文件名模板。
+`[resource]`替换被Webpack用来解析文件的路径，包括最右边的加载器的请求参数(如果有的话)。
+`[resource]` is replaced by the path used by Webpack to resolve the file, including the query params to the rightmost loader (如果有的话).
 
-Filename template string of function for the `sources` array in a generated SourceMap.
+`[resource-path]` 和 `[resource]`一样但是没有参数的事.
 
-`[resource]` is replaced by the path used by Webpack to resolve the file, including the query params to the rightmost loader (if any).
+`[loaders]` 是加载器和最右加载器（显示加载器）的参数名的列表
+`[all-loaders]` 是加载器和最右加载器（包括自动加载器）的参数名的列表
+`[id]` 替换module的id
+`[hash]`替换module标识符的hash
+`[absolute-resource-path]` 替换文件绝对路径名
 
-`[resource-path]` is the same as `[resource]` but without the loader query params.
+> 默认 (devtool=`[inline-]source-map`): `"webpack:///[resource-path]"`  
+> 默认 (devtool=`eval`): `"webpack:///[resource-path]?[loaders]"`  
+> 默认 (devtool=`eval-source-map`): `"webpack:///[resource-path]?[hash]"`
 
-`[loaders]` is the list of loaders and params up to the name of the rightmost loader (only explict loaders).
 
-`[all-loaders]` is the list of loaders and params up to the name of the rightmost loader (including automatic loaders).
-
-`[id]` is replaced by the id of the module.
-
-`[hash]` is replaced by the hash of the module identifier.
-
-`[absolute-resource-path]` is replaced with the absolute filename.
-
-> Default (devtool=`[inline-]source-map`): `"webpack:///[resource-path]"`  
-> Default (devtool=`eval`): `"webpack:///[resource-path]?[loaders]"`  
-> Default (devtool=`eval-source-map`): `"webpack:///[resource-path]?[hash]"`
-
-Can also be defined as a function instead of a string template.
-The function will accept an `info` object parameter which exposes the following properties:
+也可以定义成函数而不是字符串模板，该函数将接受`info`对象参数，次对象有下面几个属性：
 - identifier
 - shortIdentifier
 - resource
@@ -233,10 +224,9 @@ The function will accept an `info` object parameter which exposes the following 
 - hash
 
 ### `output.devtoolFallbackModuleFilenameTemplate`
+和`output.devtoolModuleFilenameTemplate`一样，但是用在有重复module标识符的时候。
 
-Similar to `output.devtoolModuleFilenameTemplate`, but used in the case of duplicate module identifiers.
-
-> Default: `"webpack:///[resourcePath]?[hash]"`
+> 默认: `"webpack:///[resourcePath]?[hash]"`
 
 ### `output.devtoolLineToLine`
 
@@ -670,7 +660,7 @@ You can pass an object to enable it and let webpack use the passed object as cac
 
 ## `debug`
 
-Switch loaders to debug mode.
+讲loader调到debug模式.
 
 
 
@@ -723,10 +713,9 @@ Example:
 > Note: With the next major version the default for `-d` will change to `cheap-module-eval-source-map`
 
 ## `devServer`
+设置 [webpack-dev-server](https://github.com/webpack/webpack-dev-server) 的相关配置。
 
-Can be used to configure the behaviour of [webpack-dev-server](https://github.com/webpack/webpack-dev-server) when the webpack config is passed to webpack-dev-server CLI.
-
-Example:
+例子:
 
 ``` javascript
 {
@@ -737,16 +726,15 @@ Example:
 ```
 
 ## `node`
+包含了许多node的polyfills或者mock
 
-Include polyfills or mocks for various node stuff:
-
-* `console`: `true` or `false`
-* `global`: `true` or `false`
-* `process`: `true`, `"mock"` or `false`
-* `Buffer`: `true` or `false`
-* `__filename`: `true` (real filename), `"mock"` (`"/index.js"`) or `false`
-* `__dirname`: `true` (real dirname), `"mock"` (`"/"`) or `false`
-* `<node buildin>`: `true`, `"mock"`, `"empty"` or `false`
+* `console`: `true` 或者 `false`
+* `global`: `true` 或者 `false`
+* `process`: `true`, `"mock"` 或者 `false`
+* `Buffer`: `true` 或者 `false`
+* `__filename`: `true` (real filename), `"mock"` (`"/index.js"`) 或者 `false`
+* `__dirname`: `true` (真实 dirname), `"mock"` (`"/"`) 或者 `false`
+* `<node buildin>`: `true`, `"mock"`, `"empty"` 或者 `false`
 
 
 ``` javascript
@@ -765,31 +753,31 @@ Include polyfills or mocks for various node stuff:
 
 ## `amd`
 
-Set the value of `require.amd` and `define.amd`.
 
-Example: `amd: { jQuery: true }` (for old 1.x AMD versions of jquery)
+设置`require.amd`和`define.amd`的值
+例如: `amd: { jQuery: true }` ( 1.x AMD 版本的jQuery)
 
 
 
 ## `loader`
-
-Custom values available in the loader context.
+自定义一些在加载器上下文有用的值。
 
 
 
 ## `recordsPath`, `recordsInputPath`, `recordsOutputPath`
 
-Store/Load compiler state from/to a json file. This will result in persistent ids of modules and chunks.
+存储/加载 compiler状态 从/到 一个json文件里面。结果将会是一些module和chunk的固定id。
 
-An **absolute path** is expected. `recordsPath` is used for `recordsInputPath` and `recordsOutputPath` if they left undefined.
+需要是 **绝对路径**，如果`recordsInputPath`,`recordsOutputPath`都为undefined，`recordsInputPath`将被使用。
 
-This is required, when using Hot Code Replacement between multiple calls to the compiler.
+在多个编译请求做热替换的时候是需要这个配置的。
+
 
 
 
 ## `plugins`
 
-Add additional plugins to the compiler.
+给编译器添加额外的插件.
 
 [CLI]:docs/cli.md
 [NODE]:docs/node.js-api.md

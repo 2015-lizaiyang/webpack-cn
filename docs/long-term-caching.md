@@ -1,15 +1,15 @@
 为了有效的缓存你的文件，需要给文件URL添加hash或者版本号。你可以手动的把文件都放进一个带版本如`v1.3`的文件夹里面。但是这样做会有很多的缺陷：增加额外的工作，没有更改的文件也不能从缓存里面取之。
 
-使用webpack可以给filename上加伤hash，有些输出file的加载器已经支持（work-loader,file-loader）.对于chunks你还需要让他能够支持，两种级别：
+使用webpack可以给filename上加上hash，有些输出file的加载器已经支持（work-loader,file-loader）.对于chunks你还需要让他能够支持，两种级别：
 1. 从所有的chunks中计算出一个hash值
 2. 从每一个chunk中计算一个hash值
 
 
 ## 第一种：一个给bundle的hash
 
-添加 `[hash]` 给filename 
+给文件名添加 `[hash]` 
 
-config options:
+配置选项:
 
 `webpack ./entry output.[hash].bundle.js`
 
@@ -26,7 +26,7 @@ config options:
 
 ## 第二种: 每个chunk一个hash
 
-添加 `[chunkhash]` 给 chunk filename 
+给chunk文件名添加 `[chunkhash]`
 
 config option
 
