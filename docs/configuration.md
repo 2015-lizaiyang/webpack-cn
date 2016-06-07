@@ -727,16 +727,15 @@ Example:
 ```
 
 ## `node`
+包含了许多node的polyfills或者mock
 
-Include polyfills or mocks for various node stuff:
-
-* `console`: `true` or `false`
-* `global`: `true` or `false`
-* `process`: `true`, `"mock"` or `false`
-* `Buffer`: `true` or `false`
-* `__filename`: `true` (real filename), `"mock"` (`"/index.js"`) or `false`
-* `__dirname`: `true` (real dirname), `"mock"` (`"/"`) or `false`
-* `<node buildin>`: `true`, `"mock"`, `"empty"` or `false`
+* `console`: `true` 或者 `false`
+* `global`: `true` 或者 `false`
+* `process`: `true`, `"mock"` 或者 `false`
+* `Buffer`: `true` 或者 `false`
+* `__filename`: `true` (real filename), `"mock"` (`"/index.js"`) 或者 `false`
+* `__dirname`: `true` (真实 dirname), `"mock"` (`"/"`) 或者 `false`
+* `<node buildin>`: `true`, `"mock"`, `"empty"` 或者 `false`
 
 
 ``` javascript
