@@ -164,10 +164,7 @@ output: {
 	publicPath: "http://cdn.example.com/assets/[hash]/"
 }
 ```
-**注:**
-**Note:** In cases when the eventual `publicPath` of output files isn't known at compile time, it can be left blank and set dynamically at runtime in the entry point file.
-If you don't know the `publicPath` while compiling you can omit it and set `__webpack_public_path__` on your entry point.
-
+**注:** 万一最终输出文件的`publicPath`在编译的时候不知道，那么你可以不填，动态的在运行时添加也可以。如果在编译过程你不知道`publicPath`你可以忽略他，然后在你的入口文件里面添加上这个字段就可以了`__webpack_public_path__`。
 ```javascript
  __webpack_public_path__ = myRuntimePublicPath
 
