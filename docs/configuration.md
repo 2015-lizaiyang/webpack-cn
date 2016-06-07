@@ -186,13 +186,13 @@ output: {
 
 js文件的SourceMap的文件名. 也同样在 `output.path` 路径下面.
 
-`[file]` is replaced by the filename of the JavaScript file.
+`[file]` 替换js文件的文件名.
 
-`[id]` is replaced by the id of the chunk.
+`[id]` 替换chunk的id.
 
-`[hash]` is replaced by the hash of the compilation.
+`[hash]` 替换编译的hash.
 
-> Default: `"[file].map"`
+> 默认: `"[file].map"`
 
 ### `output.devtoolModuleFilenameTemplate`
 
