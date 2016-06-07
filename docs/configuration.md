@@ -203,6 +203,14 @@ js文件的SourceMap的文件名. 也同样在 `output.path` 路径下面.
 
 `[loaders]` 是加载器和最右加载器（显示加载器）的参数名的列表
 `[all-loaders]` 是加载器和最右加载器（包括自动加载器）的参数名的列表
+`[id]` 替换module的id
+`[hash]`替换module标识符的hash
+`[absolute-resource-path]` 替换文件绝对路径名
+
+> 默认 (devtool=`[inline-]source-map`): `"webpack:///[resource-path]"`  
+> 默认 (devtool=`eval`): `"webpack:///[resource-path]?[loaders]"`  
+> 默认 (devtool=`eval-source-map`): `"webpack:///[resource-path]?[hash]"`
+
 `[loaders]` is the list of loaders and params up to the name of the rightmost loader (only explict loaders).
 
 `[all-loaders]` is the list of loaders and params up to the name of the rightmost loader (including automatic loaders).
