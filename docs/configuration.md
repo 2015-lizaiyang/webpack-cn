@@ -212,8 +212,7 @@ js文件的SourceMap的文件名. 也同样在 `output.path` 路径下面.
 > 默认 (devtool=`eval-source-map`): `"webpack:///[resource-path]?[hash]"`
 
 
-Can also be defined as a function instead of a string template.
-The function will accept an `info` object parameter which exposes the following properties:
+也可以定义成函数而不是字符串模板，该函数将接受`info`对象参数，次对象有下面几个属性：
 - identifier
 - shortIdentifier
 - resource
