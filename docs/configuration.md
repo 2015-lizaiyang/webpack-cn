@@ -178,9 +178,9 @@ output: {
 
 `[name]` 替换chunk的名字 (or 如果没有名字就用id替换).
 
-`[hash]` is replaced by the hash of the compilation.
+`[hash]` 替换编译的hash.
 
-`[chunkhash]` is replaced by the hash of the chunk.
+`[chunkhash]` 替换chunk的hash.
 
 ### `output.sourceMapFilename`
 
