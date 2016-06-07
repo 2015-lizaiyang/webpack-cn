@@ -135,7 +135,7 @@ entry: ["./entry1", "./entry2"]
 
 ### `output.publicPath`
 `publicPath`指定了一个在浏览器中被引用的URL地址。
-对于使用`<script>` 和 `<link>`加载器，`publicPath`
+对于使用`<script>` 和 `<link>`加载器，当文件路径不同于他们的本地磁盘路径（由`path`指定）时候`publicPath`被用来作为`href`或者`url`指向
 
 The `publicPath` specifies the public URL address of the output files when referenced in a browser. For loaders that embed `<script>` or `<link>` tags or reference assets like images, `publicPath` is used as the `href` or `url()` to the file when it's different than their location on disk (as specified by `path`). This can be helpful when you want to host some or all output files on a different domain or on a CDN. The Webpack Dev Server also uses this to determine the path where the output files are expected to be served from. As with `path` you can use the `[hash]` substitution for a better caching profile.
 
