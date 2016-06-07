@@ -195,8 +195,7 @@ js文件的SourceMap的文件名. 也同样在 `output.path` 路径下面.
 > 默认: `"[file].map"`
 
 ### `output.devtoolModuleFilenameTemplate`
-在生成的SourceMap里的函数`sources`数组的文件模板串。
-Filename template string of function for the `sources` array in a generated SourceMap.
+在生成的SourceMap里的函数`sources`数组的文件模板。
 
 `[resource]` is replaced by the path used by Webpack to resolve the file, including the query params to the rightmost loader (if any).
 
