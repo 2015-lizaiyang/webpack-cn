@@ -767,7 +767,9 @@ Example:
 ## `recordsPath`, `recordsInputPath`, `recordsOutputPath`
 
 存储/加载 compiler状态 从/到 一个json文件里面。结果将会是一些module和chunk的固定id。
+
 需要是 **绝对路径**，如果`recordsInputPath`,`recordsOutputPath`都为undefined，`recordsInputPath`将被使用。
+
 在多个编译请求做热替换的时候是需要这个配置的。
 
 
