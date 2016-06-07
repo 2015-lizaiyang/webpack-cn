@@ -197,7 +197,7 @@ js文件的SourceMap的文件名. 也同样在 `output.path` 路径下面.
 ### `output.devtoolModuleFilenameTemplate`
 在生成的SourceMap里的函数`sources`数组的文件模板。
 
-`[resource]` is replaced by the path used by Webpack to resolve the file, including the query params to the rightmost loader (if any).
+`[resource]` is replaced by the path used by Webpack to resolve the file, including the query params to the rightmost loader (如果有的话).
 
 `[resource-path]` is the same as `[resource]` but without the loader query params.
 
