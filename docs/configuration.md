@@ -201,8 +201,8 @@ js文件的SourceMap的文件名. 也同样在 `output.path` 路径下面.
 
 `[resource-path]` 和 `[resource]`一样但是没有参数的事.
 
-`[loaders]` 是加载器和最右加载器（显示加载器）的参数名列表
-
+`[loaders]` 是加载器和最右加载器（显示加载器）的参数名的列表
+`[all-loaders]` 是加载器和最右加载器（包括自动加载器）的参数名的列表
 `[loaders]` is the list of loaders and params up to the name of the rightmost loader (only explict loaders).
 
 `[all-loaders]` is the list of loaders and params up to the name of the rightmost loader (including automatic loaders).
