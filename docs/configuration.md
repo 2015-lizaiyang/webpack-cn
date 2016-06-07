@@ -756,7 +756,6 @@ Include polyfills or mocks for various node stuff:
 ## `amd`
 
 
-Set the value of `require.amd` and `define.amd`.
 设置`require.amd`和`define.amd`的值
 例如: `amd: { jQuery: true }` ( 1.x AMD 版本的jQuery)
 
