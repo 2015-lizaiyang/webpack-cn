@@ -779,7 +779,7 @@ This is required, when using Hot Code Replacement between multiple calls to the 
 
 ## `plugins`
 
-Add additional plugins to the compiler.
+给编译器添加额外的插件.
 
 [CLI]:docs/cli.md
 [NODE]:docs/node.js-api.md
