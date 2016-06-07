@@ -713,10 +713,9 @@ Example:
 > Note: With the next major version the default for `-d` will change to `cheap-module-eval-source-map`
 
 ## `devServer`
+设置 [webpack-dev-server](https://github.com/webpack/webpack-dev-server) 的相关配置。
 
-Can be used to configure the behaviour of [webpack-dev-server](https://github.com/webpack/webpack-dev-server) when the webpack config is passed to webpack-dev-server CLI.
-
-Example:
+例子:
 
 ``` javascript
 {
