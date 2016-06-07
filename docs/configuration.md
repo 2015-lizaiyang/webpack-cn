@@ -660,7 +660,7 @@ You can pass an object to enable it and let webpack use the passed object as cac
 
 ## `debug`
 
-Switch loaders to debug mode.
+讲loader调到debug模式.
 
 
 
