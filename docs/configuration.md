@@ -184,7 +184,7 @@ output: {
 
 ### `output.sourceMapFilename`
 
-The filename of the SourceMaps for the JavaScript files. They are inside the `output.path` directory.
+js文件的SourceMap的文件名. 也同样在 `output.path` 路径下面.
 
 `[file]` is replaced by the filename of the JavaScript file.
 
