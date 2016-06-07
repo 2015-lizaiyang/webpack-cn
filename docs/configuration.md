@@ -154,7 +154,7 @@ output: {
   <link href="/assets/spinner.gif"/>
 </head>
 ```
-And a more complicated example of using a CDN and hashes for assets.
+使用CDN 和 hash的例子.
 
 **config.js**
 ```javascript
