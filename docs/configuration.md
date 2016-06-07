@@ -211,19 +211,6 @@ js文件的SourceMap的文件名. 也同样在 `output.path` 路径下面.
 > 默认 (devtool=`eval`): `"webpack:///[resource-path]?[loaders]"`  
 > 默认 (devtool=`eval-source-map`): `"webpack:///[resource-path]?[hash]"`
 
-`[loaders]` is the list of loaders and params up to the name of the rightmost loader (only explict loaders).
-
-`[all-loaders]` is the list of loaders and params up to the name of the rightmost loader (including automatic loaders).
-
-`[id]` is replaced by the id of the module.
-
-`[hash]` is replaced by the hash of the module identifier.
-
-`[absolute-resource-path]` is replaced with the absolute filename.
-
-> Default (devtool=`[inline-]source-map`): `"webpack:///[resource-path]"`  
-> Default (devtool=`eval`): `"webpack:///[resource-path]?[loaders]"`  
-> Default (devtool=`eval-source-map`): `"webpack:///[resource-path]?[hash]"`
 
 Can also be defined as a function instead of a string template.
 The function will accept an `info` object parameter which exposes the following properties:
