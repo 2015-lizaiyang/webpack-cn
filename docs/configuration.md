@@ -224,10 +224,9 @@ js文件的SourceMap的文件名. 也同样在 `output.path` 路径下面.
 - hash
 
 ### `output.devtoolFallbackModuleFilenameTemplate`
+和`output.devtoolModuleFilenameTemplate`一样，但是用在有重复module标识符的时候。
 
-Similar to `output.devtoolModuleFilenameTemplate`, but used in the case of duplicate module identifiers.
-
-> Default: `"webpack:///[resourcePath]?[hash]"`
+> 默认: `"webpack:///[resourcePath]?[hash]"`
 
 ### `output.devtoolLineToLine`
 
