@@ -261,7 +261,7 @@ webpack异步加载的JSONP函数.
 
 A shorter function may reduce the filesize a bit. Use different identifier, when having multiple webpack instances on a single page.
 
-> Default: `"webpackJsonp"`
+> 默认: `"webpackJsonp"`
 
 ### `output.hotUpdateFunction`
 
