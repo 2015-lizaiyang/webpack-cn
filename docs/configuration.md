@@ -257,8 +257,7 @@ The filename of the Hot Update Main File. It is inside the `output.path` directo
 > 默认: `"[hash].hot-update.json"`
 
 ### `output.jsonpFunction`
-
-The JSONP function used by webpack for asnyc loading of chunks.
+webpack异步加载的JSONP函数.
 
 A shorter function may reduce the filesize a bit. Use different identifier, when having multiple webpack instances on a single page.
 
