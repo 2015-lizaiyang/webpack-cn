@@ -254,7 +254,7 @@ The filename of the Hot Update Main File. It is inside the `output.path` directo
 
 `[hash]` is replaced by the hash of the compilation. (The last hash stored in the records)
 
-> Default: `"[hash].hot-update.json"`
+> 默认: `"[hash].hot-update.json"`
 
 ### `output.jsonpFunction`
 
