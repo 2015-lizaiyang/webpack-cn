@@ -259,7 +259,7 @@ The filename of the Hot Update Main File. It is inside the `output.path` directo
 ### `output.jsonpFunction`
 webpack异步加载的JSONP函数.
 
-A shorter function may reduce the filesize a bit. Use different identifier, when having multiple webpack instances on a single page.
+较短的函数可以缩小文件的大小，在一个页面里面拥有多个webpack引用的时候，需要使用不同的标识符.
 
 > 默认: `"webpackJsonp"`
 
