@@ -70,7 +70,7 @@ webpack <entry> <output>
 
 ### 配置文件 `--config example.config.js`
 
-Specifies a different configuration file to pick up. Use this if you want to specify something different than `webpack.config.js`, which is the default.
+挂载一个指定的config文件. 如果你想使用 `webpack.config.js`之外的文件作为配置文件,就使用这个方法。webpack 默认使用`webpack.config.js`做配置文件.
 
 
 ### Display options
