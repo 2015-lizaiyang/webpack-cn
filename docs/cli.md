@@ -1,15 +1,15 @@
-## Installation
+## 安装
 
 ``` sh
 $ npm install webpack -g
 ```
 
-The `webpack` command is now available globally.
+这样`webpack`就全局可用了.
 
 
 
 
-## Pure CLI
+## 纯 CLI
 
 ``` sh
 webpack <entry> <output>
@@ -19,133 +19,135 @@ webpack <entry> <output>
 
 ### `entry`
 
-Pass a file or a request string. You can pass multiple entries (every entry is loaded on startup).
+传入一个文件或者一个请求串。也可以传入多个入口文件（每个入口文件都将在加载时候执行）.
 
-If you pass a pair in the form `<name>=<request>` you can create an additional entry point.
+如果传一个类格式为`<name>=<request>`的值，你就可以创建额外的entry.
 
-It will be mapped to the configuration option `entry`.
+这个entry将会被映射到配置项`entry`里。
 
 
 
 ### `output`
 
-Pass a path to a file.
+ 传入一个文件路径.
 
-It will be mapped to the configuration options `output.path` and `output.filename`.
-
-
-
-### Configuration options
-
-Many configuration options are mapped from CLI options. I. e. `--debug` maps to `debug: true`, or `--output-library-target` to `output.libraryTarget`.
-
-You see a list of all options, if you don't pass any option.
+与配置里面的 `output.path` 和 `output.filename`对应.
 
 
 
-### Plugins
+### 配置选项
 
-Some plugins are mapped to CLI options. I. e. `--define <string>=<string>` maps to the `DefinePlugin`.
+许多配置项都和 CLI 的参数项对应. 比如. `--debug` 对应 `debug: true`, 以及 `--output-library-target` 对应 `output.libraryTarget`.
 
-You see a list of all options, if you don't pass any option.
-
-
-
-### Development shortcut `-d`
-
-Equals to `--debug` `--devtool source-map` `--output-pathinfo`
+如果不穿任何参数，则会显示webpack的帮助信息，里面有非常多的参数可用.
 
 
 
-### Production shortcut `-p`
+### 插件
 
-Equals to `--optimize-minimize` `--optimize-occurence-order`
+一些插件也和CLI的参数对应. `--define <string>=<string>` 对应 `DefinePlugin`.
 
-
-
-### Watch mode `--watch`
-
-Watches all dependencies and recompile on change.
+如果不穿任何参数，则会显示webpack的帮助信息，里面有非常多的参数可用.
 
 
-### Configuration file `--config example.config.js`
 
-Specifies a different configuration file to pick up. Use this if you want to specify something different than `webpack.config.js`, which is the default.
+### 开发环境 缩写 `-d`
+
+等于 `--debug` `--devtool source-map` `--output-pathinfo`
 
 
-### Display options
+
+###生产环境缩写 `-p`
+
+等于 `--optimize-minimize` `--optimize-occurence-order`
+
+
+
+### 监听模式 `--watch`
+
+在文件改动监听所有的依赖以及重编译。
+
+
+### 配置文件 `--config example.config.js`
+
+挂载一个指定的config文件. 如果你想使用 `webpack.config.js`之外的文件作为配置文件,就使用这个方法。webpack 默认使用`webpack.config.js`做配置文件.
+
+
+### 显示参数
 
 #### `--progress`
 
-Display a compilation progress to stderr.
+在标准输入输出端口显示一次编译的进度。
 
 #### `--json`
+显示JSON格式的输出而不是，易读的格式。
 
-Write JSON to stdout instead of a human readable format.
 
-> Hint: Try to put the result into the [analyse tool](http://webpack.github.com/analyse).
+> 提示: 当需要将数据放倒 [analyse tool](http://webpack.github.com/analyse)的时候可以使用.
 
 #### `--no-color`
 
-Disable colors to display the statistics.
+显示信息无颜色.
 
 #### `--sort-modules-by`, `--sort-chunks-by`, `--sort-assets-by`
 
-Sort the modules/chunks/assets list by a column.
+将 modules/chunks/assets 列表纵列排序.
 
 #### `--display-chunks`
 
-Display the separation of the modules into chunks.
+显示module分离成chunk的信息.
 
 #### `--display-reasons`
 
-Show more information about the reasons why a module is included.
+显示更多关于一个模块为什么会被包含的原因。
 
 #### `--display-error-details`
 
-Show more information about the errors. I. e. this shows which paths are tried while resolving a module.
+显示更多的错误信息. 比如. 展示在解析当前这个模块的时候尝试解析了哪些路径。
 
 #### `--display-modules`
 
-Show hidden modules. Modules are hidden from output by default when they live inside directories called `["node_modules", "bower_components", "jam", "components"]`
+展示隐藏的module.Module信息在输出的时候默认是被隐藏的当她们在 `["node_modules", "bower_components", "jam", "components"]`这些目录下面的时候。
 
-### Profiling
+### 性能分析
 
-If you wish to have a more in-depth idea of what is taking how long, you can use the `--profile` switch. This will cause WebPack to display more detailed timing informations. Combine this with the switches above to get a very detailed message and information set, which will contain the timings of your modules.
+如果你希望油更深入的了解什么消耗了多久时间，你可以使用`--peofile`开关。这将会让webpack显示详细的小号的时间信息。结合这个你将会得到非常详细的信息集合，包括你每个module编译的时间。
 
-#### The timing "keys"
+#### 计时 "keys"
 
-- `factory`: The time it took to build the module information.
-- `building`: The time that was spent building the module (loaders, for example).
-- `dependencies`: The time that was spent gathering and connecting the dependencies.
+- `factory`: build模块信息花费的时间.
+- `building`: build模块所花费的时间（比如loader模块）.
+- `dependencies`: 收集和处理依赖的时间.
 
 
 
-### Additional configuration options
+### 附加的配置参数
 
-When using the CLI it's possible to have the following options in the configuration file. They passed in other ways when using the node.js API.
+当使用CLI的时候，在配置文件里面可以带有下面这些参数的。在使用node.js API时他们将以别的方式传入.
 
 
 
 
 #### `watch`
 
-Enter watch mode, which rebuilds on file change.
+进入watch模式.
 
 #### `watchOptions.aggregateTimeout`
 
-Delay the rebuilt after the first change. Value is a time in ms.
+当文件修改时，延迟重编译时间，单位时ms.
 
-> Default: 300
+> 默认: 300
 
 #### `watchOptions.poll`
 
-`true`: use polling
+`true`:使用轮询
 
-number: use polling with specified interval
+number: 使用指定次数的轮询
 
-> Default: `undefined` 
+> 默认: `undefined` 
 
 #### `stats`
 
-Display options. See [[node.js API]] `Stats.toString()` for more details.
+显示参数. 可参见 [node.js API][nodejs] `Stats.toString()` .
+
+[nodejs]:docs/node.js-api.md
