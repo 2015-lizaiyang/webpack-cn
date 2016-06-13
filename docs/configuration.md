@@ -676,7 +676,7 @@ Enforcing `amd` or `umd` in a external value will break if not compiling as amd/
 
 Prefixing `@`, `#` or `#@` will enforce a pragma style. (Defaults to `#`, recommended)
 
-Combinations are possible. `hidden`, `inline`, `eval` and pragma style are exclusive.
+可以组合使用. `hidden`, `inline`, `eval` 标注样式是独立的.
 
 i. e. `cheap-module-inline-source-map`, `cheap-eval-source-map`, `#@source-map`
 
