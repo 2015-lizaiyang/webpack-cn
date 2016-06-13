@@ -73,17 +73,17 @@ webpack <entry> <output>
 挂载一个指定的config文件. 如果你想使用 `webpack.config.js`之外的文件作为配置文件,就使用这个方法。webpack 默认使用`webpack.config.js`做配置文件.
 
 
-### Display options
+### 显示参数
 
 #### `--progress`
 
-Display a compilation progress to stderr.
+在标准输入输出端口显示一次编译的进度。
 
 #### `--json`
+显示JSON格式的输出而不是，易读的格式。
 
-Write JSON to stdout instead of a human readable format.
 
-> Hint: Try to put the result into the [analyse tool](http://webpack.github.com/analyse).
+> 注意: 当需要将数据放倒 [analyse tool](http://webpack.github.com/analyse)的时候可以使用.
 
 #### `--no-color`
 
