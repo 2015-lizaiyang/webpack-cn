@@ -29,7 +29,7 @@ There are multiple standards for how to define dependencies and export values:
 <script src="libraryA.js"></script>
 <script src="module3.js"></script>
 ```
-每个模块都导出一个借口给一个全局变量 比如`window`。模块可以通过这个全局变量来读去依赖的接口。
+每个模块都导出一个接口给一个全局变量 比如`window`。模块可以通过这个全局变量来读去依赖的接口。
 
 #### 常见的问题
 
