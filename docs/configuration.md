@@ -316,9 +316,9 @@ webpack异步加载的JSONP函数.
 
 ### `output.crossOriginLoading`
 
-This option enables cross-origin loading of chunks.
+允许跨域加载chunk.
 
-Possible values are:
+可能的值有:
 
 `false` - Disable cross-origin loading.
 
