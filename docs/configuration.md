@@ -601,9 +601,9 @@ webpack没有在`resolve.root` 或者 `resolve.modulesDirectories`找到的模�
 | "amd"       | `"abc"`             | `define(["abc"], function(X) { module.exports = X; })` |
 | "umd"       | `"abc"`             | everything above |
 
-Enforcing `amd` or `umd` in a external value will break if not compiling as amd/umd target.
+如果没有作为`amd/umd`的目标解析，将会执行amd或者umd的额外值.
 
-> Note: If using `umd` you can specify an object as external value with property `commonjs`, `commonjs2`, `amd` and `root` to set different values for each import kind.
+> 注意，如果用umd你可以指定一个对象的额外值，属性为 commonjs, commonjs2, amd和root会被设置不同的值.
 
 
 
