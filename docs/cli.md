@@ -45,7 +45,7 @@ webpack <entry> <output>
 
 ### 插件
 
-Some plugins are mapped to CLI options. I. e. `--define <string>=<string>` maps to the `DefinePlugin`.
+一些插件也和CLI的参数对应. `--define <string>=<string>` 对应 `DefinePlugin`.
 
 You see a list of all options, if you don't pass any option.
 
