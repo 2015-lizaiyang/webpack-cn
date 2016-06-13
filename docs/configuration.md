@@ -558,12 +558,11 @@ webpack没有在`resolve.root` 或者 `resolve.modulesDirectories`找到的模�
 
 值是对象，字符串，函数，正则，数组都会被接受。
 
-* string: An exact matched dependency becomes external. The same string is used as external dependency.
-* object: If an dependency matches exactly a property of the object, the property value is used as dependency. The property value may contain a dependency type prefixed and separated with a space. If the property value is `true` the property name is used instead. If the property value is `false` the externals test is aborted and the dependency is not external. See example below.
-* function: `function(context, request, callback(err, result))` The function is called on each dependency. If a result is passed to the callback function this value is handled like a property value of an object (above bullet point).
-* RegExp: Every matched dependency becomes external. The matched text is used as the `request` for the external dependency.  Because the `request` _is the exact code_ used to generate the external code hook, if you are matching a commonjs package (e.g. '../some/package.js'), instead use the function external strategy. You can import the package via `callback(null, "require('" + request + "')"`, which generates a `module.exports = require('../some/package.js');`, using require outside of webpack context.
-* array: Multiple values of the scheme (recursive).
-
+* 字符串：一个精确匹配的依赖会变成外部依赖，同意的字符串会被用于外部依赖。
+* 对象：如果依赖精确匹配到了对象的一个属性，属性值就会被当作依赖。属性值可以包含一个依赖型的前缀，用一个空格隔开。如果属性值为true，则使用该属性名。如果属性值为false，外部测试失败，这个依赖是内部依赖。见下面的例子。
+* 函数：`function(context, request, callback(err, result))`。函数会在每个依赖中调用。如果结果被传递到回调函数里，这个值就会被像处理对象属性值那样处理。
+* 正则表达式：每个被匹配的依赖都会成为外部依赖。匹配的文本会被用作外部依赖的请求。因为请求是用于生成外部代码钩子的确切代码，如果你匹配到一个cmd的包(比如 `‘../some/package.js’`),相反使用外部`function`的策略。你可以通过`callback(null, "require('" + request + "')"`引入包，这个包生成`module.exports = require('../some/package.js');`使用要求在webpack上下文外。
+* 数组：这个表的多个值(递归)
 例如:
 
 ``` javascript
