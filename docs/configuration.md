@@ -491,7 +491,7 @@ resolve: {
 
 ### `resolve.modulesDirectories`
 
-An array of directory names to be resolved to the current directory as well as its ancestors, and searched for modules. This functions similarly to how node finds "node_modules" directories. For example, if the value is `["mydir"]`, webpack will look in "./mydir", "../mydir", "../../mydir", etc.
+解析目录名的一个数组到当前目录以及先前的目录，并且是查找模块。这个函数和node怎么找到node_modules很像。比如如果值为["mydir"]，webpack会查找“./mydir”, “../mydir”, “../../mydir”,等等.
 
 > 默认: `["web_modules", "node_modules"]`
 
