@@ -664,7 +664,7 @@ Enforcing `amd` or `umd` in a external value will break if not compiling as amd/
 
 ## `devtool`
 
-Choose a developer tool to enhance debugging.
+选择开发工具来提高debug效率.
 
 `eval` - Each module is executed with `eval` and `//@ sourceURL`.
 
