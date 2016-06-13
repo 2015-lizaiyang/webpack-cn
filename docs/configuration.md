@@ -482,7 +482,7 @@ The directory (**absolute path**) that contains your modules. May also be an arr
 
 > It **must** be an **absolute path**! Don't pass something like `./app/modules`.
 
-Example:
+例子:
 
 ```javascript
 var path = require('path');
@@ -500,7 +500,7 @@ resolve: {
 
 An array of directory names to be resolved to the current directory as well as its ancestors, and searched for modules. This functions similarly to how node finds "node_modules" directories. For example, if the value is `["mydir"]`, webpack will look in "./mydir", "../mydir", "../../mydir", etc.
 
-> Default: `["web_modules", "node_modules"]`
+> 默认: `["web_modules", "node_modules"]`
 
 > Note: Passing `"../someDir"`, `"app"`, `"."` or an absolute path isn't necessary here. Just use a directory name, not a path. Use only if you expect to have a hierarchy within these folders. Otherwise you may want to use the `resolve.root` option instead.
 
@@ -512,9 +512,9 @@ A directory (or array of directories **absolute paths**), in which webpack shoul
 
 An array of extensions that should be used to resolve modules. For example, in order to discover CoffeeScript files, your array should contain the string `".coffee"`.
 
-> Default: `["", ".webpack.js", ".web.js", ".js"]`
+> 默认: `["", ".webpack.js", ".web.js", ".js"]`
 
-**IMPORTANT**: Setting this option will override the default, meaning that webpack will no longer try to resolve modules using the default extensions. If you want modules that were required with their extension (e.g. `require('./somefile.ext')`) to be properly resolved, you **must** include an empty string in your array. Similarly, if you want modules that were required without extensions (e.g. `require('underscore')`) to be resolved to files with ".js" extensions, you **must** include `".js"` in your array.
+**重要信息**: Setting this option will override the default, meaning that webpack will no longer try to resolve modules using the default extensions. If you want modules that were required with their extension (e.g. `require('./somefile.ext')`) to be properly resolved, you **must** include an empty string in your array. Similarly, if you want modules that were required without extensions (e.g. `require('underscore')`) to be resolved to files with ".js" extensions, you **must** include `".js"` in your array.
 
 ### `resolve.packageMains`
 
