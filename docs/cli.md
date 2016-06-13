@@ -109,7 +109,7 @@ webpack <entry> <output>
 
 展示隐藏的module.Module信息在输出的时候默认是被隐藏的当她们在 `["node_modules", "bower_components", "jam", "components"]`这些目录下面的时候。
 
-### Profiling
+### 性能分析
 
 If you wish to have a more in-depth idea of what is taking how long, you can use the `--profile` switch. This will cause WebPack to display more detailed timing informations. Combine this with the switches above to get a very detailed message and information set, which will contain the timings of your modules.
 
