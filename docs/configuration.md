@@ -468,7 +468,7 @@ module: {
 
 `index.js` 可能会解析其他的文件，如果设置了 `package.json`的话.
 
-`/abc/node_modules` may resolve in `/node_modules` too.
+`/abc/node_modules` 也可能解析到/node_modules里.
 
 ### `resolve.root`
 
