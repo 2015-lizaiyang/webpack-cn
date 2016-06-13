@@ -502,7 +502,7 @@ webpack没有在`resolve.root` 或者 `resolve.modulesDirectories`找到的模�
 
 ### `resolve.extensions`
 
-An array of extensions that should be used to resolve modules. For example, in order to discover CoffeeScript files, your array should contain the string `".coffee"`.
+解析模块的拓展名的数组。比如，为了发现一个CS文件，你这数组里应该包含字符串".coffee".
 
 > 默认: `["", ".webpack.js", ".web.js", ".js"]`
 
