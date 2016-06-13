@@ -391,7 +391,7 @@ module: {
 
 ### automatically created contexts defaults `module.xxxContextXxx`
 
-There are multiple options to configure the defaults for an automatically created context. We differentiate three types of automatically created contexts:
+这有许多选项配置自动创建上下文的默认值，我们区分三种情况下自动创建的上下文:
 
 * `exprContext`: An expression as dependency (i. e. `require(expr)`)
 * `wrappedContext`: An expression plus pre- and/or suffixed string (i. e. `require("./templates/" + expr)`)
