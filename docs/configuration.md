@@ -633,15 +633,14 @@ Enforcing `amd` or `umd` in a external value will break if not compiling as amd/
 
 ## `bail`
 
-Report the first error as a hard error instead of tolerating it.
+将第一个错误报告为严重错误而不是容忍他。
 
 
 
 ## `profile`
+为每一个module捕获定时信息。
 
-Capture timing information for each module.
-
-> Hint: Use the [analyze tool](http://webpack.github.io/analyse) to visualize it. `--json` or `stats.toJson()` will give you the stats as JSON.
+> 提示: Use the [analyze tool](http://webpack.github.io/analyse) to visualize it. `--json` or `stats.toJson()` will give you the stats as JSON.
 
 
 
