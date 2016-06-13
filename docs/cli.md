@@ -51,13 +51,13 @@ webpack <entry> <output>
 
 
 
-### 缩写 `-d`
+### 开发环境 缩写 `-d`
 
 等于 `--debug` `--devtool source-map` `--output-pathinfo`
 
 
 
-### Production shortcut `-p`
+###生产环境缩写 `-p`
 
 Equals to `--optimize-minimize` `--optimize-occurence-order`
 
