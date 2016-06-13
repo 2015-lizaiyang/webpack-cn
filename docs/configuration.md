@@ -264,7 +264,7 @@ webpack异步加载的JSONP函数.
 
 ### `output.hotUpdateFunction`
 
-The JSONP function used by webpack for async loading of hot update chunks.
+热替换时候一步更新js的jsonp方法.
 
 > Default: `"webpackHotUpdate"`
 
