@@ -702,7 +702,7 @@ Enforcing `amd` or `umd` in a external value will break if not compiling as amd/
 //# sourceMappingURL=...
 ```
 
-> Note: With the next major version the default for `-d` will change to `cheap-module-eval-source-map`
+> 注意: 下一个主要版本里面 `-d` 选项 将改成 `cheap-module-eval-source-map`
 
 ## `devServer`
 设置 [webpack-dev-server](https://github.com/webpack/webpack-dev-server) 的相关配置。
