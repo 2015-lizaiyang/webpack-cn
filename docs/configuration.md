@@ -274,9 +274,9 @@ webpack异步加载的JSONP函数.
 
 `require(/* ./test */23)`
 
-Do not use this in production.
+不要在生产环境里面使用.
 
-> Default: `false`
+> 默认: `false`
 
 ### `output.library`
 
