@@ -692,7 +692,7 @@ Enforcing `amd` or `umd` in a external value will break if not compiling as amd/
 | eval-source-map              |     --      |       +       |       no       | original source               |
 | source-map                   |     --      |       --      |       yes      | original source               |
 
-Example:
+例如:
 
 ``` javascript
 {
