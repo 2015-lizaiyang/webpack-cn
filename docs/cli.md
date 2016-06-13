@@ -1,15 +1,15 @@
-## Installation
+## 安装
 
 ``` sh
 $ npm install webpack -g
 ```
 
-The `webpack` command is now available globally.
+这样`webpack`就全局可用了.
 
 
 
 
-## Pure CLI
+## 纯 CLI
 
 ``` sh
 webpack <entry> <output>
@@ -19,7 +19,7 @@ webpack <entry> <output>
 
 ### `entry`
 
-Pass a file or a request string. You can pass multiple entries (every entry is loaded on startup).
+传入一个文件或者一个请求串。也可以传入多个入口文件（每个入口文件都将在加载时候执行）.
 
 If you pass a pair in the form `<name>=<request>` you can create an additional entry point.
 
