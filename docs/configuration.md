@@ -241,11 +241,11 @@ js文件的SourceMap的文件名. 也同样在 `output.path` 路径下面.
 热替换chunks的文件名.
 在`output.path`目录里。
 
-`[id]` is replaced by the id of the chunk.
+`[id]` 替换chunk的id.
 
-`[hash]` is replaced by the hash of the compilation. (The last hash stored in the records)
+`[hash]` 替换编译的hash. (记录里的最近一个hash)
 
-> Default: `"[id].[hash].hot-update.js"`
+> 默认: `"[id].[hash].hot-update.js"`
 
 ### `output.hotUpdateMainFilename`
 
