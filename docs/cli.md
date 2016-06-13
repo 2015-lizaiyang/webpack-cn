@@ -43,7 +43,7 @@ webpack <entry> <output>
 
 
 
-### Plugins
+### 插件
 
 Some plugins are mapped to CLI options. I. e. `--define <string>=<string>` maps to the `DefinePlugin`.
 
