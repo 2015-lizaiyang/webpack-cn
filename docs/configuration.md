@@ -250,7 +250,7 @@ js文件的SourceMap的文件名. 也同样在 `output.path` 路径下面.
 ### `output.hotUpdateMainFilename`
 热替换主文件的的名字。在output.path目录里。
 
-`[hash]` is replaced by the hash of the compilation. (The last hash stored in the records)
+`[hash]` 替换编译的hash. (记录里的最近一个hash)
 
 > 默认: `"[hash].hot-update.json"`
 
