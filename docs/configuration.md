@@ -471,10 +471,9 @@ module: {
 `/abc/node_modules` 也可能解析到/node_modules里.
 
 ### `resolve.root`
-包含你模块的目录（**绝对路径**），通常是一个目录数组，这个设置应该被用于添加个人目录到webpack查找路径里
-The directory (**absolute path**) that contains your modules. May also be an array of directories. This setting should be used to add individual directories to the search path.
+包含你模块的目录（**绝对路径**），通常是一个目录数组，这个设置应该被用于添加个人目录到webpack查找路径里.
 
-> It **must** be an **absolute path**! Don't pass something like `./app/modules`.
+> 必须是个绝对路径，不要这样写./app/modules.
 
 例子:
 
