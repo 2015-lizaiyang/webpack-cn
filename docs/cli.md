@@ -95,7 +95,7 @@ webpack <entry> <output>
 
 #### `--display-chunks`
 
-Display the separation of the modules into chunks.
+显示module分离成chunk的信息.
 
 #### `--display-reasons`
 
