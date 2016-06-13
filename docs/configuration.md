@@ -399,10 +399,11 @@ module: {
 
 四个选项用来自动创建上下文:
 
-* `request`: The request for context.
-* `recursive`: Subdirectories should be traversed.
-* `regExp`: The RegExp for the expression.
-* `critical`: This type of dependency should be consider as critical (emits a warning).
+* `request`: 上下文的请求.
+* `recursive`: 递归： 子目录需要被遍历.
+* `regExp`:  正则表达式.
+* `critical`:  这种类型的依赖应该被视为关键（发出警告）
+.
 
 选项和默认值:
 
