@@ -107,7 +107,7 @@ webpack <entry> <output>
 
 #### `--display-modules`
 
-展示隐藏的module.Module在输出的时候默认是被隐藏的当她们在 `["node_modules", "bower_components", "jam", "components"]`这些目录下面的时候。
+展示隐藏的module.Module信息在输出的时候默认是被隐藏的当她们在 `["node_modules", "bower_components", "jam", "components"]`这些目录下面的时候。
 
 ### Profiling
 
