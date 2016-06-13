@@ -47,13 +47,13 @@ webpack <entry> <output>
 
 一些插件也和CLI的参数对应. `--define <string>=<string>` 对应 `DefinePlugin`.
 
-You see a list of all options, if you don't pass any option.
+如果不穿任何参数，则会显示webpack的帮助信息，里面有非常多的参数可用.
 
 
 
-### Development shortcut `-d`
+### 缩写 `-d`
 
-Equals to `--debug` `--devtool source-map` `--output-pathinfo`
+等于 `--debug` `--devtool source-map` `--output-pathinfo`
 
 
 
