@@ -123,7 +123,7 @@ webpack <entry> <output>
 
 ### 附加的配置参数
 
-When using the CLI it's possible to have the following options in the configuration file. They passed in other ways when using the node.js API.
+当使用CLI的时候，在配置文件里面可以带有下面这些参数的。在使用node.js API时他们将以别的方式传入.
 
 
 
