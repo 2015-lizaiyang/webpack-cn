@@ -31,7 +31,7 @@ webpack <entry> <output>
 
  传入一个文件路径.
 
-It will be mapped to the configuration options `output.path` and `output.filename`.
+与配置里面的 `output.path` 和 `output.filename`对应.
 
 
 
