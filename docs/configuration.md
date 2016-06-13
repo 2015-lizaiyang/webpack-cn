@@ -379,9 +379,7 @@ module: {
 
 ### `module.preLoaders`, `module.postLoaders`
 
-Syntax like `module.loaders`.
-
-An array of applied pre and post loaders.
+ 语法跟module.loaders很像，前置和后置装载的数组loaders.
 
 ### `module.noParse`
 
