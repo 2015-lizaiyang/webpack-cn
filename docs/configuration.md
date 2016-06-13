@@ -534,15 +534,14 @@ webpack没有在`resolve.root` 或者 `resolve.modulesDirectories`找到的模�
 像 `resolve` 但是是对于loaders.
 
 ``` javascript
-// Default:
+// 默认:
 {
 	modulesDirectories: ["web_loaders", "web_modules", "node_loaders", "node_modules"],
 	extensions: ["", ".webpack-loader.js", ".web-loader.js", ".loader.js", ".js"],
 	packageMains: ["webpackLoader", "webLoader", "loader", "main"]
 }
 ```
-
-Note that you can use `alias` here and other features familiar from `resolve`. 例如 `{ txt: 'raw-loader' }` would shim `txt!templates/demo.txt` to use `raw-loader`.
+注意，你可以用alias，其他特性和resolve相似。例如 `{ txt: 'raw-loader' }`是 `txt!templates/demo.txt`用  `raw-loader`后的结果.
 
 ### `resolveLoader.moduleTemplates`
 
