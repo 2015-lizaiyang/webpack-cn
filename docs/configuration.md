@@ -310,9 +310,9 @@ webpack异步加载的JSONP函数.
 
 ### `output.sourcePrefix`
 
-Prefixes every line of the source in the bundle with this string.
+在代码的每一行前面加上此前缀.
 
-> Default: `"\t"`
+> 默认: `"\t"`
 
 ### `output.crossOriginLoading`
 
