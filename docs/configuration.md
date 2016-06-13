@@ -338,9 +338,9 @@ webpack异步加载的JSONP函数.
 
 ### `module.loaders`
 
-An array of automatically applied loaders.
+自动引用的加载器的数组.
 
-Each item can have these properties:
+每个元素有这些选项:
 
 * `test`: A condition that must be met
 * `exclude`: A condition that must not be met
