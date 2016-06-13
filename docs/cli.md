@@ -83,15 +83,15 @@ webpack <entry> <output>
 显示JSON格式的输出而不是，易读的格式。
 
 
-> 注意: 当需要将数据放倒 [analyse tool](http://webpack.github.com/analyse)的时候可以使用.
+> 提示: 当需要将数据放倒 [analyse tool](http://webpack.github.com/analyse)的时候可以使用.
 
 #### `--no-color`
 
-Disable colors to display the statistics.
+显示信息无颜色.
 
 #### `--sort-modules-by`, `--sort-chunks-by`, `--sort-assets-by`
 
-Sort the modules/chunks/assets list by a column.
+将 modules/chunks/assets 列表 c将 modules/chunks/assets 列表纵列排序.
 
 #### `--display-chunks`
 
