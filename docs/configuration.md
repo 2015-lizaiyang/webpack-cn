@@ -640,7 +640,7 @@ Enforcing `amd` or `umd` in a external value will break if not compiling as amd/
 ## `profile`
 为每一个module捕获定时信息。
 
-> 提示: Use the [analyze tool](http://webpack.github.io/analyse) to visualize it. `--json` or `stats.toJson()` will give you the stats as JSON.
+> 提示: 使用 [analyze tool](http://webpack.github.io/analyse) 来做可视化分析. `--json` 或者 `stats.toJson()` 将给出states的JSON数据.
 
 
 
