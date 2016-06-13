@@ -510,9 +510,9 @@ webpack没有在`resolve.root` 或者 `resolve.modulesDirectories`找到的模�
 
 ### `resolve.packageMains`
 
-Check these fields in the `package.json` for suitable files.
+ 在package.json中查找符合这些字段的文件.
 
-> Default: `["webpack", "browser", "web", "browserify", ["jam", "main"], "main"]`
+> 默认: `["webpack", "browser", "web", "browserify", ["jam", "main"], "main"]`
 
 ### `resolve.packageAlias`
 
