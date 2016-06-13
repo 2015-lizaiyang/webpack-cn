@@ -466,7 +466,7 @@ module: {
 | `{ xyz: "xyz/dir" }` | `/abc/node_modules/xyz/dir/index.js` | `/abc/node_modules/xyz/dir/file.js` |
 | `{ xyz$: "xyz/dir" }` | `/abc/node_modules/xyz/dir/index.js` | `/abc/node_modules/xyz/file.js` |
 
-`index.js` may resolve to another file if defined in the `package.json`.
+`index.js` 可能会解析其他的文件，如果设置了 `package.json`的话.
 
 `/abc/node_modules` may resolve in `/node_modules` too.
 
