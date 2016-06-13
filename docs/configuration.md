@@ -280,9 +280,9 @@ webpack异步加载的JSONP函数.
 
 ### `output.library`
 
-If set, export the bundle as library. `output.library` is the name.
+如果设置了此项, 将会把bundle打包成lib. `output.library` 的值就是文件名.
 
-Use this, if you are writing a library and want to publish it as single file.
+如果你在写一个单一的文件库的时候后使用他.
 
 ### `output.libraryTarget`
 
