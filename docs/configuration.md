@@ -682,7 +682,7 @@ i. e. `cheap-module-inline-source-map`, `cheap-eval-source-map`, `#@source-map`
 
 > Hint: If your modules already contain SourceMaps you'll need to use the [source-map-loader](https://github.com/webpack/source-map-loader) to merge it with the emitted SourceMap.
 
-| devtool                      | 编译 | 重编译速度 | production supported | 质量                 |
+| devtool                      | 编译 | 重编译速度 | 生产环境支持 | 质量                 |
 |------------------------------|-------------|---------------|----------------------|-------------------------|
 | eval                         |     +++     |      +++      |       no       | generated code                |
 | cheap-eval-source-map        |      +      |      ++       |       no       | transformed code (lines only) |
