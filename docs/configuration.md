@@ -545,9 +545,9 @@ webpack没有在`resolve.root` 或者 `resolve.modulesDirectories`找到的模�
 
 ### `resolveLoader.moduleTemplates`
 
-That's a `resolveLoader` only property.
+这是resolveLoader 唯一的属性.
 
-It describes alternatives for the module name that are tried.
+它描述了尝试的模块名称的替代名
 
 > Default: `["*-webpack-loader", "*-web-loader", "*-loader", "*"]`
 
