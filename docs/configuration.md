@@ -394,7 +394,7 @@ module: {
 这有许多选项配置自动创建上下文的默认值，我们区分三种情况下自动创建的上下文:
 
 * `exprContext`: 一个作为依赖的表达式 (如 `require(expr)`)
-* `wrappedContext`: An expression plus pre- and/or suffixed string (i. e. `require("./templates/" + expr)`)
+* `wrappedContext`: 一个加前缀或者后缀的字符串 (i. e. `require("./templates/" + expr)`)
 * `unknownContext`: Any other unparsable usage of `require` (i. e. `require`)
 
 四个选项用来自动创建上下文:
