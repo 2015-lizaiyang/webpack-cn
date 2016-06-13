@@ -444,9 +444,8 @@ module: {
 模块被其他模块名和路径替代.
 
 改配置对象键名为模块名，键值为新的路径。类似于替换但是更比替换更好。如果该键结尾是只有$的确切匹配（没有$）将被替换。
-Expected an object with keys being module names. The value is the new path. It's similar to a replace but a bit more clever. If the the key ends with `$` only the exact match (without the `$`) will be replaced.
 
-If the value is a relative path it will be relative to the file containing the require.
+如果键值是相对路径，它将与该文件中包含的文件相对
 
 例子: 请求 `/abc/entry.js` 里面的require ，不同的alias对比.
 
