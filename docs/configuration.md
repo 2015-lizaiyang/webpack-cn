@@ -238,7 +238,8 @@ js文件的SourceMap的文件名. 也同样在 `output.path` 路径下面.
 
 ### `output.hotUpdateChunkFilename`
 
-The filename of the Hot Update Chunks. They are inside the `output.path` directory.
+热替换chunks的文件名.
+在output.path目录里。
 
 `[id]` is replaced by the id of the chunk.
 
