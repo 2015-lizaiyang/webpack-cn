@@ -393,11 +393,11 @@ module: {
 
 这有许多选项配置自动创建上下文的默认值，我们区分三种情况下自动创建的上下文:
 
-* `exprContext`: An expression as dependency (i. e. `require(expr)`)
+* `exprContext`: 一个作为依赖的表达式 (如 `require(expr)`)
 * `wrappedContext`: An expression plus pre- and/or suffixed string (i. e. `require("./templates/" + expr)`)
 * `unknownContext`: Any other unparsable usage of `require` (i. e. `require`)
 
-Four options are possible for automatically created contexts:
+四个选项用来自动创建上下文:
 
 * `request`: The request for context.
 * `recursive`: Subdirectories should be traversed.
