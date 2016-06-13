@@ -674,7 +674,7 @@ Enforcing `amd` or `umd` in a external value will break if not compiling as amd/
 * `cheap-source-map` 不包含列信息，不包含 loader 的 `sourcemap`，（譬如 `babel` 的 `sourcemap`）
 * `cheap-module-source-map` 不包含列信息，同时 loader 的 sourcemap 也被简化为只包含对应行的。最终的 sourcemap 只有一份，它是 webpack 对 loader 生成的 sourcemap 进行简化，然后再次生成的。
 
-前缀 `@`, `#` 或者 `#@` 执行编译指示风格. (默认 `#`, 推荐)
+前缀 `@`, `#` 或者 `#@` 将执行编译指示风格. (默认 `#`, 推荐)
 
 可以组合使用. `hidden`, `inline`, `eval` 标注样式是独立的.
 
