@@ -111,13 +111,13 @@ webpack <entry> <output>
 
 ### 性能分析
 
-If you wish to have a more in-depth idea of what is taking how long, you can use the `--profile` switch. This will cause WebPack to display more detailed timing informations. Combine this with the switches above to get a very detailed message and information set, which will contain the timings of your modules.
+如果你希望油更深入的了解什么消耗了多久时间，你可以使用`--peofile`开关。这将会让webpack显示详细的小号的时间信息。结合这个你将会得到非常详细的信息集合，包括你每个module编译的时间。
 
-#### The timing "keys"
+#### 计时 "keys"
 
-- `factory`: The time it took to build the module information.
-- `building`: The time that was spent building the module (loaders, for example).
-- `dependencies`: The time that was spent gathering and connecting the dependencies.
+- `factory`: build模块信息花费的时间.
+- `building`: build模块所花费的时间（比如loader模块）.
+- `dependencies`: 收集和处理依赖的时间.
 
 
 
