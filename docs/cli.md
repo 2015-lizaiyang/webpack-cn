@@ -99,11 +99,11 @@ webpack <entry> <output>
 
 #### `--display-reasons`
 
-Show more information about the reasons why a module is included.
+显示更多关于一个模块为什么会被包含的原因。
 
 #### `--display-error-details`
 
-Show more information about the errors. I. e. this shows which paths are tried while resolving a module.
+显示更多的错误信息. 比如. 展示在解析当前这个模块的时候尝试解析了哪些路径。
 
 #### `--display-modules`
 
