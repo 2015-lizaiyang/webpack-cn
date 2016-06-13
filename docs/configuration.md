@@ -646,13 +646,14 @@ Enforcing `amd` or `umd` in a external value will break if not compiling as amd/
 
 ## `cache`
 
-Cache generated modules and chunks to improve performance for multiple incremental builds.
+在多次增量编译时候，缓存生成的moudle和chunk来提高性能。
 
-This is enabled by default in watch mode.
+在watch模式下面默认是开启的.
 
-You can pass `false` to disable it.
+你可以传`false`将它禁止掉.
 
-You can pass an object to enable it and let webpack use the passed object as cache. This way you can share the cache object between multiple compiler calls. Note: Don't share the cache between calls with different options.
+你也可以传递一个对象来开启他，并且webpack会利用传入的对象作为缓存，这样你就可以在多次编译当中共享缓存对象。
+注意：不要在不同的选项之间共享缓存。
 
 
 ## `debug`
