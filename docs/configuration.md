@@ -350,7 +350,7 @@ webpack异步加载的JSONP函数.
 
 更多: [loaders][loaders]
 
-*重要信息*: The loaders here are resolved *relative to the resource* which they are applied to. This means they are not resolved relative to the configuration file. If you have loaders installed from npm and your `node_modules` folder is not in a parent folder of all source files, webpack cannot find the loader. You need to add the `node_modules` folder as absolute path to the `resolveLoader.root` option. (`resolveLoader: { root: path.join(__dirname, "node_modules") }`)
+*重要信息*：这里的loader解析了他们应用相关的资源，这意味着他们不需要解析配置过的文件。如果你用npm安装loaders，node_modules文件夹不在资源文件夹的父目录中，webpack就找不到这个loader。你需要把node_modules文件夹的绝对路径添加到resolveLoader.root这个选项中。 (`resolveLoader: { root: path.join(__dirname, "node_modules") }`) 
 
 例子:
 
