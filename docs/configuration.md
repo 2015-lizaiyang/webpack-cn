@@ -625,7 +625,7 @@ Enforcing `amd` or `umd` in a external value will break if not compiling as amd/
 * `"web"` 浏览器环境(默认)
 * `"webworker"` WebWorker
 * `"node"` node (使用 `require` 加载 chunk)
-* `"async-node"` Compile for usage in a node.js-like environment (use `fs` and `vm` to load chunks async)
+* `"async-node"` node (使用 `fs` 和 `vm` 来加载异步chunk)
 * `"node-webkit"` Compile for usage in webkit, uses jsonp chunk loading but also supports builtin node.js modules plus require("nw.gui") (experimental)
 * `"electron"` Compile for usage in [Electron](http://electron.atom.io/) – supports `require`-ing Electron-specific modules.
 
