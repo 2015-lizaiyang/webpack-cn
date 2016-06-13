@@ -320,11 +320,11 @@ webpack异步加载的JSONP函数.
 
 可能的值有:
 
-`false` - Disable cross-origin loading.
+`false` - 禁止.
 
-`"anonymous"` - Cross-origin loading is enabled. When using `anonymous` no credentials will be send with the request.
+`"anonymous"` - 可用.credentials将不随请求被发送.
 
-`"use-credentials"` - Cross-origin loading is enabled and credentials will be send with the request.
+`"use-credentials"` - 可用.credentials将随请求被发送.
 
 For more information on cross-origin loading see [MDN](https://developer.mozilla.org/en/docs/Web/HTML/Element/script#attr-crossorigin)
 
