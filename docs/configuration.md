@@ -341,8 +341,8 @@ webpack异步加载的JSONP函数.
 每个元素有这些选项:
 
 * `test`: 必须满足的条件
-* `exclude`: 必须不满足的条件
-* `include`: 满足条件
+* `exclude`: 不满足的条件
+* `include`: 必须满足条件
 * `loader`: 用 "!" 隔开多个loader
 * `loaders`: 多个loader
 
