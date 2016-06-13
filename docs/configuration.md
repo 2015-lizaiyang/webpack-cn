@@ -453,7 +453,7 @@ Expected an object with keys being module names. The value is the new path. It's
 
 If the value is a relative path it will be relative to the file containing the require.
 
-Examples: Calling a require from `/abc/entry.js` with different alias settings.
+例子: 请求 `/abc/entry.js` 里面的require ，不同的alias对比.
 
 | `alias:` | `require("xyz")` | `require("xyz/file.js")` |
 |---|---|---|
