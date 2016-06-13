@@ -551,7 +551,7 @@ Like `resolve` but for loaders.
 }
 ```
 
-Note that you can use `alias` here and other features familiar from `resolve`. For example `{ txt: 'raw-loader' }` would shim `txt!templates/demo.txt` to use `raw-loader`.
+Note that you can use `alias` here and other features familiar from `resolve`. 例如 `{ txt: 'raw-loader' }` would shim `txt!templates/demo.txt` to use `raw-loader`.
 
 ### `resolveLoader.moduleTemplates`
 
@@ -575,7 +575,7 @@ As value an object, a string, a function, a RegExp and an array is accepted.
 * RegExp: Every matched dependency becomes external. The matched text is used as the `request` for the external dependency.  Because the `request` _is the exact code_ used to generate the external code hook, if you are matching a commonjs package (e.g. '../some/package.js'), instead use the function external strategy. You can import the package via `callback(null, "require('" + request + "')"`, which generates a `module.exports = require('../some/package.js');`, using require outside of webpack context.
 * array: Multiple values of the scheme (recursive).
 
-Example:
+例如:
 
 ``` javascript
 {
