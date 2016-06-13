@@ -395,7 +395,7 @@ module: {
 
 * `exprContext`: 一个作为依赖的表达式 (如 `require(expr)`)
 * `wrappedContext`: 一个加前缀或者后缀的字符串 (i. e. `require("./templates/" + expr)`)
-* `unknownContext`: Any other unparsable usage of `require` (i. e. `require`)
+* `unknownContext`: 一些其他不解析的 `require` (i. e. `require`)
 
 四个选项用来自动创建上下文:
 
