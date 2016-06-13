@@ -59,16 +59,16 @@ webpack <entry> <output>
 
 ###生产环境缩写 `-p`
 
-Equals to `--optimize-minimize` `--optimize-occurence-order`
+等于 `--optimize-minimize` `--optimize-occurence-order`
 
 
 
-### Watch mode `--watch`
+### 监听模式 `--watch`
 
-Watches all dependencies and recompile on change.
+在文件改动监听所有的依赖以及重编译。
 
 
-### Configuration file `--config example.config.js`
+### 配置文件 `--config example.config.js`
 
 Specifies a different configuration file to pick up. Use this if you want to specify something different than `webpack.config.js`, which is the default.
 
