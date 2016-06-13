@@ -1,9 +1,7 @@
-> webpack is fed a configuration object. Depending on your usage of webpack there are two ways to pass this configuration object:
+> webpack 通过一个配置对象来操作. 有两种方式来传递这个对象:
 
 ### CLI
-
-If you use the [[CLI]] it will read a file `webpack.config.js` (or the file passed by the `--config` option). This file should export the configuration object:
-
+如果你使用[CLI][CLI] ，webpack 会默认读取`webpack.config.js`（或者通过 `--config` 选项指向读取文件），该文件需要导出一个配置对象。
 ``` javascript
 module.exports = {
 	// configuration
@@ -12,7 +10,7 @@ module.exports = {
 
 ### node.js API
 
-If you use the [[node.js API]] you need to pass the configuration object as parameter:
+如果使用[node.js API][NODE] 需要将配置对象当作参数传递:
 
 ``` javascript
 webpack({
@@ -20,19 +18,18 @@ webpack({
 }, callback);
 ```
 
-### multiple configurations
+### [](#multiple-configurations)多个配置对象
 
-In both cases you can also use an array of configurations, which are processed in parallel. They share filesystem cache and watchers so this is more efficent than calling webpack multiple times.
-
-
-
+在这两种方法里面，你都可以使用一个配置对象数组来并行的执行。
+他们共享数据缓存，和监听器，这样比多次执行webpack效率更高。
 
 
-# configuration object content
 
-> Hint: Keep in mind that you don't need to write pure JSON into the configuration. Use any JavaScript you want. It's just a node.js module...
+# 配置对象内容
 
-Very simple configuration object example:
+> 提示: 记住不要拘泥于在配置对象里面写纯json对象，可以使用你想使用的任何js方法，他仅仅是一个nodejs模块罢了。
+
+简单的例子:
 
 ``` javascript
 {
@@ -49,26 +46,21 @@ Very simple configuration object example:
 
 ## `context`
 
-The base directory (absolute path!) for resolving the `entry` option. If `output.pathinfo` is set, the included pathinfo is shortened to this directory.
+用于解析`entry`选项的基础目录(绝对路径), 如果output.pathinfo设置了，就包含了缩短过的目录；（相当于公共目录，下面所有的目录都在这个公共目录下面)
 
-> Default: `process.cwd()`
+> 默认: `process.cwd()`
 
 
 
 ## `entry`
 
-The entry point for the bundle.
-
-If you pass a string: The string is resolved to a module which is loaded upon startup.
-
-If you pass an array: All modules are loaded upon startup. The last one is exported.
-
+bundle的入口点。
+- 如果传入一个字符串，这个字符串就会被解析为启动时加载的模块。
+- 如果传入个数组，所有模块都是启动时加载，模块导出到最后一个里面。
 ``` javascript
 entry: ["./entry1", "./entry2"]
 ```
-
-If you pass an object: Multiple entry bundles are created. The key is the chunk name. The value can be a string or an array.
-
+- 如果传入一个对象，就会创建多个输入包文件，对象键值就chunk的name，值可以是字符串或者是数组。
 ``` javascript
 {
 	entry: {
@@ -76,29 +68,27 @@ If you pass an object: Multiple entry bundles are created. The key is the chunk 
 		page2: ["./entry1", "./entry2"]
 	},
 	output: {
-		// Make sure to use [name] or [id] in output.filename
-		//  when using multiple entry points
+        // 当使用多入口文件时候，要确保在output.filename使用[name]或者[id]
 		filename: "[name].bundle.js",
 		chunkFilename: "[id].bundle.js"
 	}
 }
 ```
 
-> **NOTE**: It is not possible to configure other options specific to entry points. If you need entry point specific configuration you need to use [multiple configurations](#multiple-configurations).
+> **注意**: 没有别的专门来配置入口点的选项。如果你需要一个专门来配置入口点的配置对象，你需要用到[多个配置对象](#multiple-configurations).
 
 
 
 ## `output`
+ output是影响编译输出的选项。output选项告诉webpack怎么把编译文件写入磁盘。注意，虽然可以有很多输入口，但是只有一个输出配置
 
-Options affecting the output of the compilation. `output` options tell Webpack how to write the compiled files to disk. Note, that while there can be multiple `entry` points, only one `output` configuration is specified.
-
-If you use any hashing (`[hash]` or `[chunkhash]`) make sure to have a consistent ordering of modules. Use the `OccurenceOrderPlugin` or `recordsPath`.
+如果使用了哈希(`[hash]` 或者 `[chunkhash]`), 需要确保有一个一致的模块顺序。使用OccurenceOrderPlugin插件或者 recordsPath。(译者：参看[这个issue](https://github.com/webpack/webpack/issues/950))
 
 ### `output.filename`
+指定输出到硬盘的文件的的文件名。这里**不能**是一个绝对的路径！`output.path`会确定该文件的存在硬盘额路径的。`filename`仅仅用来给每个文件命名而已。
 
-Specifies the name of each output file on disk. You must **not** specify an absolute path here! The `output.path` option determines the location on disk the files are written to, `filename` is used solely for naming the individual files.
 
-**single entry**
+**单一入口**
 ```javascript
 {
   entry: './src/app.js',
@@ -108,18 +98,18 @@ Specifies the name of each output file on disk. You must **not** specify an abso
   }
 }
 
-// writes to disk: ./built/bundle.js
+// 写入磁盘: ./built/bundle.js
 ```
 
-**multiple entries**
+**多入口**
 
-If your configuration creates more than a single "chunk" (as with multiple entry points or when using plugins like CommonsChunkPlugin), you should use substitutions below to ensure that each file has a unique name.
+如果你的配置创建了多于一个的"chunk"(也就是带有多个入口点，或者使用了CommonsChunkPlugin这样的插件)，你应该使用替换符来为每个文件命名一个为一个名字。
 
-`[name]` is replaced by the name of the chunk.
+`[name]`被chunk的名字替换.
 
-`[hash]` is replaced by the hash of the compilation.
+`[hash]`被编译器hash替换.
 
-`[chunkhash]` is replaced by the hash of the chunk.
+`[chunkhash]` 被chunk的hash替换.
 
 ```javascript
 {
@@ -133,19 +123,20 @@ If your configuration creates more than a single "chunk" (as with multiple entry
   }
 }
 
-// writes to disk: ./built/app.js, ./built/search.js
+// 谢如磁盘: ./built/app.js, ./built/search.js
 ```
 
 ### `output.path`
 
-The output directory as **absolute path** (required).
+**绝对路径**  (required).
 
-`[hash]` is replaced by the hash of the compilation.
+`[hash]` 被编译后文件hash替换.
 
 
 ### `output.publicPath`
+`publicPath`指定了一个在浏览器中被引用的URL地址。
+对于使用`<script>` 和 `<link>`加载器，当文件路径不同于他们的本地磁盘路径（由`path`指定）时候`publicPath`被用来作为`href`或者`url`指向该文件。这种做法在你需要将静态文件放在不同的域名或者CDN上面的时候是很有用的。 Webpack Dev Server 也是用这个方式来读取文件的。与`path`搭配使用上`[hash]`就可以做好缓存方案了。
 
-The `publicPath` specifies the public URL address of the output files when referenced in a browser. For loaders that embed `<script>` or `<link>` tags or reference assets like images, `publicPath` is used as the `href` or `url()` to the file when it's different than their location on disk (as specified by `path`). This can be helpful when you want to host some or all output files on a different domain or on a CDN. The Webpack Dev Server also uses this to determine the path where the output files are expected to be served from. As with `path` you can use the `[hash]` substitution for a better caching profile.
 
 **config.js**
 
@@ -163,7 +154,7 @@ output: {
   <link href="/assets/spinner.gif"/>
 </head>
 ```
-And a more complicated example of using a CDN and hashes for assets.
+使用CDN 和 hash的例子.
 
 **config.js**
 ```javascript
@@ -173,10 +164,7 @@ output: {
 	publicPath: "http://cdn.example.com/assets/[hash]/"
 }
 ```
-
-**Note:** In cases when the eventual `publicPath` of output files isn't known at compile time, it can be left blank and set dynamically at runtime in the entry point file.
-If you don't know the `publicPath` while compiling you can omit it and set `__webpack_public_path__` on your entry point.
-
+**注:** 万一最终输出文件的`publicPath`在编译的时候不知道，那么你可以不填，动态的在运行时添加也可以。如果在编译过程你不知道`publicPath`你可以忽略他，然后在你的入口文件里面添加上这个字段就可以了`__webpack_public_path__`。
 ```javascript
  __webpack_public_path__ = myRuntimePublicPath
 
@@ -184,53 +172,46 @@ If you don't know the `publicPath` while compiling you can omit it and set `__we
 ```
 
 ### `output.chunkFilename`
+非入口chunk的文件名，作为一个相对路径放到`output.path`里。
 
-The filename of non-entry chunks as relative path inside the `output.path` directory.
+`[id]` 替换chunk的id.
 
-`[id]` is replaced by the id of the chunk.
+`[name]` 替换chunk的名字 (or 如果没有名字就用id替换).
 
-`[name]` is replaced by the name of the chunk (or with the id when the chunk has no name).
+`[hash]` 替换编译的hash.
 
-`[hash]` is replaced by the hash of the compilation.
-
-`[chunkhash]` is replaced by the hash of the chunk.
+`[chunkhash]` 替换chunk的hash.
 
 ### `output.sourceMapFilename`
 
-The filename of the SourceMaps for the JavaScript files. They are inside the `output.path` directory.
+js文件的SourceMap的文件名. 也同样在 `output.path` 路径下面.
 
-`[file]` is replaced by the filename of the JavaScript file.
+`[file]` 替换js文件的文件名.
 
-`[id]` is replaced by the id of the chunk.
+`[id]` 替换chunk的id.
 
-`[hash]` is replaced by the hash of the compilation.
+`[hash]` 替换编译的hash.
 
-> Default: `"[file].map"`
+> 默认: `"[file].map"`
 
 ### `output.devtoolModuleFilenameTemplate`
+在生成的SourceMap里的函数`sources`数组的文件名模板。
+`[resource]`替换被Webpack用来解析文件的路径，包括最右边的加载器的请求参数(如果有的话)。
 
-Filename template string of function for the `sources` array in a generated SourceMap.
+`[resource-path]` 和 `[resource]`一样但是没有参数的事.
 
-`[resource]` is replaced by the path used by Webpack to resolve the file, including the query params to the rightmost loader (if any).
+`[loaders]` 是加载器和最右加载器（显示加载器）的参数名的列表
+`[all-loaders]` 是加载器和最右加载器（包括自动加载器）的参数名的列表
+`[id]` 替换module的id
+`[hash]`替换module标识符的hash
+`[absolute-resource-path]` 替换文件绝对路径名
 
-`[resource-path]` is the same as `[resource]` but without the loader query params.
+> 默认 (devtool=`[inline-]source-map`): `"webpack:///[resource-path]"`  
+> 默认 (devtool=`eval`): `"webpack:///[resource-path]?[loaders]"`  
+> 默认 (devtool=`eval-source-map`): `"webpack:///[resource-path]?[hash]"`
 
-`[loaders]` is the list of loaders and params up to the name of the rightmost loader (only explict loaders).
 
-`[all-loaders]` is the list of loaders and params up to the name of the rightmost loader (including automatic loaders).
-
-`[id]` is replaced by the id of the module.
-
-`[hash]` is replaced by the hash of the module identifier.
-
-`[absolute-resource-path]` is replaced with the absolute filename.
-
-> Default (devtool=`[inline-]source-map`): `"webpack:///[resource-path]"`  
-> Default (devtool=`eval`): `"webpack:///[resource-path]?[loaders]"`  
-> Default (devtool=`eval-source-map`): `"webpack:///[resource-path]?[hash]"`
-
-Can also be defined as a function instead of a string template.
-The function will accept an `info` object parameter which exposes the following properties:
+也可以定义成函数而不是字符串模板，该函数将接受`info`对象参数，次对象有下面几个属性：
 - identifier
 - shortIdentifier
 - resource
@@ -242,140 +223,136 @@ The function will accept an `info` object parameter which exposes the following 
 - hash
 
 ### `output.devtoolFallbackModuleFilenameTemplate`
+和`output.devtoolModuleFilenameTemplate`一样，但是用在有重复module标识符的时候。
 
-Similar to `output.devtoolModuleFilenameTemplate`, but used in the case of duplicate module identifiers.
-
-> Default: `"webpack:///[resourcePath]?[hash]"`
+> 默认: `"webpack:///[resourcePath]?[hash]"`
 
 ### `output.devtoolLineToLine`
+为所有模块启用行映射模式，行映射模式用了一个简单的SourceMap，用在了每一行生成的source映射到原始的source，这是一个性能优化，仅用在你的性能需要更佳，你确定输入行对应生成行的时候。
 
-Enable line to line mapped mode for all/specified modules. Line to line mapped mode uses a simple SourceMap where each line of the generated source is mapped to the same line of the original source. It's a performance optimization. Only use it if your performance needs to be better and you are sure that input lines match which generated lines.
+`true` 用在所有模块(不建议)
 
-`true` enables it for all modules (not recommended)
+可以用类似于 `module.loaders` 的带有`{test, include, exclude}` 对象 来开启特定文件.
 
-An object `{test, include, exclude}` similar to `module.loaders` enables it for specific files.
-
-> Default: disabled
+> 默认: disabled
 
 ### `output.hotUpdateChunkFilename`
 
-The filename of the Hot Update Chunks. They are inside the `output.path` directory.
+热替换chunks的文件名.
+在`output.path`目录里。
 
-`[id]` is replaced by the id of the chunk.
+`[id]` 替换chunk的id.
 
-`[hash]` is replaced by the hash of the compilation. (The last hash stored in the records)
+`[hash]` 替换编译的hash. (记录里的最近一个hash)
 
-> Default: `"[id].[hash].hot-update.js"`
+> 默认: `"[id].[hash].hot-update.js"`
 
 ### `output.hotUpdateMainFilename`
+热替换主文件的的名字。在output.path目录里。
 
-The filename of the Hot Update Main File. It is inside the `output.path` directory.
+`[hash]` 替换编译的hash. (记录里的最近一个hash)
 
-`[hash]` is replaced by the hash of the compilation. (The last hash stored in the records)
-
-> Default: `"[hash].hot-update.json"`
+> 默认: `"[hash].hot-update.json"`
 
 ### `output.jsonpFunction`
+webpack异步加载的JSONP函数.
+较短的函数可以缩小文件的大小，在一个页面里面拥有多个webpack引用的时候，需要使用不同的标识符.
 
-The JSONP function used by webpack for asnyc loading of chunks.
-
-A shorter function may reduce the filesize a bit. Use different identifier, when having multiple webpack instances on a single page.
-
-> Default: `"webpackJsonp"`
+> 默认: `"webpackJsonp"`
 
 ### `output.hotUpdateFunction`
 
-The JSONP function used by webpack for async loading of hot update chunks.
+热替换时候一步更新js的jsonp方法.
 
 > Default: `"webpackHotUpdate"`
 
 ### `output.pathinfo`
 
-Include comments with information about the modules.
+包含了一些module的信息的注解.
 
 `require(/* ./test */23)`
 
-Do not use this in production.
+不要在生产环境里面使用.
 
-> Default: `false`
+> 默认: `false`
 
 ### `output.library`
 
-If set, export the bundle as library. `output.library` is the name.
+如果设置了此项, 将会把bundle打包成lib. `output.library` 的值就是文件名.
 
-Use this, if you are writing a library and want to publish it as single file.
+如果你在写一个单一的文件库的时候后使用他.
 
 ### `output.libraryTarget`
 
-Which format to export the library:
+格式化导出的库:
 
-`"var"` - Export by setting a variable: `var Library = xxx` (default)
+`"var"` - 通过设置一个变量导出: `var Library = xxx` (default)
 
-`"this"` - Export by setting a property of `this`: `this["Library"] = xxx`
+`"this"` - 通过设置 `this`的属性来导出: `this["Library"] = xxx`
 
-`"commonjs"` - Export by setting a property of `exports`: `exports["Library"] = xxx`
+`"commonjs"` - 通过设置 `exports`的属性导出: `exports["Library"] = xxx`
 
-`"commonjs2"` - Export by setting `module.exports`: `module.exports = xxx`
+`"commonjs2"` - 通过设置 `module.exports`导出: `module.exports = xxx`
 
-`"amd"` - Export to AMD (optionally named - set the name via the library option)
+`"amd"` - 导出为AMD (视情况可通过`output.library`来命名)
 
-`"umd"` - Export to AMD, CommonJS2 or as property in root
+`"umd"` - 导出为 AMD, CommonJS2 或者是顶级属性
 
-> Default: `"var"`
+> 默认: `"var"`
 
-If `output.library` is not set, but `output.libraryTarget` is set to a value other than `var`, every property of the exported object is copied (Except `amd`, `commonjs2` and `umd`).
+如 `output.library` 没有设置, 但是 `output.libraryTarget` 被设置为了`var`以外的选项, 导出的对象的每个属性都是被复制的 (除了 `amd`, `commonjs2` 和 `umd`).
 
 ### `output.umdNamedDefine`
 
-If `output.libraryTarget` is set to `umd` and `output.library` is set, setting this to `true` will name the AMD module.
+如果 `output.libraryTarget` 被设置为 `umd` 且 `output.library` 被 设置, 设置该项为 `true` 将为AMD module 命名.
 
 ### `output.sourcePrefix`
 
-Prefixes every line of the source in the bundle with this string.
+在代码的每一行前面加上此前缀.
 
-> Default: `"\t"`
+> 默认: `"\t"`
 
 ### `output.crossOriginLoading`
 
-This option enables cross-origin loading of chunks.
+允许跨域加载chunk.
 
-Possible values are:
+可能的值有:
 
-`false` - Disable cross-origin loading.
+`false` - 禁止.
 
-`"anonymous"` - Cross-origin loading is enabled. When using `anonymous` no credentials will be send with the request.
+`"anonymous"` - 可用.credentials将不随请求被发送.
 
-`"use-credentials"` - Cross-origin loading is enabled and credentials will be send with the request.
+`"use-credentials"` - 可用.credentials将随请求被发送.
 
-For more information on cross-origin loading see [MDN](https://developer.mozilla.org/en/docs/Web/HTML/Element/script#attr-crossorigin)
+更多请查阅 [MDN](https://developer.mozilla.org/en/docs/Web/HTML/Element/script#attr-crossorigin)
 
-> Default: `false`
+> 默认: `false`
 
 
 
 ## `module`
 
-Options affecting the normal modules (`NormalModuleFactory`)
+影响标准 module 的选项(`NormalModuleFactory`)
 
 ### `module.loaders`
 
-An array of automatically applied loaders.
+自动引用的加载器的数组.
 
-Each item can have these properties:
+每个元素有这些选项:
 
-* `test`: A condition that must be met
-* `exclude`: A condition that must not be met
-* `include`: A condition that must be met
-* `loader`: A string of "!" separated loaders
-* `loaders`: An array of loaders as string
+* `test`: 必须满足的条件
+* `exclude`: 不满足的条件
+* `include`: 必须满足条件
+* `loader`: 用 "!" 隔开多个loader
+* `loaders`: 多个loader
 
-A condition may be a `RegExp` (tested against absolute path), a `string` containing the absolute path, a `function(absPath): bool`, or an array of one of these combined with "and".
+可能有一项是正则表达式(测试绝对路径)，包含绝对路径的字符串，一个函数 `function(absPath): bool`，或者一个数组，用"and"结合
 
-See more: [[loaders]]
+更多: [loaders][loaders]
 
-*IMPORTANT*: The loaders here are resolved *relative to the resource* which they are applied to. This means they are not resolved relative to the configuration file. If you have loaders installed from npm and your `node_modules` folder is not in a parent folder of all source files, webpack cannot find the loader. You need to add the `node_modules` folder as absolute path to the `resolveLoader.root` option. (`resolveLoader: { root: path.join(__dirname, "node_modules") }`)
+*重要信息*：这里的loader解析了他们应用相关的资源，这意味着他们不需要解析配置过的文件。如果你用npm安装loaders，node_modules文件夹不在资源文件夹的父目录中，webpack就找不到这个loader。你需要把node_modules文件夹的绝对路径添加到resolveLoader.root这个选项中。 (`resolveLoader: { root: path.join(__dirname, "node_modules") }`) 
 
-Example:
+例子:
 
 ``` js
 module: {
@@ -402,36 +379,32 @@ module: {
 
 ### `module.preLoaders`, `module.postLoaders`
 
-Syntax like `module.loaders`.
-
-An array of applied pre and post loaders.
+ 语法跟module.loaders很像，前置和后置装载的数组loaders.
 
 ### `module.noParse`
+一个正则表达式或者一组正则，不会匹配到的路径
+它不匹配整个解析请求。
 
-A RegExp or an array of RegExps. Don't parse files matching.
+当忽略大的库的时候可以提高性能
 
-It's matched against the full resolved request.
+该文件预计不可调用require,define或者其他类似的东西，不过可以用exports和modulle.exports.
 
-This can boost the performance when ignoring big libraries.
+### 自动创建上下文默认值 `module.xxxContextXxx`
 
-The files are expected to have no call to `require`, `define` or similar. They are allowed to use `exports` and `module.exports`.
+这有许多选项配置自动创建上下文的默认值，我们区分三种情况下自动创建的上下文:
 
-### automatically created contexts defaults `module.xxxContextXxx`
+* `exprContext`: 一个作为依赖的表达式 (如 `require(expr)`)
+* `wrappedContext`: 一个加前缀或者后缀的字符串 (i. e. `require("./templates/" + expr)`)
+* `unknownContext`: 一些其他不解析的 `require` (i. e. `require`)
 
-There are multiple options to configure the defaults for an automatically created context. We differentiate three types of automatically created contexts:
+四个选项用来自动创建上下文:
 
-* `exprContext`: An expression as dependency (i. e. `require(expr)`)
-* `wrappedContext`: An expression plus pre- and/or suffixed string (i. e. `require("./templates/" + expr)`)
-* `unknownContext`: Any other unparsable usage of `require` (i. e. `require`)
+* `request`: 上下文的请求.
+* `recursive`: 递归： 子目录需要被遍历.
+* `regExp`:  正则表达式.
+* `critical`:  这种类型的依赖应该被视为关键（发出警告）.
 
-Four options are possible for automatically created contexts:
-
-* `request`: The request for context.
-* `recursive`: Subdirectories should be traversed.
-* `regExp`: The RegExp for the expression.
-* `critical`: This type of dependency should be consider as critical (emits a warning).
-
-All options and defaults:
+选项和默认值:
 
 `unknownContextRequest = "."`, `unknownContextRecursive = true`, `unknownContextRegExp = /^\.\/.*$/`, `unknownContextCritical = true`
 
@@ -439,9 +412,9 @@ All options and defaults:
 
 `wrappedContextRegExp = /.*/`, `wrappedContextRecursive = true`, `wrappedContextCritical = false`
 
-> Note: `module.wrappedContextRegExp` only refers to the middle part of the full RegExp. The remaining is generated from prefix and surfix.
+> 注意: `module.wrappedContextRegExp` 只指完整的正则表达式的中间部分，剩下的就是从字头和字尾里产生.
 
-Example:
+例子:
 
 ``` javascript
 {
@@ -464,17 +437,17 @@ Example:
 
 ## `resolve`
 
-Options affecting the resolving of modules.
+影响解析模块的选项resolve.
 
 ### `resolve.alias`
 
-Replace modules with other modules or paths.
+模块被其他模块名和路径替代.
 
-Expected an object with keys being module names. The value is the new path. It's similar to a replace but a bit more clever. If the the key ends with `$` only the exact match (without the `$`) will be replaced.
+改配置对象键名为模块名，键值为新的路径。类似于替换但是更比替换更好。如果该键结尾是只有$的确切匹配（没有$）将被替换。
 
-If the value is a relative path it will be relative to the file containing the require.
+如果键值是相对路径，它将与该文件中包含的文件相对
 
-Examples: Calling a require from `/abc/entry.js` with different alias settings.
+例子: 请求 `/abc/entry.js` 里面的require ，不同的alias对比.
 
 | `alias:` | `require("xyz")` | `require("xyz/file.js")` |
 |---|---|---|
@@ -493,17 +466,16 @@ Examples: Calling a require from `/abc/entry.js` with different alias settings.
 | `{ xyz: "xyz/dir" }` | `/abc/node_modules/xyz/dir/index.js` | `/abc/node_modules/xyz/dir/file.js` |
 | `{ xyz$: "xyz/dir" }` | `/abc/node_modules/xyz/dir/index.js` | `/abc/node_modules/xyz/file.js` |
 
-`index.js` may resolve to another file if defined in the `package.json`.
+`index.js` 可能会解析其他的文件，如果设置了 `package.json`的话.
 
-`/abc/node_modules` may resolve in `/node_modules` too.
+`/abc/node_modules` 也可能解析到/node_modules里.
 
 ### `resolve.root`
+包含你模块的目录（**绝对路径**），通常是一个目录数组，这个设置应该被用于添加个人目录到webpack查找路径里.
 
-The directory (**absolute path**) that contains your modules. May also be an array of directories. This setting should be used to add individual directories to the search path.
+> 必须是个绝对路径，不要这样写./app/modules.
 
-> It **must** be an **absolute path**! Don't pass something like `./app/modules`.
-
-Example:
+例子:
 
 ```javascript
 var path = require('path');
@@ -519,84 +491,79 @@ resolve: {
 
 ### `resolve.modulesDirectories`
 
-An array of directory names to be resolved to the current directory as well as its ancestors, and searched for modules. This functions similarly to how node finds "node_modules" directories. For example, if the value is `["mydir"]`, webpack will look in "./mydir", "../mydir", "../../mydir", etc.
+解析目录名的一个数组到当前目录以及先前的目录，并且是查找模块。这个函数和node怎么找到node_modules很像。比如如果值为["mydir"]，webpack会查找“./mydir”, “../mydir”, “../../mydir”,等等.
 
-> Default: `["web_modules", "node_modules"]`
+> 默认: `["web_modules", "node_modules"]`
 
-> Note: Passing `"../someDir"`, `"app"`, `"."` or an absolute path isn't necessary here. Just use a directory name, not a path. Use only if you expect to have a hierarchy within these folders. Otherwise you may want to use the `resolve.root` option instead.
+> 注意: Passing `"../someDir"`, `"app"`, `"."` or an absolute path isn't necessary here. Just use a directory name, not a path. Use only if you expect to have a hierarchy within these folders. Otherwise you may want to use the `resolve.root` option instead.
 
 ### `resolve.fallback`
-
-A directory (or array of directories **absolute paths**), in which webpack should look for modules that weren't found in `resolve.root` or `resolve.modulesDirectories`.
+webpack没有在`resolve.root` 或者 `resolve.modulesDirectories`找到的模块的一个目录（或者目录绝对路径的数组）.
 
 ### `resolve.extensions`
 
-An array of extensions that should be used to resolve modules. For example, in order to discover CoffeeScript files, your array should contain the string `".coffee"`.
+解析模块的拓展名的数组。比如，为了发现一个CS文件，你这数组里应该包含字符串".coffee".
 
-> Default: `["", ".webpack.js", ".web.js", ".js"]`
+> 默认: `["", ".webpack.js", ".web.js", ".js"]`
 
-**IMPORTANT**: Setting this option will override the default, meaning that webpack will no longer try to resolve modules using the default extensions. If you want modules that were required with their extension (e.g. `require('./somefile.ext')`) to be properly resolved, you **must** include an empty string in your array. Similarly, if you want modules that were required without extensions (e.g. `require('underscore')`) to be resolved to files with ".js" extensions, you **must** include `".js"` in your array.
+**重要信息**: 设置这个选项将会重写默认值，这意味着webpack不再试着用默认的拓展名解析模块，如果你希望模块加载的时候带着他们的拓展名也可以得到正确额解析(比如require('./somefile.ext'))，你需要在你的数组里添加一个空字符串。如果你希望模块加载不带拓展名(比如require('underscore'))可以解析为“.js”的拓展名。你必须在数组里包含".js".
 
 ### `resolve.packageMains`
 
-Check these fields in the `package.json` for suitable files.
+ 在package.json中查找符合这些字段的文件.
 
-> Default: `["webpack", "browser", "web", "browserify", ["jam", "main"], "main"]`
+> 默认: `["webpack", "browser", "web", "browserify", ["jam", "main"], "main"]`
 
 ### `resolve.packageAlias`
 
-Check this field in the `package.json` for an object. Key-value-pairs are threaded as aliasing according to [this spec](https://gist.github.com/defunctzombie/4339901)
+在package.json中查询对象里的字段，键值对是按照 [这个规范](https://gist.github.com/defunctzombie/4339901)的别名来进行的
 
-> Not set by default
+> 没有默认值
 
-Example: `"browser"` to check the browser field.
+比如: 比如"browser"会检查browser字段.
 
 ### `resolve.unsafeCache`
 
-Enable aggressive but unsafe caching for the resolving of a part of your files. Changes to cached paths may cause failure (in rare cases). An array of RegExps, only a RegExp or `true` (all files) is expected. If the resolved path matches, it'll be cached.
-
-> Default: `[]`
+启用不安全的缓存来解析一部分文件。改变缓存路径也许会导致出错（罕见情况下）。 一个正则表达式数组里，只有一个正则或只有一个为true（对应全部文件）是最好的实践 。如果解析路径匹配，就会被缓存。
+> 默认: `[]`
 
 
 
 ## `resolveLoader`
 
-Like `resolve` but for loaders.
+像 `resolve` 但是是对于loaders.
 
 ``` javascript
-// Default:
+// 默认:
 {
 	modulesDirectories: ["web_loaders", "web_modules", "node_loaders", "node_modules"],
 	extensions: ["", ".webpack-loader.js", ".web-loader.js", ".loader.js", ".js"],
 	packageMains: ["webpackLoader", "webLoader", "loader", "main"]
 }
 ```
-
-Note that you can use `alias` here and other features familiar from `resolve`. For example `{ txt: 'raw-loader' }` would shim `txt!templates/demo.txt` to use `raw-loader`.
+注意，你可以用alias，其他特性和resolve相似。例如 `{ txt: 'raw-loader' }`是 `txt!templates/demo.txt`用  `raw-loader`后的结果.
 
 ### `resolveLoader.moduleTemplates`
 
-That's a `resolveLoader` only property.
+这是resolveLoader 唯一的属性.
 
-It describes alternatives for the module name that are tried.
+它描述了尝试的模块名称的替代名
 
-> Default: `["*-webpack-loader", "*-web-loader", "*-loader", "*"]`
+> 默认: `["*-webpack-loader", "*-web-loader", "*-loader", "*"]`
 
 
 
 ## `externals`
+指定的依赖不会被webpack解析，但会成为bundle里的依赖。`output.libraryTarget`.决定着依赖的类型
 
-Specify dependencies that shouldn't be resolved by webpack, but should become dependencies of the resulting bundle. The kind of the dependency depends on `output.libraryTarget`.
+值是对象，字符串，函数，正则，数组都会被接受。
 
-As value an object, a string, a function, a RegExp and an array is accepted.
-
-* string: An exact matched dependency becomes external. The same string is used as external dependency.
-* object: If an dependency matches exactly a property of the object, the property value is used as dependency. The property value may contain a dependency type prefixed and separated with a space. If the property value is `true` the property name is used instead. If the property value is `false` the externals test is aborted and the dependency is not external. See example below.
-* function: `function(context, request, callback(err, result))` The function is called on each dependency. If a result is passed to the callback function this value is handled like a property value of an object (above bullet point).
-* RegExp: Every matched dependency becomes external. The matched text is used as the `request` for the external dependency.  Because the `request` _is the exact code_ used to generate the external code hook, if you are matching a commonjs package (e.g. '../some/package.js'), instead use the function external strategy. You can import the package via `callback(null, "require('" + request + "')"`, which generates a `module.exports = require('../some/package.js');`, using require outside of webpack context.
-* array: Multiple values of the scheme (recursive).
-
-Example:
+* 字符串：一个精确匹配的依赖会变成外部依赖，同意的字符串会被用于外部依赖。
+* 对象：如果依赖精确匹配到了对象的一个属性，属性值就会被当作依赖。属性值可以包含一个依赖型的前缀，用一个空格隔开。如果属性值为true，则使用该属性名。如果属性值为false，外部测试失败，这个依赖是内部依赖。见下面的例子。
+* 函数：`function(context, request, callback(err, result))`。函数会在每个依赖中调用。如果结果被传递到回调函数里，这个值就会被像处理对象属性值那样处理。
+* 正则表达式：每个被匹配的依赖都会成为外部依赖。匹配的文本会被用作外部依赖的请求。因为请求是用于生成外部代码钩子的确切代码，如果你匹配到一个cmd的包(比如 `‘../some/package.js’`),相反使用外部`function`的策略。你可以通过`callback(null, "require('" + request + "')"`引入包，这个包生成`module.exports = require('../some/package.js');`使用要求在webpack上下文外。
+* 数组：这个表的多个值(递归)
+例如:
 
 ``` javascript
 {
@@ -634,82 +601,76 @@ Example:
 | "amd"       | `"abc"`             | `define(["abc"], function(X) { module.exports = X; })` |
 | "umd"       | `"abc"`             | everything above |
 
-Enforcing `amd` or `umd` in a external value will break if not compiling as amd/umd target.
+如果没有作为`amd/umd`的目标解析，将会执行amd或者umd的额外值.
 
-> Note: If using `umd` you can specify an object as external value with property `commonjs`, `commonjs2`, `amd` and `root` to set different values for each import kind.
+> 注意，如果用umd你可以指定一个对象的额外值，属性为 commonjs, commonjs2, amd和root会被设置不同的值.
 
 
 
 
 ## `target`
-
-* `"web"` Compile for usage in a browser-like environment (default)
-* `"webworker"` Compile as WebWorker
-* `"node"` Compile for usage in a node.js-like environment (use `require` to load chunks)
-* `"async-node"` Compile for usage in a node.js-like environment (use `fs` and `vm` to load chunks async)
-* `"node-webkit"` Compile for usage in webkit, uses jsonp chunk loading but also supports builtin node.js modules plus require("nw.gui") (experimental)
-* `"electron"` Compile for usage in [Electron](http://electron.atom.io/) – supports `require`-ing Electron-specific modules.
+编译到的目标使用环境
+* `"web"` 浏览器环境(默认)
+* `"webworker"` WebWorker
+* `"node"` node (使用 `require` 加载 chunk)
+* `"async-node"` node (使用 `fs` 和 `vm` 来加载异步chunk)
+* `"node-webkit"` webkit, 使用jsonp加载chunk 但同样支持 node.js module 加， equire("nw.gui") (实验性)
+* `"electron"` [Electron](http://electron.atom.io/) – 支持 `require` 带有Electron特性 modules.
 
 
 
 ## `bail`
 
-Report the first error as a hard error instead of tolerating it.
+将第一个错误报告为严重错误而不是容忍他。
 
 
 
 ## `profile`
+为每一个module捕获定时信息。
 
-Capture timing information for each module.
-
-> Hint: Use the [analyze tool](http://webpack.github.io/analyse) to visualize it. `--json` or `stats.toJson()` will give you the stats as JSON.
+> 提示: 使用 [analyze tool](http://webpack.github.io/analyse) 来做可视化分析. `--json` 或者 `stats.toJson()` 将给出states的JSON数据.
 
 
 
 ## `cache`
 
-Cache generated modules and chunks to improve performance for multiple incremental builds.
+在多次增量编译时候，缓存生成的moudle和chunk来提高性能。
 
-This is enabled by default in watch mode.
+在watch模式下面默认是开启的.
 
-You can pass `false` to disable it.
+你可以传`false`将它禁止掉.
 
-You can pass an object to enable it and let webpack use the passed object as cache. This way you can share the cache object between multiple compiler calls. Note: Don't share the cache between calls with different options.
+你也可以传递一个对象来开启他，并且webpack会利用传入的对象作为缓存，这样你就可以在多次编译当中共享缓存对象。
+注意：不要在不同的选项之间共享缓存。
 
 
 ## `debug`
 
-Switch loaders to debug mode.
+讲loader调到debug模式.
 
 
 
 ## `devtool`
 
-Choose a developer tool to enhance debugging.
+选择开发工具来提高debug效率.
 
-`eval` - Each module is executed with `eval` and `//@ sourceURL`.
+* `eval` 文档上解释的很明白，每个模块都封装到 eval 包裹起来，并在后面添加 //# sourceURL
+* `source-map` 这是最原始的 `source-map` 实现方式，其实现是打包代码同时创建一个新的 sourcemap 文件， 并在打包文件的末尾添加 //# sourceURL 注释行告诉 JS 引擎文件在哪儿
+* `hidden-source-map` 文档上也说了，就是 soucremap 但没注释，没注释怎么找文件呢？貌似只能靠后缀，譬如 xxx/bundle.js 文件，某些引擎会尝试去找 xxx/bundle.js.map
+* `inline-source-map` 为每一个文件添加 sourcemap 的 DataUrl，注意这里的文件是打包前的每一个文件而不是最后打包出来的，同时这个 DataUrl 是包含一个文件完整 souremap 信息的 Base64 格式化后的字符串，而不是一个 url。
+* `eval-source-map` 这个就是把 eval 的 sourceURL 换成了完整 `souremap` 信息的 DataUrl
+* `cheap-source-map` 不包含列信息，不包含 loader 的 `sourcemap`，（譬如 `babel` 的 `sourcemap`）
+* `cheap-module-source-map` 不包含列信息，同时 loader 的 sourcemap 也被简化为只包含对应行的。最终的 sourcemap 只有一份，它是 webpack 对 loader 生成的 sourcemap 进行简化，然后再次生成的。
 
-`source-map` - A SourceMap is emitted. See also `output.sourceMapFilename`.
+前缀 `@`, `#` 或者 `#@` 将执行编译指示风格. (默认 `#`, 推荐)
 
-`hidden-source-map` - Same as `source-map`, but doesn't add a reference comment to the bundle.
+可以组合使用. `hidden`, `inline`, `eval` 标注样式是独立的.
 
-`inline-source-map` - A SourceMap is added as DataUrl to the JavaScript file.
+比如. `cheap-module-inline-source-map`, `cheap-eval-source-map`, `#@source-map`
 
-`eval-source-map` - Each module is executed with `eval` and a SourceMap is added as DataUrl to the `eval`.
+> 注意: 如果你的module已经包含了SourceMap那么你需要使用 [source-map-loader](https://github.com/webpack/source-map-loader) 将导出的sourceMap合并.
 
-`cheap-source-map` - A SourceMap without column-mappings. SourceMaps from loaders are not used.
-
-`cheap-module-source-map` - A SourceMap without column-mappings. SourceMaps from loaders are simplified to a single mapping per line.
-
-Prefixing `@`, `#` or `#@` will enforce a pragma style. (Defaults to `#`, recommended)
-
-Combinations are possible. `hidden`, `inline`, `eval` and pragma style are exclusive.
-
-i. e. `cheap-module-inline-source-map`, `cheap-eval-source-map`, `#@source-map`
-
-> Hint: If your modules already contain SourceMaps you'll need to use the [source-map-loader](https://github.com/webpack/source-map-loader) to merge it with the emitted SourceMap.
-
-| devtool                      | build speed | rebuild speed | production supported | quality                 |
+| devtool                      | 编译 | 重编译速度 | 生产环境支持 | 质量                 |
 |------------------------------|-------------|---------------|----------------------|-------------------------|
 | eval                         |     +++     |      +++      |       no       | generated code                |
 | cheap-eval-source-map        |      +      |      ++       |       no       | transformed code (lines only) |
@@ -719,7 +680,7 @@ i. e. `cheap-module-inline-source-map`, `cheap-eval-source-map`, `#@source-map`
 | eval-source-map              |     --      |       +       |       no       | original source               |
 | source-map                   |     --      |       --      |       yes      | original source               |
 
-Example:
+例如:
 
 ``` javascript
 {
@@ -729,13 +690,12 @@ Example:
 //# sourceMappingURL=...
 ```
 
-> Note: With the next major version the default for `-d` will change to `cheap-module-eval-source-map`
+> 注意: 下一个主要版本里面 `-d` 选项 将改成 `cheap-module-eval-source-map`
 
 ## `devServer`
+设置 [webpack-dev-server](https://github.com/webpack/webpack-dev-server) 的相关配置。
 
-Can be used to configure the behaviour of [webpack-dev-server](https://github.com/webpack/webpack-dev-server) when the webpack config is passed to webpack-dev-server CLI.
-
-Example:
+例子:
 
 ``` javascript
 {
@@ -746,16 +706,15 @@ Example:
 ```
 
 ## `node`
+包含了许多node的polyfills或者mock
 
-Include polyfills or mocks for various node stuff:
-
-* `console`: `true` or `false`
-* `global`: `true` or `false`
-* `process`: `true`, `"mock"` or `false`
-* `Buffer`: `true` or `false`
-* `__filename`: `true` (real filename), `"mock"` (`"/index.js"`) or `false`
-* `__dirname`: `true` (real dirname), `"mock"` (`"/"`) or `false`
-* `<node buildin>`: `true`, `"mock"`, `"empty"` or `false`
+* `console`: `true` 或者 `false`
+* `global`: `true` 或者 `false`
+* `process`: `true`, `"mock"` 或者 `false`
+* `Buffer`: `true` 或者 `false`
+* `__filename`: `true` (real filename), `"mock"` (`"/index.js"`) 或者 `false`
+* `__dirname`: `true` (真实 dirname), `"mock"` (`"/"`) 或者 `false`
+* `<node buildin>`: `true`, `"mock"`, `"empty"` 或者 `false`
 
 
 ``` javascript
@@ -774,28 +733,32 @@ Include polyfills or mocks for various node stuff:
 
 ## `amd`
 
-Set the value of `require.amd` and `define.amd`.
 
-Example: `amd: { jQuery: true }` (for old 1.x AMD versions of jquery)
+设置`require.amd`和`define.amd`的值
+例如: `amd: { jQuery: true }` ( 1.x AMD 版本的jQuery)
 
 
 
 ## `loader`
-
-Custom values available in the loader context.
+自定义一些在加载器上下文有用的值。
 
 
 
 ## `recordsPath`, `recordsInputPath`, `recordsOutputPath`
 
-Store/Load compiler state from/to a json file. This will result in persistent ids of modules and chunks.
+存储/加载 compiler状态 从/到 一个json文件里面。结果将会是一些module和chunk的固定id。
 
-An **absolute path** is expected. `recordsPath` is used for `recordsInputPath` and `recordsOutputPath` if they left undefined.
+需要是 **绝对路径**，如果`recordsInputPath`,`recordsOutputPath`都为undefined，`recordsInputPath`将被使用。
 
-This is required, when using Hot Code Replacement between multiple calls to the compiler.
+在多个编译请求做热替换的时候是需要这个配置的。
+
 
 
 
 ## `plugins`
 
-Add additional plugins to the compiler.
+给编译器添加额外的插件.
+
+[CLI]:docs/cli.md
+[NODE]:docs/node.js-api.md
+[loaders]:docs/loaders.md

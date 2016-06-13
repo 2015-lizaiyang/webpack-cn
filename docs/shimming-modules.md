@@ -1,22 +1,22 @@
-In some cases webpack cannot parse some file, because it has a unsupported module format or isn't even in a module format. Therefore you have many options to convert the file into a module.
+有的时候由于一些文件的模块格式不支持活着就没有好模块，webpack 不能解析这些文件，所以我们有很多的选项来讲这些文件转换成module
 
 
 
-# [[Using loaders]]
+# [Using loaders][Using loaders]
 
-On this page all examples with loaders are inlined into `require` calls. This is just for demonstration. You may want to configure them in your webpack config instead. Read [[Using loaders]] for more details how to do this.
+此页例子里面的loader都写到 `require`里面了，仅仅只是为了举例。你也可以在你的webpack 里面配置。更多详情请看[Using loaders][Using loaders]
 
 
 
-# Importing
+# 引入
 
-Useful when a file has dependencies that are not imported via `require()`. 
+当文件的依赖没有被`require()`的时候有用。
 
 ## [`imports-loader`](https://github.com/webpack/imports-loader)
-
+这个loader允许你将module或其它任意格式的js添加本地文件里面
 This loader allows you to put some modules or arbitrary JavaScript onto a local variable of the file.
 
-Examples: 
+例如: 
 
 ##### `file.js` expect a global variable `$` and you have a module `jquery` that should be used.
 
@@ -30,7 +30,7 @@ Examples:
 
 `require("imports?this=>window!./file.js")` or `require("imports?this=>global!./file.js")`
 
-## [[plugin | list of plugins]] `ProvidePlugin`
+## [插件列表][list of plugins] `ProvidePlugin`
 
 This plugin makes a module available as variable in every module. The module is required only if you use the variable.
 
@@ -46,10 +46,9 @@ new webpack.ProvidePlugin({
 
 
 
-# Exporting
+# 输出
 
-The file doesn't export its value.
-
+当文件没有到处变量时使用。
 ## [`exports-loader`](https://github.com/webpack/exports-loader)
 
 This loader exports variables from inside the file.
@@ -75,27 +74,27 @@ Examples:
 
 
 
-# Fixing broken module styles
+# 修复损坏的module
 
-Some files use a module style wrong. You may want to fix this by teaching webpack to not use this style.
+有的文件使用错误的模块格式. 你需要告诉webpack不要使用这个格式。
 
-## Disable some module styles
+## 禁用 module styles
 
-Examples:
+比如:
 
-##### Broken AMD
+##### 禁用 AMD
 
 `require("imports?define=>false!./file.js")`
 
-##### Broken CommonJs
+##### 禁用 CommonJs
 
 `require("imports?require=>false!./file.js")`
 
-## [[configuration]] option `module.noParse`
+## [configuration][configuration] 选项 `module.noParse`
 
 This disables parsing by webpack. Therefore you cannot use dependencies. This may be useful for prepackaged libraries.
 
-Example:
+例如:
 
 ``` javascript
 {
@@ -119,7 +118,7 @@ This loader evaluates code in the global context, just like you would add the co
 
 
 
-# Exposing
+# 暴露全局
 
 There are cases where you want a module to export itself to the global context.
 
@@ -158,8 +157,11 @@ By making Jquery available as a global namespace in our file contianing Jquery c
 
 
 
-# Order of loaders
+# loader的顺序
 
 In rare cases when you have to apply more than one technique, you need to use the correct order of loaders:
 
 inlined: `expose!imports!exports`, configuration: expose before imports before exports.
+
+[Using loaders]: using-loaders.md
+[configuration]: configuration.md
