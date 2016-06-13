@@ -680,7 +680,7 @@ Enforcing `amd` or `umd` in a external value will break if not compiling as amd/
 
 比如. `cheap-module-inline-source-map`, `cheap-eval-source-map`, `#@source-map`
 
-> Hint: If your modules already contain SourceMaps you'll need to use the [source-map-loader](https://github.com/webpack/source-map-loader) to merge it with the emitted SourceMap.
+> 注意: 如果你的module已经包含了SourceMap那么你需要使用 [source-map-loader](https://github.com/webpack/source-map-loader) 将导出的sourceMap合并.
 
 | devtool                      | 编译 | 重编译速度 | 生产环境支持 | 质量                 |
 |------------------------------|-------------|---------------|----------------------|-------------------------|
