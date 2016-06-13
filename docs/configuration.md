@@ -773,3 +773,4 @@ Enforcing `amd` or `umd` in a external value will break if not compiling as amd/
 
 [CLI]:docs/cli.md
 [NODE]:docs/node.js-api.md
+[loaders]:docs/loaders.md
