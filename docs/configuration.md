@@ -296,7 +296,7 @@ webpack异步加载的JSONP函数.
 
 `"commonjs2"` - 通过设置 `module.exports`导出: `module.exports = xxx`
 
-`"amd"` - Export to AMD (optionally named - set the name via the library option)
+`"amd"` - 导出为AMD (视情况可通过`output.library`来命名)
 
 `"umd"` - Export to AMD, CommonJS2 or as property in root
 
