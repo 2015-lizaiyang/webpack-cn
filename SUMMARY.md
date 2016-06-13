@@ -44,7 +44,7 @@
    * [List of loaders](docs/list-of-loaders.md)
    * [List of plugins](docs/list-of-plugins.md)
    * [List of hints](docs/list-of-hints.md)
-   * [Configuration](docs/configuration.md)
+   * [配置](docs/configuration.md)
    * [CLI](docs/cli.md)
    * [Node.js API](docs/node.js-api.md)
    * [API in modules](docs/api-in-modules.md)
