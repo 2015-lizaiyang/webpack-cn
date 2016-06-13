@@ -531,7 +531,7 @@ webpack没有在`resolve.root` 或者 `resolve.modulesDirectories`找到的模�
 
 ## `resolveLoader`
 
-Like `resolve` but for loaders.
+像 `resolve` 但是是对于loaders.
 
 ``` javascript
 // Default:
