@@ -549,12 +549,12 @@ webpack没有在`resolve.root` 或者 `resolve.modulesDirectories`找到的模�
 
 它描述了尝试的模块名称的替代名
 
-> Default: `["*-webpack-loader", "*-web-loader", "*-loader", "*"]`
+> 默认: `["*-webpack-loader", "*-web-loader", "*-loader", "*"]`
 
 
 
 ## `externals`
-
+指定的依赖不会被webpack解析，但会成为bundle里的依赖。`output.libraryTarget`.决定着依赖的类型
 Specify dependencies that shouldn't be resolved by webpack, but should become dependencies of the resulting bundle. The kind of the dependency depends on `output.libraryTarget`.
 
 As value an object, a string, a function, a RegExp and an array is accepted.
