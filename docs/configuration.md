@@ -264,71 +264,71 @@ webpack异步加载的JSONP函数.
 
 ### `output.hotUpdateFunction`
 
-The JSONP function used by webpack for async loading of hot update chunks.
+热替换时候一步更新js的jsonp方法.
 
 > Default: `"webpackHotUpdate"`
 
 ### `output.pathinfo`
 
-Include comments with information about the modules.
+包含了一些module的信息的注解.
 
 `require(/* ./test */23)`
 
-Do not use this in production.
+不要在生产环境里面使用.
 
-> Default: `false`
+> 默认: `false`
 
 ### `output.library`
 
-If set, export the bundle as library. `output.library` is the name.
+如果设置了此项, 将会把bundle打包成lib. `output.library` 的值就是文件名.
 
-Use this, if you are writing a library and want to publish it as single file.
+如果你在写一个单一的文件库的时候后使用他.
 
 ### `output.libraryTarget`
 
-Which format to export the library:
+格式化导出的库:
 
-`"var"` - Export by setting a variable: `var Library = xxx` (default)
+`"var"` - 通过设置一个变量导出: `var Library = xxx` (default)
 
-`"this"` - Export by setting a property of `this`: `this["Library"] = xxx`
+`"this"` - 通过设置 `this`的属性来导出: `this["Library"] = xxx`
 
-`"commonjs"` - Export by setting a property of `exports`: `exports["Library"] = xxx`
+`"commonjs"` - 通过设置 `exports`的属性导出: `exports["Library"] = xxx`
 
-`"commonjs2"` - Export by setting `module.exports`: `module.exports = xxx`
+`"commonjs2"` - 通过设置 `module.exports`导出: `module.exports = xxx`
 
-`"amd"` - Export to AMD (optionally named - set the name via the library option)
+`"amd"` - 导出为AMD (视情况可通过`output.library`来命名)
 
-`"umd"` - Export to AMD, CommonJS2 or as property in root
+`"umd"` - 导出为 AMD, CommonJS2 或者是顶级属性
 
-> Default: `"var"`
+> 默认: `"var"`
 
-If `output.library` is not set, but `output.libraryTarget` is set to a value other than `var`, every property of the exported object is copied (Except `amd`, `commonjs2` and `umd`).
+如 `output.library` 没有设置, 但是 `output.libraryTarget` 被设置为了`var`以外的选项, 导出的对象的每个属性都是被复制的 (除了 `amd`, `commonjs2` 和 `umd`).
 
 ### `output.umdNamedDefine`
 
-If `output.libraryTarget` is set to `umd` and `output.library` is set, setting this to `true` will name the AMD module.
+如果 `output.libraryTarget` 被设置为 `umd` 且 `output.library` 被 设置, 设置该项为 `true` 将为AMD module 命名.
 
 ### `output.sourcePrefix`
 
-Prefixes every line of the source in the bundle with this string.
+在代码的每一行前面加上此前缀.
 
-> Default: `"\t"`
+> 默认: `"\t"`
 
 ### `output.crossOriginLoading`
 
-This option enables cross-origin loading of chunks.
+允许跨域加载chunk.
 
-Possible values are:
+可能的值有:
 
-`false` - Disable cross-origin loading.
+`false` - 禁止.
 
-`"anonymous"` - Cross-origin loading is enabled. When using `anonymous` no credentials will be send with the request.
+`"anonymous"` - 可用.credentials将不随请求被发送.
 
-`"use-credentials"` - Cross-origin loading is enabled and credentials will be send with the request.
+`"use-credentials"` - 可用.credentials将随请求被发送.
 
-For more information on cross-origin loading see [MDN](https://developer.mozilla.org/en/docs/Web/HTML/Element/script#attr-crossorigin)
+更多请查阅 [MDN](https://developer.mozilla.org/en/docs/Web/HTML/Element/script#attr-crossorigin)
 
-> Default: `false`
+> 默认: `false`
 
 
 
