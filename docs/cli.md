@@ -29,7 +29,7 @@ webpack <entry> <output>
 
 ### `output`
 
-Pass a path to a file.
+ 传入一个文件路径.
 
 It will be mapped to the configuration options `output.path` and `output.filename`.
 
