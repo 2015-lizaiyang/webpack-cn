@@ -248,8 +248,7 @@ js文件的SourceMap的文件名. 也同样在 `output.path` 路径下面.
 > 默认: `"[id].[hash].hot-update.js"`
 
 ### `output.hotUpdateMainFilename`
-
-The filename of the Hot Update Main File. It is inside the `output.path` directory.
+热替换主文件的的名字。在output.path目录里。
 
 `[hash]` is replaced by the hash of the compilation. (The last hash stored in the records)
 
