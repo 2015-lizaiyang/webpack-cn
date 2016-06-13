@@ -286,11 +286,11 @@ webpack异步加载的JSONP函数.
 
 ### `output.libraryTarget`
 
-Which format to export the library:
+格式化导出的库:
 
-`"var"` - Export by setting a variable: `var Library = xxx` (default)
+`"var"` - 通过设置一个变量导出: `var Library = xxx` (default)
 
-`"this"` - Export by setting a property of `this`: `this["Library"] = xxx`
+`"this"` - 通过设置 `this`的属性来导出: `this["Library"] = xxx`
 
 `"commonjs"` - Export by setting a property of `exports`: `exports["Library"] = xxx`
 
