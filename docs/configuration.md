@@ -516,7 +516,7 @@ webpack没有在`resolve.root` 或者 `resolve.modulesDirectories`找到的模�
 
 ### `resolve.packageAlias`
 
-Check this field in the `package.json` for an object. Key-value-pairs are threaded as aliasing according to [this spec](https://gist.github.com/defunctzombie/4339901)
+在package.json中查询对象里的字段，键值对是按照 [这个规范](https://gist.github.com/defunctzombie/4339901)的别名来进行的
 
 > Not set by default
 
