@@ -412,7 +412,7 @@ module: {
 
 `wrappedContextRegExp = /.*/`, `wrappedContextRecursive = true`, `wrappedContextCritical = false`
 
-> 注意: `module.wrappedContextRegExp` only refers to the middle part of the full RegExp. The remaining is generated from prefix and surfix.
+> 注意: `module.wrappedContextRegExp` 只指完整的正则表达式的中间部分，剩下的就是从字头和字尾里产生.
 
 例子:
 
