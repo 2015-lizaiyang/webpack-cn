@@ -130,22 +130,24 @@ webpack <entry> <output>
 
 #### `watch`
 
-Enter watch mode, which rebuilds on file change.
+进入watch模式.
 
 #### `watchOptions.aggregateTimeout`
 
-Delay the rebuilt after the first change. Value is a time in ms.
+当文件修改时，延迟重编译时间，单位时ms.
 
-> Default: 300
+> 默认: 300
 
 #### `watchOptions.poll`
 
-`true`: use polling
+`true`:使用轮询
 
-number: use polling with specified interval
+number: 使用指定次数的轮询
 
-> Default: `undefined` 
+> 默认: `undefined` 
 
 #### `stats`
 
-Display options. See [[node.js API]] `Stats.toString()` for more details.
+显示参数. 可参见 [node.js API][nodejs] `Stats.toString()` .
+
+[nodejs]:docs/node.js-api.md
