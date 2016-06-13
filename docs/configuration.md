@@ -384,8 +384,10 @@ module: {
 ### `module.noParse`
 一个正则表达式或者一组正则，不会匹配到的路径
 它不匹配整个解析请求。
+
 当忽略大的库的时候可以提高性能
 
+该文件预计不可调用require,define或者其他类似的东西，不过可以用exports和modulle.exports
 The files are expected to have no call to `require`, `define` or similar. They are allowed to use `exports` and `module.exports`.
 
 ### automatically created contexts defaults `module.xxxContextXxx`
