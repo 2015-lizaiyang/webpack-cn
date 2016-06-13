@@ -300,7 +300,7 @@ webpack异步加载的JSONP函数.
 
 `"umd"` - 导出为 AMD, CommonJS2 或者是顶级属性
 
-> Default: `"var"`
+> 默认: `"var"`
 
 If `output.library` is not set, but `output.libraryTarget` is set to a value other than `var`, every property of the exported object is copied (Except `amd`, `commonjs2` and `umd`).
 
