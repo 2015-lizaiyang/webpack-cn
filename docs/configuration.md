@@ -270,7 +270,7 @@ webpack异步加载的JSONP函数.
 
 ### `output.pathinfo`
 
-Include comments with information about the modules.
+包含了一些module的信息的注解.
 
 `require(/* ./test */23)`
 
