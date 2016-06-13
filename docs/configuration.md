@@ -437,7 +437,7 @@ module: {
 
 ## `resolve`
 
-Options affecting the resolving of modules.
+影响解析模块的选项resolve.
 
 ### `resolve.alias`
 
