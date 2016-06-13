@@ -91,7 +91,7 @@ webpack <entry> <output>
 
 #### `--sort-modules-by`, `--sort-chunks-by`, `--sort-assets-by`
 
-将 modules/chunks/assets 列表 c将 modules/chunks/assets 列表纵列排序.
+将 modules/chunks/assets 列表纵列排序.
 
 #### `--display-chunks`
 
