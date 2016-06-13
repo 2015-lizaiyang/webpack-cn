@@ -23,7 +23,7 @@ webpack <entry> <output>
 
 如果传一个类格式为`<name>=<request>`的值，你就可以创建额外的entry.
 
-It will be mapped to the configuration option `entry`.
+这个entry将会被映射到配置项`entry`里。
 
 
 
