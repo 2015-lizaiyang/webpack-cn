@@ -121,7 +121,7 @@ webpack <entry> <output>
 
 
 
-### Additional configuration options
+### 附加的配置参数
 
 When using the CLI it's possible to have the following options in the configuration file. They passed in other ways when using the node.js API.
 
