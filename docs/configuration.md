@@ -524,9 +524,8 @@ webpack没有在`resolve.root` 或者 `resolve.modulesDirectories`找到的模�
 
 ### `resolve.unsafeCache`
 
-Enable aggressive but unsafe caching for the resolving of a part of your files. Changes to cached paths may cause failure (in rare cases). An array of RegExps, only a RegExp or `true` (all files) is expected. If the resolved path matches, it'll be cached.
-
-> Default: `[]`
+启用不安全的缓存来解析一部分文件。改变缓存路径也许会导致出错（罕见情况下）。 一个正则表达式数组里，只有一个正则或只有一个为true（对应全部文件）是最好的实践 。如果解析路径匹配，就会被缓存。
+> 默认: `[]`
 
 
 
