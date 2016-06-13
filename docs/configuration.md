@@ -382,12 +382,9 @@ module: {
  语法跟module.loaders很像，前置和后置装载的数组loaders.
 
 ### `module.noParse`
-
-A RegExp or an array of RegExps. Don't parse files matching.
-
-It's matched against the full resolved request.
-
-This can boost the performance when ignoring big libraries.
+一个正则表达式或者一组正则，不会匹配到的路径
+它不匹配整个解析请求。
+当忽略大的库的时候可以提高性能
 
 The files are expected to have no call to `require`, `define` or similar. They are allowed to use `exports` and `module.exports`.
 
