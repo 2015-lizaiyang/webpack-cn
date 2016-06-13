@@ -298,7 +298,7 @@ webpack异步加载的JSONP函数.
 
 `"amd"` - 导出为AMD (视情况可通过`output.library`来命名)
 
-`"umd"` - Export to AMD, CommonJS2 or as property in root
+`"umd"` - 导出为 AMD, CommonJS2 或者是顶级属性
 
 > Default: `"var"`
 
