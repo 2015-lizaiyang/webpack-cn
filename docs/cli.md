@@ -37,7 +37,7 @@ webpack <entry> <output>
 
 ### 配置选项
 
-Many configuration options are mapped from CLI options. I. e. `--debug` maps to `debug: true`, or `--output-library-target` to `output.libraryTarget`.
+许多配置项都和 CLI 的参数项对应. 比如. `--debug` 对应 `debug: true`, 以及 `--output-library-target` 对应 `output.libraryTarget`.
 
 You see a list of all options, if you don't pass any option.
 
