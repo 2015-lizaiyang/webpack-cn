@@ -228,10 +228,9 @@ js文件的SourceMap的文件名. 也同样在 `output.path` 路径下面.
 > 默认: `"webpack:///[resourcePath]?[hash]"`
 
 ### `output.devtoolLineToLine`
+为所有模块启用行映射模式，行映射模式用了一个简单的SourceMap，用在了每一行生成的source映射到原始的source，这是一个性能优化，仅用在你的性能需要更佳，你确定输入行对应生成行的时候。
 
-Enable line to line mapped mode for all/specified modules. Line to line mapped mode uses a simple SourceMap where each line of the generated source is mapped to the same line of the original source. It's a performance optimization. Only use it if your performance needs to be better and you are sure that input lines match which generated lines.
-
-`true` enables it for all modules (not recommended)
+`true` 用在所有模块(不建议)
 
 An object `{test, include, exclude}` similar to `module.loaders` enables it for specific files.
 
