@@ -420,7 +420,7 @@ Four options are possible for automatically created contexts:
 
 > 注意: `module.wrappedContextRegExp` only refers to the middle part of the full RegExp. The remaining is generated from prefix and surfix.
 
-Example:
+例子:
 
 ``` javascript
 {
