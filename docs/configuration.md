@@ -306,7 +306,7 @@ webpack异步加载的JSONP函数.
 
 ### `output.umdNamedDefine`
 
-If `output.libraryTarget` is set to `umd` and `output.library` is set, setting this to `true` will name the AMD module.
+如果 `output.libraryTarget` 被设置为 `umd` 且 `output.library` 被 设置, 设置该项为 `true` 将为AMD module 命名.
 
 ### `output.sourcePrefix`
 
