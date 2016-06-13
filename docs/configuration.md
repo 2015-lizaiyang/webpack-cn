@@ -498,8 +498,7 @@ resolve: {
 > 注意: Passing `"../someDir"`, `"app"`, `"."` or an absolute path isn't necessary here. Just use a directory name, not a path. Use only if you expect to have a hierarchy within these folders. Otherwise you may want to use the `resolve.root` option instead.
 
 ### `resolve.fallback`
-
-A directory (or array of directories **absolute paths**), in which webpack should look for modules that weren't found in `resolve.root` or `resolve.modulesDirectories`.
+webpack没有在`resolve.root` 或者 `resolve.modulesDirectories`找到的模块的一个目录（或者目录绝对路径的数组）.
 
 ### `resolve.extensions`
 
