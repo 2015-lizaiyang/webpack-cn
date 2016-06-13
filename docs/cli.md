@@ -39,7 +39,7 @@ webpack <entry> <output>
 
 许多配置项都和 CLI 的参数项对应. 比如. `--debug` 对应 `debug: true`, 以及 `--output-library-target` 对应 `output.libraryTarget`.
 
-You see a list of all options, if you don't pass any option.
+如果不穿任何参数，则会显示webpack的帮助信息，里面有非常多的参数可用.
 
 
 
