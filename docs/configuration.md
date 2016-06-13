@@ -556,7 +556,7 @@ webpack没有在`resolve.root` 或者 `resolve.modulesDirectories`找到的模�
 ## `externals`
 指定的依赖不会被webpack解析，但会成为bundle里的依赖。`output.libraryTarget`.决定着依赖的类型
 
-As value an object, a string, a function, a RegExp and an array is accepted.
+值是对象，字符串，函数，正则，数组都会被接受。
 
 * string: An exact matched dependency becomes external. The same string is used as external dependency.
 * object: If an dependency matches exactly a property of the object, the property value is used as dependency. The property value may contain a dependency type prefixed and separated with a space. If the property value is `true` the property name is used instead. If the property value is `false` the externals test is aborted and the dependency is not external. See example below.
