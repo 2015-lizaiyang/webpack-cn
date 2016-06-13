@@ -232,9 +232,9 @@ js文件的SourceMap的文件名. 也同样在 `output.path` 路径下面.
 
 `true` 用在所有模块(不建议)
 
-An object `{test, include, exclude}` similar to `module.loaders` enables it for specific files.
+可以用类似于 `module.loaders` 的带有`{test, include, exclude}` 对象 来开启特定文件.
 
-> Default: disabled
+> 默认: disabled
 
 ### `output.hotUpdateChunkFilename`
 
