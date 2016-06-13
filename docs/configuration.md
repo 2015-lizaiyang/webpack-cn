@@ -334,7 +334,7 @@ webpack异步加载的JSONP函数.
 
 ## `module`
 
-Options affecting the normal modules (`NormalModuleFactory`)
+影响标准 module 的选项(`NormalModuleFactory`)
 
 ### `module.loaders`
 
