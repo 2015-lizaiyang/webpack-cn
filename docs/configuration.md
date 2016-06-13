@@ -678,7 +678,7 @@ Prefixing `@`, `#` or `#@` will enforce a pragma style. (Defaults to `#`, recomm
 
 可以组合使用. `hidden`, `inline`, `eval` 标注样式是独立的.
 
-i. e. `cheap-module-inline-source-map`, `cheap-eval-source-map`, `#@source-map`
+比如. `cheap-module-inline-source-map`, `cheap-eval-source-map`, `#@source-map`
 
 > Hint: If your modules already contain SourceMaps you'll need to use the [source-map-loader](https://github.com/webpack/source-map-loader) to merge it with the emitted SourceMap.
 
