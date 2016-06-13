@@ -506,7 +506,7 @@ webpack没有在`resolve.root` 或者 `resolve.modulesDirectories`找到的模�
 
 > 默认: `["", ".webpack.js", ".web.js", ".js"]`
 
-**重要信息**: Setting this option will override the default, meaning that webpack will no longer try to resolve modules using the default extensions. If you want modules that were required with their extension (e.g. `require('./somefile.ext')`) to be properly resolved, you **must** include an empty string in your array. Similarly, if you want modules that were required without extensions (e.g. `require('underscore')`) to be resolved to files with ".js" extensions, you **must** include `".js"` in your array.
+**重要信息**: 设置这个选项将会重写默认值，这意味着webpack不再试着用默认的拓展名解析模块，如果你希望模块加载的时候带着他们的拓展名也可以得到正确额解析(比如require('./somefile.ext'))，你需要在你的数组里添加一个空字符串。如果你希望模块加载不带拓展名(比如require('underscore'))可以解析为“.js”的拓展名。你必须在数组里包含".js".
 
 ### `resolve.packageMains`
 
