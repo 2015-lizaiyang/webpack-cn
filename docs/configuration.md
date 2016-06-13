@@ -326,9 +326,9 @@ webpack异步加载的JSONP函数.
 
 `"use-credentials"` - 可用.credentials将随请求被发送.
 
-For more information on cross-origin loading see [MDN](https://developer.mozilla.org/en/docs/Web/HTML/Element/script#attr-crossorigin)
+更多请查阅 [MDN](https://developer.mozilla.org/en/docs/Web/HTML/Element/script#attr-crossorigin)
 
-> Default: `false`
+> 默认: `false`
 
 
 
