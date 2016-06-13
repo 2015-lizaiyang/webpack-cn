@@ -389,7 +389,7 @@ module: {
 
 该文件预计不可调用require,define或者其他类似的东西，不过可以用exports和modulle.exports.
 
-### automatically created contexts defaults `module.xxxContextXxx`
+### 自动创建上下文默认值 `module.xxxContextXxx`
 
 这有许多选项配置自动创建上下文的默认值，我们区分三种情况下自动创建的上下文:
 
