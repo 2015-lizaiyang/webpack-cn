@@ -520,7 +520,7 @@ webpack没有在`resolve.root` 或者 `resolve.modulesDirectories`找到的模�
 
 > 没有默认值
 
-Example: `"browser"` to check the browser field.
+比如: 比如"browser"会检查browser字段.
 
 ### `resolve.unsafeCache`
 
