@@ -292,9 +292,9 @@ webpack异步加载的JSONP函数.
 
 `"this"` - 通过设置 `this`的属性来导出: `this["Library"] = xxx`
 
-`"commonjs"` - Export by setting a property of `exports`: `exports["Library"] = xxx`
+`"commonjs"` - 通过设置 `exports`的属性导出: `exports["Library"] = xxx`
 
-`"commonjs2"` - Export by setting `module.exports`: `module.exports = xxx`
+`"commonjs2"` - 通过设置 `module.exports`导出: `module.exports = xxx`
 
 `"amd"` - Export to AMD (optionally named - set the name via the library option)
 
