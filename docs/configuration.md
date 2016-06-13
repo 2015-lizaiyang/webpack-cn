@@ -410,7 +410,7 @@ Four options are possible for automatically created contexts:
 * `regExp`: The RegExp for the expression.
 * `critical`: This type of dependency should be consider as critical (emits a warning).
 
-All options and defaults:
+选项和默认值:
 
 `unknownContextRequest = "."`, `unknownContextRecursive = true`, `unknownContextRegExp = /^\.\/.*$/`, `unknownContextCritical = true`
 
@@ -418,7 +418,7 @@ All options and defaults:
 
 `wrappedContextRegExp = /.*/`, `wrappedContextRecursive = true`, `wrappedContextCritical = false`
 
-> Note: `module.wrappedContextRegExp` only refers to the middle part of the full RegExp. The remaining is generated from prefix and surfix.
+> 注意: `module.wrappedContextRegExp` only refers to the middle part of the full RegExp. The remaining is generated from prefix and surfix.
 
 Example:
 
