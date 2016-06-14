@@ -2,7 +2,6 @@
 
 * [关于文档](README.md)
 * [概览](docs/Home.md)
-   * API
 * 开始
    * [动机](docs/motivation.md)
    * [webpack是什么](docs/what-is-webpack.md)
