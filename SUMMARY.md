@@ -62,4 +62,5 @@
    * [Roadmap](docs/roadmap.md)
    * [Ideas](docs/ideas.md)
    * Contributing
+* API
 
