@@ -1,5 +1,4 @@
-_**webpack-dev-server**_ 是一个微型的 [Express](http://expressjs.com/) 服务器, 使用了_[webpack-dev-middleware][webpack-dev-middleware]_ 来为webpack bundle提供服务。同时也提供一个运行环境通过[Socket.IO](http://socket.io/)链接到服务器。服务器会推送关于编译状态的信息到对这些信息作出反应的客户端。
-which uses the _[[webpack-dev-middleware]]_ to serve a _webpack bundle_. It also has a little runtime which is connected to the server via [Socket.IO](http://socket.io/). The server emits information about the compilation state to the client, which reacts to those events. You can choose between different modes, depending on your needs. So let's say you have the following config file:
+_**webpack-dev-server**_ 是一个微型的 [Express](http://expressjs.com/) 服务器, 使用了_[webpack-dev-middleware][webpack-dev-middleware]_ 来为webpack bundle提供服务。同时也提供另一种方案，添加一个运行环境通过[Socket.IO](http://socket.io/)链接到服务器，服务器会推送关于编译状态的信息到对这些事件作出反应的客户端。你可以选择上述两种方案。取决于你的需要。好了我们来看看例子吧:
 
 ```javascript
 var path = require("path");
@@ -14,11 +13,12 @@ module.exports = {
   }
 };
 ```
-
+_webpack_ 将会把app文件夹下面的main.js打包到bundle.js放在build文件夹里。
 You have an `app` folder with your initial entry point that _webpack_ will bundle into a `bundle.js` file in the `build` folder.
 
-## Content Base
+## 内容基础
 The _webpack-dev-server_ will serve the files in the current directory, unless you configure a specific content base. 
+_webpack-dev-server_将会以当前的文件目录作为服务目录作为内容基础，除非你自己指定内容基础。
 
 ```sh
 $ webpack-dev-server --content-base build/
