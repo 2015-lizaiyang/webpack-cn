@@ -40,7 +40,7 @@
    * [热替换](docs/hot-module-replacement-with-webpack.md)
    * [Comparison](docs/comparison.md)
 * webpack with
-   * [grunt | Usage with grunt](docs/usage-with-grunt.md)
+   * [grunt | 使用grunt](docs/usage-with-grunt.md)
    * [gulp | 使用gulp](docs/usage-with-gulp.md)
    * [bower | Usage with bower](docs/usage-with-bower.md)
    * [karma | Usage with karma](docs/usage-with-karma.md)
