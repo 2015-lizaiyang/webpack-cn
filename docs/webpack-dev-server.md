@@ -23,7 +23,7 @@ _webpack-dev-server_将会以当前的文件目录作为服务目录作为内容
 ```sh
 $ webpack-dev-server --content-base build/
 ```
-
+这样设置以后
 Using this config _webpack-dev-server_ will serve the static files in your `build` folder. It'll watch your source files for changes and when changes are made the _bundle_ will be recompiled. This modified _bundle_ is served from memory at the relative path specified in `publicPath` (see [API](#api)). It will not be written to your configured output directory. Where a _bundle_ already exists at the same url path the _bundle_ in memory will take precedence (by default).
 
 For example with the configuration above your _bundle_ will be available at `localhost:8080/assets/bundle.js`
