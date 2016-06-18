@@ -14,10 +14,10 @@ module.exports = {
 };
 ```
 _webpack_ 将会把app文件夹下面的main.js打包到bundle.js放在build文件夹里。
-You have an `app` folder with your initial entry point that _webpack_ will bundle into a `bundle.js` file in the `build` folder.
+
 
 ## 内容基础
-The _webpack-dev-server_ will serve the files in the current directory, unless you configure a specific content base. 
+
 _webpack-dev-server_将会以当前的文件目录作为服务目录作为内容基础，除非你自己指定内容基础。
 
 ```sh
