@@ -15,7 +15,6 @@ module.exports = {
 ```
 _webpack_ 将会把app文件夹下面的main.js打包到bundle.js放在build文件夹里。
 
-You have an `app` folder with your initial entry point that _webpack_ will bundle into a `bundle.js` file in the `build` folder.
 
 ## 内容基础
 
