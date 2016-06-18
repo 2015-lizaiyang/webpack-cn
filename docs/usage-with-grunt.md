@@ -1,6 +1,6 @@
-There is a grunt plugin for using webpack and the [[webpack-dev-server]]: [grunt-webpack](https://github.com/webpack/grunt-webpack).
+有一个使用webpack 以及 [webpack-dev-server](http://webpack.github.io/docs/webpack-dev-server.html) 的Grunt插件: [grunt-webpack](https://github.com/webpack/grunt-webpack).
 
-It's pretty simple to use:
+它用起来非常方便:
 
 ``` javascript
 module.exports = function(grunt) {
@@ -32,13 +32,14 @@ module.exports = function(grunt) {
 };
 ```
 
-## Development
+## 开发
 
-The best option for development is the [[webpack-dev-server]], but it requires spawning a server. If this is not possible or too complex the normal build - watch cycle is possible too.
+开发过程中的最佳利器就是 [[webpack-dev-server]], 但是它需要生成一个server. 如果没法做到这个或者太复杂没法做到, 正常的
+build - watch cycle 也是可行的.
 
-## Example
+## 示例
 
-Take a look at an example Gruntfile. It covers three modes:
+阅读一下这个Gruntfile例子.它包含了以下三个模式:
 
 * webpack-dev-server
 * build - watch cycle
