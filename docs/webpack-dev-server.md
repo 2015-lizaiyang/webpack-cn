@@ -53,17 +53,16 @@ _webpack-dev-server_ 支持多个模式的自动刷新。
 
 * Iframe 模式 (页面内嵌到iframe里面，等文件改动时候刷新)
 * 行内模式 (在bundle文件里面添加一个小型webpack-dev-server客户端，当有改动触发刷新)
+每个模式都支持热替换，当有一个改动的时候bundle将被通知，而不是整个页面的刷新。然后热替换执行环境加载更新过的moudle然后注入到运行的app里面。
 
-Each mode also supports Hot Module Replacement in which the bundle is notified that a change happened instead of a full page reload. A Hot Module Replacement runtime could then load the updated modules and inject them into the running app.
-
-### Iframe mode
+### Iframe 模式
 To use the iframe mode no additional configuration is needed. Just navigate the browser to `http://<host>:<port>/webpack-dev-server/<path>`. I. e. with the above configuration `http://localhost:8080/webpack-dev-server/index.html`.
 
 * No configuration change needed.
 * Nice information bar on top of your app.
 * Url changes in the app are **not** reflected in the browsers url bar.
 
-### Inline mode
+### Inline 模式
 To use the inline mode, specify `--inline` on the command line (you cannot specify it in the configuration). This adds the webpack-dev-server client entry point to the webpack configuration. There is no change in the url required. Just navigate to `http://<host>:<port>/<path>`. I. e. with the above configuration `http://localhost:8080/index.html`.
 
 * Command line flag needed.
