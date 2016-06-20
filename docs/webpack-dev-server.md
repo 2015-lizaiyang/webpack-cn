@@ -23,12 +23,14 @@ _webpack-dev-server_将会以当前的文件目录作为服务目录作为内容
 ```sh
 $ webpack-dev-server --content-base build/
 ```
-这样设置以后_webpack-dev-server_将build当作服务器的文件目录。
-Using this config _webpack-dev-server_ will serve the static files in your `build` folder. It'll watch your source files for changes and when changes are made the _bundle_ will be recompiled. This modified _bundle_ is served from memory at the relative path specified in `publicPath` (see [API](#api)). It will not be written to your configured output directory. Where a _bundle_ already exists at the same url path the _bundle_ in memory will take precedence (by default).
+这样设置以后_webpack-dev-server_将build当作服务器的文件目录。它将监听文件的改动并且_bundle_将重新编译。这个被修改的_bundle_来自`publicPath`指定的相对目录下的内存（参看 [API](#api)）。他将不会写入你配置好的文件输出路径里。（默认）将会写入到内存里面的_bundle_里，_bundle_和配置的outputpath拥有相同的url 路径。
 
-For example with the configuration above your _bundle_ will be available at `localhost:8080/assets/bundle.js`
+
+有了上面的设置下下面这个就可以访问了。
+`localhost:8080/assets/bundle.js`
  
-To load your bundled files, you will need to create an `index.html` file in the `build` folder from which static files are served (`--content-base` option). e.g:
+为了加载bundle文件, 你需要在`build`目录下面，创建一个`index.html`文件
+例如:
 
 ```html
 <!DOCTYPE html>
@@ -45,23 +47,22 @@ To load your bundled files, you will need to create an `index.html` file in the 
 
 By default go to `localhost:8080/` to launch your app. For example with the configuration above (with publicPath) go to `localhost:8080/assets/`.
 
-## Automatic Refresh
+## 自动刷新
 
-The _webpack-dev-server_ supports multiple modes to automatic refresh the page:
+_webpack-dev-server_ 支持多个模式的自动刷新。
 
-* Iframe mode (page is embedded in an iframe and reloaded on change)
-* Inline mode (a small webpack-dev-server client entry is added to the bundle which refresh the page on change)
+* Iframe 模式 (页面内嵌到iframe里面，等文件改动时候刷新)
+* 行内模式 (在bundle文件里面添加一个小型webpack-dev-server客户端，当有改动触发刷新)
+每个模式都支持热替换，当有一个改动的时候bundle将被通知，而不是整个页面的刷新。然后热替换执行环境加载更新过的moudle然后注入到运行的app里面。
 
-Each mode also supports Hot Module Replacement in which the bundle is notified that a change happened instead of a full page reload. A Hot Module Replacement runtime could then load the updated modules and inject them into the running app.
-
-### Iframe mode
+### Iframe 模式
 To use the iframe mode no additional configuration is needed. Just navigate the browser to `http://<host>:<port>/webpack-dev-server/<path>`. I. e. with the above configuration `http://localhost:8080/webpack-dev-server/index.html`.
 
 * No configuration change needed.
 * Nice information bar on top of your app.
 * Url changes in the app are **not** reflected in the browsers url bar.
 
-### Inline mode
+### Inline 模式
 To use the inline mode, specify `--inline` on the command line (you cannot specify it in the configuration). This adds the webpack-dev-server client entry point to the webpack configuration. There is no change in the url required. Just navigate to `http://<host>:<port>/<path>`. I. e. with the above configuration `http://localhost:8080/index.html`.
 
 * Command line flag needed.
