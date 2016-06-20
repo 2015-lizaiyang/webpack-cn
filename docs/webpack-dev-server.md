@@ -25,12 +25,12 @@ $ webpack-dev-server --content-base build/
 ```
 这样设置以后_webpack-dev-server_将build当作服务器的文件目录。它将监听文件的改动并且_bundle_将重新编译。这个被修改的_bundle_来自`publicPath`指定的相对目录下的内存（参看 [API](#api)）。他将不会写入你配置好的文件输出路径里。（默认）将会写入到内存里面的_bundle_里，_bundle_和配置的outputpath拥有相同的url 路径。
 
-Using this config _webpack-dev-server_ will serve the static files in your `build` folder. It'll watch your source files for changes and when changes are made the _bundle_ will be recompiled. This modified _bundle_ is served from memory at the relative path specified in `publicPath` (see [API](#api)). It will not be written to your configured output directory. Where a _bundle_ already exists at the same url path the _bundle_ in memory will take precedence (by default).
 
 有了上面的设置下下面这个就可以访问了。
 `localhost:8080/assets/bundle.js`
  
-To load your bundled files, you will need to create an `index.html` file in the `build` folder from which static files are served (`--content-base` option). e.g:
+为了加载bundle文件, 你需要在`build`目录下面，创建一个`index.html`文件
+例如:
 
 ```html
 <!DOCTYPE html>
