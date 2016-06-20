@@ -49,10 +49,10 @@ By default go to `localhost:8080/` to launch your app. For example with the conf
 
 ## 自动刷新
 
-The _webpack-dev-server_ supports multiple modes to automatic refresh the page:
+_webpack-dev-server_ 支持多个模式的自动刷新。
 
-* Iframe mode (page is embedded in an iframe and reloaded on change)
-* Inline mode (a small webpack-dev-server client entry is added to the bundle which refresh the page on change)
+* Iframe 模式 (页面内嵌到iframe里面，等文件改动时候刷新)
+* 行内模式 (在bundle文件里面添加一个小型webpack-dev-server客户端，当有改动触发刷新)
 
 Each mode also supports Hot Module Replacement in which the bundle is notified that a change happened instead of a full page reload. A Hot Module Replacement runtime could then load the updated modules and inject them into the running app.
 
