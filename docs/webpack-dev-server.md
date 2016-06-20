@@ -47,7 +47,7 @@ $ webpack-dev-server --content-base build/
 
 By default go to `localhost:8080/` to launch your app. For example with the configuration above (with publicPath) go to `localhost:8080/assets/`.
 
-## Automatic Refresh
+## 自动刷新
 
 The _webpack-dev-server_ supports multiple modes to automatic refresh the page:
 
