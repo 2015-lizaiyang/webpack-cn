@@ -87,8 +87,7 @@ server.listen(8080);
 
 
 #### HTML
-
-There is also the option to add a reference to the webpack-dev-server client script to the HTML page:
+这同样是一种添加webpack-dev-server的方式：
 
 ```html
 <script src="http://localhost:8080/webpack-dev-server.js"></script>
