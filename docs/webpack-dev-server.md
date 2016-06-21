@@ -58,9 +58,9 @@ _webpack-dev-server_ 支持多个模式的自动刷新。
 ### Iframe 模式
 To use the iframe mode no additional configuration is needed. Just navigate the browser to `http://<host>:<port>/webpack-dev-server/<path>`. I. e. with the above configuration `http://localhost:8080/webpack-dev-server/index.html`.
 
-* No configuration change needed.
-* Nice information bar on top of your app.
-* Url changes in the app are **not** reflected in the browsers url bar.
+* 不需要改变配置.
+* 很好的信息条展示在app的头部.
+* app的url改变 **不** 影响浏览器的地址栏变化.
 
 ### Inline 模式
 使用行内模式，你只需要在命令行加上`--inline` （不能在配置里面加）。这样webpack的配置里面就会加入webpack-dev-server的入口点。url请求方式没有改变还是`http://<host>:<port>/<path>`，比如`http://localhost:8080/index.html`。
