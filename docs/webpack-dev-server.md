@@ -74,7 +74,7 @@ To use the iframe mode no additional configuration is needed. Just navigate the 
 
 webpack-dev-server里面没有`inline:true`标记，因为webpack-dev-server模块不能访问webpack配置。要在node api 里使用，就必须将webpack-dev-server客户端入口文件添加到webpack的配置里面。
 There is no `inline: true` flag in the webpack-dev-server configuration, because the webpack-dev-server module has no access to the webpack configuration. Instead the user must add the webpack-dev-server client entry point to the webpack configuration.
-
+想要这么做，只需要在所有的入口文件里面添加`webpack-dev-server/client?http://<path>:<port>/`就可以了。比如：
 To do this just add `webpack-dev-server/client?http://<path>:<port>/` to (all) entry point(s). I. e. with the above configuration:
 
 ``` js
