@@ -59,7 +59,7 @@ _webpack-dev-server_ 支持多个模式的自动刷新。
 不需要改变配置. 只需要将浏览器打开 `http://<host>:<port>/webpack-dev-server/<path>`链接就可以. 比如.  `http://localhost:8080/webpack-dev-server/index.html`.
 
 * 不需要改变配置.
-* 很好的信息条展示在app的头部.
+* 友好信息条展示在app的头部.
 * app的url改变 **不** 影响浏览器的地址栏变化.
 
 ### Inline 模式
