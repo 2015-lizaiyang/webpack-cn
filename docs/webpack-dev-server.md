@@ -56,25 +56,26 @@ _webpack-dev-server_ 支持多个模式的自动刷新。
 每个模式都支持热替换，当有一个改动的时候bundle将被通知，而不是整个页面的刷新。然后热替换执行环境加载更新过的moudle然后注入到运行的app里面。
 
 ### Iframe 模式
-To use the iframe mode no additional configuration is needed. Just navigate the browser to `http://<host>:<port>/webpack-dev-server/<path>`. I. e. with the above configuration `http://localhost:8080/webpack-dev-server/index.html`.
+不需要改变配置. 只需要将浏览器打开 `http://<host>:<port>/webpack-dev-server/<path>`链接就可以. 比如.  `http://localhost:8080/webpack-dev-server/index.html`.
 
-* No configuration change needed.
-* Nice information bar on top of your app.
-* Url changes in the app are **not** reflected in the browsers url bar.
+* 不需要改变配置.
+* 很好的信息条展示在app的头部.
+* app的url改变 **不** 影响浏览器的地址栏变化.
 
 ### Inline 模式
-To use the inline mode, specify `--inline` on the command line (you cannot specify it in the configuration). This adds the webpack-dev-server client entry point to the webpack configuration. There is no change in the url required. Just navigate to `http://<host>:<port>/<path>`. I. e. with the above configuration `http://localhost:8080/index.html`.
+使用行内模式，你只需要在命令行加上`--inline` （不能在配置里面加）。这样webpack的配置里面就会加入webpack-dev-server的入口点。url请求方式没有改变还是`http://<host>:<port>/<path>`，比如`http://localhost:8080/index.html`。
 
-* Command line flag needed.
-* Status information in the browser log.
-* Url changes in the app are reflected in the browsers url bar.
+* 需要命令行.
+* 在浏览器端会有状态日志.
+* app里面url改变会影响浏览器地址栏的url改变.
 
 
-#### Inline mode with node.js API
+#### node.js API
 
-There is no `inline: true` flag in the webpack-dev-server configuration, because the webpack-dev-server module has no access to the webpack configuration. Instead the user must add the webpack-dev-server client entry point to the webpack configuration.
+webpack-dev-server里面没有`inline:true`标记，因为webpack-dev-server模块不能访问webpack配置。要在node api 里使用，就必须将webpack-dev-server客户端入口文件添加到webpack的配置里面。
 
-To do this just add `webpack-dev-server/client?http://<path>:<port>/` to (all) entry point(s). I. e. with the above configuration:
+想要这么做，只需要在所有的入口文件里面添加`webpack-dev-server/client?http://<path>:<port>/`就可以了。比如：
+
 
 ``` js
 var config = require("./webpack.config.js");
@@ -85,22 +86,21 @@ server.listen(8080);
 ```
 
 
-#### Inline mode in HTML
-
-There is also the option to add a reference to the webpack-dev-server client script to the HTML page:
+#### HTML
+这同样是一种添加webpack-dev-server的方式：
 
 ```html
 <script src="http://localhost:8080/webpack-dev-server.js"></script>
 ```
 
 
-### Hot Module Replacement
+### 热替换
 To enable Hot Module Replacement with the webpack-dev-server specify `--hot` on the command line. This adds the `HotModuleReplacementPlugin` to the webpack configuration.
 
 The easiest way to use Hot Module Replacement with the webpack-dev-server is to use the inline mode.
 
 
-#### Hot Module Replacement with Inline mode on CLI
+#### CLI行内模式的热替换
 
 Nothing more is needed. `--inline --hot` does all the relevant work automatically. The CLI of the webpack-dev-server automatically adds the special `webpack/hot/dev-server` entry point to your configuration.
 
