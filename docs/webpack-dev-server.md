@@ -100,7 +100,7 @@ To enable Hot Module Replacement with the webpack-dev-server specify `--hot` on 
 The easiest way to use Hot Module Replacement with the webpack-dev-server is to use the inline mode.
 
 
-#### Hot Module Replacement with Inline mode on CLI
+#### CLI行内模式的热替换
 
 Nothing more is needed. `--inline --hot` does all the relevant work automatically. The CLI of the webpack-dev-server automatically adds the special `webpack/hot/dev-server` entry point to your configuration.
 
