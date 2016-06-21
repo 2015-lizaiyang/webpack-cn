@@ -56,7 +56,7 @@ _webpack-dev-server_ 支持多个模式的自动刷新。
 每个模式都支持热替换，当有一个改动的时候bundle将被通知，而不是整个页面的刷新。然后热替换执行环境加载更新过的moudle然后注入到运行的app里面。
 
 ### Iframe 模式
-To use the iframe mode no additional configuration is needed. Just navigate the browser to `http://<host>:<port>/webpack-dev-server/<path>`. I. e. with the above configuration `http://localhost:8080/webpack-dev-server/index.html`.
+不需要改变配置. 只需要将浏览器打开 `http://<host>:<port>/webpack-dev-server/<path>`链接就可以. 比如.  `http://localhost:8080/webpack-dev-server/index.html`.
 
 * 不需要改变配置.
 * 很好的信息条展示在app的头部.
