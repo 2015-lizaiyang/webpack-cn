@@ -70,7 +70,7 @@ To use the inline mode, specify `--inline` on the command line (you cannot speci
 * Url changes in the app are reflected in the browsers url bar.
 
 
-#### Inline mode with node.js API
+#### node.js API
 
 There is no `inline: true` flag in the webpack-dev-server configuration, because the webpack-dev-server module has no access to the webpack configuration. Instead the user must add the webpack-dev-server client entry point to the webpack configuration.
 
@@ -85,7 +85,7 @@ server.listen(8080);
 ```
 
 
-#### Inline mode in HTML
+#### HTML
 
 There is also the option to add a reference to the webpack-dev-server client script to the HTML page:
 
