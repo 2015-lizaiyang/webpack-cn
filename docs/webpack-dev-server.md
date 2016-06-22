@@ -95,6 +95,7 @@ server.listen(8080);
 
 
 ### 热替换
+
 To enable Hot Module Replacement with the webpack-dev-server specify `--hot` on the command line. This adds the `HotModuleReplacementPlugin` to the webpack configuration.
 
 The easiest way to use Hot Module Replacement with the webpack-dev-server is to use the inline mode.
