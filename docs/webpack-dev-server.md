@@ -165,7 +165,7 @@ See the [node-http-proxy Options documentation](https://github.com/nodejitsu/nod
 
 Proxying some URLs can be useful for a variety of configurations. One example is to serve JavaScript files and other static assets from the local development server but still send API requests to an external backend development server. Another example is splitting requests between two separate backend servers such as an authentication backend and a application backend.
 
-### Bypass the Proxy
+### 绕开代理
 
 (Added in v1.13.0.) The proxy can be optionally bypassed based on the return from a function. The function can inspect the HTTP request, response, and any given proxy options. It must return either `false` or a URL path that will be served _instead_ of continuing to proxy the request.
 
