@@ -59,7 +59,7 @@ _webpack-dev-server_ 支持多个模式的自动刷新。
 不需要改变配置. 只需要将浏览器打开 `http://<host>:<port>/webpack-dev-server/<path>`链接就可以. 比如.  `http://localhost:8080/webpack-dev-server/index.html`.
 
 * 不需要改变配置.
-* 很好的信息条展示在app的头部.
+* 友好信息条展示在app的头部.
 * app的url改变 **不** 影响浏览器的地址栏变化.
 
 ### Inline 模式
@@ -95,6 +95,7 @@ server.listen(8080);
 
 
 ### 热替换
+
 To enable Hot Module Replacement with the webpack-dev-server specify `--hot` on the command line. This adds the `HotModuleReplacementPlugin` to the webpack configuration.
 
 The easiest way to use Hot Module Replacement with the webpack-dev-server is to use the inline mode.
@@ -118,7 +119,7 @@ Messages prefixed with `[HMR]` originate from the `webpack/hot/dev-server` modul
 It's important to specify a correct `output.publicPath` otherwise the hot update chunks cannot be loaded.
 
 
-#### Hot Module Replacement with node.js API
+#### 热替换在node.js API应用
 
 Similar to the inline mode the user must make changes to the webpack configuration.
 
@@ -147,7 +148,7 @@ Note that many editors support "safe write" feature and have it enabled by defau
 * **VIM** - set ":set backupcopy=yes" ([see documentation](http://vimdoc.sourceforge.net/htmldoc/options.html#'backupcopy'))
 * **IntelliJ** - Settings -> System Settings -> Synchronization -> disable "safe write" (may differ in various IntelliJ IDEs, but you can still use the search feature)
 
-## Proxy
+## 代理
 
 The Webpack dev server makes use of [node-http-proxy](https://github.com/nodejitsu/node-http-proxy) to optionally proxy requests to a separate, possibly external, backend server. A sample configuration is below.
 
@@ -164,7 +165,7 @@ See the [node-http-proxy Options documentation](https://github.com/nodejitsu/nod
 
 Proxying some URLs can be useful for a variety of configurations. One example is to serve JavaScript files and other static assets from the local development server but still send API requests to an external backend development server. Another example is splitting requests between two separate backend servers such as an authentication backend and a application backend.
 
-### Bypass the Proxy
+### 绕开代理
 
 (Added in v1.13.0.) The proxy can be optionally bypassed based on the return from a function. The function can inspect the HTTP request, response, and any given proxy options. It must return either `false` or a URL path that will be served _instead_ of continuing to proxy the request.
 
@@ -184,7 +185,7 @@ proxy: {
 }
 ```
 
-### Rewriting URLs of proxy request
+### 重写代理请求url
 
 (Added in v???) The request to the proxy can be optionally rewritten by providing a function. The function can inspect and change the HTTP request.
 
