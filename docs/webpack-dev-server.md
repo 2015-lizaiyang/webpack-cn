@@ -119,7 +119,7 @@ Messages prefixed with `[HMR]` originate from the `webpack/hot/dev-server` modul
 It's important to specify a correct `output.publicPath` otherwise the hot update chunks cannot be loaded.
 
 
-#### Hot Module Replacement with node.js API
+#### 热替换在node.js API应用
 
 Similar to the inline mode the user must make changes to the webpack configuration.
 
@@ -148,7 +148,7 @@ Note that many editors support "safe write" feature and have it enabled by defau
 * **VIM** - set ":set backupcopy=yes" ([see documentation](http://vimdoc.sourceforge.net/htmldoc/options.html#'backupcopy'))
 * **IntelliJ** - Settings -> System Settings -> Synchronization -> disable "safe write" (may differ in various IntelliJ IDEs, but you can still use the search feature)
 
-## Proxy
+## 代理
 
 The Webpack dev server makes use of [node-http-proxy](https://github.com/nodejitsu/node-http-proxy) to optionally proxy requests to a separate, possibly external, backend server. A sample configuration is below.
 
