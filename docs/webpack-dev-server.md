@@ -185,7 +185,7 @@ proxy: {
 }
 ```
 
-### Rewriting URLs of proxy request
+### 重写代理请求url
 
 (Added in v???) The request to the proxy can be optionally rewritten by providing a function. The function can inspect and change the HTTP request.
 
