@@ -11,7 +11,7 @@ webpack({
 });
 ```
 
-## The long way
+## 复杂的方式
 
 ``` javascript
 var webpack = require("webpack");
