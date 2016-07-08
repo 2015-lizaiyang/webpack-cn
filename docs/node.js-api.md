@@ -1,4 +1,4 @@
-## The short way
+## 简单的方式
 
 ``` javascript
 var webpack = require("webpack");
@@ -11,7 +11,7 @@ webpack({
 });
 ```
 
-## The long way
+## 复杂的方式
 
 ``` javascript
 var webpack = require("webpack");
@@ -38,7 +38,7 @@ compiler.watch({ // watch options:
 
 ## `Compiler`
 
-An instance of `Compiler` has the following methods
+ `Compiler` 引用有如下方法：
 
 `compiler.run(callback)` - Builds the bundle(s).
 * callback(err, stats) - A function that will be called with the build is complete.
