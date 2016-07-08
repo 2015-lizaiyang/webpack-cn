@@ -1,4 +1,4 @@
-## The short way
+## 简单的方式
 
 ``` javascript
 var webpack = require("webpack");
