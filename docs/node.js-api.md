@@ -38,7 +38,7 @@ compiler.watch({ // watch options:
 
 ## `Compiler`
 
-An instance of `Compiler` has the following methods
+ `Compiler` 引用有如下方法：
 
 `compiler.run(callback)` - Builds the bundle(s).
 * callback(err, stats) - A function that will be called with the build is complete.
